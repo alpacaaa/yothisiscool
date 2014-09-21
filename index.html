@@ -6,19 +6,68 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Dude This Is Cool / Index</title>
+		<title>Index / Dude, This is Cool</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link rel="stylesheet" href="styles/css/main.css">
 		<script src="scripts/js/modernizr-2.6.2.min.js"></script>
 	</head>
-	<body>
+	<body lang="en">
 		<!--[if lt IE 7]>
 			<div class="warning small"><p>Wouldn’t you prefer to <a href="http://browsehappy.com/" target="_blank">upgrade</a> your <strong>outdated browser</strong> to enjoy a way better <em>experience</em> of this site?</p></div>
 		<![endif]-->
 
-		<p>Hello world!</p>
+		<header class="header">
+			<h1>Dude, This is Cool</h1>
+			<nav class="nav">
+				<h6>Main Menu</h6>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Index</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main class="content">
+			<article class="project">
+				<header class="head medium">
+					<h2>Index</h2>
+				</header>
+
+				<div class="body medium">
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+					<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+				</div>
+
+				<section class="feet">
+					<h3 class="notation">Looking for something?</h3>
+					<form class="form" action="">
+						<div class="field">
+							<label for="comment">Search</label>
+							<input id="comment" name="" placeholder="https://github.com/username/project" type="text"/>
+							<i>Some instruction.</i>
+						</div>
+						<div class="button">
+							<input class="send" name="" type="submit" value="Search *"/>
+						</div>
+						<div class="caption">Some caption.</div>
+					</form>
+					<ul class="letters">
+						<li class="letter"><a href="#">A as Ananas <span class="amount"> 0</span></a></li>
+						<li class="letter"><a href="#">B as Banana <span class="amount"> 0</span></a></li>
+						<li class="letter"><a href="#">C as Cucumber <span class="amount"> 0</span></a></li>
+					</ul>
+				</section>
+			</article>
+		</main>
+
+		<footer class="footer">
+			<ul>
+				<li><a href="#">Colophon</a></li>
+				<li><a href="#">Back to Top</a></li>
+			</ul>
+		</footer>
 
 		<script src="scripts/js/main.min.js"></script>
 	</body>
