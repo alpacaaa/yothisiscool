@@ -1,1 +1,28 @@
 /* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+
+/*
+ * Colors
+ * 0 1 | 2 3 | 4 5 | 6 7 | 8 9 | a b | c d | e f
+ */
+
+$type-color: #444; // type
+$strong-type-color: #333; // strong type
+$light-type-color: #888; // light type
+$selected-type-color: $strong-type-color; // selected type
+
+$color: #ff6600; // color
+
+$background-color: #fcfcfc; // background
+$strong-background-color: darken($background-color, 8%); // background
+$selected-background-color: darken($background-color, 4%); // selected background
+$field-background-color: $background-color; // field background
+
+$code-background-color: darken($background-color, 4%); // code background
+
+$picture-background-color: darken($background-color, 8%); // image background
+$picture-shadow-color: darken($background-color, 12%); // image shadow
+
+$border-color: $type-color;
+
+$field-color: desaturate($color, 100%);
+$weak-field-color: darken($background-color, 4%); // weak border
