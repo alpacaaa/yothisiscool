@@ -13,8 +13,7 @@ $selected-type-color: $strong-type-color; // selected type
 $color: #ff6600; // color
 
 $background-color: #fcfcfc; // background
-$strong-background-color: darken($background-color, 8%); // background
-$selected-background-color: darken($background-color, 4%); // selected background
+$selected-background-color: darken($background-color, 8%); // selected background
 $field-background-color: $background-color; // field background
 
 $code-background-color: darken($background-color, 4%); // code background
@@ -26,3 +25,7 @@ $border-color: $type-color;
 
 $field-color: desaturate($color, 100%);
 $weak-field-color: darken($background-color, 4%); // weak border
+
+$strong-border-color: red;
+
+$error: blue;

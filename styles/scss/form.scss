@@ -1,1 +1,155 @@
 /* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+
+::-webkit-input-placeholder {
+	color: $light-type-color;
+	opacity: 1.0;
+}
+:-moz-placeholder {
+	opacity: 1.0; /* Firefox 18- */
+	color: $light-type-color;
+}
+::-moz-placeholder {
+	opacity: 1.0;  /* Firefox 19+ */
+	color: $light-type-color;
+}
+:-ms-input-placeholder {
+	color: $light-type-color;
+	opacity: 1.0;
+}
+
+input,
+textarea {
+	&:focus {
+		outline: none;
+	}
+}
+
+.form {
+	margin-bottom: rhythm(6);
+	input[type = "text"],
+	textarea,
+	input[type = "submit"] {
+		@include face(sans);
+		display: block;
+		@include transition-property(color, border-color);
+		@include transition-duration(0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out);
+		@include transition-delay(0s, 0s);
+	}
+	label {
+		@include adjust-font-size-to($m-medium-size, $m-medium-line);
+		display: block;
+		margin: 0 0 rhythm($m-medium-line/2, $m-medium-size) 0;
+		font-weight: $normal;
+	}
+	input[type = "text"],
+	textarea {
+		@include rhythm-borders($field-border-width, 1, $m-medium-size, solid);
+		@include adjust-font-size-to($m-medium-size, $m-medium-line);
+		//padding: rhythm(1*4/3, $m-medium-size) em($m-quarter-gut, $m-medium-size) rhythm(1*4/3, $m-medium-size) em($m-quarter-gut, $m-medium-size);
+		width: 100%;
+		border-color: $border-color;
+		background-color: $field-background-color;
+		color: $type-color;
+		&:focus, &:hover {
+			background-color: $background-color;
+			color: $type-color;
+		}
+		&:hover {
+			border-color: $border-color;
+		}
+		&:focus, &:focus:hover {
+			border-color: $type-color;
+		}
+	}
+	input[type = "text"] {
+		height: em(39, $m-medium-size);
+	}
+	i {
+		@include adjust-font-size-to($m-small-size, $m-small-line);
+		display: block;
+		margin-top: rhythm(1, $m-small-size);
+		text-align: right;
+		font-style: normal;
+	}
+	input[type = "submit"] {
+		display: inline-block;
+		height: em(39, $m-medium-size);
+		@include border-radius(5px, 5px);
+		@include rhythm-borders($field-border-width, 1, $m-medium-size, solid);
+		@include adjust-font-size-to($m-medium-size, $m-medium-line);
+		padding: rhythm(1, $m-medium-size) em($m-half-gut, $m-medium-size) rhythm(1, $m-medium-size) em($m-half-gut, $m-medium-size);
+		border-color: $color;
+		background-color: $background-color;
+		color: $color;
+		font-weight: $normal;
+		&:focus, &:hover {
+			border-color: $border-color;
+			color: $strong-type-color;
+		}
+		&:active {
+			@include transition-duration(0s, 0s);
+			border-color: $border-color;
+			color: $border-color;
+		}
+	}
+	.field {
+		margin-bottom: rhythm($m-medium-line);
+	}
+	.button {
+		width: 100%;
+		text-align: center;
+	}
+	.error {
+		input[type = "text"],
+		textarea {
+			border-color: $color;
+		}
+	}
+	@include respond-to(break3) {
+		label {
+			@include adjust-font-size-to($d-medium-size, $d-medium-line);
+			margin-bottom: rhythm($d-medium-line/2, $d-medium-size);
+		}
+		input[type = "text"],
+		textarea {
+			@include adjust-font-size-to($d-medium-size, $d-medium-line);
+			//padding: rhythm($d-medium-line/2, $d-medium-size) em($d-gut/4, $d-medium-size) rhythm($d-medium-line/2, $d-medium-size) em($d-gut/4, $d-medium-size);
+			option {
+				margin-bottom: rhythm(1, $d-medium-size);
+			}
+		}
+		input[type = "text"] {
+			height: rhythm($d-medium-line*1.5, $d-medium-size);
+		}
+		i {
+			@include adjust-font-size-to($d-small-size, $d-small-line);
+			margin: rhythm(2, $d-small-size) 0 0 0;
+		}
+		input[type = "submit"] {
+			height: em($d-medium-line, $d-medium-size);
+			@include adjust-font-size-to($d-medium-size, $d-medium-line);
+			@include rhythm-borders($field-border-width, 1, $d-medium-size, solid);
+			//padding: rhythm(1, $d-medium-size) em($d-half-gut, $d-medium-size) rhythm(1, $d-medium-size) em($d-half-gut, $d-medium-size);
+		}
+		.field {
+			margin-bottom: rhythm($d-medium-line);
+		}
+	}
+	@include respond-to(break5) {
+		label {
+			float: left;
+			clear: left;
+			margin-top: rhythm(1);
+			margin-left: nem($column-width*6 + $d-gut);
+			width: col(6);
+			text-align: right;
+		}
+		.button {
+			text-align: left;
+		}
+	}
+	@include respond-to(break7) {
+		margin-bottom: rhythm(8);
+	}
+}

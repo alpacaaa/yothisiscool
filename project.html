@@ -10,7 +10,7 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic'/>
+		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,700,700italic,400italic'/>
 		<link rel="stylesheet" href="styles/css/main.css">
 		<script src="scripts/js/modernizr-2.6.2.min.js"></script>
 	</head>
@@ -23,7 +23,7 @@
 			<h1>Dude, This is Cool</h1>
 			<nav class="nav">
 				<h6>Main Menu</h6>
-				<ul>
+				<ul class="menu">
 					<li><a href="#">Home</a></li>
 					<li><a href="#">Index</a></li>
 				</ul>
@@ -32,16 +32,16 @@
 
 		<main class="content">
 			<article class="project">
-				<header class="head medium">
+				<header class="head typo-l">
 					<h2>Syphony 2</h2>
 				</header>
 
-				<div class="body medium">
+				<div class="body typo-m">
 					<p>This is the official Symphony 2 repository.</p>
 					<i class="author">a project by <a href="#" rel="author"><img class="avatar" src="media/avatars/symphony_00.png" alt="">@symphonycms</a></i>
 				</div>
 
-				<section class="feet">
+				<!--<div class="to-comment">
 					<h3 class="notation"><span>Thanks</span> × 2</h3>
 					<form class="form" action="">
 						<div class="field">
@@ -54,14 +54,17 @@
 						</div>
 						<div class="caption">You’ll be asked to authorize access to your Github profile. Fear not, it’s read only! ;-)</div>
 					</form>
+				</div>-->
+
+				<section class="feet">
 					<ol class="comments">
-						<li class="comment medium" id="2" data-count="2">
-							<p>This is the best project I have ever seen in my whole life!</p></div>
-							<i class="author"><a href="#"><img class="avatar" src="media/avatars/marco_00.jpg" alt=""> @alpacaaa</a> said <time datetime="0000-00-00 00:00"><a href="#2">2 h ago</a></time>.</i>
+						<li class="comment typo-m" id="2" data-count="2">
+							<img class="avatar" src="media/avatars/marco_00.jpg" alt="">
+							<p>This is the best project I have ever seen in my whole life! — <i class="author"><a href="#">@alpacaaa</a> said <time datetime="0000-00-00 00:00"><a href="#2">2 h ago</a></time>.</i></p></div>
 						</li>
-						<li class="comment medium" id="1" data-count="1">
-							<p>I consider Symphony one of the most influential project I’ve ever deal with since I was born.</p>
-							<i class="author"> <a href="#"><img class="avatar" src="media/avatars/andrea_00.jpg" alt=""> @ranbureand</a> said <time datetime="0000-00-00 00:00"><a href="#1">1 d ago</a></time>.</i>
+						<li class="comment typo-m" id="1" data-count="1">
+							<img class="avatar" src="media/avatars/andrea_00.jpg" alt="">
+							<p>I consider Symphony one of the most influential project I’ve ever deal with since I was born. — <i class="author"> <a href="#">@ranbureand</a> said <time datetime="0000-00-00 00:00"><a href="#1">1 d ago</a></time>.</i></p>
 						</li>
 					</ol>
 				</section>
@@ -69,9 +72,9 @@
 		</main>
 
 		<footer class="footer">
-			<ul>
+			<ul class="menu">
 				<li><a href="#">Colophon</a></li>
-				<li><a href="#">Back to Top</a></li>
+				<li><a href="#">Top</a></li>
 			</ul>
 		</footer>
 

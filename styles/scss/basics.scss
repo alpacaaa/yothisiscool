@@ -50,7 +50,7 @@ html {
 }
 
 body {
-	$background-color: $background-color;
+	background-color: $background-color;
 	@include face(sans);
 	height: 100%;
 	font-weight: $normal;
@@ -128,7 +128,7 @@ code, kbd, mark {
 
 pre {
 	@include border-radius(2px, 2px);
-	@extend %column-hgut;
+	@extend %column-gut;
 	display: block;
 	background-color: $code-background-color;
 	code {
