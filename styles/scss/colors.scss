@@ -5,12 +5,14 @@
  * 0 1 | 2 3 | 4 5 | 6 7 | 8 9 | a b | c d | e f
  */
 
+$color: #9529CC; // color
+
 $type-color: #444; // type
 $strong-type-color: #333; // strong type
-$light-type-color: #888; // light type
+$light-type-color: desaturate($color, 100%); // light type
 $selected-type-color: $strong-type-color; // selected type
 
-$color: #ff6600; // color
+
 
 $background-color: #fcfcfc; // background
 $selected-background-color: darken($background-color, 8%); // selected background

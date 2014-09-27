@@ -18,7 +18,7 @@
  * Istances
  */
 
-body {
+/*body {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
@@ -26,6 +26,17 @@ body {
 
 .content {
 	flex: 1;
+}*/
+
+body {
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+.footer {
+	display: table-row;
+	height: 1px;
 }
 
 .header {
@@ -114,7 +125,8 @@ body {
 }
 
 .feet {
-	
+	overflow: hidden;
+	clear: both;
 }
 
 .comments {
@@ -128,7 +140,29 @@ body {
 	align-content: flex-start;
 }
 
+.author {
+	display: block;
+	font-style: normal;
+	@include adjust-font-size-to($m-small-size, $m-small-line);
+	.avatar {
+		float: left;
+		font-size: 1em;
+		margin: 0 em(4, $d-small-size) 0 0;
+		width: em(24, $d-small-size);
+		height: em(24, $d-small-size);
+	}
+	@include respond-to(break3) {
+		@include adjust-font-size-to($d-small-size, $d-small-line);
+		.avatar {
+			margin: 0 em(4, $d-small-size) 0 0;
+			width: em(24, $d-small-size);
+			height: em(24, $d-small-size);
+		}
+	}
+}
+
 .comment {
+	font-weight: $bold;
 	flex-grow: 0;
 	flex-shrink: 1;
 	width: 100%;
@@ -136,17 +170,20 @@ body {
 	padding-top: rhythm($m-medium-line);
 	padding-bottom: rhythm($m-medium-line);
 	.avatar {
-		//@include border-radius(4px);
-		float: left;
 		font-size: 1em;
-		display: inline-block;
-		width: em(24);
-		height: em(24);
+		float: left;
+		margin: em(7) em(12) em(7) 0;
+		width: em(42);
+		height: em(42);
 	}
-	@include respond-to(break2) {
-		width: 50%;
+	.tributary {
+		color: $light-type-color;
+		font-style: normal;
+		font-weight: $normal;
+		@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
 	}
 	@include respond-to(break3) {
+		
 		width: col(4);
 		padding-top: rhythm($d-medium-line);
 		padding-bottom: rhythm($d-medium-line);
@@ -155,22 +192,8 @@ body {
 			width: em(36);
 			height: em(36);
 		}
-	}
-}
-
-
-
-.author {
-	//font-weight: 300;
-	color: $light-type-color;
-	//@include adjust-font-size-to($m-small-size, $m-small-line);
-	font-style: normal;
-	//margin-top: em(-4px);
-	time {
-		color: $strong-type-color;
-	}
-	@include respond-to(break3) {
-		//margin-top: em(-12px);
-		@include adjust-font-size-to($d-small-size, $d-medium-line, $d-medium-size);
+		.tributary {
+			@include adjust-font-size-to($d-small-size, $d-small-line, $d-medium-size);
+		}
 	}
 }

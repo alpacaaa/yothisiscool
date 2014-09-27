@@ -24,8 +24,8 @@ $m-medium-line: 2.8;
 $d-medium-size: 16px;
 $d-medium-line: 2.4;
 
-$m-small-size: 14px;
-$m-small-line: 2.4;
+$m-small-size: 16px;
+$m-small-line: 2.8;
 
 $d-small-size: 14px;
 $d-small-line: 2.4;
@@ -40,7 +40,7 @@ $d-tiny-line: 2.0;
  * Font weights
  */
 
-$bold: 700;
+$bold: 500;
 $normal: 400;
 
 /*
@@ -93,7 +93,7 @@ $column-width: 72px;
  * Guts and indents
  */
 
-$m-gut: 16; // mobile gut
+$m-gut: 24; // mobile gut
 $m-half-gut: $m-gut/2; // mobile half gut
 $m-quarter-gut: $m-gut/4; // mobile quarter gut
 $m-indent: $m-gut; // mobile indent
