@@ -48,8 +48,8 @@ $normal: 400;
  */
 
 $border-width: 1px;
-$field-border-width: 2px;
-$button-width: 2px;
+$field-border-width: 1px;
+$button-border-width: 1px;
 
 /*
  * Strip units
@@ -74,6 +74,16 @@ $button-width: 2px;
 $column-width: 72px;
 
 /*
+ * Guts and indents
+ */
+
+$m-gut: 24px; // mobile gut
+$m-indent: $m-gut; // mobile indent
+
+$d-gut: 32px; // desktop gut
+$d-indent: $d-gut; // desktop indent
+
+/*
  * Column-width function, in ems
  */
 
@@ -88,20 +98,6 @@ $column-width: 72px;
 @function col-px($number-columns) {
 	@return $column-width * $number-columns * 1px;
 }
-
-/*
- * Guts and indents
- */
-
-$m-gut: 24; // mobile gut
-$m-half-gut: $m-gut/2; // mobile half gut
-$m-quarter-gut: $m-gut/4; // mobile quarter gut
-$m-indent: $m-gut; // mobile indent
-
-$d-gut: 32; // desktop gut
-$d-half-gut: $d-gut/2; // desktop half gut
-$d-quarter-gut: $d-gut/4; // desktop quarter gut
-$d-indent: $d-gut; // desktop indent
 
 /*
  * Breakpoints

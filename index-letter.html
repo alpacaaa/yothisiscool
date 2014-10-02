@@ -22,7 +22,7 @@
 			<h1>Dude, This is Cool</h1>
 			<nav class="nav">
 				<h6>Main Menu</h6>
-				<ul>
+				<ul class="menu">
 					<li><a href="#">Home</a></li>
 					<li><a href="#">Index</a></li>
 				</ul>
@@ -40,18 +40,20 @@
 				</div>
 
 				<section class="feet">
-					<h3 class="notation">Looking for something?</h3>
-					<form class="form" action="">
-						<div class="field">
-							<label for="comment">Search</label>
-							<input id="comment" name="" placeholder="https://github.com/username/project" type="text"/>
-							<i>Some instruction.</i>
-						</div>
-						<div class="button">
-							<input class="send" name="" type="submit" value="Search *"/>
-						</div>
-						<div class="caption">Some caption.</div>
-					</form>
+					<div class="to-search open">
+						<h3 class="notation">Looking for something?</h3>
+						<form class="form" action="">
+							<div class="field">
+								<label for="comment">Search</label>
+								<input id="comment" name="" placeholder="https://github.com/username/project" type="text"/>
+								<i>Some instruction.</i>
+							</div>
+							<div class="button">
+								<input class="send" name="" type="submit" value="Search *"/>
+							</div>
+							<div class="caption">Some caption.</div>
+						</form>
+					</div>
 					<ul class="projects">
 						<li class="project"><a href="#">Project #1 <span class="amount"> 0</span></a></li>
 						<li class="project"><a href="#">Project #2 <span class="amount"> 0</span></a></li>
@@ -62,7 +64,7 @@
 		</main>
 
 		<footer class="footer">
-			<ul>
+			<ul class="menu">
 				<li><a href="#">Colophon</a></li>
 				<li><a href="#">Back to Top</a></li>
 			</ul>

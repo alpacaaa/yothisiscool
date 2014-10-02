@@ -6,11 +6,11 @@
 
 %column-gut {
 	position: relative;
-	padding-right: em($m-half-gut);
-	padding-left: em($m-half-gut);
+	padding-right: em($m-gut/2);
+	padding-left: em($m-gut/2);
 	@include respond-to(break3) {
-		padding-right: em($d-half-gut);
-		padding-left: em($d-half-gut);
+		padding-right: em($d-gut/2);
+		padding-left: em($d-gut/2);
 	}
 }
 
@@ -113,17 +113,6 @@ body {
 	}
 }
 
-
-
-.form {
-	@extend %column-gut;
-	margin-left: auto;
-	margin-right: auto;
-	@include respond-to(break3) {
-		width: col(8);
-	}
-}
-
 .feet {
 	overflow: hidden;
 	clear: both;
@@ -194,6 +183,57 @@ body {
 		}
 		.tributary {
 			@include adjust-font-size-to($d-small-size, $d-small-line, $d-medium-size);
+		}
+	}
+}
+
+.to-comment,
+.to-search {
+	@extend %column-gut;
+	margin-left: auto;
+	margin-right: auto;
+	@include respond-to(break3) {
+		width: col(4);
+	}
+}
+
+.letters {
+	@extend %column-gut;
+	margin-left: auto;
+	margin-right: auto;
+	@include column-rule($border-width, solid, $border-color);
+	@include respond-to(break3) {
+		width: col(8);
+		@include column-count(2);
+		@include column-gap($d-gut);
+		@include column-width(col(4)-em($d-gut));
+	}
+	@include respond-to(break5) {
+		width: col(12);
+		@include column-count(3);
+	}
+	@include respond-to(break7) {
+		width: col(16);
+		@include column-count(4);
+	}
+}
+
+.letter {
+	@include adjust-font-size-to($m-medium-size, $m-medium-line);
+	a {
+		display: block;
+		padding-top: rhythm($m-medium-line/2, $m-medium-size);
+		padding-bottom: rhythm($m-medium-line/2, $m-medium-size);
+	}
+	.amount {
+		float: right;
+	}
+	@include respond-to(break3) {
+		@include column-break-inside(avoid);
+		@include adjust-font-size-to($d-medium-size, $d-medium-line);
+		a {
+			padding-top: rhythm($d-medium-line/2, $d-medium-size);
+			padding-bottom: rhythm($d-medium-line/2, $d-medium-size);
 		}
 	}
 }

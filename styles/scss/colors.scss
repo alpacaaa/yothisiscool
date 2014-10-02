@@ -10,13 +10,14 @@ $color: #9529CC; // color
 $type-color: #444; // type
 $strong-type-color: #333; // strong type
 $light-type-color: desaturate($color, 100%); // light type
+$placeholder-type-color: red;
+
 $selected-type-color: $strong-type-color; // selected type
 
 
 
 $background-color: #fcfcfc; // background
 $selected-background-color: darken($background-color, 8%); // selected background
-$field-background-color: $background-color; // field background
 
 $code-background-color: darken($background-color, 4%); // code background
 
@@ -26,6 +27,10 @@ $picture-shadow-color: darken($background-color, 12%); // image shadow
 $border-color: $type-color;
 
 $field-color: desaturate($color, 100%);
+$field-background-color: darken($background-color, 8%); // field background
+
+
+
 $weak-field-color: darken($background-color, 4%); // weak border
 
 $strong-border-color: red;

@@ -91,9 +91,8 @@ html {
 		@include adjust-font-size-to($m-small-size, $m-small-line);
 		margin: 0 0 rhythm($m-medium-line/2, $m-small-size) 0;
 	}
-	hr, .hr {
+	hr {
 		@include leading-border(1px, $m-medium-line/2);
-		margin: 0 0 0 nem($m-half-gut);
 	}
 	@include respond-to(break3) {
 		h1, h2, h3,
@@ -122,9 +121,8 @@ html {
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 			margin: 0 0 rhythm($d-medium-line/2, $d-small-size) 0;
 		}
-		hr, .hr {
+		hr {
 			@include leading-border(1px, $d-medium-line/2);
-			margin: 0 0 0 nem($d-half-gut);
 		}
 	}
 }
@@ -159,9 +157,8 @@ html {
 		@include adjust-font-size-to($m-small-size, $m-small-line);
 		margin: 0 0 rhythm($m-small-line/2) 0;
 	}
-	hr, .hr {
+	hr {
 		@include leading-border(1px, $m-small-line/2);
-		margin: 0 0 0 nem($m-half-gut);
 	}
 	@include respond-to(break3) {
 		h1, h2, h3,
@@ -193,9 +190,8 @@ html {
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 			margin: 0 0 rhythm($d-small-line/2) 0;
 		}
-		hr, .hr {
+		hr {
 			@include leading-border(1px, $d-small-line/2);
-			margin: 0 0 0 nem($d-half-gut);
 		}
 	}
 }
@@ -230,9 +226,8 @@ html {
 		@include adjust-font-size-to($m-small-size, $m-small-line);
 		margin: 0 0 rhythm($m-large-line/2, $m-small-size) 0;
 	}
-	hr, .hr {
+	hr {
 		@include leading-border(1px, $m-large-line/2);
-		margin: 0 0 0 nem($m-half-gut);
 	}
 	@include respond-to(break3) {
 		h1, h2, h3,
@@ -264,9 +259,8 @@ html {
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 			margin: 0 0 rhythm($d-large-line/2, $d-small-size) 0;
 		}
-		hr, .hr {
+		hr {
 			@include leading-border(1px, $d-large-line/2);
-			margin: 0 0 0 nem($d-half-gut);
 		}
 	}
 }

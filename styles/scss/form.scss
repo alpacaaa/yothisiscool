@@ -25,7 +25,6 @@ textarea {
 }
 
 .form {
-	margin-bottom: rhythm(6);
 	input[type = "text"],
 	textarea,
 	input[type = "submit"] {
@@ -38,7 +37,7 @@ textarea {
 	}
 	label {
 		@include adjust-font-size-to($m-medium-size, $m-medium-line);
-		display: block;
+		display: none;
 		margin: 0 0 rhythm($m-medium-line/2, $m-medium-size) 0;
 		font-weight: $normal;
 	}
@@ -66,19 +65,20 @@ textarea {
 		height: em(39, $m-medium-size);
 	}
 	i {
-		@include adjust-font-size-to($m-small-size, $m-small-line);
+		@include adjust-font-size-to($m-tiny-size, $m-tiny-line);
 		display: block;
-		margin-top: rhythm(1, $m-small-size);
+		margin-top: rhythm($m-tiny-line/2, $m-tiny-size);
 		text-align: right;
 		font-style: normal;
 	}
 	input[type = "submit"] {
+		width: 100%;
 		display: inline-block;
 		height: em(39, $m-medium-size);
 		@include border-radius(5px, 5px);
-		@include rhythm-borders($field-border-width, 1, $m-medium-size, solid);
+		@include rhythm-borders($button-border-width, 1, $m-medium-size, solid);
 		@include adjust-font-size-to($m-medium-size, $m-medium-line);
-		padding: rhythm(1, $m-medium-size) em($m-half-gut, $m-medium-size) rhythm(1, $m-medium-size) em($m-half-gut, $m-medium-size);
+		padding: rhythm(1, $m-medium-size) em($m-gut/2, $m-medium-size) rhythm(1, $m-medium-size) em($m-gut/2, $m-medium-size);
 		border-color: $color;
 		background-color: $background-color;
 		color: $color;
@@ -94,7 +94,13 @@ textarea {
 		}
 	}
 	.field {
-		margin-bottom: rhythm($m-medium-line);
+		@include border-top-radius(4px);
+		padding-bottom: rhythm($m-medium-line/2);
+		background-color: $field-background-color;
+	}
+	.caption {
+		@include adjust-font-size-to($m-tiny-size, $m-tiny-line);
+		color: $light-type-color;
 	}
 	.button {
 		width: 100%;
@@ -123,33 +129,42 @@ textarea {
 			height: rhythm($d-medium-line*1.5, $d-medium-size);
 		}
 		i {
-			@include adjust-font-size-to($d-small-size, $d-small-line);
-			margin: rhythm(2, $d-small-size) 0 0 0;
+			@include adjust-font-size-to($d-tiny-size, $d-tiny-line);
+			margin: rhythm($d-tiny-line/2, $d-tiny-size) 0 0 0;
 		}
 		input[type = "submit"] {
-			height: em($d-medium-line, $d-medium-size);
+			height: em($d-medium-line*2, $d-medium-size);
 			@include adjust-font-size-to($d-medium-size, $d-medium-line);
 			@include rhythm-borders($field-border-width, 1, $d-medium-size, solid);
 			//padding: rhythm(1, $d-medium-size) em($d-half-gut, $d-medium-size) rhythm(1, $d-medium-size) em($d-half-gut, $d-medium-size);
 		}
 		.field {
-			margin-bottom: rhythm($d-medium-line);
+			padding-bottom: rhythm($d-medium-line/2);
+		}
+		.caption {
+			@include adjust-font-size-to($d-tiny-size, $d-tiny-line);
 		}
 	}
 	@include respond-to(break5) {
 		label {
-			float: left;
-			clear: left;
 			margin-top: rhythm(1);
-			margin-left: nem($column-width*6 + $d-gut);
-			width: col(6);
-			text-align: right;
 		}
 		.button {
 			text-align: left;
 		}
 	}
-	@include respond-to(break7) {
-		margin-bottom: rhythm(8);
+}
+
+.closed {
+	input[type = "submit"] {
+		@include border-top-radius(4px);
+		@include border-bottom-radius(4px);
+	}
+}
+
+.open {
+	input[type = "submit"] {
+		@include border-top-radius(0px);
+		@include border-bottom-radius(4px);
 	}
 }
