@@ -119,6 +119,8 @@ body {
 }
 
 .comments {
+	margin-left: auto;
+	margin-right: auto;
 	padding-top: rhythm($m-medium-line);
 	padding-bottom: rhythm($m-medium-line);
 	width: 100%;
@@ -127,6 +129,15 @@ body {
 	justify-content: center;
 	align-items: flex-start;
 	align-content: flex-start;
+	@include respond-to(break3) {
+		width: col(8);
+	}
+	@include respond-to(break5) {
+		width: col(12);
+	}
+	@include respond-to(break7) {
+		width: col(16);
+	}
 }
 
 .author {
@@ -197,16 +208,18 @@ body {
 	}
 }
 
-.letters {
-	@extend %column-gut;
+.letters,
+.projects {
+	position: relative;
+	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	@include column-rule($border-width, solid, $border-color);
 	@include respond-to(break3) {
 		width: col(8);
 		@include column-count(2);
-		@include column-gap($d-gut);
-		@include column-width(col(4)-em($d-gut));
+		@include column-gap(0);
+		@include column-width(col(4));
 	}
 	@include respond-to(break5) {
 		width: col(12);
@@ -218,20 +231,54 @@ body {
 	}
 }
 
-.letter {
+.letter,
+.project {
 	@include adjust-font-size-to($m-medium-size, $m-medium-line);
+	border-bottom: 1px solid $border-color;
 	a {
+		padding-right: em($m-gut/2, $m-medium-size);
+		padding-left: em($m-gut/2, $m-medium-size);
+		@include transition-property(background-color);
+		@include transition-duration(0.2s);
+		@include transition-timing-function(ease-in-out);
+		@include transition-delay(0s);
+		color: $light-type-color;
 		display: block;
 		padding-top: rhythm($m-medium-line/2, $m-medium-size);
 		padding-bottom: rhythm($m-medium-line/2, $m-medium-size);
+		i {
+			font-style: normal;
+			font-weight: $bold;
+			color: $strong-type-color;
+		}
+
+		&:hover {
+			background-color: yellow;
+		}
+		&:active {
+			@include transition-duration(0.125s);
+			background-color: red;
+		}
+		/*&:focus {
+			color: $focus;
+		}
+		&:hover {
+			color: $hover;
+		}
+		&:active {
+			color: $active;
+		}*/
 	}
-	.amount {
+	.counter {
 		float: right;
 	}
 	@include respond-to(break3) {
+		border-bottom: 0px solid $border-color;
 		@include column-break-inside(avoid);
 		@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		a {
+			padding-right: em($d-gut/2, $d-medium-size);
+			padding-left: em($d-gut/2, $d-medium-size);
 			padding-top: rhythm($d-medium-line/2, $d-medium-size);
 			padding-bottom: rhythm($d-medium-line/2, $d-medium-size);
 		}
