@@ -235,6 +235,9 @@ body {
 .project {
 	@include adjust-font-size-to($m-medium-size, $m-medium-line);
 	border-bottom: 1px solid $border-color;
+	&:last-child {
+		border-bottom: 0px solid $border-color;
+	}
 	a {
 		padding-right: em($m-gut/2, $m-medium-size);
 		padding-left: em($m-gut/2, $m-medium-size);
@@ -250,6 +253,21 @@ body {
 			font-style: normal;
 			font-weight: $bold;
 			color: $strong-type-color;
+		}
+		.amount {
+			float: right;
+			
+			@include transition-property(opacity);
+			@include transition-duration(0.2s);
+			@include transition-timing-function(ease-in-out);
+			@include transition-delay(0s);
+			&:before {
+				color: $light-type-color;
+				font-weight: normal;
+				content: " \00D7 ";
+				padding-left: 1em;
+				padding-right: 0.2em;
+			}
 		}
 
 		&:hover {
@@ -269,9 +287,7 @@ body {
 			color: $active;
 		}*/
 	}
-	.counter {
-		float: right;
-	}
+	
 	@include respond-to(break3) {
 		border-bottom: 0px solid $border-color;
 		@include column-break-inside(avoid);
@@ -281,6 +297,14 @@ body {
 			padding-left: em($d-gut/2, $d-medium-size);
 			padding-top: rhythm($d-medium-line/2, $d-medium-size);
 			padding-bottom: rhythm($d-medium-line/2, $d-medium-size);
+			.amount {
+				opacity: 0.0;
+			}
+			&:hover {
+				.amount {
+					opacity: 1.0;
+				}
+			}
 		}
 	}
 }
