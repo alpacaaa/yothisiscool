@@ -61,7 +61,7 @@ body {
 		overflow: hidden;
 		width: em(40);
 		height: em(40);
-		background-color: black;
+		@include border-radius(50%);
 		&:first-child {
 			float: left;
 			margin-left: em($m-gut/2);
@@ -75,6 +75,36 @@ body {
 			height: 100%;
 			width: 100%;
 			text-indent: 9999px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 32px 32px;
+			background-color: $light-type-color;
+			@include transition-property(background-color);
+			@include transition-duration(0.2s);
+			@include transition-timing-function(ease-in-out);
+			@include transition-delay(0s);
+			&:hover {
+				background-color: $color;
+			}
+			&:active {
+				@include transition-duration(0.0625s);
+				background-color: $strong-type-color;
+			}
+		}
+		.current {
+			background-color: $strong-type-color;
+		}
+		.home {
+			background-image: url("../../media/icons/home.svg");
+		}
+		.index {
+			background-image: url("../../media/icons/index.svg");
+		}
+		.colophon {
+			background-image: url("../../media/icons/colophon.svg");
+		}
+		.top {
+			background-image: url("../../media/icons/top.svg");
 		}
 	}
 	@include respond-to(break3) {
@@ -116,6 +146,10 @@ body {
 .feet {
 	overflow: hidden;
 	clear: both;
+	padding-bottom: rhythm($m-medium-line*4);
+	@include respond-to(break3) {
+		padding-bottom: rhythm($d-medium-line*4);
+	}
 }
 
 .comments {
@@ -168,7 +202,11 @@ body {
 	width: 100%;
 	@extend %column-gut;
 	padding-top: rhythm($m-medium-line);
-	padding-bottom: rhythm($m-medium-line);
+	padding-bottom: rhythm($m-medium-line)
+	p {
+		background-color: red;
+		color: $strong-type-color;
+	}
 	.avatar {
 		font-size: 1em;
 		float: left;
@@ -183,7 +221,6 @@ body {
 		@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
 	}
 	@include respond-to(break3) {
-		
 		width: col(4);
 		padding-top: rhythm($d-medium-line);
 		padding-bottom: rhythm($d-medium-line);
@@ -203,8 +240,10 @@ body {
 	@extend %column-gut;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: rhythm($m-medium-line*2);
 	@include respond-to(break3) {
 		width: col(4);
+		margin-bottom: rhythm($d-medium-line*2);
 	}
 }
 
@@ -214,9 +253,9 @@ body {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	@include column-rule($border-width, solid, $border-color);
 	@include respond-to(break3) {
 		width: col(8);
+		@include column-rule($border-width, solid, $border-color);
 		@include column-count(2);
 		@include column-gap(0);
 		@include column-width(col(4));
@@ -245,6 +284,7 @@ body {
 		@include transition-duration(0.2s);
 		@include transition-timing-function(ease-in-out);
 		@include transition-delay(0s);
+		font-weight: $normal;
 		color: $light-type-color;
 		display: block;
 		padding-top: rhythm($m-medium-line/2, $m-medium-size);
@@ -263,7 +303,7 @@ body {
 			@include transition-delay(0s);
 			&:before {
 				color: $light-type-color;
-				font-weight: normal;
+				font-weight: $normal;
 				content: " \00D7 ";
 				padding-left: 1em;
 				padding-right: 0.2em;
@@ -271,7 +311,7 @@ body {
 		}
 
 		&:hover {
-			background-color: yellow;
+			background-color: $border-color;
 		}
 		&:active {
 			@include transition-duration(0.125s);
@@ -298,7 +338,7 @@ body {
 			padding-top: rhythm($d-medium-line/2, $d-medium-size);
 			padding-bottom: rhythm($d-medium-line/2, $d-medium-size);
 			.amount {
-				opacity: 0.0;
+				opacity: 0.2;
 			}
 			&:hover {
 				.amount {

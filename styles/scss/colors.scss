@@ -9,7 +9,7 @@ $color: #9529CC; // color
 
 $type-color: #555; // type
 $strong-type-color: #333; // strong type
-$light-type-color: desaturate($color, 100%); // light type
+$light-type-color: #999; // light type
 $placeholder-type-color: red;
 
 $selected-type-color: $strong-type-color; // selected type
@@ -24,7 +24,7 @@ $code-background-color: darken($background-color, 4%); // code background
 $picture-background-color: darken($background-color, 8%); // image background
 $picture-shadow-color: darken($background-color, 12%); // image shadow
 
-$border-color: #ddd;
+$border-color: #eee;
 
 $field-color: desaturate($color, 100%);
 $field-background-color: darken($background-color, 8%); // field background
