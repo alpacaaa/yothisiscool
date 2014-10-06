@@ -34,16 +34,28 @@ body {
 	width: 100%;
 }
 
-.footer {
-	display: table-row;
-	height: 1px;
-}
-
 .header {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $break8;
+	.menu {
+		@include perspective-origin(center bottom);
+	}
 	h1 {
 		display: none;
 		margin-left: auto;
 		margin-right: auto;
+	}
+}
+
+.footer {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $break8;
+	display: table-row;
+	height: 1px;
+	.menu {
+		@include perspective-origin(center top);
 	}
 }
 
@@ -54,70 +66,152 @@ body {
 }
 
 .menu {
-	padding-top: rhythm($m-small-line);
-	padding-bottom: rhythm($m-small-line);
+	@include perspective(100em);
+	padding-top: em($m-gut/2);
+	padding-bottom: em($m-gut/2);
 	overflow: hidden;
 	li {
-		overflow: hidden;
-		width: em(40);
-		height: em(40);
-		@include border-radius(50%);
+		text-transform: uppercase;
+		@include adjust-font-size-to($m-small-size, $m-small-line);
+		//overflow: hidden;
+		height: em(40px, $m-small-size);
 		&:first-child {
 			float: left;
-			margin-left: em($m-gut/2);
+			margin-left: em($m-gut/2, $m-small-size);
 		}
 		&:last-child {
 			float: right;
-			margin-right: em($m-gut/2);
+			margin-right: em($m-gut/2, $m-small-size);
 		}
-		a {
-			display: block;
-			height: 100%;
-			width: 100%;
-			text-indent: 9999px;
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: 32px 32px;
-			background-color: $light-type-color;
-			@include transition-property(background-color);
+	}
+	a {
+		display: block;
+		&:hover {
+			span {
+				color: $color;
+				background-color: $border-color;
+				@include rotate3d(0, 0, 0, 0);
+			}
+		}
+		&:active {
+			span {
+				@include transition-duration(0.0625s);
+				color: $strong-type-color;
+			}
+		}
+		span {
+			//border: 1px solid red;
+			padding-top: em(8px, $m-small-size);
+			padding-bottom: em(8px, $m-small-size);
+			@include transition-property(background-color, transform);
 			@include transition-duration(0.2s);
 			@include transition-timing-function(ease-in-out);
 			@include transition-delay(0s);
-			&:hover {
-				background-color: $color;
-			}
-			&:active {
-				@include transition-duration(0.0625s);
-				background-color: $strong-type-color;
-			}
+			display: block;
+			height: 100%;
+			//text-indent: 9999px;
+			background-repeat: no-repeat;
 		}
-		.current {
-			background-color: $strong-type-color;
+	}
+	.current {
+		span {
+			//background-color: $strong-type-color;
 		}
-		.home {
+	}
+	.home {
+		span {
+			@include apply-origin(left top, false);
+			padding-right: em(8px, $m-small-size);
+			padding-left: em(40px, $m-small-size); 
 			background-image: url("../../media/icons/home.svg");
+			@include rotate3d(4, 4, 0, 24deg);
+			background-position: left center;
 		}
-		.index {
+	}
+	.index {
+		span {
+			@include apply-origin(right top, false);
+			padding-right: em(40px, $m-small-size);
+			padding-left: em(8px, $m-small-size);
 			background-image: url("../../media/icons/index.svg");
+			@include rotate3d(4, -4, 0, 24deg);
+			background-position: right center;
 		}
-		.colophon {
+	}
+	.colophon {
+		span {
+			@include apply-origin(left bottom, false);
+			padding-right: em(8px, $m-small-size);
+			background-position: left center;
+			padding-left: em(40px, $m-small-size);
 			background-image: url("../../media/icons/colophon.svg");
+			@include rotate3d(-4, 4, 0, 24deg);
 		}
-		.top {
+	}
+	.top {
+		span {
+			@include apply-origin(right bottom, false);
+			background-position: right center;
+			padding-left: em(8px, $m-small-size);
+			padding-right: em(40px, $m-small-size);
+			@include rotate3d(-4, -4, 0, 24deg);
 			background-image: url("../../media/icons/top.svg");
 		}
 	}
 	@include respond-to(break3) {
-		padding-top: rhythm($d-small-line);
-		padding-bottom: rhythm($d-small-line);
+		padding-top: em($d-gut/2);
+		padding-bottom: em($d-gut/2);
 		li {
+			height: em(40px, $d-small-size);
+			@include adjust-font-size-to($d-small-size, $d-small-line);
 			&:first-child {
-				margin-left: em($d-gut/2);
+				margin-left: em($d-gut/2, $d-small-size);
 			}
 			&:last-child {
-				margin-right: em($d-gut/2);
+				margin-right: em($d-gut/2, $d-small-size);
 			}
 		}
+		a {
+			span {
+				padding-top: em(8px, $d-small-size);
+				padding-bottom: em(8px, $d-small-size);
+				height: 100%;
+			}
+		}
+		.home {
+			span {
+				padding-right: em(8px, $d-small-size);
+				padding-left: em(40px, $d-small-size);
+			}
+		}
+		.index {
+			span {
+				padding-left: em(8px, $d-small-size);
+				padding-right: em(40px, $d-small-size);
+			}
+		}
+		.colophon {
+			span {
+				padding-right: em(8px, $d-small-size);
+				padding-left: em(40px, $d-small-size);
+			}
+		}
+		.top {
+			span {
+				padding-left: em(8px, $d-small-size);
+				padding-right: em(40px, $d-small-size);
+			}
+		}
+	}
+}
+
+.content {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $break8;
+	padding-top: rhythm($m-medium-line*4);
+	@include respond-to(break3) {
+		padding-top: rhythm($d-medium-line*4);
 	}
 }
 
@@ -126,6 +220,9 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: rhythm($m-large-line/2);
+	h2 {
+		text-align: center;
+	}
 	@include respond-to(break3) {
 		width: col(8);
 		margin-bottom: rhythm($d-large-line/2);
@@ -296,12 +393,16 @@ body {
 		}
 		.amount {
 			float: right;
-			
-			@include transition-property(opacity);
+			color: $strong-type-color;
+			@include transition-property(color);
 			@include transition-duration(0.2s);
 			@include transition-timing-function(ease-in-out);
 			@include transition-delay(0s);
 			&:before {
+				@include transition-property(color);
+				@include transition-duration(0.2s);
+				@include transition-timing-function(ease-in-out);
+				@include transition-delay(0s);
 				color: $light-type-color;
 				font-weight: $normal;
 				content: " \00D7 ";
@@ -309,7 +410,6 @@ body {
 				padding-right: 0.2em;
 			}
 		}
-
 		&:hover {
 			background-color: $border-color;
 		}
@@ -338,11 +438,18 @@ body {
 			padding-top: rhythm($d-medium-line/2, $d-medium-size);
 			padding-bottom: rhythm($d-medium-line/2, $d-medium-size);
 			.amount {
-				opacity: 0.2;
+				color: $ultra-light-type-color;
+				&:before {
+					color: $ultra-light-type-color;
+				}
 			}
-			&:hover {
+			&:hover,
+			&:active {
 				.amount {
-					opacity: 1.0;
+					color: $strong-type-color;
+					&:before {
+						color: $light-type-color;
+					}
 				}
 			}
 		}

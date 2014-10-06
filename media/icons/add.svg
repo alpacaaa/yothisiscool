@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="15px" viewBox="0 0 14 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1 (8751) - http://www.bohemiancoding.com/sketch -->
+    <title>add</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="add" sketch:type="MSArtboardGroup" transform="translate(-26.000000, -23.000000)" fill="#FCFCFC">
+            <g id="icon" sketch:type="MSLayerGroup" transform="translate(16.000000, 16.000000)">
+                <rect id="rectangle_3" sketch:type="MSShapeGroup" x="10" y="18" width="20" height="4"></rect>
+                <rect id="rectangle_2" sketch:type="MSShapeGroup" x="10" y="12" width="20" height="3"></rect>
+                <rect id="rectangle_1" sketch:type="MSShapeGroup" x="10" y="7" width="20" height="2"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

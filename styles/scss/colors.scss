@@ -10,6 +10,7 @@ $color: #9529CC; // color
 $type-color: #555; // type
 $strong-type-color: #333; // strong type
 $light-type-color: #999; // light type
+$ultra-light-type-color: #ddd; // ultra light type
 $placeholder-type-color: red;
 
 $selected-type-color: $strong-type-color; // selected type
@@ -17,6 +18,7 @@ $selected-type-color: $strong-type-color; // selected type
 
 
 $background-color: #fcfcfc; // background
+$strong-background-color: #ddd;
 $selected-background-color: darken($background-color, 8%); // selected background
 
 $code-background-color: darken($background-color, 4%); // code background
