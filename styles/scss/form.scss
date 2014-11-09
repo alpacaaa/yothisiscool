@@ -1,19 +1,19 @@
 /* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
 
 ::-webkit-input-placeholder {
-	color: $light-type-color;
+	color: $placeholder-type-color;
 	opacity: 1.0;
 }
 :-moz-placeholder {
 	opacity: 1.0; /* Firefox 18- */
-	color: $light-type-color;
+	color: $placeholder-type-color;
 }
 ::-moz-placeholder {
 	opacity: 1.0;  /* Firefox 19+ */
-	color: $light-type-color;
+	color: $placeholder-type-color;
 }
 :-ms-input-placeholder {
-	color: $light-type-color;
+	color: $placeholder-type-color;
 	opacity: 1.0;
 }
 
@@ -65,9 +65,9 @@ textarea {
 		height: em(39, $m-medium-size);
 	}
 	i {
-		@include adjust-font-size-to($m-tiny-size, $m-tiny-line);
+		@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
 		display: block;
-		margin-top: rhythm($m-tiny-line/2, $m-tiny-size);
+		margin-top: rhythm($m-extra-small-line/2, $m-extra-small-size);
 		text-align: right;
 		font-style: normal;
 	}
@@ -99,7 +99,7 @@ textarea {
 		background-color: $field-background-color;
 	}
 	.caption {
-		@include adjust-font-size-to($m-tiny-size, $m-tiny-line);
+		@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
 		color: $light-type-color;
 	}
 	.button {
@@ -129,8 +129,8 @@ textarea {
 			height: rhythm($d-medium-line*1.5, $d-medium-size);
 		}
 		i {
-			@include adjust-font-size-to($d-tiny-size, $d-tiny-line);
-			margin: rhythm($d-tiny-line/2, $d-tiny-size) 0 0 0;
+			@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
+			margin: rhythm($d-extra-small-line/2, $d-extra-small-size) 0 0 0;
 		}
 		input[type = "submit"] {
 			height: em($d-medium-line*2, $d-medium-size);
@@ -142,7 +142,7 @@ textarea {
 			padding-bottom: rhythm($d-medium-line/2);
 		}
 		.caption {
-			@include adjust-font-size-to($d-tiny-size, $d-tiny-line);
+			@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
 		}
 	}
 	@include respond-to(break5) {
@@ -168,3 +168,142 @@ textarea {
 		@include border-bottom-radius(4px);
 	}
 }
+
+/*
+
+form {
+	margin: 0;
+}
+
+input,
+textarea {
+	&:focus {
+		outline: none;
+	}
+}
+
+.form {
+	input[type = "text"],
+	textarea,
+	input[type = "submit"] {
+		@include face(sans);
+		display: block;
+		@include transition-property(color, border-color);
+		@include transition-duration(0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out);
+		@include transition-delay(0s, 0s);
+	}
+	label {
+		@include adjust-font-size-to($m-medium-size, $m-medium-line);
+		display: block;
+		margin-bottom: rhythm($m-medium-line/4, $m-medium-size);
+		margin-left: em($m-gut/2, $m-medium-size);
+		font-weight: $normal;
+	}
+	input[type = "text"],
+	textarea {
+		border: $field-border-width solid $field-border-color;
+		@include adjust-font-size-to($m-medium-size, $m-medium-line);
+		padding: rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut/2, $m-medium-size) rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut/2, $m-medium-size);
+		width: 100%;
+		background-color: $field-background-color;
+		color: $type-color;
+		&:focus, &:hover {
+			color: $strong-type-color;
+		}
+		&:hover {
+			border-color: $strong-field-border-color;
+		}
+		&:focus, &:focus:hover {
+			border-color: $strong-field-border-color;
+		}
+	}
+	input[type = "text"] {
+		height: rhythm($m-medium-line*1.5, $m-medium-size);
+	}
+	i {
+		@include adjust-font-size-to($m-small-size, $m-small-line);
+		margin-top: rhythm($m-small-line/4, $m-small-size);
+		display: block;
+		text-align: right;
+		font-style: normal;
+		a {
+			@include link;
+		}
+	}
+	input[type = "submit"] {
+		display: inline-block;
+		height: rhythm($m-medium-line*1.5, $m-medium-size);
+		@include adjust-font-size-to($m-medium-size, $m-medium-line);
+		padding: rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut*3, $m-medium-size) rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut*3, $m-medium-size);
+		@include border-radius(4px, 4px);
+		@include adjust-font-size-to($m-medium-size, $m-medium-line);
+		border: $field-border-width solid $strong-field-border-color;
+		background-color: $field-background-color;
+		color: $strong-type-color;
+		font-weight: $normal;
+		&:focus, &:hover {
+			text-decoration: line-through;
+		}
+		&:active {
+			@include transition-duration(0s, 0s);
+			border-color: $color;
+			color: $color;
+		}
+	}
+	.field,
+	.button {
+		margin-bottom: rhythm($m-medium-line);
+	}
+	.button {
+		width: 100%;
+		text-align: center;
+	}
+	.error {
+		input[type = "text"],
+		textarea {
+			border-color: $color;
+		}
+	}
+	@include respond-to(break3) {
+		label {
+			@include adjust-font-size-to($d-medium-size, $d-medium-line);
+			margin-left: em($d-gut/2, $d-medium-size);
+			margin-bottom: rhythm($d-medium-line/4, $d-medium-size);
+		}
+		input[type = "text"],
+		textarea {
+			@include adjust-font-size-to($d-medium-size, $d-medium-line);
+			padding: rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut/2, $d-medium-size) rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut/2, $d-medium-size);
+		}
+		input[type = "text"] {
+			height: rhythm($d-medium-line*1.5, $d-medium-size);
+		}
+		i {
+			@include adjust-font-size-to($d-small-size, $d-small-line);
+			margin-top: rhythm($d-small-line/4, $d-small-size);
+		}
+		input[type = "submit"] {
+			height: rhythm($d-medium-line*1.5, $d-medium-size);
+			@include adjust-font-size-to($d-medium-size, $d-medium-line);
+			padding: rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut*3, $d-medium-size) rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut*3, $d-medium-size);
+		}
+		.field,
+		.button {
+			margin-bottom: rhythm($d-medium-line);
+		}
+	}
+	@include respond-to(break5) {
+		label {
+			float: left;
+			clear: left;
+			margin-top: rhythm($d-medium-line/4, $d-medium-size);
+			margin-left: em(-$column-width*4 -$d-gut, $d-medium-size);
+			width: col(4, $d-medium-size);
+			text-align: right;
+		}
+		.button {
+			text-align: left;
+		}
+	}
+}*/

@@ -115,17 +115,6 @@
 	},
 	"buffers":
 	[
-		{
-			"contents": "<!DOCTYPE html>\n<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\"> <![endif]-->\n<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\"> <![endif]-->\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\"> <!--<![endif]-->\n	<head>\n		<meta charset=\"utf-8\">\n		<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n		<title>Dude This Is Cool / Symphony 2</title>\n		<meta name=\"description\" content=\"\">\n		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n		<link rel=\"stylesheet\" href=\"styles/css/main.css\">\n		<script src=\"scripts/js/modernizr-2.6.2.min.js\"></script>\n	</head>\n	<body lang=\"en\">\n		<!--[if lt IE 7]>\n			<div class=\"warning small\"><p>Wouldn’t you prefer to <a href=\"http://browsehappy.com/\" target=\"_blank\">upgrade</a> your <strong>outdated browser</strong> to enjoy a way better <em>experience</em> of this site?</p></div>\n		<![endif]-->\n\n		<header class=\"header\">\n			<h1>Dude, This is Cool</h1>\n			<nav class=\"nav\">\n				<h6>Main Menu</h6>\n				<ul>\n					<li><a href=\"#\">Home</a></li>\n					<li><a href=\"#\">Index</a></li>\n				</ul>\n			</nav>\n		</header>\n\n		<main class=\"content\">\n			<article class=\"project\">\n				<header class=\"head medium\">\n					<h2>Syphony 2</h2>\n				</header>\n				<div class=\"body medium\">\n					<p>This is the official Symphony 2 repository.</p>\n					<p>a project by @symphonycms</p>\n				</div>\n\n				<section class=\"comments\">\n					<h3><span>Thanks</span> × 2</h3>\n					<form class=\"form\" action=\"\">\n						<div class=\"field\">\n							<label for=\"comment\">Comment</label>\n							<input id=\"comment\" name=\"\" placeholder=\"Dude, this is cool!\" type=\"text\"/>\n							<i>Be nice and don’t misbehave.</i>\n						</div>\n						<div class=\"button\">\n							<input class=\"send\" name=\"\" type=\"submit\" value=\"This is Cool *\"/>\n						</div>\n						<div>You’ll be asked to authorize access to your Github profile. Fear not, it’s read only! ;-)</div>\n					</form>\n					<ol>\n						<li class=\"comment\" id=\"2\" data-count=\"2\">\n							<div class=\"text\">This is the best project I have ever seen in my whole life!</div>\n							<div class=\"author\">\n								<a href=\"#\"><img class=\"avatar\" src=\"media/avatars/marco_00.jpg\" alt=\"\"> @alpacaaa</a> said <time datetime=\"0000-00-00 00:00\"><a href=\"#2\">2 h ago</a></time>.\n							</div>\n						</li>\n						<li class=\"comment\" id=\"1\" data-count=\"1\">\n							<div class=\"text\">I consider Symphony one of the most influential project I’ve ever deal with since I was born.</div>\n							<div class=\"author\">\n								<a href=\"#\"><img class=\"avatar\" src=\"media/avatars/andrea_00.jpg\" alt=\"\"> @ranbureand</a> said <time datetime=\"0000-00-00 00:00\"><a href=\"#1\">1 d ago</a></time>.\n							</div>\n						</li>\n					</ol>\n				</section>\n			</article>\n		</main>\n\n		<footer class=\"footer\">\n			<ul>\n				<li><a href=\"#\">Colophon</a></li>\n				<li><a href=\"#\">Back to Top</a></li>\n			</ul>\n		</footer>\n\n		<script src=\"scripts/js/main.min.js\"></script>\n	</body>\n</html>\n",
-			"file": "project.html",
-			"file_size": 2966,
-			"file_write_time": 130557700020000000,
-			"settings":
-			{
-				"buffer_size": 2980,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -202,10 +191,18 @@
 		"/Applications/MAMP/htdocs/dude",
 		"/Applications/MAMP/htdocs/dude/scripts",
 		"/Applications/MAMP/htdocs/dude/scripts/js",
-		"/Applications/MAMP/htdocs/dude/styles"
+		"/Applications/MAMP/htdocs/dude/styles",
+		"/Applications/MAMP/htdocs/dude/styles/scss"
 	],
 	"file_history":
 	[
+		"/Applications/MAMP/htdocs/agrilaete/.htaccess",
+		"/Users/marshallbanana/Library/Application Support/Sublime Text 3/Packages/User/CSScomb.sublime-settings",
+		"/Applications/MAMP/htdocs/dude/styles/scss/layout.scss",
+		"/Users/marshallbanana/Library/Application Support/Sublime Text 3/Packages/CSScomb/CSScomb.sublime-settings",
+		"/Applications/MAMP/htdocs/dude/csscomb.json",
+		"/Applications/MAMP/htdocs/dude/project.html",
+		"/Applications/MAMP/htdocs/dude/dude_00.sublime-project",
 		"/Applications/MAMP/htdocs/dude/index.html",
 		"/Applications/MAMP/htdocs/dude/home.html",
 		"/Applications/MAMP/htdocs/dude/styles/scss/main.scss",
@@ -326,18 +323,11 @@
 		"/Applications/MAMP/htdocs/sitefolio-2/workspace/scripts/js/main.js",
 		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/get-project.xsl",
 		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/header.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/ninja.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/styles/scss/main.scss",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/pages/about.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/get-skills.xsl",
-		"/Users/marshallbanana/Desktop/GentiumPlus-1.510-web/web/GentiumPlus-webfont-example.css",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/pages/sitemap.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/get-form.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/styles/css/main.css"
+		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/ninja.xsl"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -360,6 +350,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"content",
 			"supheading",
 			"span",
 			"clear",
@@ -486,8 +477,7 @@
 			"magic",
 			"@",
 			"@column",
-			"@gutter",
-			"hgroup"
+			"@gutter"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -576,39 +566,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "project.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2980,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1383,
-								1395
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 346.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

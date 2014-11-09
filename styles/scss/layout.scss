@@ -219,13 +219,13 @@ body {
 	@extend %column-gut;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: rhythm($m-large-line/2);
+	margin-bottom: rhythm($m-extra-large-line/2);
 	h2 {
 		text-align: center;
 	}
 	@include respond-to(break3) {
 		width: col(8);
-		margin-bottom: rhythm($d-large-line/2);
+		margin-bottom: rhythm($d-extra-large-line/2);
 	}
 }
 
@@ -249,7 +249,7 @@ body {
 	}
 }
 
-.comments {
+/*.comments {
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: rhythm($m-medium-line);
@@ -269,9 +269,9 @@ body {
 	@include respond-to(break7) {
 		width: col(16);
 	}
-}
+}*/
 
-.author {
+/*.author {
 	display: block;
 	font-style: normal;
 	@include adjust-font-size-to($m-small-size, $m-small-line);
@@ -290,20 +290,43 @@ body {
 			height: em(24, $d-small-size);
 		}
 	}
+}*/
+
+.author {
+	.avatar {
+		font-size: 1em;
+		float: left;
+		margin: em(7) em(12) em(7) 0;
+		width: em(42);
+		height: em(42);
+	}
+	.tributary {
+		color: $light-type-color;
+		font-style: normal;
+		font-weight: $normal;
+		//@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
+	}
+	@include respond-to(break3) {
+		.avatar {
+			margin: em(6) em(12) em(6) 0;
+			width: em(36);
+			height: em(36);
+		}
+		.tributary {
+			//@include adjust-font-size-to($d-small-size, $d-small-line, $d-medium-size);
+		}
+	}
 }
 
 .comment {
+	@include break-inside(avoid);
 	font-weight: $bold;
-	flex-grow: 0;
-	flex-shrink: 1;
+	//flex-grow: 0;
+	//flex-shrink: 1;
 	width: 100%;
 	@extend %column-gut;
 	padding-top: rhythm($m-medium-line);
-	padding-bottom: rhythm($m-medium-line)
-	p {
-		background-color: red;
-		color: $strong-type-color;
-	}
+	padding-bottom: rhythm($m-medium-line);
 	.avatar {
 		font-size: 1em;
 		float: left;
@@ -345,7 +368,8 @@ body {
 }
 
 .letters,
-.projects {
+.projects,
+.comments {
 	position: relative;
 	width: 100%;
 	margin-left: auto;

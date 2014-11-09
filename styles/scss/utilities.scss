@@ -12,11 +12,17 @@ $base-line-height: 10px;
  * Font sizes and line heights
  */
 
-$m-large-size: 28px;
+$m-extra-large-size: 34px;
+$m-extra-large-line: 4.4;
+
+$d-extra-large-size: 32px;
+$d-extra-large-line: 4.0;
+
+$m-large-size: 22px;
 $m-large-line: 3.6;
 
-$d-large-size: 32px;
-$d-large-line: 4.0;
+$d-large-size: 20px;
+$d-large-line: 3.2;
 
 $m-medium-size: 18px;
 $m-medium-line: 2.8;
@@ -30,11 +36,11 @@ $m-small-line: 2.8;
 $d-small-size: 14px;
 $d-small-line: 2.4;
 
-$m-tiny-size: 13px;
-$m-tiny-line: 2.0;
+$m-extra-small-size: 13px;
+$m-extra-small-line: 2.0;
 
-$d-tiny-size: 13px;
-$d-tiny-line: 2.0;
+$d-extra-small-size: 13px;
+$d-extra-small-line: 2.0;
 
 /*
  * Font weights
@@ -42,6 +48,22 @@ $d-tiny-line: 2.0;
 
 $bold: 500;
 $normal: 400;
+
+/*
+ * Grid
+ */
+
+$column-width: 72px;
+
+/*
+ * Guts and indents
+ */
+
+$m-gut: 16px; // mobile gut
+$m-indent: $m-gut; // mobile indent
+
+$d-gut: 32px; // desktop gut
+$d-indent: $d-gut; // desktop indent
 
 /*
  * Border widths
@@ -68,22 +90,6 @@ $button-border-width: 1px;
 }
 
 /*
- * Grid
- */
-
-$column-width: 72px;
-
-/*
- * Guts and indents
- */
-
-$m-gut: 24px; // mobile gut
-$m-indent: $m-gut; // mobile indent
-
-$d-gut: 32px; // desktop gut
-$d-indent: $d-gut; // desktop indent
-
-/*
  * Column-width function, in ems
  */
 
@@ -106,7 +112,7 @@ $d-indent: $d-gut; // desktop indent
 $break0: em(0);
 $break1: em(320); // mobile portrait
 $break2: em(480); // mobile landscape
-$break3: em(640); // small tablet portrait
+$break3: em(strip($column-width)*8); // small tablet portrait
 $break4: em(800); // small tablet/tablet landscape
 $break5: em(960); // tablet/desktop landscape
 $break6: em(1120); // desktop landscape
