@@ -5,13 +5,13 @@
  */
 
 ::-moz-selection {
-	background-color: $selected-background-color;
 	color: $selected-type-color;
+	background-color: $selected-background-color;
 	text-shadow: none;
 }
 ::selection {
-	background-color: $selected-background-color;
 	color: $selected-type-color;
+	background-color: $selected-background-color;
 	text-shadow: none;
 }
 
@@ -34,14 +34,18 @@ img::selection {
 @include establish-baseline;
 
 html {
+	font-size: 100% * $base-font-size / $browser-default-font-size;
+
+	height: 100%;
+
+	color: $type-color;
+
 	@include adjust-leading-to($m-medium-line);
 	@include box-sizing(border-box);
-	color: $type-color;
-	height: 100%;
-	font-size: 100% * $base-font-size / $browser-default-font-size;
 	@include respond-to(break3) {
-		@include adjust-leading-to($d-medium-line);
 		font-size: 100% * $base-font-size / $browser-default-font-size;
+
+		@include adjust-leading-to($d-medium-line);
 	}
 }
 
@@ -50,16 +54,20 @@ html {
 }
 
 body {
-	background-color: $background-color;
-	@include face(sans);
-	height: 100%;
 	font-weight: $normal;
+
+	height: 100%;
+
+	background-color: $background-color;
+
+	@include face(sans);
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
 	font-size: 1em;
+
 	margin: 0;
+
 	color: $strong-type-color;
 	span {
 		font-weight: $normal;
@@ -75,16 +83,20 @@ h4, h6 {
 ul, ol {
 	margin: 0;
 	padding: 0;
+
 	list-style-type: none;
 }
 
 dl {
 	margin: 0;
 	dt {
-		margin-right: 0.8em;
-		color: $strong-type-color;
 		font-style: italic;
+
 		float: left;
+
+		margin-right: 0.8em;
+
+		color: $strong-type-color;
 	}
 	dd {
 		margin: 0;
@@ -95,37 +107,14 @@ p {
 	margin: 0;
 }
 
-/*1, h2, h3,
-h4, h5, h6 {
-	color: $strong-type-color;
-	font-weight: $bold;
-	span {
-		font-weight: $normal;
-	}
-}
-
-ul, ol {
-	margin: 0 0 0 0;
-	padding: 0 0 0 0;
-	list-style-type: none;
-}
-
-dl {
-	dt {
-		font-weight: $bold;
-	}
-	dd {
-		margin: 0 0 0 0;
-	}
-}*/
-
 a {
+	text-decoration: none;
+
 	@include transition-property(color);
 	@include transition-duration(0.2s);
 	@include transition-timing-function(ease-in-out);
 	@include transition-delay(0s);
 	@include link-colors($color, $color, $color);
-	text-decoration: none;
 	&:active {
 		@include transition-duration(0.0s);
 	}
@@ -138,13 +127,15 @@ a[href^="mailto"] {
 }
 
 strong {
-	color: $color;
 	font-weight: $bold;
+
+	color: $color;
 }
 
 q {
-	color: $strong-type-color;
 	font-style: italic;
+
+	color: $strong-type-color;
 	&:before {
 		content: "“";
 	}
@@ -160,27 +151,35 @@ code, samp, kbd {
 	@include face(code);
 }
 code, kbd, mark {
-	@include border-radius(2px, 2px);
 	padding: 0 0.2em;
+
 	background-color: $code-background-color;
+
+	@include border-radius(2px, 2px);
 }
 
 pre {
+	display: block;
+
+	background-color: $code-background-color;
+
 	@include border-radius(2px, 2px);
 	@extend %column-gut;
-	display: block;
-	background-color: $code-background-color;
 	code {
 		display: block;
+
 		padding: 0;
+
 		background-color: transparent;
 	}
 }
 
 blockquote {
-	margin: 0 0 0 0;
-	border-color: $border-color;
 	font-style: italic;
+
+	margin: 0 0 0 0;
+
+	border-color: $border-color;
 	em {
 		font-style: normal;
 	}
@@ -194,6 +193,7 @@ blockquote {
 
 img, iframe {
 	display: block;
+
 	max-width: 100%;
 }
 
@@ -203,31 +203,27 @@ img {
 
 hr {
 	display: block;
+
+	height: 1px;
 	margin: 1em 0;
 	padding: 0;
-	height: 1px;
+
 	border: 0;
 	border-top: 1px solid $border-color;
 }
 
-audio,
-canvas,
-img,
-svg,
-video {
+audio, canvas, img, svg, video {
 	vertical-align: middle;
 }
 
 fieldset {
 	margin: 0;
 	padding: 0;
+
 	border: 0;
 }
 
-button,
-input,
-select,
-textarea {
+button, input, select, textarea {
 	color: $type-color;
 }
 

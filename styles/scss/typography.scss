@@ -1,7 +1,5 @@
 /* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
 
-/* (c) 2013 Andrea Buran [www.andreaburan.com] All rights reserved */
-
 /*
  * Typefaces
  */
@@ -24,6 +22,7 @@
 
 html {
 	height: 100%;
+
 	@include adjust-leading-to(4);
 }
 
@@ -33,15 +32,16 @@ html {
 
 %typography {
 	position: relative;
-	ul, ol,
-	blockquote {
+
+	ul, ol, blockquote {
 		padding-left: em($m-indent);
 	}
 	ul {
 		li {
 			&:before {
 				float: left;
-				content: '\003E';
+
+				content: "\003E";
 			}
 		}
 	}
@@ -51,6 +51,7 @@ html {
 			counter-increment: ordered-list;
 			&:before {
 				float: left;
+
 				content: counter(ordered-list);
 			}
 		}
@@ -62,9 +63,6 @@ html {
 	sup {
 		margin-left: 0.2em;
 	}
-	hr {
-		margin-left: em(-$m-gut/2);
-	}
 	> *:first-child {
 		margin-top: 0;
 	}
@@ -72,32 +70,29 @@ html {
 		margin-bottom: 0;
 	}
 	@include respond-to(break3) {
-		ul, ol,
-		blockquote {
+		ul, ol, blockquote {
 			padding-left: em($d-indent);
-		}
-		hr {
-			margin-left: em(-$d-gut/2);
 		}
 	}
 }
 
 %typography-medium {
 	h1, h2 {
-		@include adjust-font-size-to($m-large-size, $m-large-line);
 		margin-bottom: rhythm($m-large-line/2, $m-large-size);
+
+		@include adjust-font-size-to($m-large-size, $m-large-line);
 	}
-	h3, h4,
-	p, dd {
-		@include adjust-font-size-to($m-medium-size, $m-medium-line);
+	h3, h4, p, dd {
 		margin-bottom: rhythm($m-medium-line/2, $m-medium-size);
+
+		@include adjust-font-size-to($m-medium-size, $m-medium-line);
 	}
 	h5, h6 {
-		@include adjust-font-size-to($m-small-size, $m-small-line);
 		margin-bottom: rhythm($m-small-line/2, $m-small-size);
+
+		@include adjust-font-size-to($m-small-size, $m-small-line);
 	}
-	ul, ol,
-	blockquote {
+	ul, ol, blockquote {
 		margin-bottom: rhythm($m-small-line/2);
 	}
 	li, dt {
@@ -105,8 +100,8 @@ html {
 	}
 	li {
 		&:before {
-			margin-left: em(-$m-indent, $m-medium-size);
 			width: em($m-indent, $m-medium-size);
+			margin-left: em(-$m-indent, $m-medium-size);
 		}
 		li {
 			font-size: 1em;
@@ -115,12 +110,14 @@ html {
 	pre {
 		padding-right: em($m-gut/2, $m-medium-size);
 		padding-left: em($m-indent, $m-medium-size);
+
 		@include adjust-font-size-to($m-medium-size, $m-medium-line);
 		@include rhythm($m-medium-line/2, $m-medium-line/2, $m-medium-line/2, $m-medium-line/2, $d-medium-size);
 	}
 	img {
-		@include adjust-font-size-to($m-small-size, $m-small-line);
 		margin-bottom: rhythm($m-medium-line/2, $m-small-size);
+
+		@include adjust-font-size-to($m-small-size, $m-small-line);
 	}
 	hr {
 		@include rhythm-margins($m-medium-line/2, $m-medium-line/2);
@@ -128,20 +125,21 @@ html {
 	}
 	@include respond-to(break3) {
 		h1, h2 {
-			@include adjust-font-size-to($d-large-size, $d-large-line);
 			margin-bottom: rhythm($d-large-line/2, $d-large-size);
+
+			@include adjust-font-size-to($d-large-size, $d-large-line);
 		}
-		h3, h4,
-		p, dd {
-			@include adjust-font-size-to($d-medium-size, $d-medium-line);
+		h3, h4, p, dd {
 			margin-bottom: rhythm($d-medium-line/2, $d-medium-size);
+
+			@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		}
 		h5, h6 {
-			@include adjust-font-size-to($d-small-size, $d-small-line);
 			margin-bottom: rhythm($d-small-line/2, $d-small-size);
+
+			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
-		ul, ol,
-		blockquote {
+		ul, ol, blockquote {
 			margin-bottom: rhythm($d-small-line/2);
 		}
 		li, dt {
@@ -149,8 +147,8 @@ html {
 		}
 		li {
 			&:before {
-				margin-left: em(-$d-indent, $d-medium-size);
 				width: em($d-indent, $d-medium-size);
+				margin-left: em(-$d-indent, $d-medium-size);
 			}
 			li {
 				font-size: 1em;
@@ -159,12 +157,14 @@ html {
 		pre {
 			padding-right: em($d-gut/2, $d-medium-size);
 			padding-left: em($d-indent, $d-medium-size);
+
 			@include adjust-font-size-to($d-medium-size, $d-medium-line);
 			@include rhythm($d-medium-line/2, $d-medium-line/2, $d-medium-line/2, $d-medium-line/2, $d-medium-size);
 		}
 		img {
-			@include adjust-font-size-to($d-small-size, $d-small-line);
 			margin-bottom: rhythm($d-medium-line/2, $d-small-size);
+
+			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
 		hr {
 			@include rhythm-margins($d-medium-line/2, $d-medium-line/2);
@@ -174,21 +174,22 @@ html {
 }
 
 %typography-small {
-	h1, h2,
-	h3, h4 {
-		@include adjust-font-size-to($m-medium-size, $m-medium-line);
+	h1, h2, h3, h4 {
 		margin-bottom: rhythm($m-medium-line/2, $m-medium-size);
+
+		@include adjust-font-size-to($m-medium-size, $m-medium-line);
 	}
 	p, dd {
-		@include adjust-font-size-to($m-small-size, $m-small-line);
 		margin-bottom: rhythm($m-small-line/2, $m-small-size);
+
+		@include adjust-font-size-to($m-small-size, $m-small-line);
 	}
 	h5, h6 {
-		@include adjust-font-size-to($m-small-size, $m-small-line);
 		margin-bottom: rhythm($m-small-line/2, $m-small-size);
+
+		@include adjust-font-size-to($m-small-size, $m-small-line);
 	}
-	ul, ol,
-	blockquote {
+	ul, ol, blockquote {
 		margin-bottom: rhythm($m-small-line/2);
 	}
 	li, dt {
@@ -196,8 +197,8 @@ html {
 	}
 	li {
 		&:before {
-			margin-left: em(-$m-indent, $m-small-size);
 			width: em($m-indent, $m-small-size);
+			margin-left: em(-$m-indent, $m-small-size);
 		}
 		li {
 			font-size: 1em;
@@ -206,30 +207,34 @@ html {
 	pre {
 		padding-right: em($m-gut/2, $m-small-size);
 		padding-left: em($m-indent, $m-small-size);
+
 		@include adjust-font-size-to($m-small-size, $m-small-line);
 		@include rhythm($m-small-line/2, $m-small-line/2, $m-small-line/2, $m-small-line/2, $d-small-size);
 	}
 	img {
-		@include adjust-font-size-to($m-small-size, $m-small-line);
 		margin-bottom: rhythm($m-small-line/2, $m-small-size);
+
+		@include adjust-font-size-to($m-small-size, $m-small-line);
 	}
 	hr {
 		@include rhythm-margins($m-small-line/2, 0);
 		@include leading-border($border-width, $m-small-line/2);
 	}
 	@include respond-to(break3) {
-		h1, h2,
-		h3, h4 {
-			@include adjust-font-size-to($d-medium-size, $d-medium-line);
+		h1, h2, h3, h4 {
 			margin-bottom: rhythm($d-medium-line/2, $d-medium-size);
+
+			@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		}
 		p, dd {
-			@include adjust-font-size-to($d-small-size, $d-small-line);
 			margin-bottom: rhythm($d-small-line/2, $d-small-size);
+
+			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
 		h5, h6 {
-			@include adjust-font-size-to($d-small-size, $d-small-line);
 			margin-bottom: rhythm($d-small-line/2, $d-small-size);
+
+			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
 		ul, ol {
 			margin-bottom: rhythm($d-small-line/2);
@@ -239,8 +244,8 @@ html {
 		}
 		li {
 			&:before {
-				margin-left: em(-$d-indent, $d-small-size);
 				width: em($d-indent, $d-small-size);
+				margin-left: em(-$d-indent, $d-small-size);
 			}
 			li {
 				font-size: 1em;
@@ -249,12 +254,14 @@ html {
 		pre {
 			padding-right: em($d-gut/2, $d-small-size);
 			padding-left: em($d-indent, $d-small-size);
+
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 			@include rhythm($d-small-line/2, $d-small-line/2, $d-small-line/2, $d-small-line/2, $d-small-size);
 		}
 		img {
-			@include adjust-font-size-to($d-small-size, $d-small-line);
 			margin-bottom: rhythm($d-small-line/2, $d-small-size);
+
+			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
 		hr {
 			@include rhythm-margins($d-small-line/2, 0);
@@ -265,20 +272,21 @@ html {
 
 %typography-large {
 	h1, h2 {
-		@include adjust-font-size-to($m-extra-large-size, $m-extra-large-line);
 		margin-bottom: rhythm($m-extra-large-line/2, $m-extra-large-size);
+
+		@include adjust-font-size-to($m-extra-large-size, $m-extra-large-line);
 	}
-	h3, h4,
-	p, dd {
-		@include adjust-font-size-to($m-large-size, $m-large-line);
+	h3, h4, p, dd {
 		margin-bottom: rhythm($m-large-line/2, $m-large-size);
+
+		@include adjust-font-size-to($m-large-size, $m-large-line);
 	}
 	h5, h6 {
-		@include adjust-font-size-to($m-medium-size, $m-medium-line);
 		margin-bottom: rhythm($m-medium-line/2, $m-medium-size);
+
+		@include adjust-font-size-to($m-medium-size, $m-medium-line);
 	}
-	ul, ol,
-	blockquote {
+	ul, ol, blockquote {
 		margin-bottom: rhythm($m-large-line/2);
 	}
 	li, dt {
@@ -286,8 +294,8 @@ html {
 	}
 	li {
 		&:before {
-			margin-left: em(-$m-indent, $m-large-size);
 			width: em($m-indent, $m-large-size);
+			margin-left: em(-$m-indent, $m-large-size);
 		}
 		li {
 			font-size: 1em;
@@ -296,33 +304,36 @@ html {
 	pre {
 		padding-right: em($m-gut/2, $m-large-size);
 		padding-left: em($m-indent, $m-large-size);
+
 		@include adjust-font-size-to($m-large-size, $m-large-line);
 		@include rhythm($m-large-line/2, $m-large-line/2, $m-large-line/2, $m-large-line/2, $d-large-size);
 	}
 	img {
-		@include adjust-font-size-to($m-small-size, $m-small-line);
 		margin-bottom: rhythm($m-large-line/2, $m-small-size);
+
+		@include adjust-font-size-to($m-small-size, $m-small-line);
 	}
-	hr, .hr {
+	hr {
 		@include rhythm-margins($m-large-line/2, $m-large-line/2);
 		@include leading-border($border-width, $m-large-line/2);
 	}
 	@include respond-to(break3) {
 		h1, h2 {
-			@include adjust-font-size-to($d-extra-large-size, $d-extra-large-line);
 			margin-bottom: rhythm($d-extra-large-line/2, $d-extra-large-size);
+
+			@include adjust-font-size-to($d-extra-large-size, $d-extra-large-line);
 		}
-		h3, h4,
-		p, dd {
-			@include adjust-font-size-to($d-large-size, $d-large-line);
+		h3, h4, p, dd {
 			margin-bottom: rhythm($d-large-line/2, $d-large-size);
+
+			@include adjust-font-size-to($d-large-size, $d-large-line);
 		}
 		h5, h6 {
-			@include adjust-font-size-to($d-medium-size, $d-medium-line);
 			margin-bottom: rhythm($d-medium-line/2, $d-medium-size);
+
+			@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		}
-		ul, ol,
-		blockquote {
+		ul, ol, blockquote {
 			margin-bottom: rhythm($d-large-line/2);
 		}
 		li, dt {
@@ -330,8 +341,8 @@ html {
 		}
 		li {
 			&:before {
-				margin-left: em(-$d-indent, $d-large-size);
 				width: em($d-indent, $d-large-size);
+				margin-left: em(-$d-indent, $d-large-size);
 			}
 			li {
 				font-size: 1em;
@@ -340,12 +351,14 @@ html {
 		pre {
 			padding-right: em($d-gut/2, $d-large-size);
 			padding-left: em($d-indent, $d-large-size);
+
 			@include adjust-font-size-to($d-large-size, $d-large-line);
 			@include rhythm($d-large-line/2, $d-large-line/2, $d-large-line/2, $d-large-line/2, $d-large-size);
 		}
 		img {
-			@include adjust-font-size-to($d-small-size, $d-small-line);
 			margin-bottom: rhythm($d-large-line/2, $d-small-size);
+
+			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
 		hr {
 			@include rhythm-margins($d-large-line/2, $d-large-line/2);

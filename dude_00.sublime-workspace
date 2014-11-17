@@ -196,17 +196,22 @@
 	],
 	"file_history":
 	[
+		"/Applications/MAMP/htdocs/dude/styles/scss/layout.scss",
+		"/Applications/MAMP/htdocs/dude/project.html",
+		"/Applications/MAMP/htdocs/dude/home.html",
+		"/Applications/MAMP/htdocs/dude/index-letter.html",
+		"/Applications/MAMP/htdocs/dude/styles/scss/utilities.scss",
+		"/Applications/MAMP/htdocs/dude/styles/scss/form.scss",
+		"/Applications/MAMP/htdocs/dude/index.html",
+		"/Applications/MAMP/htdocs/dude/styles/scss/typography.scss",
+		"/Applications/MAMP/htdocs/dude/styles/scss/basics.scss",
+		"/Applications/MAMP/htdocs/dude/styles/scss/colors.scss",
 		"/Applications/MAMP/htdocs/agrilaete/.htaccess",
 		"/Users/marshallbanana/Library/Application Support/Sublime Text 3/Packages/User/CSScomb.sublime-settings",
-		"/Applications/MAMP/htdocs/dude/styles/scss/layout.scss",
 		"/Users/marshallbanana/Library/Application Support/Sublime Text 3/Packages/CSScomb/CSScomb.sublime-settings",
 		"/Applications/MAMP/htdocs/dude/csscomb.json",
-		"/Applications/MAMP/htdocs/dude/project.html",
 		"/Applications/MAMP/htdocs/dude/dude_00.sublime-project",
-		"/Applications/MAMP/htdocs/dude/index.html",
-		"/Applications/MAMP/htdocs/dude/home.html",
 		"/Applications/MAMP/htdocs/dude/styles/scss/main.scss",
-		"/Applications/MAMP/htdocs/dude/styles/scss/colors.scss",
 		"/Applications/MAMP/htdocs/dude/.gitignore",
 		"/Users/marshallbanana/Desktop/master.xsl",
 		"/Applications/MAMP/htdocs/fortune-cookie-images/scripts/gather_00.php",
@@ -318,12 +323,7 @@
 		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/get-page-home.xsl",
 		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/get-page.xsl",
 		"/Applications/MAMP/htdocs/sitefolio-2/workspace/pages/home.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/get-cover.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/get-image.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/scripts/js/main.js",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/get-project.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/header.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/ninja.xsl"
+		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/get-cover.xsl"
 	],
 	"find":
 	{
@@ -334,6 +334,7 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"/Applications/MAMP/htdocs/dude/styles/scss",
 			"/Applications/MAMP/htdocs/ilflor/workspace/styles/scss",
 			"/Applications/MAMP/htdocs/agrilaete/workspace/styles/scss",
 			"",
@@ -350,6 +351,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"$m-tiny-line",
+			"$d-tiny-line",
+			"$d-tiny-size",
+			"$m-tiny-size",
+			"project",
+			"head",
 			"content",
 			"supheading",
 			"span",
@@ -471,13 +478,7 @@
 			"small",
 			"medium",
 			"large",
-			"body",
-			"F",
-			"body",
-			"magic",
-			"@",
-			"@column",
-			"@gutter"
+			"body"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -485,6 +486,10 @@
 		"regex": false,
 		"replace_history":
 		[
+			"$m-extra-small-line",
+			"$d-extra-small-line",
+			"$d-extra-small-size",
+			"$m-extra-small-size",
 			"d-large-size",
 			"d-small-size",
 			"d-medium-size",
@@ -613,7 +618,7 @@
 	"project": "dude_00.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":

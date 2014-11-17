@@ -6,12 +6,19 @@
 
 %column-gut {
 	position: relative;
+
 	padding-right: em($m-gut/2);
 	padding-left: em($m-gut/2);
+
 	@include respond-to(break3) {
 		padding-right: em($d-gut/2);
 		padding-left: em($d-gut/2);
 	}
+}
+
+%centered {
+	margin-right: auto;
+	margin-left: auto;
 }
 
 /*
@@ -30,30 +37,33 @@
 
 body {
 	display: table;
-	height: 100%;
+
 	width: 100%;
+	height: 100%;
 }
 
 .header {
-	margin-left: auto;
-	margin-right: auto;
 	max-width: $break8;
+	margin-right: auto;
+	margin-left: auto;
 	.menu {
 		@include perspective-origin(center bottom);
 	}
 	h1 {
 		display: none;
-		margin-left: auto;
+
 		margin-right: auto;
+		margin-left: auto;
 	}
 }
 
 .footer {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: $break8;
 	display: table-row;
+
+	max-width: $break8;
 	height: 1px;
+	margin-right: auto;
+	margin-left: auto;
 	.menu {
 		@include perspective-origin(center top);
 	}
@@ -66,21 +76,27 @@ body {
 }
 
 .menu {
-	@include perspective(100em);
+	overflow: hidden;
+
 	padding-top: em($m-gut/2);
 	padding-bottom: em($m-gut/2);
-	overflow: hidden;
+
+	@include perspective(100em);
 	li {
-		text-transform: uppercase;
-		@include adjust-font-size-to($m-small-size, $m-small-line);
 		//overflow: hidden;
 		height: em(40px, $m-small-size);
+
+		text-transform: uppercase;
+
+		@include adjust-font-size-to($m-small-size, $m-small-line);
 		&:first-child {
 			float: left;
+
 			margin-left: em($m-gut/2, $m-small-size);
 		}
 		&:last-child {
 			float: right;
+
 			margin-right: em($m-gut/2, $m-small-size);
 		}
 	}
@@ -90,27 +106,32 @@ body {
 			span {
 				color: $color;
 				background-color: $border-color;
+
 				@include rotate3d(0, 0, 0, 0);
 			}
 		}
 		&:active {
 			span {
-				@include transition-duration(0.0625s);
 				color: $strong-type-color;
+
+				@include transition-duration(0.0625s);
 			}
 		}
 		span {
+			display: block;
+
+			height: 100%;
 			//border: 1px solid red;
 			padding-top: em(8px, $m-small-size);
 			padding-bottom: em(8px, $m-small-size);
+			//text-indent: 9999px;
+
+			background-repeat: no-repeat;
+
 			@include transition-property(background-color, transform);
 			@include transition-duration(0.2s);
 			@include transition-timing-function(ease-in-out);
 			@include transition-delay(0s);
-			display: block;
-			height: 100%;
-			//text-indent: 9999px;
-			background-repeat: no-repeat;
 		}
 	}
 	.current {
@@ -120,42 +141,50 @@ body {
 	}
 	.home {
 		span {
-			@include apply-origin(left top, false);
 			padding-right: em(8px, $m-small-size);
-			padding-left: em(40px, $m-small-size); 
+			padding-left: em(40px, $m-small-size);
+
 			background-image: url("../../media/icons/home.svg");
-			@include rotate3d(4, 4, 0, 24deg);
 			background-position: left center;
+
+			@include apply-origin(left top, false);
+			@include rotate3d(4, 4, 0, 24deg);
 		}
 	}
 	.index {
 		span {
-			@include apply-origin(right top, false);
 			padding-right: em(40px, $m-small-size);
 			padding-left: em(8px, $m-small-size);
+
 			background-image: url("../../media/icons/index.svg");
-			@include rotate3d(4, -4, 0, 24deg);
 			background-position: right center;
+
+			@include apply-origin(right top, false);
+			@include rotate3d(4, -4, 0, 24deg);
 		}
 	}
 	.colophon {
 		span {
-			@include apply-origin(left bottom, false);
 			padding-right: em(8px, $m-small-size);
-			background-position: left center;
 			padding-left: em(40px, $m-small-size);
+
 			background-image: url("../../media/icons/colophon.svg");
+			background-position: left center;
+
+			@include apply-origin(left bottom, false);
 			@include rotate3d(-4, 4, 0, 24deg);
 		}
 	}
 	.top {
 		span {
-			@include apply-origin(right bottom, false);
-			background-position: right center;
-			padding-left: em(8px, $m-small-size);
 			padding-right: em(40px, $m-small-size);
-			@include rotate3d(-4, -4, 0, 24deg);
+			padding-left: em(8px, $m-small-size);
+
 			background-image: url("../../media/icons/top.svg");
+			background-position: right center;
+
+			@include apply-origin(right bottom, false);
+			@include rotate3d(-4, -4, 0, 24deg);
 		}
 	}
 	@include respond-to(break3) {
@@ -163,6 +192,7 @@ body {
 		padding-bottom: em($d-gut/2);
 		li {
 			height: em(40px, $d-small-size);
+
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 			&:first-child {
 				margin-left: em($d-gut/2, $d-small-size);
@@ -173,9 +203,9 @@ body {
 		}
 		a {
 			span {
+				height: 100%;
 				padding-top: em(8px, $d-small-size);
 				padding-bottom: em(8px, $d-small-size);
-				height: 100%;
 			}
 		}
 		.home {
@@ -186,8 +216,8 @@ body {
 		}
 		.index {
 			span {
-				padding-left: em(8px, $d-small-size);
 				padding-right: em(40px, $d-small-size);
+				padding-left: em(8px, $d-small-size);
 			}
 		}
 		.colophon {
@@ -198,28 +228,30 @@ body {
 		}
 		.top {
 			span {
-				padding-left: em(8px, $d-small-size);
 				padding-right: em(40px, $d-small-size);
+				padding-left: em(8px, $d-small-size);
 			}
 		}
 	}
 }
 
 .content {
-	margin-left: auto;
-	margin-right: auto;
 	max-width: $break8;
+	margin-right: auto;
+	margin-left: auto;
 	padding-top: rhythm($m-medium-line*4);
+
 	@include respond-to(break3) {
 		padding-top: rhythm($d-medium-line*4);
 	}
 }
 
 .head {
-	@extend %column-gut;
-	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: rhythm($m-extra-large-line/2);
+	margin-left: auto;
+
+	@extend %column-gut;
 	h2 {
 		text-align: center;
 	}
@@ -230,10 +262,11 @@ body {
 }
 
 .body {
-	@extend %column-gut;
-	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: rhythm($m-medium-line);
+	margin-left: auto;
+
+	@extend %column-gut;
 	@include respond-to(break3) {
 		width: col(8);
 		margin-bottom: rhythm($d-medium-line);
@@ -241,9 +274,11 @@ body {
 }
 
 .feet {
-	overflow: hidden;
 	clear: both;
+	overflow: hidden;
+
 	padding-bottom: rhythm($m-medium-line*4);
+
 	@include respond-to(break3) {
 		padding-bottom: rhythm($d-medium-line*4);
 	}
@@ -295,22 +330,25 @@ body {
 .author {
 	.avatar {
 		font-size: 1em;
+
 		float: left;
-		margin: em(7) em(12) em(7) 0;
+
 		width: em(42);
 		height: em(42);
+		margin: em(7) em(12) em(7) 0;
 	}
 	.tributary {
-		color: $light-type-color;
-		font-style: normal;
 		font-weight: $normal;
+		font-style: normal;
+
+		color: $light-type-color;
 		//@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
 	}
 	@include respond-to(break3) {
 		.avatar {
-			margin: em(6) em(12) em(6) 0;
 			width: em(36);
 			height: em(36);
+			margin: em(6) em(12) em(6) 0;
 		}
 		.tributary {
 			//@include adjust-font-size-to($d-small-size, $d-small-line, $d-medium-size);
@@ -319,25 +357,31 @@ body {
 }
 
 .comment {
-	@include break-inside(avoid);
 	font-weight: $bold;
 	//flex-grow: 0;
 	//flex-shrink: 1;
+
 	width: 100%;
-	@extend %column-gut;
 	padding-top: rhythm($m-medium-line);
 	padding-bottom: rhythm($m-medium-line);
+
+	@include break-inside(avoid);
+	@extend %column-gut;
 	.avatar {
 		font-size: 1em;
+
 		float: left;
-		margin: em(7) em(12) em(7) 0;
+
 		width: em(42);
 		height: em(42);
+		margin: em(7) em(12) em(7) 0;
 	}
 	.tributary {
-		color: $light-type-color;
-		font-style: normal;
 		font-weight: $normal;
+		font-style: normal;
+
+		color: $light-type-color;
+
 		@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
 	}
 	@include respond-to(break3) {
@@ -345,9 +389,9 @@ body {
 		padding-top: rhythm($d-medium-line);
 		padding-bottom: rhythm($d-medium-line);
 		.avatar {
-			margin: em(6) em(12) em(6) 0;
 			width: em(36);
 			height: em(36);
+			margin: em(6) em(12) em(6) 0;
 		}
 		.tributary {
 			@include adjust-font-size-to($d-small-size, $d-small-line, $d-medium-size);
@@ -355,27 +399,28 @@ body {
 	}
 }
 
-.to-comment,
-.to-search {
-	@extend %column-gut;
-	margin-left: auto;
+.to-comment, .to-search {
 	margin-right: auto;
 	margin-bottom: rhythm($m-medium-line*2);
+	margin-left: auto;
+
+	@extend %column-gut;
 	@include respond-to(break3) {
 		width: col(4);
 		margin-bottom: rhythm($d-medium-line*2);
 	}
 }
 
-.letters,
-.projects,
-.comments {
+.letters, .projects, .comments {
 	position: relative;
+
 	width: 100%;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
+
 	@include respond-to(break3) {
 		width: col(8);
+
 		@include column-rule($border-width, solid, $border-color);
 		@include column-count(2);
 		@include column-gap(0);
@@ -383,63 +428,77 @@ body {
 	}
 	@include respond-to(break5) {
 		width: col(12);
+
 		@include column-count(3);
 	}
 	@include respond-to(break7) {
 		width: col(16);
+
 		@include column-count(4);
 	}
 }
 
-.letter,
-.project {
-	@include adjust-font-size-to($m-medium-size, $m-medium-line);
+.letter, .project {
 	border-bottom: 1px solid $border-color;
+
+	@include adjust-font-size-to($m-medium-size, $m-medium-line);
 	&:last-child {
-		border-bottom: 0px solid $border-color;
+		border-bottom: 0 solid $border-color;
 	}
 	a {
+		font-weight: $normal;
+
+		display: block;
+
+		padding-top: rhythm($m-medium-line/2, $m-medium-size);
 		padding-right: em($m-gut/2, $m-medium-size);
+		padding-bottom: rhythm($m-medium-line/2, $m-medium-size);
 		padding-left: em($m-gut/2, $m-medium-size);
+
+		color: $light-type-color;
+
 		@include transition-property(background-color);
 		@include transition-duration(0.2s);
 		@include transition-timing-function(ease-in-out);
 		@include transition-delay(0s);
-		font-weight: $normal;
-		color: $light-type-color;
-		display: block;
-		padding-top: rhythm($m-medium-line/2, $m-medium-size);
-		padding-bottom: rhythm($m-medium-line/2, $m-medium-size);
 		i {
-			font-style: normal;
 			font-weight: $bold;
+			font-style: normal;
+
 			color: $strong-type-color;
 		}
 		.amount {
 			float: right;
+
 			color: $strong-type-color;
+
 			@include transition-property(color);
 			@include transition-duration(0.2s);
 			@include transition-timing-function(ease-in-out);
 			@include transition-delay(0s);
 			&:before {
+				font-weight: $normal;
+
+				padding-right: 0.2em;
+				padding-left: 1em;
+
+				content: " \00D7 ";
+
+				color: $light-type-color;
+
 				@include transition-property(color);
 				@include transition-duration(0.2s);
 				@include transition-timing-function(ease-in-out);
 				@include transition-delay(0s);
-				color: $light-type-color;
-				font-weight: $normal;
-				content: " \00D7 ";
-				padding-left: 1em;
-				padding-right: 0.2em;
 			}
 		}
 		&:hover {
 			background-color: $border-color;
 		}
 		&:active {
-			@include transition-duration(0.125s);
 			background-color: red;
+
+			@include transition-duration(0.125s);
 		}
 		/*&:focus {
 			color: $focus;
@@ -451,24 +510,23 @@ body {
 			color: $active;
 		}*/
 	}
-	
 	@include respond-to(break3) {
-		border-bottom: 0px solid $border-color;
+		border-bottom: 0 solid $border-color;
+
 		@include column-break-inside(avoid);
 		@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		a {
-			padding-right: em($d-gut/2, $d-medium-size);
-			padding-left: em($d-gut/2, $d-medium-size);
 			padding-top: rhythm($d-medium-line/2, $d-medium-size);
+			padding-right: em($d-gut/2, $d-medium-size);
 			padding-bottom: rhythm($d-medium-line/2, $d-medium-size);
+			padding-left: em($d-gut/2, $d-medium-size);
 			.amount {
 				color: $ultra-light-type-color;
 				&:before {
 					color: $ultra-light-type-color;
 				}
 			}
-			&:hover,
-			&:active {
+			&:hover, &:active {
 				.amount {
 					color: $strong-type-color;
 					&:before {
@@ -477,5 +535,16 @@ body {
 				}
 			}
 		}
+	}
+}
+
+.notation {
+	margin-bottom: rhythm($m-small-line);
+
+	@include adjust-font-size-to($m-small-size, $m-small-line);
+	@include respond-to(break5) {
+		margin-bottom: rhythm($d-small-line);
+
+		@include adjust-font-size-to($d-small-size, $d-small-line);
 	}
 }

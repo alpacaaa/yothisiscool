@@ -5,35 +5,51 @@
  * 0 1 | 2 3 | 4 5 | 6 7 | 8 9 | a b | c d | e f
  */
 
-$color: #9529CC; // color
+$color: #9529CC;
 
-$type-color: #555; // type
-$strong-type-color: #333; // strong type
-$light-type-color: #999; // light type
-$ultra-light-type-color: #ddd; // ultra light type
+$type-color: #555;
+$strong-type-color: #333;
+
+$light-type-color: #999;
+$ultra-light-type-color: #ddd;
 $placeholder-type-color: red;
 
-$selected-type-color: $strong-type-color; // selected type
+$selected-type-color: $strong-type-color;
 
+/*
+ * Background
+ */
 
-
-$background-color: #fcfcfc; // background
+$background-color: #fcfcfc;
 $strong-background-color: #ddd;
-$selected-background-color: darken($background-color, 8%); // selected background
-
-$code-background-color: darken($background-color, 4%); // code background
-
-$picture-background-color: darken($background-color, 8%); // image background
-$picture-shadow-color: darken($background-color, 12%); // image shadow
+$selected-background-color: darken($background-color, 8%);
+$code-background-color: darken($background-color, 4%);
 
 $border-color: #eee;
 
+/*
+ * Field
+ */
+
 $field-color: desaturate($color, 100%);
-$field-background-color: darken($background-color, 8%); // field background
+$field-background-color: darken($background-color, 8%);
+$field-border-color: red;
+$strong-field-border-color: blue;
 
+/*
+ * Button
+ */
 
+$button-color: #fff;
+$button-background-color: $strong-type-color;
+$button-border-color: $strong-type-color;
 
-$weak-field-color: darken($background-color, 4%); // weak border
+/*
+ * Picture
+ */
+
+$picture-background-color: darken($background-color, 8%);
+$picture-shadow-color: darken($background-color, 12%);
 
 $strong-border-color: red;
 
