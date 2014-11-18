@@ -357,6 +357,7 @@ body {
 }
 
 .comment {
+	border-bottom: $border-width solid $border-color;
 	font-weight: $bold;
 	//flex-grow: 0;
 	//flex-shrink: 1;
@@ -368,6 +369,9 @@ body {
 	@include break-inside(avoid);
 	@extend %column-gut;
 	.avatar {
+		opacity: 0.9;
+		@include border-radius(4px);
+		//border: 2px solid $picture-border-color;
 		font-size: 1em;
 
 		float: left;
@@ -385,6 +389,7 @@ body {
 		@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
 	}
 	@include respond-to(break3) {
+		border-bottom: 0 solid $border-color;
 		width: col(4);
 		padding-top: rhythm($d-medium-line);
 		padding-bottom: rhythm($d-medium-line);
@@ -439,11 +444,11 @@ body {
 }
 
 .letter, .project {
-	border-bottom: 1px solid $border-color;
+	border-bottom: $border-width solid $border-color;
 
 	@include adjust-font-size-to($m-medium-size, $m-medium-line);
 	&:last-child {
-		border-bottom: 0 solid $border-color;
+		border-bottom: none;
 	}
 	a {
 		font-weight: $normal;
@@ -511,7 +516,7 @@ body {
 		}*/
 	}
 	@include respond-to(break3) {
-		border-bottom: 0 solid $border-color;
+		border-bottom: none;
 
 		@include column-break-inside(avoid);
 		@include adjust-font-size-to($d-medium-size, $d-medium-line);
@@ -539,11 +544,11 @@ body {
 }
 
 .notation {
-	margin-bottom: rhythm($m-small-line);
+	padding-bottom: rhythm($m-small-line*2);
 
 	@include adjust-font-size-to($m-small-size, $m-small-line);
 	@include respond-to(break5) {
-		margin-bottom: rhythm($d-small-line);
+		padding-bottom: rhythm($d-small-line*2);
 
 		@include adjust-font-size-to($d-small-size, $d-small-line);
 	}

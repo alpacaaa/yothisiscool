@@ -54,9 +54,9 @@ input, textarea {
 		width: 100%;
 		padding: rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut/2, $m-medium-size) rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut/2, $m-medium-size);
 
+		border: none;
+		background-color: transparent;
 		color: $type-color;
-		border: $field-border-width solid $field-border-color;
-		background-color: $field-background-color;
 
 		@include adjust-font-size-to($m-medium-size, $m-medium-line);
 		&:focus, &:hover {
@@ -72,25 +72,31 @@ input, textarea {
 	input[type = "text"] {
 		height: rhythm($m-medium-line*1.5, $m-medium-size);
 	}
+	textarea {
+		resize: none;
+	}
 	i {
 		font-style: normal;
 
 		display: block;
 
-		margin-top: rhythm($m-small-line/4, $m-small-size);
-
 		text-align: right;
 
 		@include adjust-font-size-to($m-small-size, $m-small-line);
+		padding: rhythm($m-small-line/4, $m-small-size) em($m-gut/2, $m-small-size) rhythm($m-small-line/4, $m-small-size) em($m-gut/2, $m-small-size);
 	}
 	input[type = "submit"] {
+		@include transition-property(all);
+		@include transition-duration(0.2s);
+		@include transition-timing-function(ease-in-out);
+		@include transition-delay(0s);
 		@extend %centered;
 		font-weight: $normal;
 
 		display: inline-block;
 
 		height: rhythm($m-medium-line*1.5, $m-medium-size);
-		padding: rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut*3, $m-medium-size) rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut*3, $m-medium-size);
+		padding: rhythm($m-medium-line/4-0.2, $m-medium-size) 0 rhythm($m-medium-line/4-0.2, $m-medium-size) 0;
 
 		color: $button-color;
 		border: $button-border-width solid $button-border-color;
@@ -109,12 +115,20 @@ input, textarea {
 			@include transition-duration(0s, 0s);
 		}
 	}
-	.field, .button {
+	.field {
+		@include border-radius($radius);
+		height: auto;
+		@include transition-property(all);
+		@include transition-duration(0.2s);
+		@include transition-timing-function(ease-in-out);
+		@include transition-delay(0s);
+		border: $field-border-width solid $field-border-color;
+		background-color: $field-background-color;
+	}
+	.button {
 		margin-bottom: rhythm($m-medium-line);
 	}
 	.button {
-		width: 100%;
-
 		text-align: center;
 	}
 	.error {
@@ -140,17 +154,16 @@ input, textarea {
 			height: rhythm($d-medium-line*1.5, $d-medium-size);
 		}
 		i {
-			margin-top: rhythm($d-small-line/4, $d-small-size);
-
+			padding: rhythm($d-small-line/4-0.2, $d-small-size) em($d-gut/4, $d-small-size) rhythm($d-small-line/4-0.2, $d-small-size) em($d-gut/4, $d-small-size);
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
 		input[type = "submit"] {
 			height: rhythm($d-medium-line*1.5, $d-medium-size);
-			padding: rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut*3, $d-medium-size) rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut*3, $d-medium-size);
+			padding: rhythm($d-medium-line/4-0.2, $d-medium-size) 0 rhythm($d-medium-line/4-0.2, $d-medium-size) 0;
 
 			@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		}
-		.field, .button {
+		.button {
 			margin-bottom: rhythm($d-medium-line);
 		}
 	}
@@ -169,15 +182,37 @@ input, textarea {
 }
 
 .closed {
-	input[type = "submit"] {
-		@include border-top-radius(4px);
-		@include border-bottom-radius(4px);
+	.action {
+		.field {
+			height: 0;
+			overflow: hidden;
+			border: none;
+		}
+		input[type = "submit"] {
+			margin-top: em(-$m-medium-size*4, $m-medium-size);
+			width: em($m-medium-size*4, $m-medium-size);
+			height: em($m-medium-size*4, $m-medium-size);
+			@include border-radius(50%);
+		}
+		@include respond-to(break3) {
+			input[type = "submit"] {
+				margin-top: em(-$d-medium-size*4, $d-medium-size);
+				width: em($d-medium-size*4, $d-medium-size);
+				height: em($d-medium-size*4, $d-medium-size);
+			}
+		}
 	}
 }
 
 .open {
-	input[type = "submit"] {
-		@include border-top-radius(0px);
-		@include border-bottom-radius(4px);
+	.action {
+		.field {
+			@include border-bottom-radius(0);
+		}
+		input[type = "submit"] {
+			width: 100%;
+			@include border-top-radius(0);
+			@include border-bottom-radius($radius);
+		}
 	}
 }

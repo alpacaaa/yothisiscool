@@ -5,14 +5,15 @@
  * 0 1 | 2 3 | 4 5 | 6 7 | 8 9 | a b | c d | e f
  */
 
-$color: #9529CC;
+$color: hsl(320, 72, 48);
 
-$type-color: #555;
-$strong-type-color: #333;
+$strong-type-color: hsl(180, 20, 20);
+$type-color: tint($strong-type-color, 10%);
+$light-type-color: tint($strong-type-color, 40%);
 
-$light-type-color: #999;
+
 $ultra-light-type-color: #ddd;
-$placeholder-type-color: red;
+$placeholder-type-color: $light-type-color;
 
 $selected-type-color: $strong-type-color;
 
@@ -20,7 +21,7 @@ $selected-type-color: $strong-type-color;
  * Background
  */
 
-$background-color: #fcfcfc;
+$background-color: hsl(180, 20, 92);
 $strong-background-color: #ddd;
 $selected-background-color: darken($background-color, 8%);
 $code-background-color: darken($background-color, 4%);
@@ -32,8 +33,8 @@ $border-color: #eee;
  */
 
 $field-color: desaturate($color, 100%);
-$field-background-color: darken($background-color, 8%);
-$field-border-color: red;
+$field-background-color:  hsl(180, 0, 96);
+$field-border-color: lighten($background-color, 2%);
 $strong-field-border-color: blue;
 
 /*
@@ -48,6 +49,7 @@ $button-border-color: $strong-type-color;
  * Picture
  */
 
+$picture-border-color: $field-background-color;
 $picture-background-color: darken($background-color, 8%);
 $picture-shadow-color: darken($background-color, 12%);
 
