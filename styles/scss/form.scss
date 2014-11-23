@@ -27,7 +27,7 @@ input, textarea {
 	}
 }
 
-.form {
+[class^="form"] {
 	margin-bottom: rhythm($m-medium-line*2);
 	@extend %column-gut;
 	@extend %centered;
@@ -86,10 +86,6 @@ input, textarea {
 		padding: rhythm($m-small-line/4, $m-small-size) em($m-gut/2, $m-small-size) rhythm($m-small-line/4, $m-small-size) em($m-gut/2, $m-small-size);
 	}
 	input[type = "submit"] {
-		@include transition-property(all);
-		@include transition-duration(0.2s);
-		@include transition-timing-function(ease-in-out);
-		@include transition-delay(0s);
 		@extend %centered;
 		font-weight: $normal;
 
@@ -116,12 +112,9 @@ input, textarea {
 		}
 	}
 	.field {
+		margin-right: auto;
+		margin-left: auto;
 		@include border-radius($radius);
-		height: auto;
-		@include transition-property(all);
-		@include transition-duration(0.2s);
-		@include transition-timing-function(ease-in-out);
-		@include transition-delay(0s);
 		border: $field-border-width solid $field-border-color;
 		background-color: $field-background-color;
 	}
@@ -181,38 +174,82 @@ input, textarea {
 	}
 }
 
-.closed {
-	.action {
-		.field {
-			height: 0;
-			overflow: hidden;
-			border: none;
-		}
-		input[type = "submit"] {
-			margin-top: em(-$m-medium-size*4, $m-medium-size);
-			width: em($m-medium-size*4, $m-medium-size);
-			height: em($m-medium-size*4, $m-medium-size);
-			@include border-radius(50%);
-		}
-		@include respond-to(break3) {
-			input[type = "submit"] {
-				margin-top: em(-$d-medium-size*4, $d-medium-size);
-				width: em($d-medium-size*4, $d-medium-size);
-				height: em($d-medium-size*4, $d-medium-size);
-			}
+.form-comment {
+	.field {
+		@include transition-property(width, max-height, border-radius);
+		@include transition-duration(0.2s, 0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
+		@include transition-delay(0s, 0s, 0s);
+		@include border-bottom-radius(0);
+		overflow: hidden;
+		width: 100%;
+		max-height: rhythm($d-medium-line*6 + ($d-medium-line/4-0.2)*2 + $d-small-line*2 + ($d-small-line/4-0.2)*2);
+	}
+	textarea, i {
+		@include transition-property(opacity);
+		@include transition-duration(0.2s);
+		@include transition-timing-function(ease-in-out);
+		opacity: 1.0;
+	}
+	textarea {
+		height: rhythm($d-medium-line*6 + ($d-medium-line/4-0.2)*2);
+		@include transition-delay(0.1s);
+	}
+	i {
+		@include transition-delay(0.2s);
+	}
+	input[type = "submit"] {
+		@include transition-property(width, height, border-radius, margin-top, color);
+		@include transition-duration(0.2s, 0.2s, 0.2s, 0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out);
+		@include transition-delay(0s, 0s, 0s, 0s, 0.3s);
+		width: 100%;
+		@include border-top-radius(0);
+		@include border-bottom-radius($radius);
+		position: relative;
+		z-index: 1;
+		&:after {
+			content: "bnana";
+			opacity: 1.0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background-repeat: no-repeat;
+			background-image: url("../../media/icons/add.svg");
+			background-position: center center;
+			z-index: 10;
 		}
 	}
 }
 
-.open {
-	.action {
-		.field {
-			@include border-bottom-radius(0);
+.close {
+	.field {
+		width: 0;
+		max-height: 0;
+		//border: none;
+	}
+	textarea, i {
+		opacity: 0.0;
+	}
+	input[type = "submit"] {
+		color: $button-background-color;
+		margin-top: em(-$m-medium-size*4, $m-medium-size);
+		width: em($m-medium-size*4, $m-medium-size);
+		height: em($m-medium-size*4, $m-medium-size);
+		@include border-radius(50%);
+		&:after {
+			opacity: 1.0;
 		}
+	}
+	@include respond-to(break3) {
 		input[type = "submit"] {
-			width: 100%;
-			@include border-top-radius(0);
-			@include border-bottom-radius($radius);
+			margin-top: em(-$d-medium-size*4, $d-medium-size);
+			width: em($d-medium-size*4, $d-medium-size);
+			height: em($d-medium-size*4, $d-medium-size);
 		}
 	}
 }

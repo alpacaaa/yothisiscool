@@ -13,9 +13,12 @@ $('.error input, .error textarea').focus(function() {
 	$(this).parents('div').removeClass('error');
 });*/
 
-$('.action').on( 'click', 'input[type = "submit"]', function() {
-	$(this).parents('div').removeClass('closed');
-	$(this).parents('div').addClass('open');
+$('.form-comment').on( 'click', 'input[type = "submit"]', function() {
+	$(this).parents('.form-comment').toggleClass('close');
+	//$(this).removeClass('closed');
+	//.focus();
+	//alert("banana");
 	//$(this).toggleClass( 'closed', addOrRemove );
 	return false;
+
 });

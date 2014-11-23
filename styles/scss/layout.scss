@@ -107,7 +107,7 @@ body {
 				color: $color;
 				background-color: $border-color;
 
-				@include rotate3d(0, 0, 0, 0);
+				//@include rotate3d(0, 0, 0, 0);
 			}
 		}
 		&:active {
@@ -284,51 +284,10 @@ body {
 	}
 }
 
-/*.comments {
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: rhythm($m-medium-line);
-	padding-bottom: rhythm($m-medium-line);
-	width: 100%;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	align-items: flex-start;
-	align-content: flex-start;
-	@include respond-to(break3) {
-		width: col(8);
-	}
-	@include respond-to(break5) {
-		width: col(12);
-	}
-	@include respond-to(break7) {
-		width: col(16);
-	}
-}*/
-
-/*.author {
-	display: block;
-	font-style: normal;
-	@include adjust-font-size-to($m-small-size, $m-small-line);
-	.avatar {
-		float: left;
-		font-size: 1em;
-		margin: 0 em(4, $d-small-size) 0 0;
-		width: em(24, $d-small-size);
-		height: em(24, $d-small-size);
-	}
-	@include respond-to(break3) {
-		@include adjust-font-size-to($d-small-size, $d-small-line);
-		.avatar {
-			margin: 0 em(4, $d-small-size) 0 0;
-			width: em(24, $d-small-size);
-			height: em(24, $d-small-size);
-		}
-	}
-}*/
-
 .author {
 	.avatar {
+		opacity: 0.9;
+		@include border-radius(4px);
 		font-size: 1em;
 
 		float: left;
@@ -346,9 +305,9 @@ body {
 	}
 	@include respond-to(break3) {
 		.avatar {
-			width: em(36);
-			height: em(36);
-			margin: em(6) em(12) em(6) 0;
+			width: em(48);
+			height: em(48);
+			margin: em(8) em(16) em(8) 0;
 		}
 		.tributary {
 			//@include adjust-font-size-to($d-small-size, $d-small-line, $d-medium-size);
@@ -376,9 +335,9 @@ body {
 
 		float: left;
 
-		width: em(42);
-		height: em(42);
-		margin: em(7) em(12) em(7) 0;
+		width: em(36);
+		height: em(36);
+		margin: em(6) em(12) em(6) 0;
 	}
 	.tributary {
 		font-weight: $normal;
