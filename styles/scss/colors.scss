@@ -5,15 +5,19 @@
  * 0 1 | 2 3 | 4 5 | 6 7 | 8 9 | a b | c d | e f
  */
 
-$color: hsl(320, 72, 48);
+$black: #000;
+$white: #fff;
 
-$strong-type-color: hsl(180, 20, 20);
-$type-color: tint($strong-type-color, 10%);
-$light-type-color: tint($strong-type-color, 40%);
+$color: rgba(hsl(320, 72, 48), 0.8);
+
+$strong-type-color: rgba($black, 0.8);
+$type-color: rgba($black, 0.6);
+$light-type-color: rgba($black, 0.4);
 
 
-$ultra-light-type-color: #ddd;
-$placeholder-type-color: $light-type-color;
+$ultra-light-type-color: rgba($black, 0.2);
+
+$placeholder-type-color: rgba($black, 0.4);
 
 $selected-type-color: $strong-type-color;
 
@@ -21,19 +25,19 @@ $selected-type-color: $strong-type-color;
  * Background
  */
 
-$background-color: hsl(180, 20, 92);
+$background-color: hsl(60, 80, 90);
 $strong-background-color: #ddd;
 $selected-background-color: darken($background-color, 8%);
 $code-background-color: darken($background-color, 4%);
 
-$border-color: #eee;
+$border-color: rgba($black, 0.05);
 
 /*
  * Field
  */
 
 $field-color: desaturate($color, 100%);
-$field-background-color:  hsl(180, 0, 96);
+$field-background-color:  rgba($white, 0.8);
 $field-border-color: lighten($background-color, 2%);
 $strong-field-border-color: blue;
 
@@ -41,7 +45,7 @@ $strong-field-border-color: blue;
  * Button
  */
 
-$button-color: #fff;
+$button-color: rgba(#fff, 0.95);
 $button-background-color: $color;
 $button-border-color: $color;
 
