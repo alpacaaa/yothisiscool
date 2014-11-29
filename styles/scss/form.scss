@@ -21,7 +21,7 @@ form {
 	margin: 0;
 }
 
-input, textarea {
+button, input, textarea {
 	&:focus {
 		outline: none;
 	}
@@ -86,6 +86,7 @@ input, textarea {
 		@include adjust-font-size-to($m-small-size, $m-small-line);
 		padding: rhythm($m-small-line/4, $m-small-size) em($m-gut/2, $m-small-size) rhythm($m-small-line/4, $m-small-size) em($m-gut/2, $m-small-size);
 	}
+	button,
 	input[type = "submit"] {
 		@extend %centered;
 		font-weight: $normal;
@@ -93,7 +94,7 @@ input, textarea {
 		display: inline-block;
 
 		height: rhythm($m-medium-line*1.5, $m-medium-size);
-		padding: rhythm($m-medium-line/4-0.2, $m-medium-size) 0 rhythm($m-medium-line/4-0.2, $m-medium-size) 0;
+		padding: rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut/2, $m-medium-size) rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut/2, $m-medium-size);
 
 		color: $button-color;
 		border: $button-border-width solid $button-border-color;
@@ -151,9 +152,10 @@ input, textarea {
 			padding: rhythm($d-small-line/4-0.2, $d-small-size) em($d-gut/4, $d-small-size) rhythm($d-small-line/4-0.2, $d-small-size) em($d-gut/4, $d-small-size);
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
+		button,
 		input[type = "submit"] {
 			height: rhythm($d-medium-line*1.5, $d-medium-size);
-			padding: rhythm($d-medium-line/4-0.2, $d-medium-size) 0 rhythm($d-medium-line/4-0.2, $d-medium-size) 0;
+			padding: rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut/2, $d-medium-size) rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut/2, $d-medium-size);
 
 			@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		}
@@ -172,6 +174,14 @@ input, textarea {
 
 			text-align: right;
 		}*/
+	}
+}
+
+.form-search {
+	button {
+		float: right;
+		@include border-top-left-radius(0);
+		@include border-bottom-left-radius(0);
 	}
 }
 
@@ -200,6 +210,8 @@ input, textarea {
 		@include transition-delay(0.2s);
 	}
 	input[type = "submit"] {
+		padding-left: 0;
+		padding-right: 0;
 		@include transition-property(width, height, border-radius, margin-top, background-position, color);
 		@include transition-duration(0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s);
 		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out);

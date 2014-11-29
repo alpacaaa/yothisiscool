@@ -436,23 +436,27 @@ body {
 		.amount {
 			float: right;
 
-			color: $strong-type-color;
+			color: $light-type-color;
 
 			@include transition-property(color);
 			@include transition-duration(0.2s);
 			@include transition-timing-function(ease-in-out);
 			@include transition-delay(0s);
-			&:before {
+			&:after {
+				opacity: 0.4;
 				font-weight: $normal;
 
-				padding-right: 0.2em;
-				padding-left: 1em;
+				background-repeat: no-repeat;
+				background-image: url("../../media/icons/thanks.svg");
+				background-position: right center;
 
-				content: " \00D7 ";
+				//padding-right: 0.2em;
+				padding-left: em(24px, $m-medium-size);
 
-				color: $light-type-color;
+				content: "";
+				//content: " \00D7 ";
 
-				@include transition-property(color);
+				@include transition-property(opacity);
 				@include transition-duration(0.2s);
 				@include transition-timing-function(ease-in-out);
 				@include transition-delay(0s);
@@ -487,37 +491,53 @@ body {
 			padding-bottom: rhythm($d-medium-line/2, $d-medium-size);
 			padding-left: em($d-gut/2, $d-medium-size);
 			.amount {
-				color: $ultra-light-type-color;
-				&:before {
-					color: $ultra-light-type-color;
-				}
+				opacity: 0.2;
 			}
 			&:hover, &:active {
 				.amount {
-					color: $strong-type-color;
-					&:before {
-						color: $light-type-color;
-					}
+					opacity: 1.0;
 				}
 			}
 		}
 	}
 }
 
-.notation {
-	background-repeat: no-repeat;
-	background-image: url("../../media/icons/notation.svg");
-	background-position: right 50% top rhythm($m-small-line, $m-small-size);
+[class^="notation"] {
+	color: $light-type-color;
+	width: 50%;
 	padding-bottom: rhythm($m-small-line*2, $m-small-size);
+
+	border-right: $border-width solid $border-color;
+	border-top: $border-width solid $border-color;
+
+	@include adjust-font-size-to($m-small-size, $m-small-line);
 
 	font-weight: $bold;
 
 	@include adjust-font-size-to($m-small-size, $m-small-line);
-	@include respond-to(break5) {
+	@include respond-to(break3) {
 		padding-bottom: rhythm($d-small-line*2, $d-small-size);
 
-		background-position: right 100px top rhythm($d-small-line, $d-small-size);
-
 		@include adjust-font-size-to($d-small-size, $d-small-line);
+	}
+}
+
+[class^="notation-icon-thanks"] {
+	span {
+		&:after {
+			background-repeat: no-repeat;
+			background-image: url("../../media/icons/thanks.svg");
+			background-position: center center;
+			content: "";
+			opacity: 0.4;
+			padding-left: em(32px, $m-medium-size);
+		}
+	}
+	@include respond-to(break3) {
+		span {
+			&:after {
+				padding-left: em(32px, $d-medium-size);
+			}
+		}
 	}
 }
