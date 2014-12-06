@@ -922,7 +922,7 @@ pre, .head, .body, .comment, .to-comment, .to-search, .notation, [class^="action
       padding-right: 1em;
       padding-left: 1em; } }
 
-.notation, [class^="action"], [class^="form"], [class^="form"] button,
+.notation, [class^="note"], [class^="action"], [class^="form"], [class^="form"] button,
 [class^="form"] input[type="submit"] {
   margin-right: auto;
   margin-left: auto; }
@@ -1215,20 +1215,26 @@ body {
   position: relative;
   width: 100%;
   margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto;
+  -moz-column-rule: 1px solid rgba(0, 0, 0, 0.05);
+  -webkit-column-rule: 1px solid rgba(0, 0, 0, 0.05);
+  column-rule: 1px solid rgba(0, 0, 0, 0.05);
+  -moz-column-gap: 0;
+  -webkit-column-gap: 0;
+  column-gap: 0;
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
+  -moz-column-width: 50%;
+  -webkit-column-width: 50%;
+  column-width: 50%; }
   @media only screen and (min-width: 36em) {
     .letters {
       padding-bottom: 6em;
       width: 36em;
-      -moz-column-rule: 1px solid rgba(0, 0, 0, 0.05);
-      -webkit-column-rule: 1px solid rgba(0, 0, 0, 0.05);
-      column-rule: 1px solid rgba(0, 0, 0, 0.05);
       -moz-column-count: 4;
       -webkit-column-count: 4;
       column-count: 4;
-      -moz-column-gap: 0;
-      -webkit-column-gap: 0;
-      column-gap: 0;
       -moz-column-width: 9em;
       -webkit-column-width: 9em;
       column-width: 9em; } }
@@ -1246,9 +1252,8 @@ body {
       column-count: 8; } }
 
 .letter {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  font-size: 1em;
-  line-height: 1.5em; }
+  font-size: 0.8125em;
+  line-height: 1.53846em; }
   .letter:last-child {
     border-bottom: none; }
   .letter a {
@@ -1256,10 +1261,10 @@ body {
     text-align: center;
     font-weight: 400;
     display: block;
-    padding-top: 0.75em;
-    padding-right: 0.5em;
-    padding-bottom: 0.75em;
-    padding-left: 0.5em;
+    padding-top: 1.84615em;
+    padding-right: 0.61538em;
+    padding-bottom: 1.84615em;
+    padding-left: 0.61538em;
     color: rgba(0, 0, 0, 0.4);
     -moz-transition-property: background-color, box-shadow;
     -o-transition-property: background-color, box-shadow;
@@ -1282,10 +1287,16 @@ body {
       font-style: normal;
       display: block;
       color: rgba(0, 0, 0, 0.8); }
+    .letter a .initial {
+      font-size: 4.30769em;
+      line-height: 1em; }
+    .letter a .word {
+      font-size: 1.07692em;
+      line-height: 1.71429em; }
     .letter a .amount {
       position: absolute;
-      right: 0;
-      top: 0;
+      top: 1.84615em;
+      right: 0.61538em;
       color: rgba(0, 0, 0, 0.4);
       -moz-transition-property: color;
       -o-transition-property: color;
@@ -1319,19 +1330,18 @@ body {
       transition-duration: 0.0625s; }
   @media only screen and (min-width: 36em) {
     .letter {
-      border-bottom: none;
       -moz-page-break-inside: avoid;
       -webkit-column-break-inside: avoid;
       break-inside: avoid;
       font-size: 0.8125em;
       line-height: 1.53846em; }
       .letter a {
-        padding-top: 0.92308em;
+        padding-top: 1.84615em;
         padding-right: 1.23077em;
-        padding-bottom: 0.92308em;
+        padding-bottom: 1.84615em;
         padding-left: 1.23077em; }
         .letter a .initial {
-          font-size: 5.53846em;
+          font-size: 4.92308em;
           line-height: 1em; }
         .letter a .word {
           font-size: 1.07692em;
@@ -1353,8 +1363,8 @@ body {
           -o-transition-delay: 0s;
           -webkit-transition-delay: 0s;
           transition-delay: 0s;
-          right: 0.92308em;
-          top: 1.23077em;
+          top: 1.84615em;
+          right: 1.23077em;
           opacity: 0.2; }
         .letter a:hover .amount, .letter a:active .amount {
           opacity: 1.0; } }
@@ -1491,7 +1501,11 @@ body {
           opacity: 1.0; } }
 
 .notation {
+  background-repeat: repeat-y;
+  background-image: url("../../media/icons/notation.svg");
+  background-position: top center;
   width: 100%;
+  padding-bottom: 3em;
   /*@include respond-to(break5) {
   	width: col(12);
   }
@@ -1500,14 +1514,15 @@ body {
   }*/ }
   @media only screen and (min-width: 36em) {
     .notation {
-      width: 36em; } }
+      width: 36em;
+      padding-bottom: 3em; } }
 
 [class^="note"] {
+  background-color: #fafad1;
   color: rgba(0, 0, 0, 0.4);
   width: 50%;
-  padding-bottom: 3.42857em;
-  border-right: 1px solid rgba(0, 0, 0, 0.05);
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   font-size: 0.875em;
   line-height: 1.71429em;
   font-weight: 500;
@@ -1515,7 +1530,6 @@ body {
   line-height: 1.71429em; }
   @media only screen and (min-width: 36em) {
     [class^="note"] {
-      padding-bottom: 3.42857em;
       font-size: 0.875em;
       line-height: 1.71429em; } }
 
@@ -1537,23 +1551,25 @@ body {
   padding-bottom: 6em;
   width: 75%;
   text-align: center; }
-  [class^="action"] a {
-    display: block;
+  [class^="action"] .instruction {
     font-size: 0.875em;
     line-height: 1.71429em; }
-  [class^="action"] span {
+    [class^="action"] .instruction span {
+      color: rgba(0, 0, 0, 0.6); }
+  [class^="action"] .caption {
     margin-top: 0.76923em;
-    display: block;
     font-size: 0.8125em;
     line-height: 1.53846em; }
+    [class^="action"] .caption span {
+      color: rgba(211, 34, 152, 0.8); }
   @media only screen and (min-width: 36em) {
     [class^="action"] {
       padding-bottom: 6em;
       width: 18em; }
-      [class^="action"] a {
+      [class^="action"] .instruction {
         font-size: 0.875em;
         line-height: 1.71429em; }
-      [class^="action"] span {
+      [class^="action"] .caption {
         margin-top: 0.76923em;
         font-size: 0.8125em;
         line-height: 1.53846em; } }
@@ -1588,25 +1604,25 @@ button:focus, input:focus, textarea:focus {
   background-image: url("../../media/icons/notation.svg");
   background-position: top center;
   margin-bottom: 3em; }
-  [class^="form"] input[type="text"], [class^="form"] input[type="search"], [class^="form"] textarea, [class^="form"] input[type="submit"] {
+  [class^="form"] input[type="text"], [class^="form"] input[type="search"], [class^="form"] textarea, [class^="form"] button, [class^="form"] input[type="submit"] {
     display: block;
     font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
-    -moz-transition-property: color, border-color;
-    -o-transition-property: color, border-color;
-    -webkit-transition-property: color, border-color;
-    transition-property: color, border-color;
-    -moz-transition-duration: 0.2s, 0.2s;
-    -o-transition-duration: 0.2s, 0.2s;
-    -webkit-transition-duration: 0.2s, 0.2s;
-    transition-duration: 0.2s, 0.2s;
-    -moz-transition-timing-function: ease-in-out, ease-in-out;
-    -o-transition-timing-function: ease-in-out, ease-in-out;
-    -webkit-transition-timing-function: ease-in-out, ease-in-out;
-    transition-timing-function: ease-in-out, ease-in-out;
-    -moz-transition-delay: 0s, 0s;
-    -o-transition-delay: 0s, 0s;
-    -webkit-transition-delay: 0s, 0s;
-    transition-delay: 0s, 0s; }
+    -moz-transition-property: color, border-color, background-color;
+    -o-transition-property: color, border-color, background-color;
+    -webkit-transition-property: color, border-color, background-color;
+    transition-property: color, border-color, background-color;
+    -moz-transition-duration: 0.2s, 0.2s, 0.2s;
+    -o-transition-duration: 0.2s, 0.2s, 0.2s;
+    -webkit-transition-duration: 0.2s, 0.2s, 0.2s;
+    transition-duration: 0.2s, 0.2s, 0.2s;
+    -moz-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+    -o-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+    -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+    -moz-transition-delay: 0s, 0s, 0s;
+    -o-transition-delay: 0s, 0s, 0s;
+    -webkit-transition-delay: 0s, 0s, 0s;
+    transition-delay: 0s, 0s, 0s; }
   [class^="form"] label {
     font-weight: 400;
     display: none;
@@ -1664,10 +1680,13 @@ button:focus, input:focus, textarea:focus {
     border-radius: 4px / 4px;
     font-size: 1em;
     line-height: 1.5em; }
+    [class^="form"] button:active, [class^="form"] button:hover,
+    [class^="form"] input[type="submit"]:active,
+    [class^="form"] input[type="submit"]:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+      border-color: rgba(0, 0, 0, 0.8); }
     [class^="form"] button:active,
     [class^="form"] input[type="submit"]:active {
-      color: rgba(211, 34, 152, 0.8);
-      border-color: rgba(211, 34, 152, 0.8);
       -moz-transition-duration: 0s, 0s;
       -o-transition-duration: 0s, 0s;
       -webkit-transition-duration: 0s, 0s;

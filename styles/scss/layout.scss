@@ -381,14 +381,17 @@ body {
 	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
+	@include column-rule($border-width, solid, $border-color);
+	@include column-gap(0);
+
+	@include column-count(2);
+	@include column-width(50%);
 
 	@include respond-to(break3) {
 		padding-bottom: rhythm($d-medium-line*4);
 		width: col(8);
 
-		@include column-rule($border-width, solid, $border-color);
 		@include column-count(4);
-		@include column-gap(0);
 		@include column-width(col(2));
 	}
 	@include respond-to(break5) {
@@ -404,9 +407,8 @@ body {
 }
 
 .letter {
-	border-bottom: $border-width solid $border-color;
 
-	@include adjust-font-size-to($m-medium-size, $m-medium-line);
+	@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
 	&:last-child {
 		border-bottom: none;
 	}
@@ -417,10 +419,10 @@ body {
 
 		display: block;
 
-		padding-top: rhythm($m-medium-line/2, $m-medium-size);
-		padding-right: em($m-gut/2, $m-medium-size);
-		padding-bottom: rhythm($m-medium-line/2, $m-medium-size);
-		padding-left: em($m-gut/2, $m-medium-size);
+		padding-top: rhythm($m-medium-line, $m-extra-small-size);
+		padding-right: em($m-gut/2, $m-extra-small-size);
+		padding-bottom: rhythm($m-medium-line, $m-extra-small-size);
+		padding-left: em($m-gut/2, $m-extra-small-size);
 
 		color: $light-type-color;
 
@@ -428,16 +430,23 @@ body {
 		@include transition-duration(0.2s, 0.2s);
 		@include transition-timing-function(ease-in-out, ease-in-out);
 		@include transition-delay(0s, 0s);
+
 		i {
 			font-weight: $bold;
 			font-style: normal;
 			display: block;
 			color: $strong-type-color;
 		}
+		.initial {
+			@include adjust-font-size-to($m-huge-size, $m-huge-line, $m-extra-small-size);
+		}
+		.word {
+			@include adjust-font-size-to($m-small-size, $m-small-line, $m-extra-small-size);
+		}
 		.amount {
 			position: absolute;
-			right: 0;
-			top: 0;
+			top: rhythm($m-medium-line, $m-extra-small-size);
+			right: em($m-gut/2, $m-extra-small-size);
 
 			color: $light-type-color;
 
@@ -458,14 +467,13 @@ body {
 		}
 	}
 	@include respond-to(break3) {
-		border-bottom: none;
 
 		@include column-break-inside(avoid);
 		@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
 		a {
-			padding-top: rhythm($d-medium-line/2, $d-extra-small-size);
+			padding-top: rhythm($d-medium-line, $d-extra-small-size);
 			padding-right: em($d-gut/2, $d-extra-small-size);
-			padding-bottom: rhythm($d-medium-line/2, $d-extra-small-size);
+			padding-bottom: rhythm($d-medium-line, $d-extra-small-size);
 			padding-left: em($d-gut/2, $d-extra-small-size);
 			.initial {
 				@include adjust-font-size-to($d-huge-size, $d-huge-line, $d-extra-small-size);
@@ -478,8 +486,8 @@ body {
 				@include transition-duration(0.2s);
 				@include transition-timing-function(ease-in-out);
 				@include transition-delay(0s);
-				right: rhythm($d-medium-line/2, $d-extra-small-size);
-				top: em($d-gut/2, $d-extra-small-size);
+				top: rhythm($d-medium-line, $d-extra-small-size);
+				right: em($d-gut/2, $d-extra-small-size);
 				opacity: 0.2;
 			}
 			&:hover, &:active {
@@ -610,11 +618,16 @@ body {
 }
 
 .notation {
+	background-repeat: repeat-y;
+	background-image: url("../../media/icons/notation.svg");
+	background-position: top center;
 	@extend %column-gut;
 	@extend %centered;
 	width: 100%;
+	padding-bottom: rhythm($m-small-line*2);
 	@include respond-to(break3) {
 		width: col(8);
+		padding-bottom: rhythm($d-small-line*2);
 	}
 	/*@include respond-to(break5) {
 		width: col(12);
@@ -625,12 +638,14 @@ body {
 }
 
 [class^="note"] {
+	@extend %centered;
+	background-color: $background-color;
 	color: $light-type-color;
 	width: 50%;
-	padding-bottom: rhythm($m-small-line*2, $m-small-size);
+	text-align: center;
+	
 
-	border-right: $border-width solid $border-color;
-	border-top: $border-width solid $border-color;
+	border-bottom: $border-width solid $border-color;
 
 	@include adjust-font-size-to($m-small-size, $m-small-line);
 
@@ -638,7 +653,6 @@ body {
 
 	@include adjust-font-size-to($m-small-size, $m-small-line);
 	@include respond-to(break3) {
-		padding-bottom: rhythm($d-small-line*2, $d-small-size);
 
 		@include adjust-font-size-to($d-small-size, $d-small-line);
 	}
@@ -676,22 +690,26 @@ body {
 	@extend %centered;
 	width: 75%;
 	text-align: center;
-	a {
-		display: block;
+	.instruction {
 		@include adjust-font-size-to($m-small-size, $m-small-line);
+		span {
+			color: $type-color;
+		}
 	}
-	span {
+	.caption {
 		margin-top: rhythm($m-extra-small-line/2, $m-extra-small-size);
-		display: block;
 		@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
+		span {
+			color: $color;
+		}
 	}
 	@include respond-to(break3) {
 		padding-bottom: rhythm($d-medium-line*4);
 		width: col(4);
-		a {
+		.instruction {
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
-		span {
+		.caption {
 			margin-top: rhythm($d-extra-small-line/2, $d-extra-small-size);
 			@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
 		}

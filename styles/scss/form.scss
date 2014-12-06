@@ -34,14 +34,14 @@ button, input, textarea {
 	margin-bottom: rhythm($m-medium-line*2);
 	@extend %column-gut;
 	@extend %centered;
-	input[type = "text"], input[type = "search"], textarea, input[type = "submit"] {
+	input[type = "text"], input[type = "search"], textarea, button, input[type = "submit"] {
 		display: block;
 
 		@include face(sans);
-		@include transition-property(color, border-color);
-		@include transition-duration(0.2s, 0.2s);
-		@include transition-timing-function(ease-in-out, ease-in-out);
-		@include transition-delay(0s, 0s);
+		@include transition-property(color, border-color, background-color);
+		@include transition-duration(0.2s, 0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
+		@include transition-delay(0s, 0s, 0s);
 	}
 	label {
 		font-weight: $normal;
@@ -115,13 +115,11 @@ button, input, textarea {
 		@include adjust-font-size-to($m-medium-size, $m-medium-line);
 		@include border-radius(4px, 4px);
 		@include adjust-font-size-to($m-medium-size, $m-medium-line);
-		&:focus, &:hover {
-			
+		&:active, &:hover {
+			background-color: $active-button-background-color;
+			border-color: $active-button-border-color;
 		}
 		&:active {
-			color: $color;
-			border-color: $color;
-
 			@include transition-duration(0s, 0s);
 		}
 	}
