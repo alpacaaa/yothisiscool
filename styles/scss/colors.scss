@@ -17,7 +17,7 @@ $light-type-color: rgba($black, 0.4);
 
 $ultra-light-type-color: rgba($black, 0.2);
 
-$placeholder-type-color: rgba($black, 0.4);
+$placeholder-type-color: rgba($black, 0.2);
 
 $selected-type-color: $strong-type-color;
 
@@ -42,9 +42,9 @@ $border-color: rgba($black, 0.05);
 
 $field-color: desaturate($color, 100%);
 $field-background-color:  rgba($white, 0.8);
-$field-border-color: lighten($background-color, 2%);
-$strong-field-border-color: blue;
-
+$field-border-color: rgba($black, 0.025);
+$strong-field-border-color: rgba($black, 0.1);
+$error-field-border-color: rgba(hsl(320, 72, 48), 0.2);
 /*
  * Button
  */
@@ -53,7 +53,7 @@ $button-color: rgba(#fff, 0.95);
 $button-background-color: $color;
 $button-border-color: $color;
 
-$shadow-color: rgba($black, 0.1);
+$shadow-color: rgba($black, 0.05);
 
 /*
  * Picture

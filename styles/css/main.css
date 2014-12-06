@@ -302,10 +302,10 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   /* 2 */
-  box-sizing: content-box; }
+  box-sizing: border-box; }
 
 /**
  * Remove inner padding and search cancel button in Safari and Chrome on OS X.
@@ -819,7 +819,7 @@ a {
   transition-delay: 0s;
   color: rgba(211, 34, 152, 0.8); }
   a:hover {
-    color: rgba(211, 34, 152, 0.8); }
+    color: rgba(0, 0, 0, 0.8); }
   a:active {
     color: rgba(0, 0, 0, 0.8); }
   a:active {
@@ -835,7 +835,7 @@ a[href^="mailto"] {
 
 strong {
   font-weight: 500;
-  color: rgba(211, 34, 152, 0.8); }
+  color: rgba(0, 0, 0, 0.8); }
 
 q {
   font-style: italic;
@@ -913,16 +913,16 @@ textarea {
 /*
  * Placeholders
  */
-pre, .head, .body, .comment, .to-comment, .to-search, [class^="form"] {
+pre, .head, .body, .comment, .to-comment, .to-search, .notation, [class^="form"] {
   position: relative;
   padding-right: 0.5em;
   padding-left: 0.5em; }
   @media only screen and (min-width: 36em) {
-    pre, .head, .body, .comment, .to-comment, .to-search, [class^="form"] {
+    pre, .head, .body, .comment, .to-comment, .to-search, .notation, [class^="form"] {
       padding-right: 1em;
       padding-left: 1em; } }
 
-[class^="form"], [class^="form"] button,
+.notation, [class^="form"], [class^="form"] button,
 [class^="form"] input[type="submit"] {
   margin-right: auto;
   margin-left: auto; }
@@ -992,10 +992,17 @@ body {
   .menu a {
     display: block; }
     .menu a:hover span {
-      color: rgba(211, 34, 152, 0.8);
+      color: rgba(0, 0, 0, 0.8);
+      -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
+      -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
       background-color: rgba(0, 0, 0, 0.05); }
     .menu a:active span {
       color: rgba(0, 0, 0, 0.8);
+      -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
+      -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
+      background-color: rgba(211, 34, 152, 0.2);
       -moz-transition-duration: 0.0625s;
       -o-transition-duration: 0.0625s;
       -webkit-transition-duration: 0.0625s;
@@ -1009,22 +1016,22 @@ body {
       padding-top: 0.57143em;
       padding-bottom: 0.57143em;
       background-repeat: no-repeat;
-      -moz-transition-property: background-color, -moz-transform;
-      -o-transition-property: background-color, -o-transform;
-      -webkit-transition-property: background-color, -webkit-transform;
-      transition-property: background-color, transform;
-      -moz-transition-duration: 0.2s;
-      -o-transition-duration: 0.2s;
-      -webkit-transition-duration: 0.2s;
-      transition-duration: 0.2s;
-      -moz-transition-timing-function: ease-in-out;
-      -o-transition-timing-function: ease-in-out;
-      -webkit-transition-timing-function: ease-in-out;
-      transition-timing-function: ease-in-out;
-      -moz-transition-delay: 0s;
-      -o-transition-delay: 0s;
-      -webkit-transition-delay: 0s;
-      transition-delay: 0s; }
+      -moz-transition-property: background-color, box-shadow, -moz-transform;
+      -o-transition-property: background-color, box-shadow, -o-transform;
+      -webkit-transition-property: background-color, box-shadow, -webkit-transform;
+      transition-property: background-color, box-shadow, transform;
+      -moz-transition-duration: 0.2s, 0.2s, 0.2s;
+      -o-transition-duration: 0.2s, 0.2s, 0.2s;
+      -webkit-transition-duration: 0.2s, 0.2s, 0.2s;
+      transition-duration: 0.2s, 0.2s, 0.2s;
+      -moz-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+      -o-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+      -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+      transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+      -moz-transition-delay: 0s, 0s, 0s;
+      -o-transition-delay: 0s, 0s, 0s;
+      -webkit-transition-delay: 0s, 0s, 0s;
+      transition-delay: 0s, 0s, 0s; }
   .menu .home span {
     padding-right: 0.57143em;
     padding-left: 2.85714em;
@@ -1254,22 +1261,22 @@ body {
     padding-bottom: 0.75em;
     padding-left: 0.5em;
     color: rgba(0, 0, 0, 0.4);
-    -moz-transition-property: background-color;
-    -o-transition-property: background-color;
-    -webkit-transition-property: background-color;
-    transition-property: background-color;
-    -moz-transition-duration: 0.2s;
-    -o-transition-duration: 0.2s;
-    -webkit-transition-duration: 0.2s;
-    transition-duration: 0.2s;
-    -moz-transition-timing-function: ease-in-out;
-    -o-transition-timing-function: ease-in-out;
-    -webkit-transition-timing-function: ease-in-out;
-    transition-timing-function: ease-in-out;
-    -moz-transition-delay: 0s;
-    -o-transition-delay: 0s;
-    -webkit-transition-delay: 0s;
-    transition-delay: 0s;
+    -moz-transition-property: background-color, box-shadow;
+    -o-transition-property: background-color, box-shadow;
+    -webkit-transition-property: background-color, box-shadow;
+    transition-property: background-color, box-shadow;
+    -moz-transition-duration: 0.2s, 0.2s;
+    -o-transition-duration: 0.2s, 0.2s;
+    -webkit-transition-duration: 0.2s, 0.2s;
+    transition-duration: 0.2s, 0.2s;
+    -moz-transition-timing-function: ease-in-out, ease-in-out;
+    -o-transition-timing-function: ease-in-out, ease-in-out;
+    -webkit-transition-timing-function: ease-in-out, ease-in-out;
+    transition-timing-function: ease-in-out, ease-in-out;
+    -moz-transition-delay: 0s, 0s;
+    -o-transition-delay: 0s, 0s;
+    -webkit-transition-delay: 0s, 0s;
+    transition-delay: 0s, 0s;
     /*&:focus {
     	color: $focus;
     }
@@ -1327,17 +1334,17 @@ body {
         -webkit-transition-delay: 0s;
         transition-delay: 0s; }
     .letter a:hover, .project a:hover {
-      -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1) inset;
-      -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1) inset;
-      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1) inset;
+      -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
+      -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
       /*border-bottom: $border-width solid $border-color;
       border-top: $border-width solid $border-color;
       border-left: $border-width solid $border-color;*/
       background-color: rgba(0, 0, 0, 0.05); }
     .letter a:active, .project a:active {
-      -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1) inset;
-      -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1) inset;
-      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1) inset;
+      -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
+      -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
       background-color: rgba(211, 34, 152, 0.2);
       -moz-transition-duration: 0.0625s;
       -o-transition-duration: 0.0625s;
@@ -1361,7 +1368,13 @@ body {
         .letter a:hover .amount, .letter a:active .amount, .project a:hover .amount, .project a:active .amount {
           opacity: 1.0; } }
 
-[class^="notation"] {
+.notation {
+  width: 100%; }
+  @media only screen and (min-width: 36em) {
+    .notation {
+      width: 36em; } }
+
+[class^="note"] {
   color: rgba(0, 0, 0, 0.4);
   width: 50%;
   padding-bottom: 3.42857em;
@@ -1373,12 +1386,12 @@ body {
   font-size: 0.875em;
   line-height: 1.71429em; }
   @media only screen and (min-width: 36em) {
-    [class^="notation"] {
+    [class^="note"] {
       padding-bottom: 3.42857em;
       font-size: 0.875em;
       line-height: 1.71429em; } }
 
-[class^="notation-icon-thanks"] span:after {
+[class^="note-icon-thanks"] span:after {
   background-repeat: no-repeat;
   background-image: url("../../media/icons/thanks.svg");
   background-position: center center;
@@ -1386,27 +1399,27 @@ body {
   opacity: 0.4;
   padding-left: 2em; }
 @media only screen and (min-width: 36em) {
-  [class^="notation-icon-thanks"] span:after {
+  [class^="note-icon-thanks"] span:after {
     padding-left: 2em; } }
 
 /* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
 ::-webkit-input-placeholder {
   opacity: 1.0;
-  color: rgba(0, 0, 0, 0.4); }
+  color: rgba(0, 0, 0, 0.2); }
 
 :-moz-placeholder {
   opacity: 1.0;
   /* Firefox 18- */
-  color: rgba(0, 0, 0, 0.4); }
+  color: rgba(0, 0, 0, 0.2); }
 
 ::-moz-placeholder {
   opacity: 1.0;
   /* Firefox 19+ */
-  color: rgba(0, 0, 0, 0.4); }
+  color: rgba(0, 0, 0, 0.2); }
 
 :-ms-input-placeholder {
   opacity: 1.0;
-  color: rgba(0, 0, 0, 0.4); }
+  color: rgba(0, 0, 0, 0.2); }
 
 form {
   margin: 0; }
@@ -1415,8 +1428,11 @@ button:focus, input:focus, textarea:focus {
   outline: none; }
 
 [class^="form"] {
+  background-repeat: repeat-y;
+  background-image: url("../../media/icons/notation.svg");
+  background-position: top center;
   margin-bottom: 3em; }
-  [class^="form"] input[type="text"], [class^="form"] textarea, [class^="form"] input[type="submit"] {
+  [class^="form"] input[type="text"], [class^="form"] input[type="search"], [class^="form"] textarea, [class^="form"] input[type="submit"] {
     display: block;
     font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
     -moz-transition-property: color, border-color;
@@ -1442,21 +1458,24 @@ button:focus, input:focus, textarea:focus {
     margin-left: 0.5em;
     font-size: 1em;
     line-height: 1.5em; }
-  [class^="form"] input[type="text"], [class^="form"] textarea {
+  [class^="form"] input[type="text"], [class^="form"] input[type="search"], [class^="form"] textarea {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.025);
+    background-color: rgba(255, 255, 255, 0.8);
     width: 100%;
     padding: 0.25em 0.5em 0.25em 0.5em;
-    border: none;
-    background-color: transparent;
     color: rgba(0, 0, 0, 0.6);
     font-size: 1em;
     line-height: 1.5em; }
-    [class^="form"] input[type="text"]:focus, [class^="form"] input[type="text"]:hover, [class^="form"] textarea:focus, [class^="form"] textarea:hover {
+    [class^="form"] input[type="text"]:focus, [class^="form"] input[type="text"]:hover, [class^="form"] input[type="search"]:focus, [class^="form"] input[type="search"]:hover, [class^="form"] textarea:focus, [class^="form"] textarea:hover {
       color: rgba(0, 0, 0, 0.8); }
-    [class^="form"] input[type="text"]:hover, [class^="form"] textarea:hover {
-      border-color: blue; }
-    [class^="form"] input[type="text"]:focus, [class^="form"] input[type="text"]:focus:hover, [class^="form"] textarea:focus, [class^="form"] textarea:focus:hover {
-      border-color: blue; }
-  [class^="form"] input[type="text"] {
+    [class^="form"] input[type="text"]:hover, [class^="form"] input[type="search"]:hover, [class^="form"] textarea:hover {
+      border-color: rgba(0, 0, 0, 0.1); }
+    [class^="form"] input[type="text"]:focus, [class^="form"] input[type="text"]:focus:hover, [class^="form"] input[type="search"]:focus, [class^="form"] input[type="search"]:focus:hover, [class^="form"] textarea:focus, [class^="form"] textarea:focus:hover {
+      border-color: rgba(0, 0, 0, 0.1); }
+  [class^="form"] input[type="text"], [class^="form"] input[type="search"] {
     height: 2.25em; }
   [class^="form"] textarea {
     resize: none; }
@@ -1467,10 +1486,15 @@ button:focus, input:focus, textarea:focus {
     text-align: right;
     font-size: 0.875em;
     line-height: 1.71429em;
-    padding: 0.42857em 0.57143em 0.42857em 0.57143em; }
+    margin-top: 0.42857em;
+    padding-right: 0.57143em;
+    padding-left: 0.57143em; }
+    [class^="form"] i strong {
+      color: rgba(0, 0, 0, 0.6); }
   [class^="form"] button,
   [class^="form"] input[type="submit"] {
     font-weight: 400;
+    width: 50%;
     display: inline-block;
     height: 2.25em;
     padding: 0.25em 0.5em 0.25em 0.5em;
@@ -1494,18 +1518,15 @@ button:focus, input:focus, textarea:focus {
       transition-duration: 0s, 0s; }
   [class^="form"] .field {
     margin-right: auto;
-    margin-left: auto;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    border: 1px solid #fbfbda;
-    background-color: rgba(255, 255, 255, 0.8); }
+    margin-left: auto; }
+  [class^="form"] .field,
   [class^="form"] .button {
     margin-bottom: 1.5em; }
   [class^="form"] .button {
     text-align: center; }
-  [class^="form"] .error input[type="text"], [class^="form"] .error textarea {
-    border-color: rgba(211, 34, 152, 0.8); }
+  [class^="form"] .error input[type="text"], [class^="form"] .error input[type="search"], [class^="form"] .error textarea {
+    border-color: rgba(211, 34, 152, 0.2);
+    color: rgba(211, 34, 152, 0.8); }
   @media only screen and (min-width: 36em) {
     [class^="form"] {
       margin-bottom: 3em;
@@ -1515,22 +1536,26 @@ button:focus, input:focus, textarea:focus {
         margin-left: 1em;
         font-size: 1em;
         line-height: 1.5em; }
-      [class^="form"] input[type="text"], [class^="form"] textarea {
+      [class^="form"] input[type="text"], [class^="form"] input[type="search"], [class^="form"] textarea {
         padding: 0.25em 0.5em 0.25em 0.5em;
         font-size: 1em;
         line-height: 1.5em; }
-      [class^="form"] input[type="text"] {
+      [class^="form"] input[type="text"], [class^="form"] input[type="search"] {
         height: 2.25em; }
       [class^="form"] i {
-        padding: 0.28571em 0.57143em 0.28571em 0.57143em;
+        margin-top: 0.42857em;
+        padding-right: 1.14286em;
+        padding-left: 1.14286em;
         font-size: 0.875em;
         line-height: 1.71429em; }
       [class^="form"] button,
       [class^="form"] input[type="submit"] {
         height: 2.25em;
         padding: 0.25em 1em 0.25em 1em;
+        width: 13.5em;
         font-size: 1em;
         line-height: 1.5em; }
+      [class^="form"] .field,
       [class^="form"] .button {
         margin-bottom: 1.5em; } }
   @media only screen and (min-width: 60em) {
@@ -1546,14 +1571,27 @@ button:focus, input:focus, textarea:focus {
       			text-align: right;
       		}*/ } }
 
-.form-search button {
-  float: right;
-  -moz-border-radius-topleft: 0;
-  -webkit-border-top-left-radius: 0;
-  border-top-left-radius: 0;
-  -moz-border-radius-bottomleft: 0;
-  -webkit-border-bottom-left-radius: 0;
-  border-bottom-left-radius: 0; }
+.form-search {
+  background-image: none; }
+  .form-search input[type="search"] {
+    float: left;
+    width: 75%;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-right-radius: 0;
+    border-top-right-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0; }
+  .form-search button {
+    width: 25%;
+    -moz-border-radius-topleft: 0;
+    -webkit-border-top-left-radius: 0;
+    border-top-left-radius: 0;
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0; }
+  .form-search .field {
+    overflow: auto; }
 
 .form-comment .field {
   -moz-transition-property: width, max-height, border-radius;
@@ -1607,8 +1645,6 @@ button:focus, input:focus, textarea:focus {
   -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s; }
 .form-comment input[type="submit"] {
-  padding-left: 0;
-  padding-right: 0;
   -moz-transition-property: width, height, border-radius, margin-top, background-position, color;
   -o-transition-property: width, height, border-radius, margin-top, background-position, color;
   -webkit-transition-property: width, height, border-radius, margin-top, background-position, color;
@@ -1625,19 +1661,6 @@ button:focus, input:focus, textarea:focus {
   -o-transition-delay: 0s, 0s, 0s, 0s, 0s, 0.3s;
   -webkit-transition-delay: 0s, 0s, 0s, 0s, 0s, 0.3s;
   transition-delay: 0s, 0s, 0s, 0s, 0s, 0.3s;
-  width: 100%;
-  -moz-border-radius-topleft: 0;
-  -webkit-border-top-left-radius: 0;
-  border-top-left-radius: 0;
-  -moz-border-radius-topright: 0;
-  -webkit-border-top-right-radius: 0;
-  border-top-right-radius: 0;
-  -moz-border-radius-bottomleft: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  -moz-border-radius-bottomright: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-  border-bottom-right-radius: 4px;
   background-repeat: no-repeat;
   background-image: url("../../media/icons/add.svg");
   background-position: center -100%; }
@@ -1648,6 +1671,8 @@ button:focus, input:focus, textarea:focus {
 .close textarea, .close i {
   opacity: 0.0; }
 .close input[type="submit"] {
+  padding-left: 0;
+  padding-right: 0;
   color: transparent;
   margin-top: -4em;
   width: 4em;

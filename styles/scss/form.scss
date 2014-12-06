@@ -28,10 +28,13 @@ button, input, textarea {
 }
 
 [class^="form"] {
+	background-repeat: repeat-y;
+	background-image: url("../../media/icons/notation.svg");
+	background-position: top center;
 	margin-bottom: rhythm($m-medium-line*2);
 	@extend %column-gut;
 	@extend %centered;
-	input[type = "text"], textarea, input[type = "submit"] {
+	input[type = "text"], input[type = "search"], textarea, input[type = "submit"] {
 		display: block;
 
 		@include face(sans);
@@ -50,12 +53,14 @@ button, input, textarea {
 
 		@include adjust-font-size-to($m-medium-size, $m-medium-line);
 	}
-	input[type = "text"], textarea {
+	input[type = "text"], input[type = "search"], textarea {
+		@include border-radius($radius);
+		border: $field-border-width solid $field-border-color;
+		background-color: $field-background-color;
 		width: 100%;
 		padding: rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut/2, $m-medium-size) rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut/2, $m-medium-size);
 
-		border: none;
-		background-color: transparent;
+
 		color: $type-color;
 
 		@include adjust-font-size-to($m-medium-size, $m-medium-line);
@@ -69,7 +74,7 @@ button, input, textarea {
 			border-color: $strong-field-border-color;
 		}
 	}
-	input[type = "text"] {
+	input[type = "text"], input[type = "search"] {
 		height: rhythm($m-medium-line*1.5, $m-medium-size);
 	}
 	textarea {
@@ -84,12 +89,19 @@ button, input, textarea {
 		text-align: right;
 
 		@include adjust-font-size-to($m-small-size, $m-small-line);
-		padding: rhythm($m-small-line/4, $m-small-size) em($m-gut/2, $m-small-size) rhythm($m-small-line/4, $m-small-size) em($m-gut/2, $m-small-size);
+		margin-top: rhythm($m-small-line/4, $m-small-size);
+		padding-right: em($m-gut/2, $m-small-size);
+		padding-left: em($m-gut/2, $m-small-size);
+		strong {
+			color: $type-color;
+		}
 	}
 	button,
 	input[type = "submit"] {
 		@extend %centered;
 		font-weight: $normal;
+
+		width: 50%;
 
 		display: inline-block;
 
@@ -116,10 +128,8 @@ button, input, textarea {
 	.field {
 		margin-right: auto;
 		margin-left: auto;
-		@include border-radius($radius);
-		border: $field-border-width solid $field-border-color;
-		background-color: $field-background-color;
 	}
+	.field,
 	.button {
 		margin-bottom: rhythm($m-medium-line);
 	}
@@ -127,8 +137,9 @@ button, input, textarea {
 		text-align: center;
 	}
 	.error {
-		input[type = "text"], textarea {
-			border-color: $color;
+		input[type = "text"], input[type = "search"], textarea {
+			border-color: $error-field-border-color;
+			color: $color;
 		}
 	}
 	@include respond-to(break3) {
@@ -140,16 +151,18 @@ button, input, textarea {
 
 			@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		}
-		input[type = "text"], textarea {
+		input[type = "text"], input[type = "search"], textarea {
 			padding: rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut/4, $d-medium-size) rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut/4, $d-medium-size);
 
 			@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		}
-		input[type = "text"] {
+		input[type = "text"], input[type = "search"] {
 			height: rhythm($d-medium-line*1.5, $d-medium-size);
 		}
 		i {
-			padding: rhythm($d-small-line/4-0.2, $d-small-size) em($d-gut/4, $d-small-size) rhythm($d-small-line/4-0.2, $d-small-size) em($d-gut/4, $d-small-size);
+			margin-top: rhythm($d-small-line/4, $d-small-size);
+			padding-right: em($d-gut/2, $d-small-size);
+			padding-left: em($d-gut/2, $d-small-size);
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
 		button,
@@ -157,8 +170,11 @@ button, input, textarea {
 			height: rhythm($d-medium-line*1.5, $d-medium-size);
 			padding: rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut/2, $d-medium-size) rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut/2, $d-medium-size);
 
+			width: col(3, $d-medium-size);
+
 			@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		}
+		.field,
 		.button {
 			margin-bottom: rhythm($d-medium-line);
 		}
@@ -178,10 +194,20 @@ button, input, textarea {
 }
 
 .form-search {
+	background-image: none;
+	input[type = "search"] {
+		float: left;
+		width: 75%;
+		@include border-top-right-radius(0);
+		@include border-bottom-right-radius(0);
+	}
 	button {
-		float: right;
+		width: 25%;
 		@include border-top-left-radius(0);
 		@include border-bottom-left-radius(0);
+	}
+	.field {
+		overflow: auto;
 	}
 }
 
@@ -210,15 +236,10 @@ button, input, textarea {
 		@include transition-delay(0.2s);
 	}
 	input[type = "submit"] {
-		padding-left: 0;
-		padding-right: 0;
 		@include transition-property(width, height, border-radius, margin-top, background-position, color);
 		@include transition-duration(0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s);
 		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out);
 		@include transition-delay(0s, 0s, 0s, 0s, 0s, 0.3s);
-		width: 100%;
-		@include border-top-radius(0);
-		@include border-bottom-radius($radius);
 		background-repeat: no-repeat;
 		background-image: url("../../media/icons/add.svg");
 		background-position: center -100%;
@@ -235,6 +256,8 @@ button, input, textarea {
 		opacity: 0.0;
 	}
 	input[type = "submit"] {
+		padding-left: 0;
+		padding-right: 0;
 		color: transparent;
 		margin-top: em(-$m-medium-size*4, $m-medium-size);
 		width: em($m-medium-size*4, $m-medium-size);

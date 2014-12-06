@@ -114,7 +114,7 @@ a {
 	@include transition-duration(0.2s);
 	@include transition-timing-function(ease-in-out);
 	@include transition-delay(0s);
-	@include link-colors($color, $color, $strong-type-color);
+	@include link-colors($color, $strong-type-color, $strong-type-color);
 	&:active {
 		@include transition-duration(0.0s);
 	}
@@ -129,7 +129,7 @@ a[href^="mailto"] {
 strong {
 	font-weight: $bold;
 
-	color: $color;
+	color: $strong-type-color;
 }
 
 q {

@@ -104,8 +104,9 @@ body {
 		display: block;
 		&:hover {
 			span {
-				color: $color;
-				background-color: $border-color;
+				color: $strong-type-color;
+				@include box-shadow(0 1px 4px 0 $shadow-color inset);
+				background-color: $hover-background-color;
 
 				//@include rotate3d(0, 0, 0, 0);
 			}
@@ -113,6 +114,8 @@ body {
 		&:active {
 			span {
 				color: $strong-type-color;
+				@include box-shadow(0 1px 4px 0 $shadow-color inset);
+				background-color: $active-background-color;
 
 				@include transition-duration(0.0625s);
 			}
@@ -130,10 +133,10 @@ body {
 
 			background-repeat: no-repeat;
 
-			@include transition-property(background-color, transform);
-			@include transition-duration(0.2s);
-			@include transition-timing-function(ease-in-out);
-			@include transition-delay(0s);
+			@include transition-property(background-color, box-shadow, transform);
+			@include transition-duration(0.2s, 0.2s, 0.2s);
+			@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
+			@include transition-delay(0s, 0s, 0s);
 		}
 	}
 	.current {
@@ -423,10 +426,10 @@ body {
 
 		color: $light-type-color;
 
-		@include transition-property(background-color);
-		@include transition-duration(0.2s);
-		@include transition-timing-function(ease-in-out);
-		@include transition-delay(0s);
+		@include transition-property(background-color, box-shadow);
+		@include transition-duration(0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out);
+		@include transition-delay(0s, 0s);
 		i {
 			font-weight: $bold;
 			font-style: normal;
@@ -507,7 +510,16 @@ body {
 	}
 }
 
-[class^="notation"] {
+.notation {
+	@extend %column-gut;
+	@extend %centered;
+	width: 100%;
+	@include respond-to(break3) {
+		width: col(8);
+	}
+}
+
+[class^="note"] {
 	color: $light-type-color;
 	width: 50%;
 	padding-bottom: rhythm($m-small-line*2, $m-small-size);
@@ -527,7 +539,7 @@ body {
 	}
 }
 
-[class^="notation-icon-thanks"] {
+[class^="note-icon-thanks"] {
 	span {
 		&:after {
 			background-repeat: no-repeat;

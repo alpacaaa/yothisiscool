@@ -13,6 +13,15 @@ $('.error input, .error textarea').focus(function() {
 	$(this).parents('div').removeClass('error');
 });*/
 
+/*
+ * Form
+ */
+
+$('.error input, .error textarea').focus(function() {
+	//alert('banana!');
+	$(this).parents('div').removeClass('error');
+});
+
 $('.form-comment').on( 'click', 'input[type = "submit"]', function() {
 	$(this).parents('.form-comment').toggleClass('close');
 	//$(this).removeClass('closed');
