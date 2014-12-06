@@ -649,7 +649,7 @@ body {
 
 	@include adjust-font-size-to($m-small-size, $m-small-line);
 
-	font-weight: $bold;
+	font-weight: $normal;
 
 	@include adjust-font-size-to($m-small-size, $m-small-line);
 	@include respond-to(break3) {
