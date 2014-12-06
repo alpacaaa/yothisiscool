@@ -30,6 +30,10 @@ $strong-background-color: #ddd;
 $selected-background-color: darken($background-color, 8%);
 $code-background-color: darken($background-color, 4%);
 
+$hover-background-color: rgba($black, 0.05);
+$active-background-color: rgba(hsl(320, 72, 48), 0.2);
+
+
 $border-color: rgba($black, 0.05);
 
 /*
@@ -48,6 +52,8 @@ $strong-field-border-color: blue;
 $button-color: rgba(#fff, 0.95);
 $button-background-color: $color;
 $button-border-color: $color;
+
+$shadow-color: rgba($black, 0.1);
 
 /*
  * Picture

@@ -463,12 +463,17 @@ body {
 			}
 		}
 		&:hover {
-			background-color: $border-color;
+			@include box-shadow(0 1px 4px 0 $shadow-color inset);
+			/*border-bottom: $border-width solid $border-color;
+			border-top: $border-width solid $border-color;
+			border-left: $border-width solid $border-color;*/
+			background-color: $hover-background-color;
 		}
 		&:active {
-			background-color: $color;
+			@include box-shadow(0 1px 4px 0 $shadow-color inset);
+			background-color: $active-background-color;
 
-			@include transition-duration(0.125s);
+			@include transition-duration(0.0625s);
 		}
 		/*&:focus {
 			color: $focus;

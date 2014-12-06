@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"padding",
+				"padding-right"
+			],
+			[
+				"padding-",
+				"padding-left"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
 				"res",
 				"respond-to"
 			],
@@ -96,10 +108,6 @@
 				"size"
 			],
 			[
-				"font",
-				"font-family"
-			],
-			[
 				"backg",
 				"background-color"
 			],
@@ -115,19 +123,63 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 5849,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "project.html",
+			"settings":
+			{
+				"buffer_size": 6226,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "styles/scss/utilities.scss",
+			"settings":
+			{
+				"buffer_size": 2730,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "styles/scss/form.scss",
+			"settings":
+			{
+				"buffer_size": 6849,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "styles/scss/layout.scss",
+			"settings":
+			{
+				"buffer_size": 10481,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Applications/MAMP/htdocs/sketch-grid-00/styles/scss/main.scss",
+			"settings":
+			{
+				"buffer_size": 283,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 307.0,
+		"height": 87.0,
 		"selected_items":
 		[
 			[
-				"i",
-				"Indent XML"
-			],
-			[
-				"install",
+				"insta",
 				"Package Control: Install Package"
 			],
 			[
@@ -135,8 +187,20 @@
 				"Package Control: Install Package"
 			],
 			[
-				"insta",
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"install",
 				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: List Packages"
+			],
+			[
+				"i",
+				"Indent XML"
 			],
 			[
 				"remove",
@@ -196,16 +260,22 @@
 	],
 	"file_history":
 	[
-		"/Applications/MAMP/htdocs/dude/styles/scss/layout.scss",
-		"/Applications/MAMP/htdocs/dude/project.html",
-		"/Applications/MAMP/htdocs/dude/home.html",
-		"/Applications/MAMP/htdocs/dude/index-letter.html",
-		"/Applications/MAMP/htdocs/dude/styles/scss/utilities.scss",
+		"/Applications/MAMP/htdocs/dude/styles/scss/colors.scss",
+		"/Users/marshallbanana/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/marshallbanana/Library/Application Support/Sublime Text 3/Packages/User/ColorHighlighter.sublime-settings",
 		"/Applications/MAMP/htdocs/dude/styles/scss/form.scss",
-		"/Applications/MAMP/htdocs/dude/index.html",
+		"/Applications/MAMP/htdocs/dude/styles/scss/layout.scss",
 		"/Applications/MAMP/htdocs/dude/styles/scss/typography.scss",
 		"/Applications/MAMP/htdocs/dude/styles/scss/basics.scss",
-		"/Applications/MAMP/htdocs/dude/styles/scss/colors.scss",
+		"/Applications/MAMP/htdocs/dude/index.html",
+		"/Applications/MAMP/htdocs/dude/project.html",
+		"/Applications/MAMP/htdocs/dude/index-letter.html",
+		"/Applications/MAMP/htdocs/dude/home.html",
+		"/Applications/MAMP/htdocs/dude/styles/scss/utilities.scss",
+		"/Applications/MAMP/htdocs/sempiternity/workspace/styles/scss/utilities.scss",
+		"/Applications/MAMP/htdocs/dude/scripts/js/main.js",
+		"/Applications/MAMP/htdocs/dude/styles/scss/print.scss",
+		"/Applications/MAMP/htdocs/dude/styles/scss/normalize.scss",
 		"/Applications/MAMP/htdocs/agrilaete/.htaccess",
 		"/Users/marshallbanana/Library/Application Support/Sublime Text 3/Packages/User/CSScomb.sublime-settings",
 		"/Users/marshallbanana/Library/Application Support/Sublime Text 3/Packages/CSScomb/CSScomb.sublime-settings",
@@ -317,13 +387,7 @@
 		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/head.xsl",
 		"/Applications/MAMP/htdocs/sitefolio-2/workspace/styles/scss/typography.scss",
 		"/Applications/MAMP/htdocs/sitefolio-2/workspace/styles/scss/layout.scss",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/foot.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/pages/projects.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/get-video.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/get-page-home.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/get-page.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/pages/home.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/get-cover.xsl"
+		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/foot.xsl"
 	],
 	"find":
 	{
@@ -351,6 +415,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"none",
+			"resize",
+			"notation",
+			"$weak-field-color:",
+			"notation",
 			"$m-tiny-line",
 			"$d-tiny-line",
 			"$d-tiny-size",
@@ -473,12 +542,7 @@
 			"em($dhgut, 18)",
 			"mail-me",
 			"content",
-			"img",
-			"isotope",
-			"small",
-			"medium",
-			"large",
-			"body"
+			"img"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -571,8 +635,188 @@
 	"groups":
 	[
 		{
+			"selected": 5,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5849,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1879,
+								1879
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Github (SL).tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 489.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "project.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6226,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1952,
+								1952
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Github (SL).tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 354.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "styles/scss/utilities.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2730,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								534,
+								534
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Github (SL).tmTheme",
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 478.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "styles/scss/form.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6849,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								554,
+								539
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Github (SL).tmTheme",
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 168.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "styles/scss/layout.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10481,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9882,
+								9878
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Github (SL).tmTheme",
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 8436.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Applications/MAMP/htdocs/sketch-grid-00/styles/scss/main.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 283,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Github (SL).tmTheme",
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
