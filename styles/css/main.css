@@ -913,16 +913,16 @@ textarea {
 /*
  * Placeholders
  */
-pre, .head, .body, .comment, .to-comment, .to-search, .notation, [class^="form"] {
+pre, .head, .body, .comment, .to-comment, .to-search, .notation, [class^="github"], [class^="form"] {
   position: relative;
   padding-right: 0.5em;
   padding-left: 0.5em; }
   @media only screen and (min-width: 36em) {
-    pre, .head, .body, .comment, .to-comment, .to-search, .notation, [class^="form"] {
+    pre, .head, .body, .comment, .to-comment, .to-search, .notation, [class^="github"], [class^="form"] {
       padding-right: 1em;
       padding-left: 1em; } }
 
-.notation, [class^="form"], [class^="form"] button,
+.notation, [class^="github"], [class^="form"], [class^="form"] button,
 [class^="form"] input[type="submit"] {
   margin-right: auto;
   margin-left: auto; }
@@ -1113,10 +1113,12 @@ body {
   max-width: 90em;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 6em; }
+  padding-top: 6em;
+  padding-bottom: 6em; }
   @media only screen and (min-width: 36em) {
     .content {
-      padding-top: 6em; } }
+      padding-top: 6em;
+      padding-bottom: 6em; } }
 
 .head {
   margin-right: auto;
@@ -1391,7 +1393,7 @@ body {
       font-size: 0.875em;
       line-height: 1.71429em; } }
 
-[class^="note-icon-thanks"] span:after {
+[class^="note-icon"] span:after {
   background-repeat: no-repeat;
   background-image: url("../../media/icons/thanks.svg");
   background-position: center center;
@@ -1399,8 +1401,34 @@ body {
   opacity: 0.4;
   padding-left: 2em; }
 @media only screen and (min-width: 36em) {
-  [class^="note-icon-thanks"] span:after {
+  [class^="note-icon"] span:after {
     padding-left: 2em; } }
+
+.note-icon-thanks span:after {
+  background-image: url("../../media/icons/thanks.svg"); }
+
+[class^="github"] {
+  width: 75%;
+  text-align: center; }
+  [class^="github"] a {
+    display: block;
+    font-size: 0.875em;
+    line-height: 1.71429em; }
+  [class^="github"] span {
+    margin-top: 0.76923em;
+    display: block;
+    font-size: 0.8125em;
+    line-height: 1.53846em; }
+  @media only screen and (min-width: 36em) {
+    [class^="github"] {
+      width: 18em; }
+      [class^="github"] a {
+        font-size: 0.875em;
+        line-height: 1.71429em; }
+      [class^="github"] span {
+        margin-top: 0.76923em;
+        font-size: 0.8125em;
+        line-height: 1.53846em; } }
 
 /* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
 ::-webkit-input-placeholder {

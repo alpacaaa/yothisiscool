@@ -245,9 +245,11 @@ body {
 	margin-right: auto;
 	margin-left: auto;
 	padding-top: rhythm($m-medium-line*4);
+	padding-bottom: rhythm($m-medium-line*4);
 
 	@include respond-to(break3) {
 		padding-top: rhythm($d-medium-line*4);
+		padding-bottom: rhythm($d-medium-line*4);
 	}
 }
 
@@ -538,8 +540,7 @@ body {
 		@include adjust-font-size-to($d-small-size, $d-small-line);
 	}
 }
-
-[class^="note-icon-thanks"] {
+[class^="note-icon"] {
 	span {
 		&:after {
 			background-repeat: no-repeat;
@@ -555,6 +556,39 @@ body {
 			&:after {
 				padding-left: em(32px, $d-medium-size);
 			}
+		}
+	}
+}
+.note-icon-thanks {
+	span {
+		&:after {
+			background-image: url("../../media/icons/thanks.svg");
+		}
+	}
+}
+
+[class^="github"] {
+	@extend %column-gut;
+	@extend %centered;
+	width: 75%;
+	text-align: center;
+	a {
+		display: block;
+		@include adjust-font-size-to($m-small-size, $m-small-line);
+	}
+	span {
+		margin-top: rhythm($m-extra-small-line/2, $m-extra-small-size);
+		display: block;
+		@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
+	}
+	@include respond-to(break3) {
+		width: col(4);
+		a {
+			@include adjust-font-size-to($d-small-size, $d-small-line);
+		}
+		span {
+			margin-top: rhythm($d-extra-small-line/2, $d-extra-small-size);
+			@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
 		}
 	}
 }
