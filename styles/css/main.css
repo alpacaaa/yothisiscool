@@ -913,16 +913,16 @@ textarea {
 /*
  * Placeholders
  */
-pre, .head, .body, .comment, .to-comment, .to-search, .notation, [class^="github"], [class^="form"] {
+pre, .head, .body, .comment, .to-comment, .to-search, .notation, [class^="action"], [class^="form"] {
   position: relative;
   padding-right: 0.5em;
   padding-left: 0.5em; }
   @media only screen and (min-width: 36em) {
-    pre, .head, .body, .comment, .to-comment, .to-search, .notation, [class^="github"], [class^="form"] {
+    pre, .head, .body, .comment, .to-comment, .to-search, .notation, [class^="action"], [class^="form"] {
       padding-right: 1em;
       padding-left: 1em; } }
 
-.notation, [class^="github"], [class^="form"], [class^="form"] button,
+.notation, [class^="action"], [class^="form"], [class^="form"] button,
 [class^="form"] input[type="submit"] {
   margin-right: auto;
   margin-left: auto; }
@@ -1113,12 +1113,10 @@ body {
   max-width: 90em;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 6em;
-  padding-bottom: 6em; }
+  padding-top: 6em; }
   @media only screen and (min-width: 36em) {
     .content {
-      padding-top: 6em;
-      padding-bottom: 6em; } }
+      padding-top: 6em; } }
 
 .head {
   margin-right: auto;
@@ -1142,11 +1140,7 @@ body {
 
 .feet {
   clear: both;
-  overflow: hidden;
-  padding-bottom: 6em; }
-  @media only screen and (min-width: 36em) {
-    .feet {
-      padding-bottom: 6em; } }
+  overflow: hidden; }
 
 .author .avatar {
   opacity: 0.9;
@@ -1216,46 +1210,50 @@ body {
       width: 18em;
       margin-bottom: 3em; } }
 
-.letters, .projects, .comments {
+.letters {
+  padding-bottom: 6em;
   position: relative;
   width: 100%;
   margin-right: auto;
   margin-left: auto; }
   @media only screen and (min-width: 36em) {
-    .letters, .projects, .comments {
+    .letters {
+      padding-bottom: 6em;
       width: 36em;
       -moz-column-rule: 1px solid rgba(0, 0, 0, 0.05);
       -webkit-column-rule: 1px solid rgba(0, 0, 0, 0.05);
       column-rule: 1px solid rgba(0, 0, 0, 0.05);
-      -moz-column-count: 2;
-      -webkit-column-count: 2;
-      column-count: 2;
+      -moz-column-count: 4;
+      -webkit-column-count: 4;
+      column-count: 4;
       -moz-column-gap: 0;
       -webkit-column-gap: 0;
       column-gap: 0;
-      -moz-column-width: 18em;
-      -webkit-column-width: 18em;
-      column-width: 18em; } }
+      -moz-column-width: 9em;
+      -webkit-column-width: 9em;
+      column-width: 9em; } }
   @media only screen and (min-width: 60em) {
-    .letters, .projects, .comments {
+    .letters {
       width: 54em;
-      -moz-column-count: 3;
-      -webkit-column-count: 3;
-      column-count: 3; } }
+      -moz-column-count: 6;
+      -webkit-column-count: 6;
+      column-count: 6; } }
   @media only screen and (min-width: 80em) {
-    .letters, .projects, .comments {
+    .letters {
       width: 72em;
-      -moz-column-count: 4;
-      -webkit-column-count: 4;
-      column-count: 4; } }
+      -moz-column-count: 8;
+      -webkit-column-count: 8;
+      column-count: 8; } }
 
-.letter, .project {
+.letter {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   font-size: 1em;
   line-height: 1.5em; }
-  .letter:last-child, .project:last-child {
+  .letter:last-child {
     border-bottom: none; }
-  .letter a, .project a {
+  .letter a {
+    position: relative;
+    text-align: center;
     font-weight: 400;
     display: block;
     padding-top: 0.75em;
@@ -1278,22 +1276,16 @@ body {
     -moz-transition-delay: 0s, 0s;
     -o-transition-delay: 0s, 0s;
     -webkit-transition-delay: 0s, 0s;
-    transition-delay: 0s, 0s;
-    /*&:focus {
-    	color: $focus;
-    }
-    &:hover {
-    	color: $hover;
-    }
-    &:active {
-    	color: $active;
-    }*/ }
-    .letter a i, .project a i {
+    transition-delay: 0s, 0s; }
+    .letter a i {
       font-weight: 500;
       font-style: normal;
+      display: block;
       color: rgba(0, 0, 0, 0.8); }
-    .letter a .amount, .project a .amount {
-      float: right;
+    .letter a .amount {
+      position: absolute;
+      right: 0;
+      top: 0;
       color: rgba(0, 0, 0, 0.4);
       -moz-transition-property: color;
       -o-transition-property: color;
@@ -1311,39 +1303,12 @@ body {
       -o-transition-delay: 0s;
       -webkit-transition-delay: 0s;
       transition-delay: 0s; }
-      .letter a .amount:after, .project a .amount:after {
-        opacity: 0.4;
-        font-weight: 400;
-        background-repeat: no-repeat;
-        background-image: url("../../media/icons/thanks.svg");
-        background-position: right center;
-        padding-left: 1.5em;
-        content: "";
-        -moz-transition-property: opacity;
-        -o-transition-property: opacity;
-        -webkit-transition-property: opacity;
-        transition-property: opacity;
-        -moz-transition-duration: 0.2s;
-        -o-transition-duration: 0.2s;
-        -webkit-transition-duration: 0.2s;
-        transition-duration: 0.2s;
-        -moz-transition-timing-function: ease-in-out;
-        -o-transition-timing-function: ease-in-out;
-        -webkit-transition-timing-function: ease-in-out;
-        transition-timing-function: ease-in-out;
-        -moz-transition-delay: 0s;
-        -o-transition-delay: 0s;
-        -webkit-transition-delay: 0s;
-        transition-delay: 0s; }
-    .letter a:hover, .project a:hover {
+    .letter a:hover {
       -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
       -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
       box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
-      /*border-bottom: $border-width solid $border-color;
-      border-top: $border-width solid $border-color;
-      border-left: $border-width solid $border-color;*/
       background-color: rgba(0, 0, 0, 0.05); }
-    .letter a:active, .project a:active {
+    .letter a:active {
       -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
       -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
       box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
@@ -1353,25 +1318,186 @@ body {
       -webkit-transition-duration: 0.0625s;
       transition-duration: 0.0625s; }
   @media only screen and (min-width: 36em) {
-    .letter, .project {
+    .letter {
+      border-bottom: none;
+      -moz-page-break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      break-inside: avoid;
+      font-size: 0.8125em;
+      line-height: 1.53846em; }
+      .letter a {
+        padding-top: 0.92308em;
+        padding-right: 1.23077em;
+        padding-bottom: 0.92308em;
+        padding-left: 1.23077em; }
+        .letter a .initial {
+          font-size: 5.53846em;
+          line-height: 1em; }
+        .letter a .word {
+          font-size: 1.07692em;
+          line-height: 1.71429em; }
+        .letter a .amount {
+          -moz-transition-property: opacity;
+          -o-transition-property: opacity;
+          -webkit-transition-property: opacity;
+          transition-property: opacity;
+          -moz-transition-duration: 0.2s;
+          -o-transition-duration: 0.2s;
+          -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+          -moz-transition-timing-function: ease-in-out;
+          -o-transition-timing-function: ease-in-out;
+          -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+          -moz-transition-delay: 0s;
+          -o-transition-delay: 0s;
+          -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+          right: 0.92308em;
+          top: 1.23077em;
+          opacity: 0.2; }
+        .letter a:hover .amount, .letter a:active .amount {
+          opacity: 1.0; } }
+
+.projects, .comments {
+  padding-bottom: 6em;
+  position: relative;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto; }
+  @media only screen and (min-width: 36em) {
+    .projects, .comments {
+      padding-bottom: 6em;
+      width: 36em;
+      -moz-column-rule: 1px solid rgba(0, 0, 0, 0.05);
+      -webkit-column-rule: 1px solid rgba(0, 0, 0, 0.05);
+      column-rule: 1px solid rgba(0, 0, 0, 0.05);
+      -moz-column-count: 2;
+      -webkit-column-count: 2;
+      column-count: 2;
+      -moz-column-gap: 0;
+      -webkit-column-gap: 0;
+      column-gap: 0;
+      -moz-column-width: 18em;
+      -webkit-column-width: 18em;
+      column-width: 18em; } }
+  @media only screen and (min-width: 60em) {
+    .projects, .comments {
+      width: 54em;
+      -moz-column-count: 3;
+      -webkit-column-count: 3;
+      column-count: 3; } }
+  @media only screen and (min-width: 80em) {
+    .projects, .comments {
+      width: 72em;
+      -moz-column-count: 4;
+      -webkit-column-count: 4;
+      column-count: 4; } }
+
+.project {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 1em;
+  line-height: 1.5em; }
+  .project:last-child {
+    border-bottom: none; }
+  .project a {
+    font-weight: 400;
+    display: block;
+    padding-top: 0.75em;
+    padding-right: 0.5em;
+    padding-bottom: 0.75em;
+    padding-left: 0.5em;
+    color: rgba(0, 0, 0, 0.4);
+    -moz-transition-property: background-color, box-shadow;
+    -o-transition-property: background-color, box-shadow;
+    -webkit-transition-property: background-color, box-shadow;
+    transition-property: background-color, box-shadow;
+    -moz-transition-duration: 0.2s, 0.2s;
+    -o-transition-duration: 0.2s, 0.2s;
+    -webkit-transition-duration: 0.2s, 0.2s;
+    transition-duration: 0.2s, 0.2s;
+    -moz-transition-timing-function: ease-in-out, ease-in-out;
+    -o-transition-timing-function: ease-in-out, ease-in-out;
+    -webkit-transition-timing-function: ease-in-out, ease-in-out;
+    transition-timing-function: ease-in-out, ease-in-out;
+    -moz-transition-delay: 0s, 0s;
+    -o-transition-delay: 0s, 0s;
+    -webkit-transition-delay: 0s, 0s;
+    transition-delay: 0s, 0s; }
+    .project a i {
+      font-weight: 500;
+      font-style: normal;
+      color: rgba(0, 0, 0, 0.8); }
+    .project a .amount {
+      float: right;
+      color: rgba(0, 0, 0, 0.4); }
+      .project a .amount:after {
+        opacity: 0.4;
+        font-weight: 400;
+        background-repeat: no-repeat;
+        background-image: url("../../media/icons/thanks.svg");
+        background-position: right center;
+        padding-left: 1.5em;
+        content: ""; }
+    .project a:hover {
+      -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
+      -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
+      /*border-bottom: $border-width solid $border-color;
+      border-top: $border-width solid $border-color;
+      border-left: $border-width solid $border-color;*/
+      background-color: rgba(0, 0, 0, 0.05); }
+    .project a:active {
+      -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
+      -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
+      background-color: rgba(211, 34, 152, 0.2);
+      -moz-transition-duration: 0.0625s;
+      -o-transition-duration: 0.0625s;
+      -webkit-transition-duration: 0.0625s;
+      transition-duration: 0.0625s; }
+  @media only screen and (min-width: 36em) {
+    .project {
       border-bottom: none;
       -moz-page-break-inside: avoid;
       -webkit-column-break-inside: avoid;
       break-inside: avoid;
       font-size: 1em;
       line-height: 1.5em; }
-      .letter a, .project a {
+      .project a {
         padding-top: 0.75em;
         padding-right: 1em;
         padding-bottom: 0.75em;
         padding-left: 1em; }
-        .letter a .amount, .project a .amount {
-          opacity: 0.2; }
-        .letter a:hover .amount, .letter a:active .amount, .project a:hover .amount, .project a:active .amount {
+        .project a .amount {
+          opacity: 0.2;
+          -moz-transition-property: opacity;
+          -o-transition-property: opacity;
+          -webkit-transition-property: opacity;
+          transition-property: opacity;
+          -moz-transition-duration: 0.2s;
+          -o-transition-duration: 0.2s;
+          -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+          -moz-transition-timing-function: ease-in-out;
+          -o-transition-timing-function: ease-in-out;
+          -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+          -moz-transition-delay: 0s;
+          -o-transition-delay: 0s;
+          -webkit-transition-delay: 0s;
+          transition-delay: 0s; }
+        .project a:hover .amount, .project a:active .amount {
           opacity: 1.0; } }
 
 .notation {
-  width: 100%; }
+  width: 100%;
+  /*@include respond-to(break5) {
+  	width: col(12);
+  }
+  @include respond-to(break7) {
+  	width: col(16);
+  }*/ }
   @media only screen and (min-width: 36em) {
     .notation {
       width: 36em; } }
@@ -1407,25 +1533,27 @@ body {
 .note-icon-thanks span:after {
   background-image: url("../../media/icons/thanks.svg"); }
 
-[class^="github"] {
+[class^="action"] {
+  padding-bottom: 6em;
   width: 75%;
   text-align: center; }
-  [class^="github"] a {
+  [class^="action"] a {
     display: block;
     font-size: 0.875em;
     line-height: 1.71429em; }
-  [class^="github"] span {
+  [class^="action"] span {
     margin-top: 0.76923em;
     display: block;
     font-size: 0.8125em;
     line-height: 1.53846em; }
   @media only screen and (min-width: 36em) {
-    [class^="github"] {
+    [class^="action"] {
+      padding-bottom: 6em;
       width: 18em; }
-      [class^="github"] a {
+      [class^="action"] a {
         font-size: 0.875em;
         line-height: 1.71429em; }
-      [class^="github"] span {
+      [class^="action"] span {
         margin-top: 0.76923em;
         font-size: 0.8125em;
         line-height: 1.53846em; } }
