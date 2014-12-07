@@ -1216,47 +1216,38 @@ body {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  -moz-column-rule: 1px solid rgba(0, 0, 0, 0.05);
-  -webkit-column-rule: 1px solid rgba(0, 0, 0, 0.05);
-  column-rule: 1px solid rgba(0, 0, 0, 0.05);
-  -moz-column-gap: 0;
-  -webkit-column-gap: 0;
-  column-gap: 0;
-  -moz-column-count: 2;
-  -webkit-column-count: 2;
-  column-count: 2;
-  -moz-column-width: 50%;
-  -webkit-column-width: 50%;
-  column-width: 50%; }
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-align-content: flex-start;
+  align-content: flex-start; }
   @media only screen and (min-width: 36em) {
     .letters {
       padding-bottom: 6em;
-      width: 36em;
-      -moz-column-count: 4;
-      -webkit-column-count: 4;
-      column-count: 4;
-      -moz-column-width: 9em;
-      -webkit-column-width: 9em;
-      column-width: 9em; } }
+      width: 36em; } }
   @media only screen and (min-width: 60em) {
     .letters {
-      width: 54em;
-      -moz-column-count: 6;
-      -webkit-column-count: 6;
-      column-count: 6; } }
+      width: 54em; } }
   @media only screen and (min-width: 80em) {
     .letters {
-      width: 72em;
-      -moz-column-count: 8;
-      -webkit-column-count: 8;
-      column-count: 8; } }
+      width: 72em; } }
 
 .letter {
-  font-size: 0.8125em;
-  line-height: 1.53846em; }
+  width: 50%;
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  flex-shrink: 1; }
   .letter:last-child {
     border-bottom: none; }
   .letter a {
+    font-size: 0.8125em;
+    line-height: 1.53846em;
     position: relative;
     text-align: center;
     font-weight: 400;
@@ -1330,12 +1321,10 @@ body {
       transition-duration: 0.0625s; }
   @media only screen and (min-width: 36em) {
     .letter {
-      -moz-page-break-inside: avoid;
-      -webkit-column-break-inside: avoid;
-      break-inside: avoid;
-      font-size: 0.8125em;
-      line-height: 1.53846em; }
+      width: 9em; }
       .letter a {
+        font-size: 0.8125em;
+        line-height: 1.53846em;
         padding-top: 1.84615em;
         padding-right: 1.23077em;
         padding-bottom: 1.84615em;
