@@ -25,16 +25,6 @@
  * Istances
  */
 
-/*body {
-	display: flex;
-	min-height: 100vh;
-	flex-direction: column;
-}
-
-.content {
-	flex: 1;
-}*/
-
 body {
 	display: table;
 
@@ -83,7 +73,6 @@ body {
 
 	@include perspective(100em);
 	li {
-		//overflow: hidden;
 		height: em(40px, $m-small-size);
 
 		text-transform: uppercase;
@@ -105,34 +94,31 @@ body {
 		&:hover {
 			span {
 				color: $strong-type-color;
-				@include box-shadow(0 1px 4px 0 $shadow-color inset);
 				background-color: $hover-background-color;
 
+				@include box-shadow(0 1px 4px 0 $shadow-color inset);
 				//@include rotate3d(0, 0, 0, 0);
 			}
 		}
 		&:active {
 			span {
 				color: $strong-type-color;
-				@include box-shadow(0 1px 4px 0 $shadow-color inset);
 				background-color: $active-background-color;
 
+				@include box-shadow(0 1px 4px 0 $shadow-color inset);
 				@include transition-duration(0.0625s);
 			}
 		}
 		span {
 			display: block;
 
-			@include border-radius($radius);
-
 			height: 100%;
-			//border: 1px solid red;
 			padding-top: em(8px, $m-small-size);
 			padding-bottom: em(8px, $m-small-size);
-			//text-indent: 9999px;
 
 			background-repeat: no-repeat;
 
+			@include border-radius($radius);
 			@include transition-property(background-color, box-shadow, transform);
 			@include transition-duration(0.2s, 0.2s, 0.2s);
 			@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
@@ -141,7 +127,21 @@ body {
 	}
 	.current {
 		span {
-			//background-color: $strong-type-color;
+			cursor: default;
+
+			color: $strong-type-color;
+			background-color: $hover-background-color;
+
+			@include box-shadow(0 1px 4px 0 $shadow-color inset);
+		}
+		&:active {
+			span {
+				color: $strong-type-color;
+				background-color: $active-background-color;
+
+				@include box-shadow(0 1px 4px 0 $shadow-color inset);
+				@include transition-duration(0.0625s);
+			}
 		}
 	}
 	.home {
@@ -278,15 +278,8 @@ body {
 	}
 }
 
-.feet {
-	clear: both;
-	overflow: hidden;
-}
-
 .author {
 	.avatar {
-		opacity: 0.9;
-		@include border-radius(4px);
 		font-size: 1em;
 
 		float: left;
@@ -294,13 +287,16 @@ body {
 		width: em(42);
 		height: em(42);
 		margin: em(7) em(12) em(7) 0;
+
+		opacity: 0.9;
+
+		@include border-radius(4px);
 	}
 	.tributary {
 		font-weight: $normal;
 		font-style: normal;
 
 		color: $light-type-color;
-		//@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
 	}
 	@include respond-to(break3) {
 		.avatar {
@@ -308,89 +304,59 @@ body {
 			height: em(48);
 			margin: em(8) em(16) em(8) 0;
 		}
-		.tributary {
-			//@include adjust-font-size-to($d-small-size, $d-small-line, $d-medium-size);
-		}
 	}
 }
 
-.comment {
-	border-bottom: $border-width solid $border-color;
-	font-weight: $bold;
-	//flex-grow: 0;
-	//flex-shrink: 1;
-
+.notation {
 	width: 100%;
-	padding-top: rhythm($m-medium-line);
-	padding-bottom: rhythm($m-medium-line);
+	padding-bottom: rhythm($m-small-line*2);
 
-	@include break-inside(avoid);
+	text-align: center;
+
+	background-image: url("../../media/icons/notation.svg");
+	background-repeat: repeat-y;
+	background-position: top center;
+
 	@extend %column-gut;
-	.avatar {
-		opacity: 0.9;
-		@include border-radius(4px);
-		//border: 2px solid $picture-border-color;
-		font-size: 1em;
-
-		float: left;
-
-		width: em(36);
-		height: em(36);
-		margin: em(6) em(12) em(6) 0;
-	}
-	.tributary {
+	@extend %centered;
+	h3 {
 		font-weight: $normal;
-		font-style: normal;
+
+		display: inline-block;
+
+		text-align: center;
 
 		color: $light-type-color;
+		border-bottom: $border-width solid $border-color;
+		background-color: $background-color;
 
-		@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
+		@include adjust-font-size-to($m-small-size, $m-small-line);
 	}
 	@include respond-to(break3) {
-		border-bottom: 0 solid $border-color;
-		width: col(4);
-		padding-top: rhythm($d-medium-line);
-		padding-bottom: rhythm($d-medium-line);
-		.avatar {
-			width: em(36);
-			height: em(36);
-			margin: em(6) em(12) em(6) 0;
-		}
-		.tributary {
-			@include adjust-font-size-to($d-small-size, $d-small-line, $d-medium-size);
+		width: col(8);
+		padding-bottom: rhythm($d-small-line*2);
+		h3 {
+			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
 	}
 }
 
-.to-comment, .to-search {
-	margin-right: auto;
-	margin-bottom: rhythm($m-medium-line*2);
-	margin-left: auto;
-
-	@extend %column-gut;
-	@include respond-to(break3) {
-		width: col(4);
-		margin-bottom: rhythm($d-medium-line*2);
-	}
-}
-
-.letters {
-	padding-bottom: rhythm($m-medium-line*4);
+.letters, .projects {
 	position: relative;
 
 	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
+	padding-bottom: rhythm($m-medium-line*4);
 
 	@include display-flex(flex);
 	@include flex-flow(row wrap);
 	@include justify-content(center);
 	@include align-items(flex-start);
 	@include align-content(flex-start);
-
 	@include respond-to(break3) {
-		padding-bottom: rhythm($d-medium-line*4);
 		width: col(8);
+		padding-bottom: rhythm($d-medium-line*4);
 	}
 	@include respond-to(break5) {
 		width: col(12);
@@ -405,15 +371,13 @@ body {
 
 	@include flex-grow(0);
 	@include flex-shrink(1);
-
 	&:last-child {
 		border-bottom: none;
 	}
 	a {
-		@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
-		position: relative;
-		text-align: center;
 		font-weight: $normal;
+
+		position: relative;
 
 		display: block;
 
@@ -422,17 +386,21 @@ body {
 		padding-bottom: rhythm($m-medium-line, $m-extra-small-size);
 		padding-left: em($m-gut/2, $m-extra-small-size);
 
+		text-align: center;
+
 		color: $light-type-color;
 
+		@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
 		@include transition-property(background-color, box-shadow);
 		@include transition-duration(0.2s, 0.2s);
 		@include transition-timing-function(ease-in-out, ease-in-out);
 		@include transition-delay(0s, 0s);
-
 		i {
 			font-weight: $bold;
 			font-style: normal;
+
 			display: block;
+
 			color: $strong-type-color;
 		}
 		.initial {
@@ -454,25 +422,26 @@ body {
 			@include transition-delay(0s);
 		}
 		&:hover {
-			@include box-shadow(0 1px 4px 0 $shadow-color inset);
 			background-color: $hover-background-color;
+
+			@include box-shadow(0 1px 4px 0 $shadow-color inset);
 		}
 		&:active {
-			@include box-shadow(0 1px 4px 0 $shadow-color inset);
 			background-color: $active-background-color;
 
+			@include box-shadow(0 1px 4px 0 $shadow-color inset);
 			@include transition-duration(0.0625s);
 		}
 	}
 	@include respond-to(break3) {
 		width: col(2);
-
 		a {
-			@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
 			padding-top: rhythm($d-medium-line, $d-extra-small-size);
 			padding-right: em($d-gut/2, $d-extra-small-size);
 			padding-bottom: rhythm($d-medium-line, $d-extra-small-size);
 			padding-left: em($d-gut/2, $d-extra-small-size);
+
+			@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
 			.initial {
 				@include adjust-font-size-to($d-huge-size, $d-huge-line, $d-extra-small-size);
 			}
@@ -480,13 +449,15 @@ body {
 				@include adjust-font-size-to($d-small-size, $d-small-line, $d-extra-small-size);
 			}
 			.amount {
+				top: rhythm($d-medium-line, $d-extra-small-size);
+				right: em($d-gut/2, $d-extra-small-size);
+
+				opacity: 0.2;
+
 				@include transition-property(opacity);
 				@include transition-duration(0.2s);
 				@include transition-timing-function(ease-in-out);
 				@include transition-delay(0s);
-				top: rhythm($d-medium-line, $d-extra-small-size);
-				right: em($d-gut/2, $d-extra-small-size);
-				opacity: 0.2;
 			}
 			&:hover, &:active {
 				.amount {
@@ -497,38 +468,13 @@ body {
 	}
 }
 
-.projects, .comments {
-	padding-bottom: rhythm($m-medium-line*4);
-	position: relative;
-
-	width: 100%;
-	margin-right: auto;
-	margin-left: auto;
-
-	@include respond-to(break3) {
-		padding-bottom: rhythm($d-medium-line*4);
-		width: col(8);
-
-		@include column-rule($border-width, solid, $border-color);
-		@include column-count(2);
-		@include column-gap(0);
-		@include column-width(col(4));
-	}
-	@include respond-to(break5) {
-		width: col(12);
-
-		@include column-count(3);
-	}
-	@include respond-to(break7) {
-		width: col(16);
-
-		@include column-count(4);
-	}
-}
-
 .project {
+	width: 100%;
+
 	border-bottom: $border-width solid $border-color;
 
+	@include flex-grow(0);
+	@include flex-shrink(1);
 	@include adjust-font-size-to($m-medium-size, $m-medium-line);
 	&:last-child {
 		border-bottom: none;
@@ -559,37 +505,39 @@ body {
 			float: right;
 
 			color: $light-type-color;
-
 			&:after {
-				opacity: 0.4;
 				font-weight: $normal;
-
-				background-repeat: no-repeat;
-				background-image: url("../../media/icons/thanks.svg");
-				background-position: right center;
-
 				//padding-right: 0.2em;
+
 				padding-left: em(24px, $m-medium-size);
 
 				content: "";
+
+				opacity: 0.4;
+				background-image: url("../../media/icons/thanks.svg");
+				background-repeat: no-repeat;
+				background-position: right center;
 				//content: " \00D7 ";
 			}
 		}
 		&:hover {
-			@include box-shadow(0 1px 4px 0 $shadow-color inset);
 			/*border-bottom: $border-width solid $border-color;
 			border-top: $border-width solid $border-color;
 			border-left: $border-width solid $border-color;*/
 			background-color: $hover-background-color;
+
+			@include box-shadow(0 1px 4px 0 $shadow-color inset);
 		}
 		&:active {
-			@include box-shadow(0 1px 4px 0 $shadow-color inset);
 			background-color: $active-background-color;
 
+			@include box-shadow(0 1px 4px 0 $shadow-color inset);
 			@include transition-duration(0.0625s);
 		}
 	}
 	@include respond-to(break3) {
+		width: col(4);
+
 		border-bottom: none;
 
 		@include column-break-inside(avoid);
@@ -601,6 +549,7 @@ body {
 			padding-left: em($d-gut/2, $d-medium-size);
 			.amount {
 				opacity: 0.2;
+
 				@include transition-property(opacity);
 				@include transition-duration(0.2s);
 				@include transition-timing-function(ease-in-out);
@@ -615,79 +564,94 @@ body {
 	}
 }
 
-.notation {
-	background-repeat: repeat-y;
-	background-image: url("../../media/icons/notation.svg");
-	background-position: top center;
-	@extend %column-gut;
-	@extend %centered;
+.comments {
+	position: relative;
+
 	width: 100%;
-	padding-bottom: rhythm($m-small-line*2);
+	margin-right: auto;
+	margin-left: auto;
+	padding-bottom: rhythm($m-medium-line*4);
+
 	@include respond-to(break3) {
 		width: col(8);
-		padding-bottom: rhythm($d-small-line*2);
+		padding-bottom: rhythm($d-medium-line*4);
+
+		@include column-rule($border-width, solid, $border-color);
+		@include column-count(2);
+		@include column-gap(0);
+		@include column-width(col(4));
 	}
-	/*@include respond-to(break5) {
+	@include respond-to(break5) {
 		width: col(12);
+
+		@include column-count(3);
 	}
 	@include respond-to(break7) {
 		width: col(16);
-	}*/
+
+		@include column-count(4);
+	}
 }
 
-[class^="note"] {
-	@extend %centered;
-	background-color: $background-color;
-	color: $light-type-color;
-	width: 50%;
-	text-align: center;
-	
+.comment {
+	font-weight: $bold;
+	//flex-grow: 0;
+	//flex-shrink: 1;
+
+	width: 100%;
+	padding-top: rhythm($m-medium-line);
+	padding-bottom: rhythm($m-medium-line);
 
 	border-bottom: $border-width solid $border-color;
 
-	@include adjust-font-size-to($m-small-size, $m-small-line);
+	@include break-inside(avoid);
+	@extend %column-gut;
+	.avatar {
+		font-size: 1em;
 
-	font-weight: $normal;
+		float: left;
 
-	@include adjust-font-size-to($m-small-size, $m-small-line);
+		width: em(36);
+		height: em(36);
+		margin: em(6) em(12) em(6) 0;
+
+		opacity: 0.9;
+
+		@include border-radius(4px);
+	}
+	.tributary {
+		font-weight: $normal;
+		font-style: normal;
+
+		color: $light-type-color;
+
+		@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
+	}
 	@include respond-to(break3) {
+		width: col(4);
+		padding-top: rhythm($d-medium-line);
+		padding-bottom: rhythm($d-medium-line);
 
-		@include adjust-font-size-to($d-small-size, $d-small-line);
-	}
-}
-[class^="note-icon"] {
-	span {
-		&:after {
-			background-repeat: no-repeat;
-			background-image: url("../../media/icons/thanks.svg");
-			background-position: center center;
-			content: "";
-			opacity: 0.4;
-			padding-left: em(32px, $m-medium-size);
+		border-bottom: 0 solid $border-color;
+		.avatar {
+			width: em(36);
+			height: em(36);
+			margin: em(6) em(12) em(6) 0;
 		}
-	}
-	@include respond-to(break3) {
-		span {
-			&:after {
-				padding-left: em(32px, $d-medium-size);
-			}
-		}
-	}
-}
-.note-icon-thanks {
-	span {
-		&:after {
-			background-image: url("../../media/icons/thanks.svg");
+		.tributary {
+			@include adjust-font-size-to($d-small-size, $d-small-line, $d-medium-size);
 		}
 	}
 }
 
 [class^="action"] {
+	width: 75%;
 	padding-bottom: rhythm($m-medium-line*4);
+
+	text-align: center;
+
 	@extend %column-gut;
 	@extend %centered;
-	width: 75%;
-	text-align: center;
 	.instruction {
 		@include adjust-font-size-to($m-small-size, $m-small-line);
 		span {
@@ -696,19 +660,21 @@ body {
 	}
 	.caption {
 		margin-top: rhythm($m-extra-small-line/2, $m-extra-small-size);
+
 		@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
 		span {
-			color: $color;
+			color: $em-type-color;
 		}
 	}
 	@include respond-to(break3) {
-		padding-bottom: rhythm($d-medium-line*4);
 		width: col(4);
+		padding-bottom: rhythm($d-medium-line*4);
 		.instruction {
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
 		.caption {
 			margin-top: rhythm($d-extra-small-line/2, $d-extra-small-size);
+
 			@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
 		}
 	}

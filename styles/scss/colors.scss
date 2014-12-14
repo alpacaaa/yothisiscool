@@ -7,64 +7,72 @@
 
 $black: #000;
 $white: #fff;
+$emphasis: hsl(320, 72, 48);
+$canvas: hsl(60, 80, 90);
 
-$color: rgba(hsl(320, 72, 48), 0.8);
+/*
+ * Typography
+ */
 
 $strong-type-color: rgba($black, 0.8);
 $type-color: rgba($black, 0.6);
 $light-type-color: rgba($black, 0.4);
 
-
-$ultra-light-type-color: rgba($black, 0.2);
+$em-type-color: rgba($emphasis, 0.8);
 
 $placeholder-type-color: rgba($black, 0.2);
 
 $selected-type-color: $strong-type-color;
 
 /*
- * Background
+ * Backgrounds
  */
 
-$background-color: hsl(60, 80, 90);
-$strong-background-color: #ddd;
-$selected-background-color: darken($background-color, 8%);
-$code-background-color: darken($background-color, 4%);
+$background-color: $canvas;
+$selected-background-color: rgba($black, 0.05);
+$code-background-color: rgba($black, 0.05);
 
 $hover-background-color: rgba($black, 0.05);
-$active-background-color: rgba(hsl(320, 72, 48), 0.2);
+$active-background-color: rgba($emphasis, 0.2);
 
+/*
+ * Borders
+ */
 
 $border-color: rgba($black, 0.05);
 
 /*
- * Field
+ * Shadows
  */
-
-$field-color: desaturate($color, 100%);
-$field-background-color:  rgba($white, 0.8);
-$field-border-color: rgba($black, 0.025);
-$strong-field-border-color: rgba($black, 0.1);
-$error-field-border-color: rgba(hsl(320, 72, 48), 0.2);
-/*
- * Button
- */
-
-$button-color: rgba(#fff, 0.95);
-$button-background-color: $color;
-$button-border-color: $color;
-$active-button-background-color: $strong-type-color;
-$active-button-border-color: $strong-type-color;
 
 $shadow-color: rgba($black, 0.05);
 
 /*
- * Picture
+ * Fields
  */
 
-$picture-border-color: $field-background-color;
-$picture-background-color: darken($background-color, 8%);
-$picture-shadow-color: darken($background-color, 12%);
+$field-background-color:  rgba($white, 0.8);
 
-$strong-border-color: red;
+$field-border-color: rgba($black, 0.025);
+$strong-field-border-color: rgba($black, 0.1);
+$error-field-border-color: rgba($emphasis, 0.2);
 
-$error: blue;
+/*
+ * Buttons
+ */
+
+$button-color: rgba($white, 0.95);
+
+$button-background-color: $em-type-color;
+$active-button-background-color: $strong-type-color;
+
+$button-border-color: $em-type-color;
+$active-button-border-color: $strong-type-color;
+
+/*
+ * Pictures
+ */
+
+$picture-background-color: $field-background-color;
+
+$picture-shadow-color: $shadow-color;

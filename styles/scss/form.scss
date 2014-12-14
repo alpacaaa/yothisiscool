@@ -28,10 +28,12 @@ button, input, textarea {
 }
 
 [class^="form"] {
-	background-repeat: repeat-y;
-	background-image: url("../../media/icons/notation.svg");
-	background-position: top center;
 	margin-bottom: rhythm($m-medium-line*2);
+
+	background-image: url("../../media/icons/notation.svg");
+	background-repeat: repeat-y;
+	background-position: top center;
+
 	@extend %column-gut;
 	@extend %centered;
 	input[type = "text"], input[type = "search"], textarea, button, input[type = "submit"] {
@@ -54,15 +56,14 @@ button, input, textarea {
 		@include adjust-font-size-to($m-medium-size, $m-medium-line);
 	}
 	input[type = "text"], input[type = "search"], textarea {
-		@include border-radius($radius);
-		border: $field-border-width solid $field-border-color;
-		background-color: $field-background-color;
 		width: 100%;
 		padding: rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut/2, $m-medium-size) rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut/2, $m-medium-size);
 
-
 		color: $type-color;
+		border: $field-border-width solid $field-border-color;
+		background-color: $field-background-color;
 
+		@include border-radius($radius);
 		@include adjust-font-size-to($m-medium-size, $m-medium-line);
 		&:focus, &:hover {
 			color: $strong-type-color;
@@ -81,30 +82,29 @@ button, input, textarea {
 		resize: none;
 	}
 	i {
-		color: $light-type-color;
 		font-style: normal;
 
 		display: block;
 
-		text-align: right;
-
-		@include adjust-font-size-to($m-small-size, $m-small-line);
 		margin-top: rhythm($m-small-line/4, $m-small-size);
 		padding-right: em($m-gut/2, $m-small-size);
 		padding-left: em($m-gut/2, $m-small-size);
+
+		text-align: right;
+
+		color: $light-type-color;
+
+		@include adjust-font-size-to($m-small-size, $m-small-line);
 		strong {
 			color: $type-color;
 		}
 	}
-	button,
-	input[type = "submit"] {
-		@extend %centered;
+	button, input[type = "submit"] {
 		font-weight: $normal;
-
-		width: 50%;
 
 		display: inline-block;
 
+		width: 50%;
 		height: rhythm($m-medium-line*1.5, $m-medium-size);
 		padding: rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut/2, $m-medium-size) rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut/2, $m-medium-size);
 
@@ -112,12 +112,13 @@ button, input, textarea {
 		border: $button-border-width solid $button-border-color;
 		background-color: $button-background-color;
 
+		@extend %centered;
 		@include adjust-font-size-to($m-medium-size, $m-medium-line);
 		@include border-radius(4px, 4px);
 		@include adjust-font-size-to($m-medium-size, $m-medium-line);
 		&:active, &:hover {
-			background-color: $active-button-background-color;
 			border-color: $active-button-border-color;
+			background-color: $active-button-background-color;
 		}
 		&:active {
 			@include transition-duration(0s, 0s);
@@ -127,8 +128,7 @@ button, input, textarea {
 		margin-right: auto;
 		margin-left: auto;
 	}
-	.field,
-	.button {
+	.field, .button {
 		margin-bottom: rhythm($m-medium-line);
 	}
 	.button {
@@ -136,13 +136,13 @@ button, input, textarea {
 	}
 	.error {
 		input[type = "text"], input[type = "search"], textarea {
+			color: $em-type-color;
 			border-color: $error-field-border-color;
-			color: $color;
 		}
 	}
 	@include respond-to(break3) {
-		margin-bottom: rhythm($d-medium-line*2);
 		width: col(8);
+		margin-bottom: rhythm($d-medium-line*2);
 		label {
 			margin-bottom: rhythm($d-medium-line/4, $d-medium-size);
 			margin-left: em($d-gut/2, $d-medium-size);
@@ -161,33 +161,19 @@ button, input, textarea {
 			margin-top: rhythm($d-small-line/4, $d-small-size);
 			padding-right: em($d-gut/2, $d-small-size);
 			padding-left: em($d-gut/2, $d-small-size);
+
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
-		button,
-		input[type = "submit"] {
+		button, input[type = "submit"] {
+			width: col(3, $d-medium-size);
 			height: rhythm($d-medium-line*1.5, $d-medium-size);
 			padding: rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut/2, $d-medium-size) rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut/2, $d-medium-size);
 
-			width: col(3, $d-medium-size);
-
 			@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		}
-		.field,
-		.button {
+		.field, .button {
 			margin-bottom: rhythm($d-medium-line);
 		}
-	}
-	@include respond-to(break5) {
-		/*label {
-			float: left;
-			clear: left;
-
-			width: col(4, $d-medium-size);
-			margin-top: rhythm($d-medium-line/4, $d-medium-size);
-			margin-left: em(-$column-width*4 -$d-gut, $d-medium-size);
-
-			text-align: right;
-		}*/
 	}
 }
 
@@ -195,12 +181,15 @@ button, input, textarea {
 	background-image: none;
 	input[type = "search"] {
 		float: left;
+
 		width: 75%;
+
 		@include border-top-right-radius(0);
 		@include border-bottom-right-radius(0);
 	}
 	button {
 		width: 25%;
+
 		@include border-top-left-radius(0);
 		@include border-bottom-left-radius(0);
 	}
@@ -221,10 +210,11 @@ button, input, textarea {
 		max-height: rhythm($d-medium-line*6 + ($d-medium-line/4-0.2)*2 + $d-small-line*2 + ($d-small-line/4-0.2)*2);
 	}
 	textarea, i {
+		opacity: 1.0;
+
 		@include transition-property(opacity);
 		@include transition-duration(0.2s);
 		@include transition-timing-function(ease-in-out);
-		opacity: 1.0;
 	}
 	textarea {
 		height: rhythm($d-medium-line*6 + ($d-medium-line/4-0.2)*2);
@@ -234,40 +224,42 @@ button, input, textarea {
 		@include transition-delay(0.2s);
 	}
 	input[type = "submit"] {
+		background-image: url("../../media/icons/add.svg");
+		background-repeat: no-repeat;
+		background-position: center -100%;
+
 		@include transition-property(width, height, border-radius, margin-top, background-position, color);
 		@include transition-duration(0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s);
 		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out);
 		@include transition-delay(0s, 0s, 0s, 0s, 0s, 0.3s);
-		background-repeat: no-repeat;
-		background-image: url("../../media/icons/add.svg");
-		background-position: center -100%;
 	}
 }
 
 .close {
-	.field {
-		width: 0;
-		max-height: 0;
-		//border: none;
-	}
 	textarea, i {
 		opacity: 0.0;
 	}
 	input[type = "submit"] {
-		padding-left: 0;
-		padding-right: 0;
-		color: transparent;
-		margin-top: em(-$m-medium-size*4, $m-medium-size);
 		width: em($m-medium-size*4, $m-medium-size);
 		height: em($m-medium-size*4, $m-medium-size);
-		@include border-radius(50%);
+		margin-top: em(-$m-medium-size*4, $m-medium-size);
+		padding-right: 0;
+		padding-left: 0;
+
+		color: transparent;
 		background-position: center center;
+
+		@include border-radius(50%);
+	}
+	.field {
+		width: 0;
+		max-height: 0;
 	}
 	@include respond-to(break3) {
 		input[type = "submit"] {
-			margin-top: em(-$d-medium-size*4, $d-medium-size);
 			width: em($d-medium-size*4, $d-medium-size);
 			height: em($d-medium-size*4, $d-medium-size);
+			margin-top: em(-$d-medium-size*4, $d-medium-size);
 		}
 	}
 }
