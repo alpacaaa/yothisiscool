@@ -931,7 +931,7 @@ pre, .head, .body, .notation, .comment, [class^="action"], [class^="form"] {
       padding-right: 1em;
       padding-left: 1em; } }
 
-.notation, [class^="action"], [class^="form"], [class^="form"] button, [class^="form"] input[type="submit"] {
+.notation, .letters, .projects, [class^="action"], [class^="form"], [class^="form"] button, [class^="form"] input[type="submit"] {
   margin-right: auto;
   margin-left: auto; }
 
@@ -1033,13 +1033,13 @@ body {
       transition-delay: 0s, 0s, 0s; }
   .menu .current span {
     cursor: default;
-    color: rgba(0, 0, 0, 0.8);
-    background-color: rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
-    -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset; }
+    color: rgba(0, 0, 0, 0.8); }
+  .menu .current:hover span {
+    background-color: transparent;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
   .menu .current:active span {
-    color: rgba(0, 0, 0, 0.8);
     background-color: rgba(211, 34, 152, 0.2);
     -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
     -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
@@ -1174,6 +1174,16 @@ body {
     height: 3em;
     margin: 0.5em 1em 0.5em 0; } }
 
+section {
+  padding-bottom: 6em; }
+  section:last-of-type {
+    padding-bottom: 0; }
+  section > *:last-child {
+    margin-bottom: 0; }
+  @media only screen and (min-width: 36em) {
+    section {
+      padding-bottom: 6em; } }
+
 .notation {
   width: 100%;
   padding-bottom: 3em;
@@ -1201,9 +1211,6 @@ body {
 .letters, .projects {
   position: relative;
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-bottom: 6em;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
@@ -1216,8 +1223,7 @@ body {
   align-content: flex-start; }
   @media only screen and (min-width: 36em) {
     .letters, .projects {
-      width: 36em;
-      padding-bottom: 6em; } }
+      width: 36em; } }
   @media only screen and (min-width: 60em) {
     .letters, .projects {
       width: 54em; } }
@@ -1452,12 +1458,10 @@ body {
   position: relative;
   width: 100%;
   margin-right: auto;
-  margin-left: auto;
-  padding-bottom: 6em; }
+  margin-left: auto; }
   @media only screen and (min-width: 36em) {
     .comments {
       width: 36em;
-      padding-bottom: 6em;
       -moz-column-rule: 1px solid rgba(0, 0, 0, 0.05);
       -webkit-column-rule: 1px solid rgba(0, 0, 0, 0.05);
       column-rule: 1px solid rgba(0, 0, 0, 0.05);
@@ -1524,7 +1528,8 @@ body {
 
 [class^="action"] {
   width: 75%;
-  padding-bottom: 6em;
+  margin-top: 6em;
+  margin-bottom: 6em;
   text-align: center; }
   [class^="action"] .instruction {
     font-size: 0.875em;
@@ -1540,7 +1545,8 @@ body {
   @media only screen and (min-width: 36em) {
     [class^="action"] {
       width: 18em;
-      padding-bottom: 6em; }
+      margin-top: 6em;
+      margin-bottom: 6em; }
       [class^="action"] .instruction {
         font-size: 0.875em;
         line-height: 1.71429em; }
@@ -1579,6 +1585,8 @@ button:focus, input:focus, textarea:focus {
   background-image: url("../../media/icons/notation.svg");
   background-repeat: repeat-y;
   background-position: top center; }
+  [class^="form"] > *:last-child {
+    margin-bottom: 0; }
   [class^="form"] input[type="text"], [class^="form"] input[type="search"], [class^="form"] textarea, [class^="form"] button, [class^="form"] input[type="submit"] {
     display: block;
     font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
@@ -1593,11 +1601,7 @@ button:focus, input:focus, textarea:focus {
     -moz-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
     -o-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
     -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
-    transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
-    -moz-transition-delay: 0s, 0s, 0s;
-    -o-transition-delay: 0s, 0s, 0s;
-    -webkit-transition-delay: 0s, 0s, 0s;
-    transition-delay: 0s, 0s, 0s; }
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out; }
   [class^="form"] label {
     font-weight: 400;
     display: none;
@@ -1725,22 +1729,22 @@ button:focus, input:focus, textarea:focus {
     overflow: auto; }
 
 .form-comment .field {
-  -moz-transition-property: width, max-height, border-radius;
-  -o-transition-property: width, max-height, border-radius;
-  -webkit-transition-property: width, max-height, border-radius;
-  transition-property: width, max-height, border-radius;
-  -moz-transition-duration: 0.2s, 0.2s, 0.2s;
-  -o-transition-duration: 0.2s, 0.2s, 0.2s;
-  -webkit-transition-duration: 0.2s, 0.2s, 0.2s;
-  transition-duration: 0.2s, 0.2s, 0.2s;
-  -moz-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
-  -o-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
-  -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
-  transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
-  -moz-transition-delay: 0s, 0s, 0s;
-  -o-transition-delay: 0s, 0s, 0s;
-  -webkit-transition-delay: 0s, 0s, 0s;
-  transition-delay: 0s, 0s, 0s;
+  -moz-transition-property: color, border-color, background-color, width, max-height, border-radius;
+  -o-transition-property: color, border-color, background-color, width, max-height, border-radius;
+  -webkit-transition-property: color, border-color, background-color, width, max-height, border-radius;
+  transition-property: color, border-color, background-color, width, max-height, border-radius;
+  -moz-transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
+  -o-transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
+  -webkit-transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
+  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
+  -moz-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  -o-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  -moz-transition-delay: 0s, 0s, 0s, 0s, 0s, 0s;
+  -o-transition-delay: 0s, 0s, 0s, 0s, 0s, 0s;
+  -webkit-transition-delay: 0s, 0s, 0s, 0s, 0s, 0s;
+  transition-delay: 0s, 0s, 0s, 0s, 0s, 0s;
   -moz-border-radius-bottomleft: 0;
   -webkit-border-bottom-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -1752,18 +1756,18 @@ button:focus, input:focus, textarea:focus {
   max-height: 13em; }
 .form-comment textarea, .form-comment i {
   opacity: 1.0;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  -webkit-transition-property: opacity;
-  transition-property: opacity;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -moz-transition-timing-function: ease-in-out;
-  -o-transition-timing-function: ease-in-out;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out; }
+  -moz-transition-property: color, border-color, background-color, opacity;
+  -o-transition-property: color, border-color, background-color, opacity;
+  -webkit-transition-property: color, border-color, background-color, opacity;
+  transition-property: color, border-color, background-color, opacity;
+  -moz-transition-duration: 0.2s, 0.2s, 0.2s, 0.2s;
+  -o-transition-duration: 0.2s, 0.2s, 0.2s, 0.2s;
+  -webkit-transition-duration: 0.2s, 0.2s, 0.2s, 0.2s;
+  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s;
+  -moz-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  -o-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out; }
 .form-comment textarea {
   height: 9.5em;
   -moz-transition-delay: 0.1s;
@@ -1779,22 +1783,22 @@ button:focus, input:focus, textarea:focus {
   background-image: url("../../media/icons/add.svg");
   background-repeat: no-repeat;
   background-position: center -100%;
-  -moz-transition-property: width, height, border-radius, margin-top, background-position, color;
-  -o-transition-property: width, height, border-radius, margin-top, background-position, color;
-  -webkit-transition-property: width, height, border-radius, margin-top, background-position, color;
-  transition-property: width, height, border-radius, margin-top, background-position, color;
-  -moz-transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
-  -o-transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
-  -webkit-transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
-  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
-  -moz-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out;
-  -o-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out;
-  -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out;
-  transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out;
-  -moz-transition-delay: 0s, 0s, 0s, 0s, 0s, 0.3s;
-  -o-transition-delay: 0s, 0s, 0s, 0s, 0s, 0.3s;
-  -webkit-transition-delay: 0s, 0s, 0s, 0s, 0s, 0.3s;
-  transition-delay: 0s, 0s, 0s, 0s, 0s, 0.3s; }
+  -moz-transition-property: background-color, background-position, border-color, border-radius, color, height, margin-top, opacity, width;
+  -o-transition-property: background-color, background-position, border-color, border-radius, color, height, margin-top, opacity, width;
+  -webkit-transition-property: background-color, background-position, border-color, border-radius, color, height, margin-top, opacity, width;
+  transition-property: background-color, background-position, border-color, border-radius, color, height, margin-top, opacity, width;
+  -moz-transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
+  -o-transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
+  -webkit-transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
+  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
+  -moz-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  -o-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  -moz-transition-delay: 0s, 0s, 0s, 0s, 0s, 0s, 0s, 0s, 0s;
+  -o-transition-delay: 0s, 0s, 0s, 0s, 0s, 0s, 0s, 0s, 0s;
+  -webkit-transition-delay: 0s, 0s, 0s, 0s, 0s, 0s, 0s, 0s, 0s;
+  transition-delay: 0s, 0s, 0s, 0s, 0s, 0s, 0s, 0s, 0s; }
 
 .close textarea, .close i {
   opacity: 0.0; }

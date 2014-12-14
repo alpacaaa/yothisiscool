@@ -130,13 +130,15 @@ body {
 			cursor: default;
 
 			color: $strong-type-color;
-			background-color: $hover-background-color;
-
-			@include box-shadow(0 1px 4px 0 $shadow-color inset);
+		}
+		&:hover {
+			span {
+				background-color: transparent;
+				@include box-shadow(none);
+			}
 		}
 		&:active {
 			span {
-				color: $strong-type-color;
 				background-color: $active-background-color;
 
 				@include box-shadow(0 1px 4px 0 $shadow-color inset);
@@ -307,6 +309,19 @@ body {
 	}
 }
 
+section {
+	padding-bottom: rhythm($m-medium-line*4);
+	&:last-of-type {
+		padding-bottom: 0;
+	}
+	> *:last-child {
+		margin-bottom: 0;
+	}
+	@include respond-to(break3) {
+		padding-bottom: rhythm($d-medium-line*4);
+	}
+}
+
 .notation {
 	width: 100%;
 	padding-bottom: rhythm($m-small-line*2);
@@ -345,10 +360,8 @@ body {
 	position: relative;
 
 	width: 100%;
-	margin-right: auto;
-	margin-left: auto;
-	padding-bottom: rhythm($m-medium-line*4);
 
+	@extend %centered;
 	@include display-flex(flex);
 	@include flex-flow(row wrap);
 	@include justify-content(center);
@@ -356,7 +369,6 @@ body {
 	@include align-content(flex-start);
 	@include respond-to(break3) {
 		width: col(8);
-		padding-bottom: rhythm($d-medium-line*4);
 	}
 	@include respond-to(break5) {
 		width: col(12);
@@ -570,11 +582,9 @@ body {
 	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
-	padding-bottom: rhythm($m-medium-line*4);
 
 	@include respond-to(break3) {
 		width: col(8);
-		padding-bottom: rhythm($d-medium-line*4);
 
 		@include column-rule($border-width, solid, $border-color);
 		@include column-count(2);
@@ -646,7 +656,8 @@ body {
 
 [class^="action"] {
 	width: 75%;
-	padding-bottom: rhythm($m-medium-line*4);
+	margin-top: rhythm($m-medium-line*4);
+	margin-bottom: rhythm($m-medium-line*4);
 
 	text-align: center;
 
@@ -668,7 +679,8 @@ body {
 	}
 	@include respond-to(break3) {
 		width: col(4);
-		padding-bottom: rhythm($d-medium-line*4);
+		margin-top: rhythm($d-medium-line*4);
+		margin-bottom: rhythm($d-medium-line*4);
 		.instruction {
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
