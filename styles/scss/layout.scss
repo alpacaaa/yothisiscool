@@ -32,6 +32,15 @@ body {
 	height: 100%;
 }
 
+.warning {
+	text-align: center;
+	padding: rhythm(2) em($m-gut/2) rhythm(2) em($m-gut/2);
+
+	@include respond-to(break3) {
+		padding: rhythm(2) em($d-gut/2) rhythm(2) em($d-gut/2);
+	}
+}
+
 .header {
 	max-width: $break8;
 	margin-right: auto;
@@ -356,7 +365,7 @@ section {
 	}
 }
 
-.letters, .projects {
+.letters, .projects, .comments {
 	position: relative;
 
 	width: 100%;
@@ -576,37 +585,10 @@ section {
 	}
 }
 
-.comments {
-	position: relative;
-
-	width: 100%;
-	margin-right: auto;
-	margin-left: auto;
-
-	@include respond-to(break3) {
-		width: col(8);
-
-		@include column-rule($border-width, solid, $border-color);
-		@include column-count(2);
-		@include column-gap(0);
-		@include column-width(col(4));
-	}
-	@include respond-to(break5) {
-		width: col(12);
-
-		@include column-count(3);
-	}
-	@include respond-to(break7) {
-		width: col(16);
-
-		@include column-count(4);
-	}
-}
-
 .comment {
 	font-weight: $bold;
-	//flex-grow: 0;
-	//flex-shrink: 1;
+	flex-grow: 0;
+	flex-shrink: 1;
 
 	width: 100%;
 	padding-top: rhythm($m-medium-line);
