@@ -526,25 +526,8 @@ section {
 			float: right;
 
 			color: $light-type-color;
-			&:after {
-				font-weight: $normal;
-				//padding-right: 0.2em;
-
-				padding-left: em(24px, $m-medium-size);
-
-				content: "";
-
-				opacity: 0.4;
-				background-image: url("../../media/icons/thanks.svg");
-				background-repeat: no-repeat;
-				background-position: right center;
-				//content: " \00D7 ";
-			}
 		}
 		&:hover {
-			/*border-bottom: $border-width solid $border-color;
-			border-top: $border-width solid $border-color;
-			border-left: $border-width solid $border-color;*/
 			background-color: $hover-background-color;
 
 			@include box-shadow(0 1px 4px 0 $shadow-color inset);
@@ -569,7 +552,12 @@ section {
 			padding-bottom: rhythm($d-medium-line/2, $d-medium-size);
 			padding-left: em($d-gut/2, $d-medium-size);
 			.amount {
+				padding-left: 0.5em;
+				float: none;
 				opacity: 0.2;
+				@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line, $d-medium-size);
+				top: rhythm(-$d-extra-small-line/2, $d-medium-size);
+				position: relative;
 
 				@include transition-property(opacity);
 				@include transition-duration(0.2s);

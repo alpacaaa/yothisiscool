@@ -1401,18 +1401,7 @@ section {
     .project a .amount {
       float: right;
       color: rgba(0, 0, 0, 0.4); }
-      .project a .amount:after {
-        font-weight: 400;
-        padding-left: 1.5em;
-        content: "";
-        opacity: 0.4;
-        background-image: url("../../media/icons/thanks.svg");
-        background-repeat: no-repeat;
-        background-position: right center; }
     .project a:hover {
-      /*border-bottom: $border-width solid $border-color;
-      border-top: $border-width solid $border-color;
-      border-left: $border-width solid $border-color;*/
       background-color: rgba(0, 0, 0, 0.05);
       -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
       -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
@@ -1441,7 +1430,13 @@ section {
         padding-bottom: 0.75em;
         padding-left: 1em; }
         .project a .amount {
+          padding-left: 0.5em;
+          float: none;
           opacity: 0.2;
+          font-size: 0.8125em;
+          line-height: 1.53846em;
+          top: -0.625em;
+          position: relative;
           -moz-transition-property: opacity;
           -o-transition-property: opacity;
           -webkit-transition-property: opacity;
@@ -1590,7 +1585,7 @@ button:focus, input:focus, textarea:focus {
     padding: 0.25em 0.5em 0.25em 0.5em;
     color: rgba(0, 0, 0, 0.6);
     border: 1px solid rgba(0, 0, 0, 0.025);
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.6);
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
