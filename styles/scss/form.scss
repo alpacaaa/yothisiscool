@@ -36,9 +36,6 @@ button, input, textarea {
 
 	@extend %column-gut;
 	@extend %centered;
-	> *:last-child {
-		margin-bottom: 0;
-	}
 	input[type = "text"], input[type = "search"], textarea, button, input[type = "submit"] {
 		display: block;
 
@@ -130,7 +127,7 @@ button, input, textarea {
 		margin-right: auto;
 		margin-left: auto;
 	}
-	.field, .button {
+	.field {
 		margin-bottom: rhythm($m-medium-line);
 	}
 	.button {
@@ -173,7 +170,7 @@ button, input, textarea {
 
 			@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		}
-		.field, .button {
+		.field {
 			margin-bottom: rhythm($d-medium-line);
 		}
 	}
@@ -185,6 +182,8 @@ button, input, textarea {
 		float: left;
 
 		width: 75%;
+
+		border-right: none;
 
 		@include border-top-right-radius(0);
 		@include border-bottom-right-radius(0);
@@ -233,7 +232,7 @@ button, input, textarea {
 		@include transition-property(background-color, background-position, border-color, border-radius, color, height, margin-top, opacity, width);
 		@include transition-duration(0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s);
 		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out);
-		@include transition-delay(0s, 0s, 0s, 0s, 0s, 0.0s, 0s, 0s, 0s);
+		@include transition-delay(0s, 0s, 0s, 0s, 0s, 0s, 0s, 0s, 0s);
 	}
 }
 
@@ -244,7 +243,7 @@ button, input, textarea {
 	input[type = "submit"] {
 		width: em($m-medium-size*4, $m-medium-size);
 		height: em($m-medium-size*4, $m-medium-size);
-		margin-top: em(-$m-medium-size*4, $m-medium-size);
+		//margin-top: em(-$m-medium-size*4, $m-medium-size);
 		padding-right: 0;
 		padding-left: 0;
 
@@ -256,12 +255,13 @@ button, input, textarea {
 	.field {
 		width: 0;
 		max-height: 0;
+		margin-bottom: 0;
 	}
 	@include respond-to(break3) {
 		input[type = "submit"] {
 			width: em($d-medium-size*4, $d-medium-size);
 			height: em($d-medium-size*4, $d-medium-size);
-			margin-top: em(-$d-medium-size*4, $d-medium-size);
+			//margin-top: em(-$d-medium-size*4, $d-medium-size);
 		}
 	}
 }

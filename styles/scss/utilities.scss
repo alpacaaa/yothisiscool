@@ -65,7 +65,7 @@ $column-width: 72px;
  * Guts and indents
  */
 
-$m-gut: 16px; // mobile gut
+$m-gut: 24px; // mobile gut
 $m-indent: $m-gut; // mobile indent
 
 $d-gut: 32px; // desktop gut
@@ -75,9 +75,9 @@ $d-indent: $d-gut; // desktop indent
  * Border widths
  */
 
-$border-width: 1px;
-$field-border-width: 1px;
-$button-border-width: 1px;
+$border-width: 2px;
+$field-border-width: 2px;
+$button-border-width: 0px;
 
 $radius: 4px;
 

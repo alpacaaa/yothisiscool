@@ -20,7 +20,7 @@ $light-type-color: rgba($black, 0.4);
 
 $em-type-color: rgba($emphasis, 0.8);
 
-$placeholder-type-color: rgba($black, 0.2);
+$placeholder-type-color: rgba($black, 0.15);
 
 $selected-type-color: $strong-type-color;
 
@@ -51,11 +51,12 @@ $shadow-color: rgba($black, 0.05);
  * Fields
  */
 
-$field-background-color:  rgba($white, 0.6);
+$field-background-color:  rgba($white, 1.0);
 
-$field-border-color: rgba($black, 0.025);
+//$field-border-color: rgba($black, 0.025);
+$field-border-color: rgba($black, 0);
 $strong-field-border-color: rgba($black, 0.1);
-$error-field-border-color: rgba($emphasis, 0.2);
+$error-field-border-color: rgba($emphasis, 0.4);
 
 /*
  * Buttons

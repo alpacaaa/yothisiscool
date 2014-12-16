@@ -5,10 +5,10 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="add" sketch:type="MSArtboardGroup" transform="translate(-12.000000, -12.000000)">
-            <g id="icon" sketch:type="MSLayerGroup"></g>
-            <rect id="path-3" fill="#FFFFFF" sketch:type="MSShapeGroup" x="19" y="12" width="2" height="16"></rect>
-            <rect id="path-2" fill="#FFFFFF" sketch:type="MSShapeGroup" x="12" y="19" width="16" height="2"></rect>
+        <g id="add" sketch:type="MSArtboardGroup" transform="translate(-12.000000, -12.000000)" fill="#FFFFFF">
+            <g id="icon" sketch:type="MSLayerGroup">
+                <path d="M19,19 L19,12 L21,12 L21,19 L28,19 L28,21 L21,21 L21,28 L19,28 L19,21 L12,21 L12,19 L19,19 Z" id="plus" sketch:type="MSShapeGroup"></path>
+            </g>
         </g>
     </g>
 </svg>
