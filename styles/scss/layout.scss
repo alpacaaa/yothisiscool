@@ -131,7 +131,6 @@ body {
 			@include transition-property(background-color, box-shadow, transform);
 			@include transition-duration(0.2s, 0.2s, 0.2s);
 			@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
-			@include transition-delay(0s, 0s, 0s);
 		}
 	}
 	.current {
@@ -396,42 +395,42 @@ section {
 		border-bottom: none;
 	}
 	a {
-		font-weight: $normal;
+		font-weight: $bold;
 
 		position: relative;
 
 		display: block;
 
-		padding-top: rhythm($m-medium-line, $m-extra-small-size);
-		padding-right: em($m-gut/2, $m-extra-small-size);
-		padding-bottom: rhythm($m-medium-line, $m-extra-small-size);
-		padding-left: em($m-gut/2, $m-extra-small-size);
+		padding-top: rhythm($m-medium-line, $m-huge-size);
+		padding-right: em($m-gut/2, $m-huge-size);
+		padding-bottom: rhythm($m-medium-line, $m-huge-size);
+		padding-left: em($m-gut/2, $m-huge-size);
 
 		text-align: center;
 
-		color: $light-type-color;
-
-		@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
-		@include transition-property(background-color, box-shadow);
-		@include transition-duration(0.2s, 0.2s);
-		@include transition-timing-function(ease-in-out, ease-in-out);
-		@include transition-delay(0s, 0s);
+		@include adjust-font-size-to($m-huge-size, $m-huge-line);
+		@include transition-property(background-color, box-shadow, color);
+		@include transition-duration(0.2s, 0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
+		span {
+			@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line, $m-huge-size);
+			display: block;
+			font-weight: $normal;
+			color: $light-type-color;
+		}
 		i {
 			font-weight: $bold;
 			font-style: normal;
 
 			display: block;
-
-			color: $strong-type-color;
-		}
-		.initial {
-			@include adjust-font-size-to($m-huge-size, $m-huge-line, $m-extra-small-size);
 		}
 		.word {
-			@include adjust-font-size-to($m-small-size, $m-small-line, $m-extra-small-size);
+			color: $strong-type-color;
+			@include adjust-font-size-to($m-small-size, $m-small-line, $m-huge-size);
 		}
 		.amount {
 			position: absolute;
+			@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line, $m-huge-size);
 			top: rhythm($m-medium-line, $m-extra-small-size);
 			right: em($m-gut/2, $m-extra-small-size);
 
@@ -440,7 +439,6 @@ section {
 			@include transition-property(color);
 			@include transition-duration(0.2s);
 			@include transition-timing-function(ease-in-out);
-			@include transition-delay(0s);
 		}
 		&:hover {
 			background-color: $hover-background-color;
@@ -457,19 +455,20 @@ section {
 	@include respond-to(break3) {
 		width: col(2);
 		a {
-			padding-top: rhythm($d-medium-line, $d-extra-small-size);
-			padding-right: em($d-gut/2, $d-extra-small-size);
-			padding-bottom: rhythm($d-medium-line, $d-extra-small-size);
-			padding-left: em($d-gut/2, $d-extra-small-size);
+			padding-top: rhythm($d-medium-line, $d-huge-size);
+			padding-right: em($d-gut/2, $d-huge-size);
+			padding-bottom: rhythm($d-medium-line, $d-huge-size);
+			padding-left: em($d-gut/2, $d-huge-size);
 
-			@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
-			.initial {
-				@include adjust-font-size-to($d-huge-size, $d-huge-line, $d-extra-small-size);
+			@include adjust-font-size-to($d-huge-size, $d-huge-line);
+			span {
+				@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line, $d-huge-size);
 			}
 			.word {
-				@include adjust-font-size-to($d-small-size, $d-small-line, $d-extra-small-size);
+				@include adjust-font-size-to($d-small-size, $d-small-line, $d-huge-size);
 			}
 			.amount {
+				@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line, $d-huge-size);
 				top: rhythm($d-medium-line, $d-extra-small-size);
 				right: em($d-gut/2, $d-extra-small-size);
 
@@ -478,7 +477,6 @@ section {
 				@include transition-property(opacity);
 				@include transition-duration(0.2s);
 				@include transition-timing-function(ease-in-out);
-				@include transition-delay(0s);
 			}
 			&:hover, &:active {
 				.amount {
@@ -501,7 +499,7 @@ section {
 		border-bottom: none;
 	}
 	a {
-		font-weight: $normal;
+		font-weight: $bold;
 
 		display: block;
 
@@ -510,18 +508,9 @@ section {
 		padding-bottom: rhythm($m-medium-line/2, $m-medium-size);
 		padding-left: em($m-gut/2, $m-medium-size);
 
-		color: $light-type-color;
-
-		@include transition-property(background-color, box-shadow);
-		@include transition-duration(0.2s, 0.2s);
-		@include transition-timing-function(ease-in-out, ease-in-out);
-		@include transition-delay(0s, 0s);
-		i {
-			font-weight: $bold;
-			font-style: normal;
-
-			color: $strong-type-color;
-		}
+		@include transition-property(background-color, box-shadow, color);
+		@include transition-duration(0.2s, 0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
 		.amount {
 			float: right;
 
@@ -562,7 +551,6 @@ section {
 				@include transition-property(opacity);
 				@include transition-duration(0.2s);
 				@include transition-timing-function(ease-in-out);
-				@include transition-delay(0s);
 			}
 			&:hover, &:active {
 				.amount {
