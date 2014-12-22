@@ -461,9 +461,9 @@ html {
   .typo-l sup, .typo-m sup, .typo-s sup {
     margin-left: 0.2em; }
   .typo-l hr, .typo-m hr, .typo-s hr {
-    background-repeat: no-repeat;
-    background-image: url("../../media/icons/hr.svg");
-    background-position: center center; }
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%; }
   .typo-l > *:first-child, .typo-m > *:first-child, .typo-s > *:first-child {
     margin-top: 0; }
   .typo-l > *:last-child, .typo-m > *:last-child, .typo-s > *:last-child {
@@ -510,9 +510,9 @@ html {
 .typo-m hr {
   margin-top: 0.75em;
   margin-bottom: 0.75em;
-  border-top-width: 0;
+  border-top-width: 0.0625em;
   border-top-style: solid;
-  padding-top: 3em; }
+  padding-top: 1.4375em; }
 @media only screen and (min-width: 36em) {
   .typo-m h1, .typo-m h2 {
     margin-bottom: 0.8em;
@@ -552,9 +552,9 @@ html {
   .typo-m hr {
     margin-top: 0.75em;
     margin-bottom: 0.75em;
-    border-top-width: 0;
+    border-top-width: 0.0625em;
     border-top-style: solid;
-    padding-top: 3em; } }
+    padding-top: 1.4375em; } }
 
 .typo-s h1, .typo-s h2, .typo-s h3, .typo-s h4 {
   margin-bottom: 0.75em;
@@ -594,9 +594,9 @@ html {
 .typo-s hr {
   margin-top: 0.75em;
   margin-bottom: 0em;
-  border-top-width: 0;
+  border-top-width: 0.0625em;
   border-top-style: solid;
-  padding-top: 3em; }
+  padding-top: 1.4375em; }
 @media only screen and (min-width: 36em) {
   .typo-s h1, .typo-s h2, .typo-s h3, .typo-s h4 {
     margin-bottom: 0.75em;
@@ -636,9 +636,9 @@ html {
   .typo-s hr {
     margin-top: 0.75em;
     margin-bottom: 0em;
-    border-top-width: 0;
+    border-top-width: 0.0625em;
     border-top-style: solid;
-    padding-top: 3em; } }
+    padding-top: 1.4375em; } }
 
 .typo-l h1, .typo-l h2 {
   margin-bottom: 0.64286em;
@@ -678,9 +678,9 @@ html {
 .typo-l hr {
   margin-top: 0.875em;
   margin-bottom: 0.875em;
-  border-top-width: 0;
+  border-top-width: 0.0625em;
   border-top-style: solid;
-  padding-top: 3.5em; }
+  padding-top: 1.6875em; }
 @media only screen and (min-width: 36em) {
   .typo-l h1, .typo-l h2 {
     margin-bottom: 0.625em;
@@ -720,9 +720,9 @@ html {
   .typo-l hr {
     margin-top: 1em;
     margin-bottom: 1em;
-    border-top-width: 0;
+    border-top-width: 0.0625em;
     border-top-style: solid;
-    padding-top: 4em; } }
+    padding-top: 1.9375em; } }
 
 /* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
 /*

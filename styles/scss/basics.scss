@@ -213,7 +213,7 @@ hr {
 	padding: 0;
 
 	border: 0;
-	border-top: 1px solid $border-color;
+	border-top: $border-width solid $border-color;
 }
 
 audio, canvas, img, svg, video {
