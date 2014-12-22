@@ -100,15 +100,6 @@ docReady( function() {
 
 */
 
-/*var $container = $('.comments').imagesLoaded( function() {
-	// initialize Packery after all images have loaded
-	$container.packery({
-		itemSelector: '.comment',
-		columnWidth: 288,
-		gutter: 0
-	});
-});*/
-
 /*
  * Form
  */
@@ -119,7 +110,7 @@ $('.error input, .error textarea').focus(function() {
 });
 
 $('.form-comment').on( 'click', 'input[type = "submit"]', function() {
-	$(this).parents('.form-comment').toggleClass('close').find('.field textarea').focus();
+	$(this).parents('.form-comment').toggleClass('closed').find('.field textarea').focus();
 	//$(this).removeClass('closed');
 	//.focus();
 	//alert("banana");

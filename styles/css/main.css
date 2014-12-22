@@ -507,6 +507,7 @@ html {
   padding-bottom: 0.75em;
   margin-bottom: 0.75em; }
 .typo-m img {
+  margin-top: 0.85714em;
   margin-bottom: 0.85714em;
   font-size: 0.875em;
   line-height: 1.71429em; }
@@ -549,6 +550,7 @@ html {
     padding-bottom: 0.75em;
     margin-bottom: 0.75em; }
   .typo-m img {
+    margin-top: 0.85714em;
     margin-bottom: 0.85714em;
     font-size: 0.875em;
     line-height: 1.71429em; }
@@ -928,16 +930,16 @@ textarea {
 /*
  * Placeholders
  */
-pre, .head, .body, .notation, .comment, [class^="action"], [class^="form"] {
+pre, .head, .body, [class^="notation"], .comment, [class^="action"], [class^="form"] {
   position: relative;
   padding-right: 0.75em;
   padding-left: 0.75em; }
   @media only screen and (min-width: 36em) {
-    pre, .head, .body, .notation, .comment, [class^="action"], [class^="form"] {
+    pre, .head, .body, [class^="notation"], .comment, [class^="action"], [class^="form"] {
       padding-right: 1em;
       padding-left: 1em; } }
 
-.notation, .letters, .projects, .comments, [class^="action"], [class^="form"], [class^="form"] button, [class^="form"] input[type="submit"] {
+[class^="notation"], .letters, .projects, .comments, [class^="action"], [class^="form"], [class^="form"] button, [class^="form"] input[type="submit"] {
   margin-right: auto;
   margin-left: auto; }
 
@@ -1193,14 +1195,26 @@ section {
     section {
       padding-bottom: 6em; } }
 
-.notation {
+[class^="notation"] {
+  -moz-transition-property: padding;
+  -o-transition-property: padding;
+  -webkit-transition-property: padding;
+  transition-property: padding;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
   width: 100%;
   padding-bottom: 3em;
   text-align: center;
   background-image: url("../../media/icons/notation.svg");
   background-repeat: repeat-y;
   background-position: top center; }
-  .notation h3 {
+  [class^="notation"] h3 {
     font-weight: 400;
     display: inline-block;
     text-align: center;
@@ -1210,12 +1224,15 @@ section {
     font-size: 0.875em;
     line-height: 1.71429em; }
   @media only screen and (min-width: 36em) {
-    .notation {
+    [class^="notation"] {
       width: 36em;
       padding-bottom: 3em; }
-      .notation h3 {
+      [class^="notation"] h3 {
         font-size: 0.875em;
         line-height: 1.71429em; } }
+
+.notation-closed {
+  padding-bottom: 0; }
 
 .letters, .projects, .comments {
   position: relative;
@@ -1748,9 +1765,9 @@ button:focus, input:focus, textarea:focus {
   -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out;
   transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out; }
 
-.close textarea, .close i {
+.closed textarea, .closed i {
   opacity: 0.0; }
-.close input[type="submit"] {
+.closed input[type="submit"] {
   width: 4em;
   height: 4em;
   padding-right: 0;
@@ -1760,12 +1777,12 @@ button:focus, input:focus, textarea:focus {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%; }
-.close .field {
+.closed .field {
   width: 0;
   max-height: 0;
   margin-bottom: 0; }
 @media only screen and (min-width: 36em) {
-  .close input[type="submit"] {
+  .closed input[type="submit"] {
     width: 4em;
     height: 4em; } }
 
