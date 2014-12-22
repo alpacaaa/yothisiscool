@@ -1,10 +1,54 @@
 // @codekit-prepend "jquery-2.1.1.js"
+// @codekit-prepend "response.js"
 // @codekit-prepend "imagesloaded.pkgd.js"
 // @codekit-prepend "packery.pkgd.min.js"
 
 /*
  * Comments
  */
+
+var $container = $('.comments').imagesLoaded( function() {
+	// initialize Packery after all images have loaded
+	$container.packery({
+		itemSelector: '.comment',
+		columnWidth: 288,
+		gutter: 0
+	});
+});
+
+// manually trigger initial layout
+
+$(function() {
+	Response.create({
+		prop: 'width',
+		breakpoints: [0, 576]
+	});
+
+	Response.ready(function(){
+		//return console.log('ready');
+		switch (true) {
+			case Response.band(576):
+				$container.imagesLoaded( function() {
+					$container.packery();
+				});
+				break;
+		}
+	});
+
+	Response.crossover(function() {
+		switch (true) {
+			case Response.band(0, 576):
+				//return console.log('crossover < 1024');
+				$container.packery('destroy');
+
+				break;
+			default:
+				$container.packery();
+		}
+	}, 'width');
+});
+
+/*
 
 // http://codepen.io/desandro/pen/chisC
 
@@ -53,6 +97,8 @@ docReady( function() {
 		gutter: 0
 	});
 });
+
+*/
 
 /*var $container = $('.comments').imagesLoaded( function() {
 	// initialize Packery after all images have loaded

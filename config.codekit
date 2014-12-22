@@ -100,6 +100,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/media\/image_landscape_01.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 881,
+		"inputAbbreviatedPath": "\/media\/image_landscape_01.png",
+		"outputAbbreviatedPath": "\/media\/image_landscape_01.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/media\/image_portrait_00.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -215,6 +226,28 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/scripts\/js\/packery.pkgd.min.js",
 		"outputAbbreviatedPath": "\/scripts\/js\/min\/packery.pkgd.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/scripts\/js\/response.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/scripts\/js\/response.js",
+		"outputAbbreviatedPath": "\/scripts\/js\/min\/response-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/scripts\/js\/response.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/scripts\/js\/response.min.js",
+		"outputAbbreviatedPath": "\/scripts\/js\/min\/response.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
