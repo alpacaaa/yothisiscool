@@ -1258,6 +1258,7 @@ section {
       width: 72em; } }
 
 .letter {
+  position: relative;
   width: 50%;
   -webkit-flex-grow: 0;
   flex-grow: 0;
@@ -1265,6 +1266,16 @@ section {
   flex-shrink: 1; }
   .letter:last-child {
     border-bottom: none; }
+  .letter:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    content: "";
+    border-top: 1px solid rgba(0, 0, 0, 0.05); }
   .letter a {
     font-weight: 500;
     position: relative;
@@ -1338,6 +1349,8 @@ section {
   @media only screen and (min-width: 36em) {
     .letter {
       width: 9em; }
+      .letter:after {
+        width: 4.5em; }
       .letter a {
         padding-top: 0.375em;
         padding-right: 0.25em;
@@ -1374,6 +1387,7 @@ section {
 
 .project {
   width: 100%;
+  position: relative;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   -webkit-flex-grow: 0;
   flex-grow: 0;
@@ -1428,6 +1442,13 @@ section {
       break-inside: avoid;
       font-size: 1em;
       line-height: 1.5em; }
+      .project:after {
+        position: absolute;
+        bottom: 0;
+        left: 1em;
+        width: 4.5em;
+        content: "";
+        border-top: 1px solid rgba(0, 0, 0, 0.05); }
       .project a {
         padding-top: 0.75em;
         padding-right: 1em;
@@ -1458,12 +1479,13 @@ section {
 
 .comment {
   font-weight: 500;
-  flex-grow: 0;
-  flex-shrink: 1;
+  position: relative;
   width: 100%;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  flex-grow: 0;
+  flex-shrink: 1;
   -moz-page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
   break-inside: avoid; }
@@ -1478,9 +1500,9 @@ section {
     -webkit-border-radius: 4px;
     border-radius: 4px; }
   .comment .tributary {
-    display: block;
     font-weight: 400;
     font-style: normal;
+    display: block;
     color: rgba(0, 0, 0, 0.4);
     font-size: 0.875em;
     line-height: 1.71429em; }
@@ -1490,6 +1512,13 @@ section {
       padding-top: 1.5em;
       padding-bottom: 1.5em;
       border-bottom: 0 solid rgba(0, 0, 0, 0.05); }
+      .comment:after {
+        position: absolute;
+        bottom: 0.75em;
+        left: 1em;
+        width: 4.5em;
+        content: "";
+        border-top: 1px solid rgba(0, 0, 0, 0.05); }
       .comment .avatar {
         width: 2.25em;
         height: 2.25em;

@@ -393,12 +393,27 @@ section {
 }
 
 .letter {
+	position: relative;
 	width: 50%;
 
 	@include flex-grow(0);
 	@include flex-shrink(1);
 	&:last-child {
 		border-bottom: none;
+	}
+	&:after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+
+		width: 50%;
+
+		content: "";
+
+		border-top: $border-width solid $border-color;
 	}
 	a {
 		font-weight: $bold;
@@ -460,6 +475,9 @@ section {
 	}
 	@include respond-to(break3) {
 		width: col(2);
+		&:after {
+			width: col(1);
+		}
 		a {
 			padding-top: rhythm($d-medium-line, $d-huge-size);
 			padding-right: em($d-gut/2, $d-huge-size);
@@ -495,6 +513,8 @@ section {
 
 .project {
 	width: 100%;
+
+	position: relative;
 
 	border-bottom: $border-width solid $border-color;
 
@@ -541,6 +561,17 @@ section {
 
 		@include column-break-inside(avoid);
 		@include adjust-font-size-to($d-medium-size, $d-medium-line);
+		&:after {
+			position: absolute;
+			bottom: 0;
+			left: em($d-gut/2);
+
+			width: col(1);
+
+			content: "";
+
+			border-top: $border-width solid $border-color;
+		}
 		a {
 			padding-top: rhythm($d-medium-line/2, $d-medium-size);
 			padding-right: em($d-gut/2, $d-medium-size);
@@ -569,8 +600,8 @@ section {
 
 .comment {
 	font-weight: $bold;
-	flex-grow: 0;
-	flex-shrink: 1;
+
+	position: relative;
 
 	width: 100%;
 	padding-top: rhythm($m-medium-line);
@@ -578,6 +609,8 @@ section {
 
 	border-bottom: $border-width solid $border-color;
 
+	flex-grow: 0;
+	flex-shrink: 1;
 	@include break-inside(avoid);
 	@extend %column-gut;
 	.avatar {
@@ -594,9 +627,10 @@ section {
 		@include border-radius(4px);
 	}
 	.tributary {
-		display: block;
 		font-weight: $normal;
 		font-style: normal;
+
+		display: block;
 
 		color: $light-type-color;
 
@@ -608,6 +642,17 @@ section {
 		padding-bottom: rhythm($d-medium-line);
 
 		border-bottom: 0 solid $border-color;
+		&:after {
+			position: absolute;
+			bottom: rhythm($d-medium-line/2);
+			left: em($d-gut/2);
+
+			width: col(1);
+
+			content: "";
+
+			border-top: $border-width solid $border-color;
+		}
 		.avatar {
 			width: em(36);
 			height: em(36);
@@ -618,6 +663,7 @@ section {
 		}
 	}
 }
+
 
 [class^="action"] {
 	width: 75%;
