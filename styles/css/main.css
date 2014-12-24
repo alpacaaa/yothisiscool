@@ -1209,7 +1209,7 @@ section {
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
   width: 100%;
-  padding-bottom: 3em;
+  padding-bottom: 1.5em;
   text-align: center;
   background-image: url("../../media/icons/notation.svg");
   background-repeat: repeat-y;
@@ -1489,6 +1489,8 @@ section {
   -moz-page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
   break-inside: avoid; }
+  .comment:last-child {
+    border-bottom: none; }
   .comment .avatar {
     font-size: 1em;
     float: left;

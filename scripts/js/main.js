@@ -2,6 +2,39 @@
 // @codekit-prepend "response.js"
 // @codekit-prepend "imagesloaded.pkgd.js"
 // @codekit-prepend "packery.pkgd.min.js"
+// @codekit-prepend "jquery.easing.1.3.js"
+// @codekit-prepend "jquery.scrollTo.js"
+// @codekit-prepend "jquery.localScroll.js"
+
+/*
+ * Local scroll
+ */
+
+$.localScroll.defaults.axis = 'y';
+
+$.localScroll.hash({
+	duration: 500,
+	easing: 'easeOutSine',
+	margin: false,
+	offset: {top:-40},
+	queue: true,
+});
+
+$.localScroll({
+	duration: 500,
+	easing: 'easeOutSine',
+	hash: true,
+	lock: false,
+	margin: false,
+	//offset: 0,
+	offset: {top:-40},
+	queue: true,
+	stop: true,
+	/*onBefore:function( e, anchor, $target ){
+	},
+	onAfter:function( anchor, settings ){
+	}*/
+});
 
 /*
  * Comments

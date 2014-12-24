@@ -335,7 +335,7 @@ section {
 	@include transition-duration(0.2s);
 	@include transition-timing-function(ease-in-out);
 	width: 100%;
-	padding-bottom: rhythm($m-small-line*2);
+	padding-bottom: rhythm($m-small-line);
 
 	text-align: center;
 
@@ -613,6 +613,9 @@ section {
 	flex-shrink: 1;
 	@include break-inside(avoid);
 	@extend %column-gut;
+	&:last-child {
+		border-bottom: none;
+	}
 	.avatar {
 		font-size: 1em;
 
