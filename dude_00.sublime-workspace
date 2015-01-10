@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
 				"text",
 				"text-align"
 			],
@@ -128,51 +136,11 @@
 	"buffers":
 	[
 		{
-			"file": "project.html",
-			"settings":
-			{
-				"buffer_size": 6617,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "index-letter.html",
-			"settings":
-			{
-				"buffer_size": 8074,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 6801,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "styles/scss/main.scss",
-			"settings":
-			{
-				"buffer_size": 355,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "styles/scss/layout.scss",
 			"settings":
 			{
-				"buffer_size": 15085,
+				"buffer_size": 14452,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/marshallbanana/Desktop/exvid-blackdeathws.srt",
-			"settings":
-			{
-				"buffer_size": 45276,
-				"line_ending": "Windows"
 			}
 		},
 		{
@@ -184,18 +152,10 @@
 			}
 		},
 		{
-			"file": "styles/scss/form.scss",
+			"file": "scripts/js/main.js",
 			"settings":
 			{
-				"buffer_size": 7408,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "styles/scss/colors.scss",
-			"settings":
-			{
-				"buffer_size": 1567,
+				"buffer_size": 3177,
 				"line_ending": "Unix"
 			}
 		},
@@ -203,7 +163,15 @@
 			"file": "home.html",
 			"settings":
 			{
-				"buffer_size": 3255,
+				"buffer_size": 3325,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "colophon.html",
+			"settings":
+			{
+				"buffer_size": 3052,
 				"line_ending": "Unix"
 			}
 		}
@@ -296,22 +264,24 @@
 	],
 	"file_history":
 	[
-		"/Applications/MAMP/htdocs/dude/styles/scss/layout.scss",
 		"/Applications/MAMP/htdocs/dude/index.html",
-		"/Applications/MAMP/htdocs/dude/styles/scss/utilities.scss",
-		"/Applications/MAMP/htdocs/dude/styles/scss/basics.scss",
-		"/Applications/MAMP/htdocs/dude/styles/scss/form.scss",
 		"/Applications/MAMP/htdocs/dude/project.html",
-		"/Applications/MAMP/htdocs/dude/form.html",
 		"/Applications/MAMP/htdocs/dude/home.html",
-		"/Applications/MAMP/htdocs/dude/index-letter.html",
-		"/Applications/MAMP/htdocs/dude/styles/scss/colors.scss",
-		"/Applications/MAMP/htdocs/dude/styles/scss/normalize.scss",
 		"/Applications/MAMP/htdocs/dude/scripts/js/main.js",
+		"/Applications/MAMP/htdocs/dude/styles/scss/form.scss",
+		"/Applications/MAMP/htdocs/dude/styles/scss/typography.scss",
+		"/Applications/MAMP/htdocs/dude/styles/scss/layout.scss",
+		"/Applications/MAMP/htdocs/dude/colophon.html",
+		"/Applications/MAMP/htdocs/dude/styles/scss/basics.scss",
+		"/Applications/MAMP/htdocs/dude/index-letter.html",
+		"/Applications/MAMP/htdocs/dude/form.html",
+		"/Applications/MAMP/htdocs/dude/styles/scss/utilities.scss",
+		"/Applications/MAMP/htdocs/dude/styles/scss/colors.scss",
+		"/Users/marshallbanana/Desktop/exvid-blackdeathws.srt",
+		"/Applications/MAMP/htdocs/dude/styles/scss/normalize.scss",
 		"/Applications/MAMP/htdocs/sketch-grid-00/styles/scss/main.scss",
 		"/Users/marshallbanana/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/Users/marshallbanana/Library/Application Support/Sublime Text 3/Packages/User/ColorHighlighter.sublime-settings",
-		"/Applications/MAMP/htdocs/dude/styles/scss/typography.scss",
 		"/Applications/MAMP/htdocs/sempiternity/workspace/styles/scss/utilities.scss",
 		"/Applications/MAMP/htdocs/dude/styles/scss/print.scss",
 		"/Applications/MAMP/htdocs/agrilaete/.htaccess",
@@ -421,9 +391,7 @@
 		"/Applications/MAMP/htdocs/agrilaete/workspace/scripts/js/main.js",
 		"/Users/marshallbanana/Dropbox/2013-2014_agrilaete/visuals/prototype-00/prototype_00",
 		"/Users/marshallbanana/Dropbox/2013-2014_agrilaete/visuals/prototype-00/home.html",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/styles/scss/utilities.scss",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/utilities/head.xsl",
-		"/Applications/MAMP/htdocs/sitefolio-2/workspace/styles/scss/typography.scss"
+		"/Applications/MAMP/htdocs/sitefolio-2/workspace/styles/scss/utilities.scss"
 	],
 	"find":
 	{
@@ -451,6 +419,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"hr",
+			"as",
+			"delay",
+			"$field-color",
+			"ultra-",
+			"em-ty",
+			"$color",
+			"textarea",
+			"comment",
+			"to-search",
+			"to-comment",
+			"feet",
 			"action",
 			"content",
 			"box",
@@ -566,19 +546,7 @@
 			"scadenza",
 			"adesso",
 			"playground",
-			"bttn",
-			"$wb-brd",
-			"$lghtr-brd",
-			"$drkr-typ",
-			"size",
-			"invert",
-			"happy",
-			"browse",
-			"theme",
-			"link",
-			"form",
-			"figcaption",
-			"em($dhgut, 14)"
+			"bttn"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -586,6 +554,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"<span>as</span>",
+			"$em-type-color",
 			"$m-extra-small-line",
 			"$d-extra-small-line",
 			"$d-extra-small-size",
@@ -665,149 +635,30 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": false,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "project.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6617,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6056,
-								6056
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Github (SL).tmTheme",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1755.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "index-letter.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8074,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7513,
-								7513
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Github (SL).tmTheme",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1144.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6801,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4528,
-								4528
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Github (SL).tmTheme",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 758.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "styles/scss/main.scss",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 355,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Github (SL).tmTheme",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "styles/scss/layout.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15085,
+						"buffer_size": 14452,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10267,
-								10267
+								6260,
+								6260
 							]
 						],
 						"settings":
@@ -817,45 +668,16 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 8263.0,
+						"translation.y": 239.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "/Users/marshallbanana/Desktop/exvid-blackdeathws.srt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 45276,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Github (SL).tmTheme",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 55266.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
+					"buffer": 1,
 					"file": "styles/scss/utilities.scss",
-					"semi_transient": false,
+					"semi_transient": true,
 					"settings":
 					{
 						"buffer_size": 2810,
@@ -865,14 +687,74 @@
 						"selection":
 						[
 							[
-								332,
-								332
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Github (SL).tmTheme",
 							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1789.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "scripts/js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3177,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								366,
+								366
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Github (SL).tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "home.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3325,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								400,
+								400
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Github (SL).tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -883,79 +765,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "styles/scss/form.scss",
+					"buffer": 4,
+					"file": "colophon.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7408,
+						"buffer_size": 3052,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3140,
-								3140
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Github (SL).tmTheme",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1657.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "styles/scss/colors.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1567,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1306,
-								1306
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Github (SL).tmTheme",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 394.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "home.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3255,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2959,
-								2959
+								2770,
+								2770
 							]
 						],
 						"settings":
@@ -965,10 +788,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 548.0,
+						"translation.y": 446.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

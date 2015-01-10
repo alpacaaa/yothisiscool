@@ -165,6 +165,8 @@ code, kbd, mark {
 pre {
 	display: block;
 
+	white-space: normal;
+
 	background-color: $code-background-color;
 
 	@include border-radius(2px, 2px);
@@ -174,14 +176,17 @@ pre {
 
 		padding: 0;
 
+		white-space: pre;
+
 		background-color: transparent;
 	}
 }
 
+
 blockquote {
 	font-style: italic;
 
-	margin: 0 0 0 0;
+	margin: 0;
 
 	border-color: $border-color;
 	em {
