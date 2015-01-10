@@ -1240,7 +1240,18 @@ section {
 
 .letters, .projects, .comments {
   position: relative;
-  width: 100%;
+  width: 100%; }
+  @media only screen and (min-width: 36em) {
+    .letters, .projects, .comments {
+      width: 36em; } }
+  @media only screen and (min-width: 60em) {
+    .letters, .projects, .comments {
+      width: 54em; } }
+  @media only screen and (min-width: 80em) {
+    .letters, .projects, .comments {
+      width: 72em; } }
+
+.letters, .projects {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
@@ -1251,15 +1262,6 @@ section {
   align-items: flex-start;
   -webkit-align-content: flex-start;
   align-content: flex-start; }
-  @media only screen and (min-width: 36em) {
-    .letters, .projects, .comments {
-      width: 36em; } }
-  @media only screen and (min-width: 60em) {
-    .letters, .projects, .comments {
-      width: 54em; } }
-  @media only screen and (min-width: 80em) {
-    .letters, .projects, .comments {
-      width: 72em; } }
 
 .letter {
   position: relative;
@@ -1488,11 +1490,9 @@ section {
   padding-top: 1.5em;
   padding-bottom: 1.5em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  flex-grow: 0;
-  flex-shrink: 1;
-  -moz-page-break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  break-inside: avoid; }
+  float: left;
+  /*flex-grow: 0;
+  flex-shrink: 1;*/ }
   .comment:last-child {
     border-bottom: none; }
   .comment .avatar {

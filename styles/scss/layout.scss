@@ -380,11 +380,6 @@ section {
 	width: 100%;
 
 	@extend %centered;
-	@include display-flex(flex);
-	@include flex-flow(row wrap);
-	@include justify-content(center);
-	@include align-items(flex-start);
-	@include align-content(flex-start);
 	@include respond-to(break3) {
 		width: col(8);
 	}
@@ -394,6 +389,14 @@ section {
 	@include respond-to(break7) {
 		width: col(16);
 	}
+}
+
+.letters, .projects {
+	@include display-flex(flex);
+	@include flex-flow(row wrap);
+	@include justify-content(center);
+	@include align-items(flex-start);
+	@include align-content(flex-start);
 }
 
 .letter {
@@ -613,9 +616,10 @@ section {
 
 	border-bottom: $border-width solid $border-color;
 
-	flex-grow: 0;
-	flex-shrink: 1;
-	@include break-inside(avoid);
+	float: left;
+
+	/*flex-grow: 0;
+	flex-shrink: 1;*/
 	@extend %column-gut;
 	&:last-child {
 		border-bottom: none;

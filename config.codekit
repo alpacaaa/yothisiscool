@@ -275,12 +275,23 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/scripts\/js\/packery.pkgd.min.js": {
+	"\/scripts\/js\/packery.js": {
 		"fileType": 64,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/scripts\/js\/packery.pkgd.min.js",
-		"outputAbbreviatedPath": "\/scripts\/js\/min\/packery.pkgd.min-min.js",
+		"inputAbbreviatedPath": "\/scripts\/js\/packery.js",
+		"outputAbbreviatedPath": "\/scripts\/js\/min\/packery-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/scripts\/js\/packery.pkgd.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/scripts\/js\/packery.pkgd.js",
+		"outputAbbreviatedPath": "\/scripts\/js\/min\/packery.pkgd-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
