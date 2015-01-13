@@ -65,6 +65,9 @@
 /*
 ** Typefaces
 */
+/*
+** Screen dimensions
+*/
 /* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
 /*
 ** Selection
@@ -957,7 +960,6 @@ pre, [class^="form"], .head, .body, [class^="notation"], .comment, [class^="acti
       padding: 1.25em 1em 1.25em 1em; } }
 
 .header {
-  max-width: 72em;
   margin-right: auto;
   margin-left: auto; }
   .header .menu {
@@ -985,7 +987,7 @@ pre, [class^="form"], .head, .body, [class^="notation"], .comment, [class^="acti
 .menu {
   margin-left: auto;
   margin-right: auto;
-  max-width: 72em;
+  max-width: 90em;
   overflow: hidden;
   padding-top: 0.75em;
   padding-bottom: 0.75em;
