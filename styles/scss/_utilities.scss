@@ -1,0 +1,131 @@
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+
+/*
+** Font sizes and line heights
+*/
+
+$m-huge-size: 56px;
+$m-huge-line: 5.6;
+
+$d-huge-size: 64px;
+$d-huge-line: 6.4;
+
+$m-extra-large-size: 28px;
+$m-extra-large-line: 3.6;
+
+$d-extra-large-size: 32px;
+$d-extra-large-line: 4.0;
+
+$m-large-size: 18px;
+$m-large-line: 2.8;
+
+$d-large-size: 20px;
+$d-large-line: 3.2;
+
+$m-medium-size: 16px;
+$m-medium-line: 2.4;
+
+$d-medium-size: 16px;
+$d-medium-line: 2.4;
+
+$m-small-size: 14px;
+$m-small-line: 2.4;
+
+$d-small-size: 14px;
+$d-small-line: 2.4;
+
+$m-extra-small-size: 13px;
+$m-extra-small-line: 2.0;
+
+$d-extra-small-size: 13px;
+$d-extra-small-line: 2.0;
+
+/*
+** Base font sizes and line heights
+*/
+
+$base-font-size: $m-medium-size;
+$base-line-height: 10px;
+
+/*
+** Font weights
+*/
+
+$bold: 500;
+$normal: 400;
+
+/*
+** Grid
+*/
+
+$column-width: 72px;
+
+/*
+** Guts and indents
+*/
+
+$m-gut: 24px; // mobile gut
+$m-indent: $m-gut; // mobile indent
+
+$d-gut: 32px; // desktop gut
+$d-indent: $d-gut; // desktop indent
+
+/*
+** Border widths
+*/
+
+$border-width: 1px;
+$field-border-width: 2px;
+$button-border-width: 0px;
+
+/*
+** Border widths
+*/
+
+$radius: 4px;
+
+/*
+** Strip units
+*/
+
+@function strip($number) {
+	@return $number / ($number * 0 + 1);
+}
+
+/*
+** Convert pxs to ems
+*/
+
+@function em($px, $base: $base-font-size) {
+	@return strip($px / $base) * 1em;
+}
+
+/*
+** Column-width function, in ems
+*/
+
+@function col($number-columns, $base: $base-font-size) {
+	@return em($column-width * $number-columns, $base);
+}
+
+/*
+** Column-width function, in pxs
+*/
+
+@function col-px($number-columns) {
+	@return $column-width * $number-columns * 1px;
+}
+
+/*
+** Typefaces
+*/
+
+@mixin face($status: sans) {
+	@if $status == "sans" {
+		font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+	} @else if $status == "serif" {
+		font-family: Georgia, serif;
+	} @else if $status == "mono" {
+		font-family: "Droid Sans Mono", "Andale Mono", "Monaco", monospace;
+	}
+}

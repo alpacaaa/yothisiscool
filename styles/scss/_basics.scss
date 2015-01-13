@@ -1,8 +1,8 @@
 /* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
 
 /*
- * Selection
- */
+** Selection
+*/
 
 ::-moz-selection {
 	color: $selected-type-color;
@@ -22,20 +22,28 @@ img::selection {
 	background-color: transparent;
 }
 
+/*
+** Focus
+*/
+
 ::focus {
 	outline-style: none;
 	outline-color: transparent;
 }
+
+/*
+** Android
+*/
 
 -webkit-tap-highlight-color {
 	color: rgba(0, 0, 0, 0);
 }
 
 /*
- * Basics
- */
+** Basics
+*/
 
-@include establish-baseline;
+//@include establish-baseline;
 
 html {
 	font-size: 100% * $base-font-size / $browser-default-font-size;
@@ -45,12 +53,15 @@ html {
 	color: $type-color;
 
 	@include adjust-leading-to($m-medium-line);
+	    -ms-text-size-adjust: 100%; // normalize.css
+	-webkit-text-size-adjust: 100%; // normalize.css
+	@include face(sans); // normalize.css
 	@include box-sizing(border-box);
-	@include respond-to(break3) {
+	/*@include min-screen(col(8)) {
 		font-size: 100% * $base-font-size / $browser-default-font-size;
 
 		@include adjust-leading-to($d-medium-line);
-	}
+	}*/
 }
 
 *, *:before, *:after {
@@ -60,15 +71,74 @@ html {
 body {
 	font-weight: $normal;
 
+	display: table;
+
+	width: 100%;
 	height: 100%;
+	margin: 0; // normalize.css
 
 	background-color: $background-color;
-
-	@include face(sans);
 }
 
+/*
+** HTML5
+*/
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+	display: block; // normalize.css
+}
+
+audio, canvas, progress, video {
+	display: inline-block; // normalize.css
+
+	vertical-align: baseline; // normalize.css
+}
+
+audio:not([controls]) {
+	display: none; // normalize.css
+
+	height: 0; // normalize.css
+}
+
+[hidden], template {
+	display: none; // normalize.css
+}
+
+/*
+** Links
+*/
+
+a {
+	text-decoration: none;
+
+	background-color: transparent; // normalize.css
+
+	@include transition-property(color);
+	@include transition-duration(0.2s);
+	@include transition-timing-function(ease-in-out);
+	@include transition-delay(0s);
+	@include link-colors($em-type-color, $strong-type-color, $strong-type-color);
+	&:hover {
+		outline: 0; // normalize.css
+	}
+	&:active {
+		outline: 0; // normalize.css
+		@include transition-duration(0.0s);
+	}
+	&:focus {
+		outline: 0;
+	}
+}
+a[href^="mailto"] {
+	word-break: break-all;
+}
+
+/*
+** Text-level semantics
+*/
+
 h1, h2, h3, h4, h5, h6 {
-	font-size: 1em;
+	font-size: 1em; // normalize.css
 
 	margin: 0;
 
@@ -94,11 +164,7 @@ ul, ol {
 dl {
 	margin: 0;
 	dt {
-		font-style: italic;
-
-		float: left;
-
-		margin-right: 0.8em;
+		font-weight: $bold;
 
 		color: $strong-type-color;
 	}
@@ -111,27 +177,12 @@ p {
 	margin: 0;
 }
 
-a {
-	text-decoration: none;
-
-	@include transition-property(color);
-	@include transition-duration(0.2s);
-	@include transition-timing-function(ease-in-out);
-	@include transition-delay(0s);
-	@include link-colors($em-type-color, $strong-type-color, $strong-type-color);
-	&:active {
-		@include transition-duration(0.0s);
-	}
-	&:focus {
-		outline: 0;
-	}
-}
-a[href^="mailto"] {
-	word-break: break-all;
+abbr[title] {
+	border-bottom: 1px dotted; // normalize.css
 }
 
 strong {
-	font-weight: $bold;
+	font-weight: $bold; // normalize.css
 
 	color: $strong-type-color;
 }
@@ -148,11 +199,46 @@ q {
 	}
 }
 
+dfn {
+	font-style: italic; // normalize.css
+}
+
+small {
+	font-size: 0.8em; // normalize.css
+}
+
+sub, sup {
+	font-size: 0.8em; // normalize.css
+	line-height: 0; // normalize.css
+
+	position: relative; // normalize.css
+
+	margin-left: 0.2em;
+
+	vertical-align: baseline; // normalize.css
+}
+
+sup {
+	top: -0.5em; // normalize.css
+}
+
+sub {
+	bottom: -0.25em; // normalize.css
+}
+
+/*
+** Grouping content
+*/
+
+code, kbd, pre, samp {
+	font-family: monospace, monospace; // normalize.css
+	font-size: 1em; // normalize.css
+}
 code, samp, kbd, mark {
 	color: $type-color;
 }
 code, samp, kbd {
-	@include face(code);
+	@include face(mono);
 }
 code, kbd, mark {
 	padding: 0 0.2em;
@@ -164,6 +250,7 @@ code, kbd, mark {
 
 pre {
 	display: block;
+	overflow: auto; // normalize.css
 
 	white-space: normal;
 
@@ -182,7 +269,6 @@ pre {
 	}
 }
 
-
 blockquote {
 	font-style: italic;
 
@@ -200,16 +286,6 @@ blockquote {
 	}
 }
 
-img, iframe {
-	display: block;
-
-	max-width: 100%;
-}
-
-img {
-	image-rendering: optimizeQuality;
-}
-
 hr {
 	display: block;
 
@@ -221,21 +297,22 @@ hr {
 	border-top: $border-width solid $border-color;
 }
 
-audio, canvas, img, svg, video {
-	vertical-align: middle;
+/*
+** Embedded content
+*/
+
+img, iframe {
+	display: block;
+
+	max-width: 100%;
 }
 
-fieldset {
-	margin: 0;
-	padding: 0;
+img {
+	border: 0; // normalize.css
 
-	border: 0;
+	image-rendering: optimizeQuality;
 }
 
-button, input, select, textarea {
-	color: $type-color;
-}
-
-textarea {
-	resize: vertical;
+svg:not(:root) {
+	overflow: hidden; // normalize.css
 }

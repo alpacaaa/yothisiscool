@@ -1,9 +1,9 @@
 /* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
 
 /*
- * Colors
- * 0 1 | 2 3 | 4 5 | 6 7 | 8 9 | a b | c d | e f
- */
+** Colors
+** 0 1 | 2 3 | 4 5 | 6 7 | 8 9 | a b | c d | e f
+*/
 
 $black: #000;
 $white: #fff;
@@ -11,8 +11,8 @@ $emphasis: hsl(320, 80, 50);
 $canvas: hsl(60, 80, 90);
 
 /*
- * Typography
- */
+** Typography
+*/
 
 $strong-type-color: rgba($black, 0.8);
 $type-color: rgba($black, 0.6);
@@ -25,8 +25,8 @@ $placeholder-type-color: rgba($black, 0.15);
 $selected-type-color: $strong-type-color;
 
 /*
- * Backgrounds
- */
+** Backgrounds
+*/
 
 $background-color: $canvas;
 $selected-background-color: rgba($black, 0.05);
@@ -36,20 +36,20 @@ $hover-background-color: rgba($black, 0.05);
 $active-background-color: rgba($emphasis, 0.2);
 
 /*
- * Borders
- */
+** Borders
+*/
 
 $border-color: rgba($black, 0.05);
 
 /*
- * Shadows
- */
+** Shadows
+*/
 
 $shadow-color: rgba($black, 0.05);
 
 /*
- * Fields
- */
+** Fields
+*/
 
 $field-background-color:  rgba($white, 1.0);
 
@@ -59,8 +59,8 @@ $strong-field-border-color: rgba($black, 0.1);
 $error-field-border-color: rgba($emphasis, 0.4);
 
 /*
- * Buttons
- */
+** Buttons
+*/
 
 $button-color: rgba($white, 0.95);
 
@@ -71,8 +71,8 @@ $button-border-color: $em-type-color;
 $active-button-border-color: $strong-type-color;
 
 /*
- * Pictures
- */
+** Pictures
+*/
 
 $picture-background-color: $field-background-color;
 

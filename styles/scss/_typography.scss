@@ -1,34 +1,8 @@
 /* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
 
 /*
- * Typefaces
- */
-
-@mixin face($status: sans) {
-	@if $status == "sans" {
-		font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
-	} @else if $status == "serif" {
-		font-family: "Noto Serif", Georgia, serif;
-	} @else if $status == "code" {
-		font-family: "Droid Sans Mono", "Andale Mono", "Monaco", monospace;
-	}
-}
-
-/*
- * Baseline grid
- */
-
-@include establish-baseline;
-
-html {
-	height: 100%;
-
-	@include adjust-leading-to(4);
-}
-
-/*
- * Typography
- */
+** Typography
+*/
 
 [class*="typo"] {
 	position: relative;
@@ -60,9 +34,6 @@ html {
 		border-left-width: $border-width;
 		border-left-style: solid;
 	}
-	sup {
-		margin-left: 0.2em;
-	}
 	img {
 		margin-left: auto;
 		margin-right: auto;
@@ -78,7 +49,7 @@ html {
 	> *:last-child {
 		margin-bottom: 0;
 	}
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		ul, ol, blockquote {
 			padding-left: em($d-indent);
 		}
@@ -132,7 +103,7 @@ html {
 		@include rhythm-margins($m-large-line/2, $m-large-line/2);
 		@include leading-border($border-width, $m-large-line);
 	}
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		h1, h2 {
 			margin-bottom: rhythm($d-extra-large-line/2, $d-extra-large-size);
 
@@ -230,7 +201,7 @@ html {
 		@include rhythm-margins($m-medium-line/2, $m-medium-line/2);
 		@include leading-border($border-width, $m-medium-line);
 	}
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		h1, h2 {
 			margin-bottom: rhythm($d-large-line/2, $d-large-size);
 
@@ -328,7 +299,7 @@ html {
 		@include rhythm-margins($m-small-line/2, 0);
 		@include leading-border($border-width, $m-small-line);
 	}
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		h1, h2, h3, h4 {
 			margin-bottom: rhythm($d-medium-line/2, $d-medium-size);
 

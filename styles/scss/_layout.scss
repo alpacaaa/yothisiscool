@@ -1,8 +1,8 @@
 /* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
 
 /*
- * Placeholders
- */
+** Placeholders
+*/
 
 %column-gut {
 	position: relative;
@@ -10,7 +10,7 @@
 	padding-right: em($m-gut/2);
 	padding-left: em($m-gut/2);
 
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		padding-right: em($d-gut/2);
 		padding-left: em($d-gut/2);
 	}
@@ -22,27 +22,20 @@
 }
 
 /*
- * Istances
- */
-
-body {
-	display: table;
-
-	width: 100%;
-	height: 100%;
-}
+** Istances
+*/
 
 .warning {
 	text-align: center;
 	padding: rhythm(2) em($m-gut/2) rhythm(2) em($m-gut/2);
 
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		padding: rhythm(2) em($d-gut/2) rhythm(2) em($d-gut/2);
 	}
 }
 
 .header {
-	max-width: $break8;
+	max-width: col(16);
 	margin-right: auto;
 	margin-left: auto;
 	.menu {
@@ -78,7 +71,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 
-	max-width: $break8;
+	max-width: col(16);
 	overflow: hidden;
 
 	padding-top: em($m-gut/2);
@@ -206,7 +199,7 @@ body {
 			@include rotate3d(-4, -4, 0, 24deg);
 		}
 	}
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		padding-top: em($d-gut/2);
 		padding-bottom: em($d-gut/2);
 		li {
@@ -255,12 +248,12 @@ body {
 }
 
 .content {
-	max-width: $break8;
+	max-width: col(16);
 	margin-right: auto;
 	margin-left: auto;
 	padding-top: rhythm($m-medium-line*4);
 
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		padding-top: rhythm($d-medium-line*4);
 	}
 }
@@ -274,7 +267,7 @@ body {
 	h2 {
 		text-align: center;
 	}
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		width: col(8);
 		margin-bottom: rhythm($d-extra-large-line/2);
 	}
@@ -286,7 +279,7 @@ body {
 	margin-left: auto;
 
 	@extend %column-gut;
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		width: col(8);
 		margin-bottom: rhythm($d-medium-line);
 	}
@@ -312,7 +305,7 @@ body {
 
 		color: $light-type-color;
 	}
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		.avatar {
 			width: em(48);
 			height: em(48);
@@ -329,7 +322,7 @@ section {
 	> *:last-child {
 		margin-bottom: 0;
 	}
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		padding-bottom: rhythm($d-medium-line*4);
 	}
 }
@@ -362,7 +355,7 @@ section {
 
 		@include adjust-font-size-to($m-small-size, $m-small-line);
 	}
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		width: col(8);
 		padding-bottom: rhythm($d-small-line*2);
 		h3 {
@@ -380,13 +373,13 @@ section {
 	width: 100%;
 
 	@extend %centered;
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		width: col(8);
 	}
-	@include respond-to(break5) {
+	@include min-screen(col(12)) {
 		width: col(12);
 	}
-	@include respond-to(break7) {
+	@include min-screen(col(16)) {
 		width: col(16);
 	}
 }
@@ -480,7 +473,7 @@ section {
 			@include transition-duration(0.0625s);
 		}
 	}
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		width: col(2);
 		&:after {
 			width: col(1);
@@ -561,7 +554,7 @@ section {
 			@include transition-duration(0.0625s);
 		}
 	}
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		width: col(4);
 
 		border-bottom: none;
@@ -647,7 +640,7 @@ section {
 
 		@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
 	}
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		width: col(4);
 		padding-top: rhythm($d-medium-line);
 		padding-bottom: rhythm($d-medium-line);
@@ -699,7 +692,7 @@ section {
 			color: $em-type-color;
 		}
 	}
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		width: col(4);
 		margin-top: rhythm($d-medium-line*4);
 		margin-bottom: rhythm($d-medium-line*4);

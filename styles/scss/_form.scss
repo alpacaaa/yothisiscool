@@ -17,15 +17,99 @@
 	color: $placeholder-type-color;
 }
 
-form {
-	margin: 0;
-}
+/*
+** Basics
+*/
 
-button, input, textarea {
+button, input, optgroup, select, textarea {
+	font: inherit; // normalize.css
+
+	margin: 0; // normalize.css
+
+	color: inherit; // normalize.css
 	&:focus {
 		outline: none;
 	}
 }
+
+button {
+	overflow: visible; // normalize.css
+}
+
+button, select {
+	text-transform: none; // normalize.css
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+	cursor: pointer; // normalize.css
+
+	-webkit-appearance: button; // normalize.css
+}
+
+button[disabled], html input[disabled] {
+	cursor: default; // normalize.css
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+	padding: 0; // normalize.css
+
+	border: 0; // normalize.css
+}
+
+input {
+	line-height: normal; // normalize.css
+}
+
+input[type="checkbox"], input[type="radio"] {
+	padding: 0; // normalize.css
+}
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+	height: auto; // normalize.css
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield; // normalize.css
+}
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none; // normalize.css
+}
+
+fieldset {
+	margin: 0; // normalize.css
+	padding: 0; // normalize.css
+
+	border: 0; // normalize.css
+}
+
+form {
+	margin: 0;
+}
+
+legend {
+	padding: 0; // normalize.css
+
+	border: 0; // normalize.css
+}
+
+textarea {
+	overflow: auto; // normalize.css
+
+	resize: vertical;
+}
+
+optgroup {
+	font-weight: $bold; // normalize.css
+}
+
+/*button, input, select, textarea {
+	color: $type-color;
+}*/
+
+/*
+** Istances
+*/
 
 [class^="form"] {
 	margin-bottom: rhythm($m-medium-line*2);
@@ -42,7 +126,7 @@ button, input, textarea {
 	input[type = "text"], input[type = "search"], textarea, button, input[type = "submit"] {
 		display: block;
 
-		@include face(sans);
+		//@include face(sans);
 		@include transition-property(color, border-color, background-color);
 		@include transition-duration(0.2s, 0.2s, 0.2s);
 		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
@@ -142,7 +226,7 @@ button, input, textarea {
 			border-color: $error-field-border-color;
 		}
 	}
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		width: col(8);
 		margin-bottom: rhythm($d-medium-line*2);
 		label {
@@ -244,7 +328,6 @@ button, input, textarea {
 	input[type = "submit"] {
 		width: em($m-medium-size*4, $m-medium-size);
 		height: em($m-medium-size*4, $m-medium-size);
-		//margin-top: em(-$m-medium-size*4, $m-medium-size);
 		padding-right: 0;
 		padding-left: 0;
 
@@ -258,11 +341,10 @@ button, input, textarea {
 		max-height: 0;
 		margin-bottom: 0;
 	}
-	@include respond-to(break3) {
+	@include min-screen(col(8)) {
 		input[type = "submit"] {
 			width: em($d-medium-size*4, $d-medium-size);
 			height: em($d-medium-size*4, $d-medium-size);
-			//margin-top: em(-$d-medium-size*4, $d-medium-size);
 		}
 	}
 }
