@@ -126,7 +126,6 @@ optgroup {
 	input[type = "text"], input[type = "search"], textarea, button, input[type = "submit"] {
 		display: block;
 
-		//@include face(sans);
 		@include transition-property(color, border-color, background-color);
 		@include transition-duration(0.2s, 0.2s, 0.2s);
 		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
@@ -143,7 +142,7 @@ optgroup {
 	}
 	input[type = "text"], input[type = "search"], textarea {
 		width: 100%;
-		padding: rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut/2, $m-medium-size) rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut/2, $m-medium-size);
+		padding: rhythm($m-medium-line/4 + strip(-$field-border-width/10), $m-medium-size) em($m-gut/2, $m-medium-size) rhythm($m-medium-line/4 + strip(-$field-border-width/10), $m-medium-size) em($m-gut/2, $m-medium-size);
 
 		color: $type-color;
 		border: $field-border-width solid $field-border-color;
@@ -192,7 +191,7 @@ optgroup {
 
 		width: 50%;
 		height: rhythm($m-medium-line*1.5, $m-medium-size);
-		padding: rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut/2, $m-medium-size) rhythm($m-medium-line/4-0.2, $m-medium-size) em($m-gut/2, $m-medium-size);
+		padding: rhythm($m-medium-line/4 + strip(-$button-border-width/10), $m-medium-size) em($m-gut/2, $m-medium-size) rhythm($m-medium-line/4 + strip(-$button-border-width/10), $m-medium-size) em($m-gut/2, $m-medium-size);
 
 		color: $button-color;
 		border: $button-border-width solid $button-border-color;
@@ -200,7 +199,7 @@ optgroup {
 
 		@extend %centered;
 		@include adjust-font-size-to($m-medium-size, $m-medium-line);
-		@include border-radius(4px, 4px);
+		@include border-radius($radius, $radius);
 		@include adjust-font-size-to($m-medium-size, $m-medium-line);
 		&:active, &:hover {
 			border-color: $active-button-border-color;
@@ -236,7 +235,7 @@ optgroup {
 			@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		}
 		input[type = "text"], input[type = "search"], textarea {
-			padding: rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut/4, $d-medium-size) rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut/4, $d-medium-size);
+			padding: rhythm($d-medium-line/4 + strip(-$field-border-width/10), $d-medium-size) em($d-gut/4, $d-medium-size) rhythm($d-medium-line/4 + strip(-$field-border-width/10), $d-medium-size) em($d-gut/4, $d-medium-size);
 
 			@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		}
@@ -253,7 +252,7 @@ optgroup {
 		button, input[type = "submit"] {
 			width: col(3, $d-medium-size);
 			height: rhythm($d-medium-line*1.5, $d-medium-size);
-			padding: rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut/2, $d-medium-size) rhythm($d-medium-line/4-0.2, $d-medium-size) em($d-gut/2, $d-medium-size);
+			padding: rhythm($d-medium-line/4 + strip(-$button-border-width/10), $d-medium-size) em($d-gut/2, $d-medium-size) rhythm($d-medium-line/4 + strip(-$button-border-width/10), $d-medium-size) em($d-gut/2, $d-medium-size);
 
 			@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		}

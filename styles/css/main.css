@@ -1,4 +1,4 @@
-/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/*! (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
 /*
 ** Imports
 */
@@ -48,7 +48,7 @@
 ** Border widths
 */
 /*
-** Border widths
+** Radiuses
 */
 /*
 ** Strip units
@@ -769,7 +769,7 @@ optgroup {
     display: inline-block;
     width: 50%;
     height: 2.25em;
-    padding: 0.25em 0.75em 0.25em 0.75em;
+    padding: 0.375em 0.75em 0.375em 0.75em;
     color: rgba(255, 255, 255, 0.95);
     border: 0px solid rgba(230, 25, 161, 0.8);
     background-color: rgba(230, 25, 161, 0.8);
@@ -822,7 +822,7 @@ optgroup {
       [class^="form"] button, [class^="form"] input[type="submit"] {
         width: 13.5em;
         height: 2.25em;
-        padding: 0.25em 1em 0.25em 1em;
+        padding: 0.375em 1em 0.375em 1em;
         font-size: 1em;
         line-height: 1.5em; }
       [class^="form"] .field {
