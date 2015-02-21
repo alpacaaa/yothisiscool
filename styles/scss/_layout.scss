@@ -128,7 +128,7 @@
 			@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
 		}
 	}
-	.current {
+	.active {
 		span {
 			cursor: default;
 
