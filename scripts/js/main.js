@@ -137,13 +137,30 @@ docReady( function() {
  * Logo
  */
 
-var logoSize = 128;
+var coin,
+logoSize,
+posX, posY,
+rotation;
+
+coin = Math.floor(Math.random() * 2);
+logoSize = 128;
+
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 //var posX = (Math.floor((Math.random() * ($(window).width() - logoSize))/12) * 12);
 //var posY = (Math.floor((Math.random() * ($(window).height() - logoSize))/12) * 12);
-var posX = Math.floor((Math.random() * 100) + 1);
-var posY = Math.floor((Math.random() * 100) + 1);
-var rotation = Math.floor((Math.random() * 40) -20);
+
+if (coin) {
+	posX = getRandomInt(5, 30);
+	//posX = Math.floor((Math.random() * 100) + 1);
+} else {
+	posX = getRandomInt(75, 100);
+}
+
+posY = Math.floor((Math.random() * 100) + 1);
+rotation = Math.floor((Math.random() * 40) -20);
 
 $('.logo img').css({
 	'top' : posY + '%',
