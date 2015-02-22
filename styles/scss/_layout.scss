@@ -25,6 +25,41 @@
 ** Istances
 */
 
+.logo {
+	position: absolute;
+	z-index: -1;
+
+	display: block;
+	overflow: hidden;
+
+	width: 100%;
+	height: 100%;
+
+	opacity: 0.2;
+
+	img {
+		position: relative;
+		top: em($m-logo-size/2 + $m-gut/2);
+		left: 50%;
+
+		width: em($m-logo-size);
+		height: em($m-logo-size);
+
+		margin-top: em(-$m-logo-size/2);
+		margin-left: em(-$m-logo-size/2);
+	}
+	@include min-screen(col(8)) {
+		img {
+			top: em($d-logo-size/2 + $d-gut/2);
+
+			width: em($d-logo-size);
+			height: em($d-logo-size);
+			margin-top: em(-$d-logo-size/2);
+			margin-left: em(-$d-logo-size/2);
+		}
+	}
+}
+
 .warning {
 	text-align: center;
 	padding: rhythm(2) em($m-gut/2) rhythm(2) em($m-gut/2);
@@ -39,12 +74,6 @@
 	margin-left: auto;
 	.menu {
 		@include perspective-origin(center bottom);
-	}
-	h1 {
-		display: none;
-
-		margin-right: auto;
-		margin-left: auto;
 	}
 }
 
@@ -132,7 +161,7 @@
 		span {
 			cursor: default;
 
-			color: $strong-type-color;
+			color: $strong-nd-type-color;
 		}
 		&:hover {
 			span {
@@ -302,6 +331,9 @@
 		font-style: normal;
 
 		color: $light-type-color;
+		a {
+			@include link-colors($light-em-type-color, $light-type-color, $light-type-color);
+		}
 	}
 	@include min-screen(col(8)) {
 		.avatar {
@@ -637,6 +669,9 @@ section {
 		color: $light-type-color;
 
 		@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
+		a {
+			@include link-colors($light-em-type-color, $light-type-color, $light-type-color);
+		}
 	}
 	@include min-screen(col(8)) {
 		width: col(4);

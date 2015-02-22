@@ -178,6 +178,7 @@ optgroup {
 		text-align: right;
 
 		color: $light-type-color;
+		//background-color: rgba($canvas, 0.5);
 
 		@include adjust-font-size-to($m-small-size, $m-small-line);
 		strong {

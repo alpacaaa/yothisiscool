@@ -134,6 +134,27 @@ docReady( function() {
 */
 
 /*
+ * Logo
+ */
+
+var logoSize = 128;
+
+//var posX = (Math.floor((Math.random() * ($(window).width() - logoSize))/12) * 12);
+//var posY = (Math.floor((Math.random() * ($(window).height() - logoSize))/12) * 12);
+var posX = Math.floor((Math.random() * 100) + 1);
+var posY = Math.floor((Math.random() * 100) + 1);
+var rotation = Math.floor((Math.random() * 40) -20);
+
+$('.logo img').css({
+	'top' : posY + '%',
+	'left' : posX + '%',
+	'-webkit-transform' : 'rotate(' + rotation + 'deg)',
+	'-moz-transform' : 'rotate(' + rotation + 'deg)',
+	'-ms-transform' : 'rotate(' + rotation + 'deg)',
+	'transform' : 'rotate(' + rotation + 'deg)'
+});
+
+/*
  * Form
  */
 

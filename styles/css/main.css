@@ -30,6 +30,9 @@
 */
 /* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
 /*
+** Logo sizes
+*/
+/*
 ** Font sizes and line heights
 */
 /*
@@ -130,6 +133,8 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
+  position: relative;
+  z-index: 0;
   background-color: #fafad1; }
 
 /*
@@ -196,7 +201,7 @@ a[href^="mailto"] {
 h1, h2, h3, h4, h5, h6 {
   font-size: 1em;
   margin: 0;
-  color: rgba(0, 0, 0, 0.8); }
+  color: rgba(20, 184, 184, 0.8); }
   h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     color: rgba(0, 0, 0, 0.4); }
 
@@ -247,7 +252,6 @@ sub, sup {
   font-size: 0.8em;
   line-height: 0;
   position: relative;
-  margin-left: 0.2em;
   vertical-align: baseline; }
 
 sup {
@@ -346,11 +350,13 @@ svg:not(:root) {
     border-left-style: solid; }
   [class*="typo"] img {
     margin-left: auto;
-    margin-right: auto; }
-  [class*="typo"] .emojione {
+    margin-right: auto;
+    opacity: 0.9; }
+  [class*="typo"] .emoji {
     height: 3ex;
     display: inline-block;
-    margin: 0 0 -0.3em 0; }
+    margin: 0 0 -0.3em 0;
+    opacity: 0.9; }
   [class*="typo"] hr {
     margin-left: auto;
     margin-right: auto;
@@ -736,7 +742,7 @@ optgroup {
     padding: 0.25em 0.75em 0.25em 0.75em;
     color: rgba(0, 0, 0, 0.6);
     border: 2px solid transparent;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
@@ -956,6 +962,30 @@ pre, [class^="form"], .head, .body, [class^="notation"], .comment, [class^="acti
 /*
 ** Istances
 */
+.logo {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2; }
+  .logo img {
+    position: relative;
+    top: 3.75em;
+    left: 50%;
+    width: 6em;
+    height: 6em;
+    margin-top: -3em;
+    margin-left: -3em; }
+  @media screen and (min-width: 36em) {
+    .logo img {
+      top: 5em;
+      width: 8em;
+      height: 8em;
+      margin-top: -4em;
+      margin-left: -4em; } }
+
 .warning {
   text-align: center;
   padding: 1.25em 0.75em 1.25em 0.75em; }
@@ -970,10 +1000,6 @@ pre, [class^="form"], .head, .body, [class^="notation"], .comment, [class^="acti
     -moz-perspective-origin: center bottom;
     -webkit-perspective-origin: center bottom;
     perspective-origin: center bottom; }
-  .header h1 {
-    display: none;
-    margin-right: auto;
-    margin-left: auto; }
 
 .footer {
   display: table-row;
@@ -1048,15 +1074,15 @@ pre, [class^="form"], .head, .body, [class^="notation"], .comment, [class^="acti
       -o-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
       -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
       transition-timing-function: ease-in-out, ease-in-out, ease-in-out; }
-  .menu .current span {
+  .menu .active span {
     cursor: default;
-    color: rgba(0, 0, 0, 0.8); }
-  .menu .current:hover span {
+    color: rgba(20, 184, 184, 0.8); }
+  .menu .active:hover span {
     background-color: transparent;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none; }
-  .menu .current:active span {
+  .menu .active:active span {
     background-color: rgba(230, 25, 161, 0.2);
     -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
     -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
@@ -1185,6 +1211,12 @@ pre, [class^="form"], .head, .body, [class^="notation"], .comment, [class^="acti
   font-weight: 400;
   font-style: normal;
   color: rgba(0, 0, 0, 0.4); }
+  .author .tributary a {
+    color: rgba(230, 25, 161, 0.4); }
+    .author .tributary a:hover {
+      color: rgba(0, 0, 0, 0.4); }
+    .author .tributary a:active {
+      color: rgba(0, 0, 0, 0.4); }
 @media screen and (min-width: 36em) {
   .author .avatar {
     width: 3em;
@@ -1514,6 +1546,12 @@ section {
     color: rgba(0, 0, 0, 0.4);
     font-size: 0.875em;
     line-height: 1.71429em; }
+    .comment .tributary a {
+      color: rgba(230, 25, 161, 0.4); }
+      .comment .tributary a:hover {
+        color: rgba(0, 0, 0, 0.4); }
+      .comment .tributary a:active {
+        color: rgba(0, 0, 0, 0.4); }
   @media screen and (min-width: 36em) {
     .comment {
       width: 18em;
