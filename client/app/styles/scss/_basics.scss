@@ -118,7 +118,7 @@ a {
 	@include transition-duration(0.2s);
 	@include transition-timing-function(ease-in-out);
 	@include transition-delay(0s);
-	@include link-colors($em-type-color, $strong-type-color, $strong-type-color);
+	@include link-colors($strong-st-type-color, $strong-type-color, $strong-type-color);
 	&:hover {
 		outline: 0; // normalize.css
 	}

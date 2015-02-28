@@ -1,6 +1,5 @@
 [
 
-
 {
   "letter": "#",
   "slug": "NaN"
@@ -9,14 +8,13 @@
 {
   "letter": "A",
   "word": "Apophasis",
-  "definition": "(Apophasis)[http://en.wikipedia.org/wiki/Apophasis] is a rhetorical device wherein the speaker or writer brings up a subject by either denying it, or denying that it should be brought up."
+  "definition": '[Apophasis](http://en.wikipedia.org/wiki/Apophasis "Apophasis on Wikipedia") is a rhetorical device wherein the speaker or writer brings up a subject by either denying it, or denying that it should be brought up.'
 },
 
 {
   "letter": "B",
   "word": "Bottleneck",
-  "source":"http://en.wikipedia.org/wiki/Population_bottleneck",
-  "definition": "A population bottleneck is a sharp reduction in the size of a population due to extraordinary events which can reduce the variation in its gene pool."
+  "definition": "A [population bottleneck](http://en.wikipedia.org/wiki/Population_bottleneck "Population Bottleneck on Wikipedia") is a sharp reduction in the size of a population due to extraordinary events which can reduce the variation in its gene pool."
 },
 
 
@@ -40,7 +38,6 @@
   "word": "Dilbert principle",
   "definition": "The Dilbert principle refers states that companies tend to systematically promote their least-competent employees to management, in order to limit the amount of damage they are capable of doing."
 },
-
 
 {
   "letter": "D",
@@ -215,6 +212,5 @@
   "word": "Zeitgeist",
   "definition": "The <em>Zeitgeist</em> is the intellectual fashion or dominant school of thought that typifies and influences the culture of a particular period in time."
 }
-
 
 ]

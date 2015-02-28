@@ -19,9 +19,9 @@ $strong-type-color: rgba($black, 0.8);
 $type-color: rgba($black, 0.6);
 $light-type-color: rgba($black, 0.4);
 
-$em-type-color: rgba($st-color, 0.8);
+$strong-st-type-color: rgba($st-color, 0.8);
 $st-type-color: rgba($st-color, 0.6);
-$light-em-type-color: rgba($st-color, 0.4);
+$light-st-type-color: rgba($st-color, 0.4);
 
 $strong-nd-type-color: rgba($nd-color, 0.8);
 $nd-type-color: rgba($nd-color, 0.8);
@@ -70,10 +70,10 @@ $error-field-border-color: rgba($st-color, 0.4);
 
 $button-color: rgba($white, 0.95);
 
-$button-background-color: $em-type-color;
+$button-background-color: $strong-st-type-color;
 $active-button-background-color: $strong-type-color;
 
-$button-border-color: $em-type-color;
+$button-border-color: $strong-st-type-color;
 $active-button-border-color: $strong-type-color;
 
 /*

@@ -144,7 +144,7 @@
 		}
 		span {
 			display: block;
-			color: $em-type-color;
+			color: $strong-st-type-color;
 
 			height: 100%;
 			padding-top: em(8px, $m-small-size);
@@ -325,7 +325,7 @@
 
 		color: $light-type-color;
 		a {
-			@include link-colors($light-em-type-color, $light-type-color, $light-type-color);
+			@include link-colors($light-st-type-color, $light-type-color, $light-type-color);
 		}
 	}
 	@include min-screen(col(8)) {
@@ -666,7 +666,7 @@ section {
 
 		@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
 		a {
-			@include link-colors($light-em-type-color, $light-type-color, $light-type-color);
+			@include link-colors($light-st-type-color, $light-type-color, $light-type-color);
 		}
 	}
 	@include min-screen(col(8)) {
@@ -719,7 +719,7 @@ section {
 
 		@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
 		span {
-			color: $em-type-color;
+			color: $strong-st-type-color;
 		}
 	}
 	@include min-screen(col(8)) {
