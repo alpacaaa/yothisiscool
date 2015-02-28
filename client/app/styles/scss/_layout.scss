@@ -415,9 +415,9 @@ section {
 	@include align-content(flex-start);
 }
 .comments {
-	@include min-screen(col(8)) {
+	/*@include min-screen(col(8)) {
 		@include clearfix();
-	}
+	}*/
 }
 
 .letter {
