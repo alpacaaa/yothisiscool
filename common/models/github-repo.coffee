@@ -1,9 +1,11 @@
 
 github = require '../../server/github'
 Promise = require 'bluebird'
+marked  = require 'marked'
 
 index = require '../../server/alphabetic-index'
 alphabetic_index = index.reduce ((acc, item) ->
+  item.definition = marked item.definition if item.definition
   acc[item.letter.toLowerCase()] = item
   acc
 ), {}
