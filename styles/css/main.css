@@ -762,9 +762,8 @@ optgroup {
     font-style: normal;
     display: block;
     margin-top: 0.42857em;
-    padding-right: 0.85714em;
-    padding-left: 0.85714em;
-    text-align: right;
+    padding-right: 1em;
+    padding-left: 1em;
     color: rgba(0, 0, 0, 0.4);
     font-size: 0.875em;
     line-height: 1.71429em; }
@@ -821,8 +820,8 @@ optgroup {
         height: 2.25em; }
       [class^="form"] i {
         margin-top: 0.42857em;
-        padding-right: 1.14286em;
-        padding-left: 1.14286em;
+        padding-right: 0.71429em;
+        padding-left: 0.71429em;
         font-size: 0.875em;
         line-height: 1.71429em; }
       [class^="form"] button, [class^="form"] input[type="submit"] {
