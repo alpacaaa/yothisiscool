@@ -148,6 +148,14 @@ describe "User comments", ->
     .expect 500, done
 
 
+  it "shouldn't allow lengthy comments", (done) ->
+    request(app)
+    .post "/api/comments/new?access_token=#{token}"
+    .send
+      body: new Array(322).join('a')
+      repo: 1
+    .expect 500, done
+
 
   it "shouldn't allow to comment on a non existing repo", (done) ->
     request(app)

@@ -1,5 +1,7 @@
 
 `import Ember from 'ember'`
+`import ENV from 'client/config/environment'`
+
 
 ProjectRoute = Ember.Route.extend
 
@@ -28,6 +30,7 @@ ProjectRoute = Ember.Route.extend
 
     Ember.RSVP.hash
       project: promise
+      chars_allowed: ENV.APP.CHARS_ALLOWED
 
 
   clean_slug: (slug) ->

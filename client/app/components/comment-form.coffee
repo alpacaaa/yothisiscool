@@ -7,12 +7,24 @@ CommentFormComponent = Ember.Component.extend InboundActions,
   tagName: ''
   isOpen: false
   comment: ''
+  chars_allowed: null
 
   errorMsg: false
   emptyError: 'Doh. Something’s wrong here.'
+  tooManyChars: 'Dude, too many characters.'
   userIsTyping: false
 
   showTypingMessage: Ember.computed.or('utils.session.access_token', 'userIsTyping')
+
+  remainingChars: (->
+    chars = @get 'chars_allowed'
+    chars - @get('comment.length') if chars
+  ).property 'comment'
+
+  watchChars: (->
+    if @get('remainingChars') < 0
+      @set 'errorMsg', @get('tooManyChars')
+  ).observes 'remainingChars'
 
   submitComment: ->
     body = @get 'comment'

@@ -45,6 +45,10 @@ module.exports = (Comment) ->
 
       return next(new Error('Empty body')) unless body.length
 
+      chars_allowed = 320
+      if body.length > chars_allowed
+        return next(new Error('Too many characters'))
+
       Comment.createAsync
         body: body
         date: new Date()
@@ -69,7 +73,7 @@ module.exports = (Comment) ->
 
 
   markdownify = (string) ->
-    stupid = marked string,
+    marked string,
       gfm: true,
       tables: false,
       breaks: false,
@@ -77,20 +81,6 @@ module.exports = (Comment) ->
       sanitize: true,
       smartLists: false,
       smartypants: false
-
-    # remove <p></p>
-    # doesn't make any sense
-    # also, it's not clean
-    # I feel dirty
-    stupid = stupid.trim()
-
-    if stupid[0..2] == '<p>'
-      stupid = stupid[3..]
-
-    if stupid[-4..] == '</p>'
-      stupid = stupid[0..-5]
-
-    stupid
 
 
 

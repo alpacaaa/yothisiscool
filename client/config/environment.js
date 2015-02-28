@@ -22,6 +22,7 @@ module.exports = function(environment) {
   };
 
   var WS_ENDPOINT = process.env.WS_ENDPOINT || 'http://localhost:3000';
+  var CHARS_ALLOWED = 320;
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -46,6 +47,7 @@ module.exports = function(environment) {
 
   ENV.APP.OAUTH_ENDPOINT = WS_ENDPOINT;
   ENV.APP.WS_ENDPOINT = WS_ENDPOINT + '/api/';
+  ENV.APP.CHARS_ALLOWED = CHARS_ALLOWED;
 
 
   ENV.contentSecurityPolicy = {
