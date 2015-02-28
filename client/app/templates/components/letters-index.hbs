@@ -1,0 +1,17 @@
+<ul class="letters">
+
+  {{#each index as |item|}}
+
+    <li class="letter">
+
+      {{#link-to "alphabetic_detail" item.slug}}
+        {{item.letter}}
+        <span>as</span>
+        <i class="word">{{item.word}}</i>
+        <i class="amount">{{item.count}}</i>
+
+      {{/link-to}}
+    </li>
+
+  {{/each}}
+</ul>

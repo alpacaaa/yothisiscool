@@ -1,0 +1,706 @@
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+
+/*
+** Placeholders
+*/
+
+%column-gut {
+	position: relative;
+
+	padding-right: em($m-gut/2);
+	padding-left: em($m-gut/2);
+
+	@include min-screen(col(8)) {
+		padding-right: em($d-gut/2);
+		padding-left: em($d-gut/2);
+	}
+}
+
+%centered {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/*
+** Istances
+*/
+
+.warning {
+	text-align: center;
+	padding: rhythm(2) em($m-gut/2) rhythm(2) em($m-gut/2);
+
+	@include min-screen(col(8)) {
+		padding: rhythm(2) em($d-gut/2) rhythm(2) em($d-gut/2);
+	}
+}
+
+.header {
+	margin-right: auto;
+	margin-left: auto;
+	.menu {
+		@include perspective-origin(center bottom);
+	}
+	h1 {
+		display: none;
+
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+.footer {
+	display: table-row;
+
+	height: 1px;
+	margin-right: auto;
+	margin-left: auto;
+	.menu {
+		@include perspective-origin(center top);
+	}
+}
+
+.nav {
+	h6 {
+		display: none;
+	}
+}
+
+.menu {
+	margin-left: auto;
+	margin-right: auto;
+
+	max-width: $waistline;
+	overflow: hidden;
+
+	padding-top: em($m-gut/2);
+	padding-bottom: em($m-gut/2);
+
+	@include perspective(100em);
+	li {
+		height: em(40px, $m-small-size);
+
+		text-transform: uppercase;
+
+		@include adjust-font-size-to($m-small-size, $m-small-line);
+		&:first-child {
+			float: left;
+
+			margin-left: em($m-gut/2, $m-small-size);
+		}
+		&:last-child {
+			float: right;
+
+			margin-right: em($m-gut/2, $m-small-size);
+		}
+	}
+	a {
+		display: block;
+		&:hover {
+			span {
+				color: $strong-type-color;
+				background-color: $hover-background-color;
+
+				@include box-shadow(0 1px 4px 0 $shadow-color inset);
+				//@include rotate3d(0, 0, 0, 0);
+			}
+		}
+		&:active {
+			span {
+				color: $strong-type-color;
+				background-color: $active-background-color;
+
+				@include box-shadow(0 1px 4px 0 $shadow-color inset);
+				@include transition-duration(0.0625s);
+			}
+		}
+		span {
+			display: block;
+
+			height: 100%;
+			padding-top: em(8px, $m-small-size);
+			padding-bottom: em(8px, $m-small-size);
+
+			background-repeat: no-repeat;
+
+			@include border-radius($radius);
+			@include transition-property(background-color, box-shadow, transform);
+			@include transition-duration(0.2s, 0.2s, 0.2s);
+			@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
+		}
+	}
+	.active {
+		span {
+			cursor: default;
+
+			color: $strong-type-color;
+		}
+		&:hover {
+			span {
+				background-color: transparent;
+				@include box-shadow(none);
+			}
+		}
+		&:active {
+			span {
+				background-color: $active-background-color;
+
+				@include box-shadow(0 1px 4px 0 $shadow-color inset);
+				@include transition-duration(0.0625s);
+			}
+		}
+	}
+	.home {
+		span {
+			padding-right: em(8px, $m-small-size);
+			padding-left: em(40px, $m-small-size);
+
+			background-image: url("../../media/icons/home.svg");
+			background-position: left center;
+
+			@include apply-origin(left top, false);
+			@include rotate3d(4, 4, 0, 24deg);
+		}
+	}
+	.index {
+		span {
+			padding-right: em(40px, $m-small-size);
+			padding-left: em(8px, $m-small-size);
+
+			background-image: url("../../media/icons/index.svg");
+			background-position: right center;
+
+			@include apply-origin(right top, false);
+			@include rotate3d(4, -4, 0, 24deg);
+		}
+	}
+	.colophon {
+		span {
+			padding-right: em(8px, $m-small-size);
+			padding-left: em(40px, $m-small-size);
+
+			background-image: url("../../media/icons/colophon.svg");
+			background-position: left center;
+
+			@include apply-origin(left bottom, false);
+			@include rotate3d(-4, 4, 0, 24deg);
+		}
+	}
+	.top {
+		span {
+			padding-right: em(40px, $m-small-size);
+			padding-left: em(8px, $m-small-size);
+
+			background-image: url("../../media/icons/top.svg");
+			background-position: right center;
+
+			@include apply-origin(right bottom, false);
+			@include rotate3d(-4, -4, 0, 24deg);
+		}
+	}
+	@include min-screen(col(8)) {
+		padding-top: em($d-gut/2);
+		padding-bottom: em($d-gut/2);
+		li {
+			height: em(40px, $d-small-size);
+
+			@include adjust-font-size-to($d-small-size, $d-small-line);
+			&:first-child {
+				margin-left: em($d-gut/2, $d-small-size);
+			}
+			&:last-child {
+				margin-right: em($d-gut/2, $d-small-size);
+			}
+		}
+		a {
+			span {
+				height: 100%;
+				padding-top: em(8px, $d-small-size);
+				padding-bottom: em(8px, $d-small-size);
+			}
+		}
+		.home {
+			span {
+				padding-right: em(8px, $d-small-size);
+				padding-left: em(40px, $d-small-size);
+			}
+		}
+		.index {
+			span {
+				padding-right: em(40px, $d-small-size);
+				padding-left: em(8px, $d-small-size);
+			}
+		}
+		.colophon {
+			span {
+				padding-right: em(8px, $d-small-size);
+				padding-left: em(40px, $d-small-size);
+			}
+		}
+		.top {
+			span {
+				padding-right: em(40px, $d-small-size);
+				padding-left: em(8px, $d-small-size);
+			}
+		}
+	}
+}
+
+.content {
+	max-width: col(16);
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: rhythm($m-medium-line*4);
+
+	@include min-screen(col(8)) {
+		padding-top: rhythm($d-medium-line*4);
+	}
+}
+
+.head {
+	margin-right: auto;
+	margin-bottom: rhythm($m-extra-large-line/2);
+	margin-left: auto;
+
+	@extend %column-gut;
+	h2 {
+		text-align: center;
+	}
+	@include min-screen(col(8)) {
+		width: col(8);
+		margin-bottom: rhythm($d-extra-large-line/2);
+	}
+}
+
+.body {
+	margin-right: auto;
+	margin-bottom: rhythm($m-medium-line);
+	margin-left: auto;
+
+	@extend %column-gut;
+	@include min-screen(col(8)) {
+		width: col(8);
+		margin-bottom: rhythm($d-medium-line);
+	}
+}
+
+.author {
+	.avatar {
+		font-size: 1em;
+
+		float: left;
+
+		width: em(42);
+		height: em(42);
+		margin: em(7) em(12) em(7) 0;
+
+		opacity: 0.9;
+
+		@include border-radius(4px);
+	}
+	.tributary {
+		font-weight: $normal;
+		font-style: normal;
+
+		color: $light-type-color;
+	}
+	@include min-screen(col(8)) {
+		.avatar {
+			width: em(48);
+			height: em(48);
+			margin: em(8) em(16) em(8) 0;
+		}
+	}
+}
+
+section {
+	padding-bottom: rhythm($m-medium-line*4);
+	&:last-of-type {
+		padding-bottom: 0;
+	}
+	> *:last-child {
+		margin-bottom: 0;
+	}
+	@include min-screen(col(8)) {
+		padding-bottom: rhythm($d-medium-line*4);
+	}
+}
+
+[class^="notation"] {
+	@include transition-property(padding);
+	@include transition-duration(0.2s);
+	@include transition-timing-function(ease-in-out);
+	width: 100%;
+	padding-bottom: rhythm($m-small-line);
+
+	text-align: center;
+
+	background-image: url("../../media/icons/notation.svg");
+	background-repeat: repeat-y;
+	background-position: top center;
+
+	@extend %column-gut;
+	@extend %centered;
+	h3 {
+		font-weight: $normal;
+
+		display: inline-block;
+
+		text-align: center;
+
+		color: $light-type-color;
+		border-bottom: $border-width solid $border-color;
+		background-color: $background-color;
+
+		@include adjust-font-size-to($m-small-size, $m-small-line);
+	}
+	@include min-screen(col(8)) {
+		width: col(8);
+		padding-bottom: rhythm($d-small-line*2);
+		h3 {
+			@include adjust-font-size-to($d-small-size, $d-small-line);
+		}
+	}
+}
+.notation-closed {
+	padding-bottom: 0;
+}
+
+.letters, .projects, .comments {
+	position: relative;
+
+	width: 100%;
+
+	@extend %centered;
+	@include min-screen(col(8)) {
+		width: col(8);
+	}
+	@include min-screen(col(12)) {
+		width: col(12);
+	}
+	@include min-screen(col(16)) {
+		width: col(16);
+	}
+}
+
+.letters, .projects {
+	@include display-flex(flex);
+	@include flex-flow(row wrap);
+	@include justify-content(center);
+	@include align-items(flex-start);
+	@include align-content(flex-start);
+}
+
+.letter {
+	position: relative;
+	width: 50%;
+
+	@include flex-grow(0);
+	@include flex-shrink(1);
+	&:last-child {
+		border-bottom: none;
+	}
+	&:after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+
+		width: 50%;
+
+		content: "";
+
+		border-top: $border-width solid $border-color;
+	}
+	a {
+		font-weight: $bold;
+
+		position: relative;
+
+		display: block;
+
+		padding-top: rhythm($m-medium-line, $m-huge-size);
+		padding-right: em($m-gut/2, $m-huge-size);
+		padding-bottom: rhythm($m-medium-line, $m-huge-size);
+		padding-left: em($m-gut/2, $m-huge-size);
+
+		text-align: center;
+
+		@include adjust-font-size-to($m-huge-size, $m-huge-line);
+		@include transition-property(background-color, box-shadow, color);
+		@include transition-duration(0.2s, 0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
+		span {
+			@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line, $m-huge-size);
+			display: block;
+			font-weight: $normal;
+			color: $light-type-color;
+		}
+		i {
+			font-weight: $bold;
+			font-style: normal;
+
+			display: block;
+		}
+		.word {
+			color: $strong-type-color;
+			@include adjust-font-size-to($m-small-size, $m-small-line, $m-huge-size);
+		}
+		.amount {
+			position: absolute;
+			@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line, $m-huge-size);
+			top: rhythm($m-medium-line, $m-extra-small-size);
+			right: em($m-gut/2, $m-extra-small-size);
+
+			color: $light-type-color;
+
+			@include transition-property(color);
+			@include transition-duration(0.2s);
+			@include transition-timing-function(ease-in-out);
+		}
+		&:hover {
+			background-color: $hover-background-color;
+
+			@include box-shadow(0 1px 4px 0 $shadow-color inset);
+		}
+		&:active {
+			background-color: $active-background-color;
+
+			@include box-shadow(0 1px 4px 0 $shadow-color inset);
+			@include transition-duration(0.0625s);
+		}
+	}
+	@include min-screen(col(8)) {
+		width: col(2);
+		&:after {
+			width: col(1);
+		}
+		a {
+			padding-top: rhythm($d-medium-line, $d-huge-size);
+			padding-right: em($d-gut/2, $d-huge-size);
+			padding-bottom: rhythm($d-medium-line, $d-huge-size);
+			padding-left: em($d-gut/2, $d-huge-size);
+
+			@include adjust-font-size-to($d-huge-size, $d-huge-line);
+			span {
+				@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line, $d-huge-size);
+			}
+			.word {
+				@include adjust-font-size-to($d-small-size, $d-small-line, $d-huge-size);
+			}
+			.amount {
+				@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line, $d-huge-size);
+				top: rhythm($d-medium-line, $d-extra-small-size);
+				right: em($d-gut/2, $d-extra-small-size);
+
+				opacity: 0.2;
+
+				@include transition-property(opacity);
+				@include transition-duration(0.2s);
+				@include transition-timing-function(ease-in-out);
+			}
+			&:hover, &:active {
+				.amount {
+					opacity: 1.0;
+				}
+			}
+		}
+	}
+}
+
+.project {
+	width: 100%;
+
+	position: relative;
+
+	border-bottom: $border-width solid $border-color;
+
+	@include flex-grow(0);
+	@include flex-shrink(1);
+	@include adjust-font-size-to($m-medium-size, $m-medium-line);
+	&:last-child {
+		border-bottom: none;
+	}
+	a {
+		font-weight: $bold;
+
+		display: block;
+
+		padding-top: rhythm($m-medium-line/2, $m-medium-size);
+		padding-right: em($m-gut/2, $m-medium-size);
+		padding-bottom: rhythm($m-medium-line/2, $m-medium-size);
+		padding-left: em($m-gut/2, $m-medium-size);
+
+		@include transition-property(background-color, box-shadow, color);
+		@include transition-duration(0.2s, 0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
+		.amount {
+			float: right;
+
+			color: $light-type-color;
+		}
+		&:hover {
+			background-color: $hover-background-color;
+
+			@include box-shadow(0 1px 4px 0 $shadow-color inset);
+		}
+		&:active {
+			background-color: $active-background-color;
+
+			@include box-shadow(0 1px 4px 0 $shadow-color inset);
+			@include transition-duration(0.0625s);
+		}
+	}
+	@include min-screen(col(8)) {
+		width: col(4);
+
+		border-bottom: none;
+
+		@include column-break-inside(avoid);
+		@include adjust-font-size-to($d-medium-size, $d-medium-line);
+		&:after {
+			position: absolute;
+			bottom: 0;
+			left: em($d-gut/2);
+
+			width: col(1);
+
+			content: "";
+
+			border-top: $border-width solid $border-color;
+		}
+		a {
+			padding-top: rhythm($d-medium-line/2, $d-medium-size);
+			padding-right: em($d-gut/2, $d-medium-size);
+			padding-bottom: rhythm($d-medium-line/2, $d-medium-size);
+			padding-left: em($d-gut/2, $d-medium-size);
+			.amount {
+				padding-left: 0.5em;
+				float: none;
+				opacity: 0.2;
+				@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line, $d-medium-size);
+				top: rhythm(-$d-extra-small-line/2, $d-medium-size);
+				position: relative;
+
+				@include transition-property(opacity);
+				@include transition-duration(0.2s);
+				@include transition-timing-function(ease-in-out);
+			}
+			&:hover, &:active {
+				.amount {
+					opacity: 1.0;
+				}
+			}
+		}
+	}
+}
+
+.comment {
+	font-weight: $bold;
+
+	position: relative;
+
+	width: 100%;
+	padding-top: rhythm($m-medium-line);
+	padding-bottom: rhythm($m-medium-line);
+
+	border-bottom: $border-width solid $border-color;
+
+	float: left;
+
+	/*flex-grow: 0;
+	flex-shrink: 1;*/
+	@extend %column-gut;
+	&:last-child {
+		border-bottom: none;
+	}
+	.avatar {
+		font-size: 1em;
+
+		float: left;
+
+		width: em(36);
+		height: em(36);
+		margin: em(6) em(12) em(6) 0;
+
+		opacity: 0.9;
+
+		@include border-radius(4px);
+	}
+	.tributary {
+		font-weight: $normal;
+		font-style: normal;
+
+		display: block;
+
+		color: $light-type-color;
+
+		@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
+	}
+	@include min-screen(col(8)) {
+		width: col(4);
+		padding-top: rhythm($d-medium-line);
+		padding-bottom: rhythm($d-medium-line);
+
+		border-bottom: 0 solid $border-color;
+		&:after {
+			position: absolute;
+			bottom: rhythm($d-medium-line/2);
+			left: em($d-gut/2);
+
+			width: col(1);
+
+			content: "";
+
+			border-top: $border-width solid $border-color;
+		}
+		.avatar {
+			width: em(36);
+			height: em(36);
+			margin: em(6) em(12) em(6) 0;
+		}
+		.tributary {
+			@include adjust-font-size-to($d-small-size, $d-small-line, $d-medium-size);
+		}
+	}
+}
+
+
+[class^="action"] {
+	width: 75%;
+	margin-top: rhythm($m-medium-line*4);
+	margin-bottom: rhythm($m-medium-line*4);
+
+	text-align: center;
+
+	@extend %column-gut;
+	@extend %centered;
+	.instruction {
+		@include adjust-font-size-to($m-small-size, $m-small-line);
+		span {
+			color: $type-color;
+		}
+	}
+	.caption {
+		margin-top: rhythm($m-extra-small-line/2, $m-extra-small-size);
+
+		@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
+		span {
+			color: $em-type-color;
+		}
+	}
+	@include min-screen(col(8)) {
+		width: col(4);
+		margin-top: rhythm($d-medium-line*4);
+		margin-bottom: rhythm($d-medium-line*4);
+		.instruction {
+			@include adjust-font-size-to($d-small-size, $d-small-line);
+		}
+		.caption {
+			margin-top: rhythm($d-extra-small-line/2, $d-extra-small-size);
+
+			@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
+		}
+	}
+}

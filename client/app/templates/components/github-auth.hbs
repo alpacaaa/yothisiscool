@@ -1,0 +1,32 @@
+
+
+<div class="action-start">
+
+
+  {{#if disconnected}}
+
+    <div class="instruction">You've been <strong>forgotten</strong> *.</div>
+    <div class="caption"><span>*</span> May your name appear on history books, someday.</div>
+
+  {{else}}
+
+    {{#if loggedIn}}
+      <div class="instruction">
+        <a href="" {{action "logout"}}>Forget * my Github OAuth token.</a>
+      </div>
+      <div class="caption"><span>*</span> Or, in layman’s terms, log me out.</div>
+
+    {{else}}
+
+      <div class="instruction">
+        <a href="" {{action "login"}}>
+          Quick reach my starred Github repositories and thank their author/s *.
+        </a>
+      </div>
+      <div class="caption"><span>*</span> Read only access to my Github is needed.</div>
+
+    {{/if}}
+
+  {{/if}}
+
+</div>

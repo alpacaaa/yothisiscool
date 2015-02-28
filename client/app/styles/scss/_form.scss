@@ -1,0 +1,349 @@
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+
+::-webkit-input-placeholder {
+	opacity: 1.0;
+	color: $placeholder-type-color;
+}
+:-moz-placeholder {
+	opacity: 1.0; /* Firefox 18- */
+	color: $placeholder-type-color;
+}
+::-moz-placeholder {
+	opacity: 1.0;  /* Firefox 19+ */
+	color: $placeholder-type-color;
+}
+:-ms-input-placeholder {
+	opacity: 1.0;
+	color: $placeholder-type-color;
+}
+
+/*
+** Basics
+*/
+
+button, input, optgroup, select, textarea {
+	font: inherit; // normalize.css
+
+	margin: 0; // normalize.css
+
+	color: inherit; // normalize.css
+	&:focus {
+		outline: none;
+	}
+}
+
+button {
+	overflow: visible; // normalize.css
+}
+
+button, select {
+	text-transform: none; // normalize.css
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+	cursor: pointer; // normalize.css
+
+	-webkit-appearance: button; // normalize.css
+}
+
+button[disabled], html input[disabled] {
+	cursor: default; // normalize.css
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+	padding: 0; // normalize.css
+
+	border: 0; // normalize.css
+}
+
+input {
+	line-height: normal; // normalize.css
+}
+
+input[type="checkbox"], input[type="radio"] {
+	padding: 0; // normalize.css
+}
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+	height: auto; // normalize.css
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield; // normalize.css
+}
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none; // normalize.css
+}
+
+fieldset {
+	margin: 0; // normalize.css
+	padding: 0; // normalize.css
+
+	border: 0; // normalize.css
+}
+
+form {
+	margin: 0;
+}
+
+legend {
+	padding: 0; // normalize.css
+
+	border: 0; // normalize.css
+}
+
+textarea {
+	overflow: auto; // normalize.css
+
+	resize: vertical;
+}
+
+optgroup {
+	font-weight: $bold; // normalize.css
+}
+
+/*button, input, select, textarea {
+	color: $type-color;
+}*/
+
+/*
+** Istances
+*/
+
+[class^="form"] {
+	margin-bottom: rhythm($m-medium-line*2);
+
+	background-image: url("../../media/icons/notation.svg");
+	background-repeat: repeat-y;
+	background-position: top center;
+
+	@extend %column-gut;
+	@extend %centered;
+	.field:last-child, .button:last-child {
+		margin-bottom: 0;
+	}
+	input[type = "text"], input[type = "search"], textarea, button, input[type = "submit"] {
+		display: block;
+
+		@include transition-property(color, border-color, background-color);
+		@include transition-duration(0.2s, 0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
+	}
+	label {
+		font-weight: $normal;
+
+		display: none;
+
+		margin-bottom: rhythm($m-medium-line/4, $m-medium-size);
+		margin-left: em($m-gut/2, $m-medium-size);
+
+		@include adjust-font-size-to($m-medium-size, $m-medium-line);
+	}
+	input[type = "text"], input[type = "search"], textarea {
+		width: 100%;
+		padding: rhythm($m-medium-line/4 + strip(-$field-border-width/10), $m-medium-size) em($m-gut/2, $m-medium-size) rhythm($m-medium-line/4 + strip(-$field-border-width/10), $m-medium-size) em($m-gut/2, $m-medium-size);
+
+		color: $type-color;
+		border: $field-border-width solid $field-border-color;
+		background-color: $field-background-color;
+
+		@include border-radius($radius);
+		@include adjust-font-size-to($m-medium-size, $m-medium-line);
+		&:focus, &:hover {
+			color: $strong-type-color;
+		}
+		&:hover {
+			border-color: $strong-field-border-color;
+		}
+		&:focus, &:focus:hover {
+			border-color: $strong-field-border-color;
+		}
+	}
+	input[type = "text"], input[type = "search"] {
+		height: rhythm($m-medium-line*1.5, $m-medium-size);
+	}
+	textarea {
+		resize: none;
+	}
+	i {
+		font-style: normal;
+
+		display: block;
+
+		margin-top: rhythm($m-small-line/4, $m-small-size);
+		padding-right: em($m-gut/2, $m-small-size);
+		padding-left: em($m-gut/2, $m-small-size);
+
+		text-align: right;
+
+		color: $light-type-color;
+
+		@include adjust-font-size-to($m-small-size, $m-small-line);
+		strong {
+			color: $type-color;
+		}
+	}
+	button, input[type = "submit"] {
+		font-weight: $normal;
+
+		display: inline-block;
+
+		width: 50%;
+		height: rhythm($m-medium-line*1.5, $m-medium-size);
+		padding: rhythm($m-medium-line/4 + strip(-$button-border-width/10), $m-medium-size) em($m-gut/2, $m-medium-size) rhythm($m-medium-line/4 + strip(-$button-border-width/10), $m-medium-size) em($m-gut/2, $m-medium-size);
+
+		color: $button-color;
+		border: $button-border-width solid $button-border-color;
+		background-color: $button-background-color;
+
+		@extend %centered;
+		@include adjust-font-size-to($m-medium-size, $m-medium-line);
+		@include border-radius($radius, $radius);
+		@include adjust-font-size-to($m-medium-size, $m-medium-line);
+		&:active, &:hover {
+			border-color: $active-button-border-color;
+			background-color: $active-button-background-color;
+		}
+		&:active {
+			@include transition-duration(0s, 0s);
+		}
+	}
+	.field {
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.field {
+		margin-bottom: rhythm($m-medium-line);
+	}
+	.button {
+		text-align: center;
+	}
+	.error {
+		input[type = "text"], input[type = "search"], textarea {
+			color: $em-type-color;
+			border-color: $error-field-border-color;
+		}
+	}
+	@include min-screen(col(8)) {
+		width: col(8);
+		margin-bottom: rhythm($d-medium-line*2);
+		label {
+			margin-bottom: rhythm($d-medium-line/4, $d-medium-size);
+			margin-left: em($d-gut/2, $d-medium-size);
+
+			@include adjust-font-size-to($d-medium-size, $d-medium-line);
+		}
+		input[type = "text"], input[type = "search"], textarea {
+			padding: rhythm($d-medium-line/4 + strip(-$field-border-width/10), $d-medium-size) em($d-gut/4, $d-medium-size) rhythm($d-medium-line/4 + strip(-$field-border-width/10), $d-medium-size) em($d-gut/4, $d-medium-size);
+
+			@include adjust-font-size-to($d-medium-size, $d-medium-line);
+		}
+		input[type = "text"], input[type = "search"] {
+			height: rhythm($d-medium-line*1.5, $d-medium-size);
+		}
+		i {
+			margin-top: rhythm($d-small-line/4, $d-small-size);
+			padding-right: em($d-gut/2, $d-small-size);
+			padding-left: em($d-gut/2, $d-small-size);
+
+			@include adjust-font-size-to($d-small-size, $d-small-line);
+		}
+		button, input[type = "submit"] {
+			width: col(3, $d-medium-size);
+			height: rhythm($d-medium-line*1.5, $d-medium-size);
+			padding: rhythm($d-medium-line/4 + strip(-$button-border-width/10), $d-medium-size) em($d-gut/2, $d-medium-size) rhythm($d-medium-line/4 + strip(-$button-border-width/10), $d-medium-size) em($d-gut/2, $d-medium-size);
+
+			@include adjust-font-size-to($d-medium-size, $d-medium-line);
+		}
+		.field {
+			margin-bottom: rhythm($d-medium-line);
+		}
+	}
+}
+
+.form-search {
+	background-image: none;
+	input[type = "search"] {
+		float: left;
+
+		width: 75%;
+
+		border-right: none;
+
+		@include border-top-right-radius(0);
+		@include border-bottom-right-radius(0);
+	}
+	button {
+		width: 25%;
+
+		@include border-top-left-radius(0);
+		@include border-bottom-left-radius(0);
+	}
+	.field {
+		overflow: auto;
+	}
+}
+
+.form-comment {
+	.field {
+		@include transition-property(color, border-color, background-color, width, max-height, border-radius);
+		@include transition-duration(0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out);
+		@include border-bottom-radius(0);
+		overflow: hidden;
+		width: 100%;
+		max-height: rhythm($d-medium-line*6 + ($d-medium-line/4-0.2)*2 + $d-small-line*2 + ($d-small-line/4-0.2)*2);
+	}
+	textarea, i {
+		opacity: 1.0;
+
+		@include transition-property(color, border-color, background-color, opacity);
+		@include transition-duration(0.2s, 0.2s, 0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out, ease-in-out);
+	}
+	textarea {
+		height: rhythm($d-medium-line*6 + ($d-medium-line/4-0.2)*2);
+		@include transition-delay(0.1s);
+	}
+	i {
+		@include transition-delay(0.2s);
+	}
+	input[type = "submit"] {
+		background-image: url("../../media/icons/add.svg");
+		background-repeat: no-repeat;
+		background-position: center -100%;
+
+		@include transition-property(background-color, background-position, border-color, border-radius, color, height, margin-top, opacity, width);
+		@include transition-duration(0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out);
+	}
+}
+
+.closed {
+	textarea, i {
+		opacity: 0.0;
+	}
+	input[type = "submit"] {
+		width: em($m-medium-size*4, $m-medium-size);
+		height: em($m-medium-size*4, $m-medium-size);
+		padding-right: 0;
+		padding-left: 0;
+
+		color: transparent;
+		background-position: center center;
+
+		@include border-radius(50%);
+	}
+	.field {
+		width: 0;
+		max-height: 0;
+		margin-bottom: 0;
+	}
+	@include min-screen(col(8)) {
+		input[type = "submit"] {
+			width: em($d-medium-size*4, $d-medium-size);
+			height: em($d-medium-size*4, $d-medium-size);
+		}
+	}
+}

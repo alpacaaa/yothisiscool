@@ -1,0 +1,37 @@
+<main class="content">
+  <article>
+    <header class="head typo-l">
+      <h2>
+        {{result.letter.letter}} <span>as</span> {{result.letter.word}}
+      </h2>
+    </header>
+
+    <div class="body typo-l">
+      <p>{{{result.letter.definition}}} – {{result.letter.source}}</p>
+    </div>
+
+    <section>
+      <header class="notation">
+        <h3>Up to {{result.repos.length}} projects so far</h3>
+      </header>
+
+
+      <ul class="projects">
+
+        {{#each result.repos as |repo|}}
+          <li class="project">
+            {{#link-to "project" repo.slug}}
+              {{repo.slug}} <span class="amount">{{repo.count}}</span>
+            {{/link-to}}
+          </li>
+        {{/each}}
+
+      </ul>
+    </section>
+
+  </article>
+
+
+  {{#github-auth}}{{/github-auth}}
+
+</main>

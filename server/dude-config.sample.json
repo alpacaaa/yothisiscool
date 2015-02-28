@@ -1,0 +1,6 @@
+{
+  "GITHUB_CLIENT_SECRET": "YOO",
+  "GITHUB_CLIENT_ID": "YOO",
+  "GITHUB_ACCESS_TOKEN": "YOO",
+  "OAUTH_REDIRECT_URL": "http://localhost:4200"
+}

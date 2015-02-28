@@ -1,0 +1,12 @@
+
+<form class="form-search" {{action "form_submit" on="submit"}}>
+  <div {{bind-attr class=":field hasError:error"}}>
+    <label for="search">Repository</label>
+    {{input value=search id="search" placeholder="https://github.com/author/project" type="search" focus-in="removeErrors"}}
+    <button type="submit">Search</button>
+
+    {{#if hasError}}
+      <i>{{{hasError}}}</i>
+    {{/if}}
+  </div>
+</form>

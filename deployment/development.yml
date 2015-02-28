@@ -1,0 +1,15 @@
+
+dude:
+  node_version: 0.12.0
+  node_dir: /usr/local/nodejs/default/bin
+
+  mysql_root_db_pass: yolo
+  mysql_db: dude_dev
+  mysql_user: dude
+  mysql_user_pass: swag
+
+  # commented by default
+  # github_client_id: yolo
+  # github_client_secret: yolo
+  # github_access_token: www
+  # oauth_redirect_url: http://localhost:4200

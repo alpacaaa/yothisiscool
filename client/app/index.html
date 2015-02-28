@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dude, This is Cool</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{content-for 'head'}}
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500italic,500,400italic&amp;subset=latin,latin-ext" rel="stylesheet"/>
+    <!-- <script src="scripts/js/modernizr-2.6.2.min.js"></script> -->
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    {{content-for 'head-footer'}}
+  </head>
+  <body id="top" lang="en">
+    <!--[if lt IE 9]>
+      <div class="warning typo-s">
+        <p>Wouldn’t you prefer to <a href="http://browsehappy.com/" target="_blank">upgrade</a> your
+        <strong>outdated browser</strong> to enjoy a way better <em>experience</em> of this site?</p>
+      </div>
+    <![endif]-->
+
+    {{content-for 'body'}}
+
+    <script src="assets/vendor.js"></script>
+    <script src="assets/client.js"></script>
+
+    {{content-for 'body-footer'}}
+  </body>
+</html>

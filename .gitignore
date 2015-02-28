@@ -1,0 +1,8 @@
+node_modules/
+datasources.*.json
+!datasources.sample.json
+dude-config.json
+deployment/roles/
+deployment/*.txt
+deployment/production.yml
+.vagrant

@@ -1,0 +1,20 @@
+
+<header class="header">
+	<h1>Dude, This is Cool</h1>
+	<nav class="nav">
+		<h6>Main Menu</h6>
+		<ul class="menu">
+			<li>{{#link-to "index" class="home"}}<span>Home</span>{{/link-to}}</li>
+			<li>{{#link-to "alphabetic" class="index"}}<span>Index</span>{{/link-to}}</li>
+		</ul>
+	</nav>
+</header>
+
+{{outlet}}
+
+<footer class="footer">
+	<ul class="menu">
+		<li>{{#link-to "colophon" class="colophon"}}<span>Colophon</span>{{/link-to}}</li>
+		<li><a class="top" href="#top" {{action "topClicked" target=view}}><span>To The Top</span></a></li>
+	</ul>
+</footer>

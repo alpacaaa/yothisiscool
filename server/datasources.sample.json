@@ -1,0 +1,11 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "database": "dude_dev",
+    "username": "root",
+    "password": null
+  }
+}

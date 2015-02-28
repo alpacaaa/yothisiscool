@@ -1,0 +1,27 @@
+<main class="content">
+	<article>
+		<header class="head typo-l">
+			<h2>Index</h2>
+		</header>
+
+		<div class="body typo-l">
+			<p>TBD</p>
+		</div>
+
+    <section>
+      <header class="notation">
+        <h3>Looking for something in particular?</h3>
+      </header>
+
+  		{{#search-repo found_repo="transitionToRepo"}}
+  		{{/search-repo}}
+    </section>
+
+    <section>
+      {{#letters-index index=by_letter}}
+      {{/letters-index}}
+    </section>
+
+		{{#github-auth}}{{/github-auth}}
+	</article>
+</main>

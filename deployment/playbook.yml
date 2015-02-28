@@ -1,0 +1,73 @@
+---
+- hosts: all
+  vars_files:
+  - "{{ dude_env }}.yml"
+
+  pre_tasks:
+  - name: Create Dude user account
+    user: name=dude groups="sudo" shell=/bin/bash
+    sudo: yes
+
+  - name: Add public key
+    authorized_key: user=dude key="{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+    sudo: yes
+
+  - name: Custom rc.local
+    copy: src=files/rc.local dest=/etc/rc.local
+    sudo: yes
+
+  - name: Node is installed
+    stat: path=/usr/local/nodejs/{{ dude.node_version }}/bin
+    register: node_is_installed
+
+  roles:
+  - role: roles/bennojoy.mysql
+    mysql_root_db_pass: "{{ dude.mysql_root_db_pass }}"
+    mysql_db:
+    - name: "{{ dude.mysql_db }}"
+    mysql_users:
+    - name: "{{ dude.mysql_user }}"
+      pass: "{{ dude.mysql_user_pass }}"
+      priv: "{{ dude.mysql_db }}.*:ALL"
+    sudo: yes
+
+  - role: roles/ANXS.nodejs
+    nodejs_version: "{{ dude.node_version }}"
+    nodejs_install_method: "source"
+    sudo: yes
+    when: not node_is_installed.stat.exists
+
+  tasks:
+  - name: Install packages
+    npm: name={{ item }} global=yes production=yes executable={{ dude.node_dir }}/npm
+    with_items:
+      - coffee-script
+      - pm2
+    sudo: yes
+
+  - name: Create webapp environment
+    file: path=/home/dude/www state=directory
+    file: path=/home/dude/www/shared state=directory
+    file: path=/home/dude/www/shared/logs state=directory
+    file: path=/home/dude/www/shared/server state=directory
+    sudo_user: dude
+    sudo: yes
+
+  - name: Create dude configuration file for db
+    template:
+      src: files/datasources.json.tpl
+      dest: "/home/dude/www/shared/server/datasources.{{ dude_env }}.json"
+      owner: dude
+      group: dude
+      mode: 0600
+    sudo: yes
+
+  - name: Setup Github configuration (optional)
+    template:
+      src: files/dude-config.json.tpl
+      dest: "/home/dude/www/shared/server/dude-config.json"
+      owner: dude
+      group: dude
+      mode: 0600
+    when: dude.github_client_id is defined
+    sudo: yes

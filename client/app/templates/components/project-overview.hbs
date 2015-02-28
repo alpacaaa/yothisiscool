@@ -1,0 +1,15 @@
+
+<div class="body author typo-l">
+  {{#user-avatar user=project.owner}}{{/user-avatar}}
+  <p>
+    This is the official {{project.name}} repository.
+    <i class="tributary">—
+      {{#user-name user=project.owner}}{{/user-name}}
+      started crafting
+      <a {{bind-attr href="githubUrl"}}>this project</a>
+      <time {{bind-attr datetime="project.created_at"}}>
+        {{timeAgo}}
+      </time>.
+    </i>
+  </p>
+</div>
