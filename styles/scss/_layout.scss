@@ -144,6 +144,7 @@
 		}
 		span {
 			display: block;
+			color: $em-type-color;
 
 			height: 100%;
 			padding-top: em(8px, $m-small-size);
@@ -152,29 +153,21 @@
 			background-repeat: no-repeat;
 
 			@include border-radius($radius);
-			@include transition-property(background-color, box-shadow, transform);
-			@include transition-duration(0.2s, 0.2s, 0.2s);
-			@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
+			@include transition-property(background-color, box-shadow, color, transform);
+			@include transition-duration(0.2s, 0.2s, 0.2s, 0.2s);
+			@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out, ease-in-out);
 		}
 	}
 	.active {
 		span {
 			cursor: default;
-
 			color: $strong-nd-type-color;
 		}
-		&:hover {
+		&:hover, &:active {
 			span {
+				color: $strong-nd-type-color;
 				background-color: transparent;
 				@include box-shadow(none);
-			}
-		}
-		&:active {
-			span {
-				background-color: $active-background-color;
-
-				@include box-shadow(0 1px 4px 0 $shadow-color inset);
-				@include transition-duration(0.0625s);
 			}
 		}
 	}
@@ -398,6 +391,7 @@ section {
 }
 
 .letters, .projects, .comments {
+	overflow: auto;
 	position: relative;
 
 	width: 100%;
@@ -413,13 +407,17 @@ section {
 		width: col(16);
 	}
 }
-
 .letters, .projects {
 	@include display-flex(flex);
 	@include flex-flow(row wrap);
-	@include justify-content(center);
+	@include justify-content(flex-start);
 	@include align-items(flex-start);
 	@include align-content(flex-start);
+}
+.comments {
+	@include min-screen(col(8)) {
+		@include clearfix();
+	}
 }
 
 .letter {
@@ -639,8 +637,6 @@ section {
 
 	border-bottom: $border-width solid $border-color;
 
-	float: left;
-
 	/*flex-grow: 0;
 	flex-shrink: 1;*/
 	@extend %column-gut;
@@ -674,6 +670,7 @@ section {
 		}
 	}
 	@include min-screen(col(8)) {
+		float: left;
 		width: col(4);
 		padding-top: rhythm($d-medium-line);
 		padding-bottom: rhythm($d-medium-line);
