@@ -25,6 +25,41 @@
 ** Istances
 */
 
+.logo {
+	position: absolute;
+	z-index: -1;
+
+	display: block;
+	overflow: hidden;
+
+	width: 100%;
+	height: 100%;
+
+	opacity: 0.2;
+
+	img {
+		position: relative;
+		top: em($m-logo-size/2 + $m-gut/2);
+		left: 50%;
+
+		width: em($m-logo-size);
+		height: em($m-logo-size);
+
+		margin-top: em(-$m-logo-size/2);
+		margin-left: em(-$m-logo-size/2);
+	}
+	@include min-screen(col(8)) {
+		img {
+			top: em($d-logo-size/2 + $d-gut/2);
+
+			width: em($d-logo-size);
+			height: em($d-logo-size);
+			margin-top: em(-$d-logo-size/2);
+			margin-left: em(-$d-logo-size/2);
+		}
+	}
+}
+
 .warning {
 	text-align: center;
 	padding: rhythm(2) em($m-gut/2) rhythm(2) em($m-gut/2);
@@ -39,12 +74,6 @@
 	margin-left: auto;
 	.menu {
 		@include perspective-origin(center bottom);
-	}
-	h1 {
-		display: none;
-
-		margin-right: auto;
-		margin-left: auto;
 	}
 }
 
@@ -115,6 +144,7 @@
 		}
 		span {
 			display: block;
+			color: $em-type-color;
 
 			height: 100%;
 			padding-top: em(8px, $m-small-size);
@@ -123,29 +153,21 @@
 			background-repeat: no-repeat;
 
 			@include border-radius($radius);
-			@include transition-property(background-color, box-shadow, transform);
-			@include transition-duration(0.2s, 0.2s, 0.2s);
-			@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
+			@include transition-property(background-color, box-shadow, color, transform);
+			@include transition-duration(0.2s, 0.2s, 0.2s, 0.2s);
+			@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out, ease-in-out);
 		}
 	}
 	.active {
 		span {
 			cursor: default;
-
-			color: $strong-type-color;
+			color: $strong-nd-type-color;
 		}
-		&:hover {
+		&:hover, &:active {
 			span {
+				color: $strong-nd-type-color;
 				background-color: transparent;
 				@include box-shadow(none);
-			}
-		}
-		&:active {
-			span {
-				background-color: $active-background-color;
-
-				@include box-shadow(0 1px 4px 0 $shadow-color inset);
-				@include transition-duration(0.0625s);
 			}
 		}
 	}
@@ -302,6 +324,9 @@
 		font-style: normal;
 
 		color: $light-type-color;
+		a {
+			@include link-colors($light-em-type-color, $light-type-color, $light-type-color);
+		}
 	}
 	@include min-screen(col(8)) {
 		.avatar {
@@ -366,6 +391,7 @@ section {
 }
 
 .letters, .projects, .comments {
+	overflow: auto;
 	position: relative;
 
 	width: 100%;
@@ -381,13 +407,17 @@ section {
 		width: col(16);
 	}
 }
-
 .letters, .projects {
 	@include display-flex(flex);
 	@include flex-flow(row wrap);
-	@include justify-content(center);
+	@include justify-content(flex-start);
 	@include align-items(flex-start);
 	@include align-content(flex-start);
+}
+.comments {
+	@include min-screen(col(8)) {
+		@include clearfix();
+	}
 }
 
 .letter {
@@ -607,8 +637,6 @@ section {
 
 	border-bottom: $border-width solid $border-color;
 
-	float: left;
-
 	/*flex-grow: 0;
 	flex-shrink: 1;*/
 	@extend %column-gut;
@@ -637,8 +665,12 @@ section {
 		color: $light-type-color;
 
 		@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
+		a {
+			@include link-colors($light-em-type-color, $light-type-color, $light-type-color);
+		}
 	}
 	@include min-screen(col(8)) {
+		float: left;
 		width: col(4);
 		padding-top: rhythm($d-medium-line);
 		padding-bottom: rhythm($d-medium-line);

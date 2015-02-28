@@ -49,7 +49,6 @@ html {
 	font-size: 100% * $base-font-size / $browser-default-font-size;
 
 	height: 100%;
-
 	color: $type-color;
 
 	@include adjust-leading-to($m-medium-line);
@@ -77,6 +76,8 @@ body {
 	height: 100%;
 	margin: 0; // normalize.css
 
+	position: relative;
+	z-index: 0;
 	background-color: $background-color;
 }
 
@@ -142,7 +143,7 @@ h1, h2, h3, h4, h5, h6 {
 
 	margin: 0;
 
-	color: $strong-type-color;
+	color: $strong-nd-type-color;
 	span {
 		color: $light-type-color;
 	}
@@ -184,7 +185,7 @@ abbr[title] {
 strong {
 	font-weight: $bold; // normalize.css
 
-	color: $strong-type-color;
+	color: $strong-nd-type-color;
 }
 
 q {
@@ -212,8 +213,6 @@ sub, sup {
 	line-height: 0; // normalize.css
 
 	position: relative; // normalize.css
-
-	margin-left: 0.2em;
 
 	vertical-align: baseline; // normalize.css
 }

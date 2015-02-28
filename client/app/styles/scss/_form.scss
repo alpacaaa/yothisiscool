@@ -172,12 +172,11 @@ optgroup {
 		display: block;
 
 		margin-top: rhythm($m-small-line/4, $m-small-size);
-		padding-right: em($m-gut/2, $m-small-size);
-		padding-left: em($m-gut/2, $m-small-size);
-
-		text-align: right;
+		padding-right: em($m-gut/2 + $field-border-width, $m-small-size);
+		padding-left: em($m-gut/2 + $field-border-width, $m-small-size);
 
 		color: $light-type-color;
+		//background-color: rgba($canvas, 0.5);
 
 		@include adjust-font-size-to($m-small-size, $m-small-line);
 		strong {
@@ -244,8 +243,8 @@ optgroup {
 		}
 		i {
 			margin-top: rhythm($d-small-line/4, $d-small-size);
-			padding-right: em($d-gut/2, $d-small-size);
-			padding-left: em($d-gut/2, $d-small-size);
+			padding-right: em($d-gut/4 + $field-border-width, $d-small-size);
+			padding-left: em($d-gut/4 + $field-border-width, $d-small-size);
 
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}

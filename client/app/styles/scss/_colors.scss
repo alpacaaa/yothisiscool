@@ -7,7 +7,8 @@
 
 $black: #000;
 $white: #fff;
-$emphasis: hsl(320, 80, 50);
+$st-color: hsl(320, 80, 50);
+$nd-color: hsl(180, 80, 40);
 $canvas: hsl(60, 80, 90);
 
 /*
@@ -18,7 +19,13 @@ $strong-type-color: rgba($black, 0.8);
 $type-color: rgba($black, 0.6);
 $light-type-color: rgba($black, 0.4);
 
-$em-type-color: rgba($emphasis, 0.8);
+$em-type-color: rgba($st-color, 0.8);
+$st-type-color: rgba($st-color, 0.6);
+$light-em-type-color: rgba($st-color, 0.4);
+
+$strong-nd-type-color: rgba($nd-color, 0.8);
+$nd-type-color: rgba($nd-color, 0.8);
+$light-nd-type-color: rgba($nd-color, 0.5);
 
 $placeholder-type-color: rgba($black, 0.15);
 
@@ -33,7 +40,7 @@ $selected-background-color: rgba($black, 0.05);
 $code-background-color: rgba($black, 0.05);
 
 $hover-background-color: rgba($black, 0.05);
-$active-background-color: rgba($emphasis, 0.2);
+$active-background-color: rgba($st-color, 0.2);
 
 /*
 ** Borders
@@ -51,11 +58,11 @@ $shadow-color: rgba($black, 0.05);
 ** Fields
 */
 
-$field-background-color:  rgba($white, 1.0);
+$field-background-color:  rgba($white, 0.8);
 
 $field-border-color: rgba($black, 0);
 $strong-field-border-color: rgba($black, 0.1);
-$error-field-border-color: rgba($emphasis, 0.4);
+$error-field-border-color: rgba($st-color, 0.4);
 
 /*
 ** Buttons
