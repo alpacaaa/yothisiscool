@@ -6,8 +6,9 @@ deployment/roles/
 deployment/*.txt
 deployment/production.yml
 .vagrant
-.codekit
+*.codekit
 .DS_Store
 .sass-cache
-.sublime-project
-.sublime-workspace
+*.sublime-project
+*.sublime-workspace
+config.rb
