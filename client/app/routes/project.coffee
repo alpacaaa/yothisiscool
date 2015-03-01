@@ -17,6 +17,9 @@ ProjectRoute = Ember.Route.extend
     slug = @clean_slug params.slug
     controller = @get 'controller'
 
+    unless slug.indexOf('/') > -1
+      return @transitionTo 'index'
+
     promise = @getRepo(slug)
     .catch =>
       # does it even exist?
