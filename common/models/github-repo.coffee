@@ -109,7 +109,7 @@ module.exports = (GithubRepo) ->
       result = index.map (item) ->
         found = by_initial[item.letter.toLowerCase()]
         item.count = found ? 0
-        item.slug  = item.slug ? item.letter
+        item.slug  = (item.slug ? item.letter).toLowerCase()
         item
 
       next null, result
@@ -118,7 +118,7 @@ module.exports = (GithubRepo) ->
 
 
   GithubRepo.by_initial = (letter, next) ->
-    letter = '#' if letter == 'NaN'
+    letter = '#' if letter == 'nan'
 
     # Poor man mysql escape
     return next('what ya doin?') if letter.length > 1
