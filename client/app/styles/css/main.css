@@ -1201,9 +1201,9 @@ pre, [class^="form"], .head, .body, [class^="notation"], .comment, [class^="acti
   height: 2.625em;
   margin: 0.4375em 0.75em 0.4375em 0;
   opacity: 0.9;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px; }
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px; }
 .author .tributary {
   font-weight: 400;
   font-style: normal;
@@ -1300,6 +1300,28 @@ section {
   	@include clearfix();
   }*/ }
 
+.letter:before, .project:before, .comment:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: 0.75em;
+  margin-right: 0.75em;
+  content: "";
+  border-top: 1px solid rgba(0, 0, 0, 0.05); }
+@media screen and (min-width: 36em) {
+  .letter, .project, .comment {
+    width: 18em;
+    border-bottom: none;
+    -moz-page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+    font-size: 1em;
+    line-height: 1.5em; }
+    .letter:before, .project:before, .comment:before {
+      margin-left: 1em;
+      margin-right: 1em; } }
+
 .letter {
   position: relative;
   width: 50%;
@@ -1307,16 +1329,6 @@ section {
   flex-grow: 0;
   -webkit-flex-shrink: 1;
   flex-shrink: 1; }
-  .letter:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    content: "";
-    border-top: 1px solid rgba(0, 0, 0, 0.05); }
   .letter a {
     font-weight: 500;
     position: relative;
@@ -1390,9 +1402,6 @@ section {
   @media screen and (min-width: 36em) {
     .letter {
       width: 9em; }
-      .letter:before {
-        left: 1em;
-        width: 7em; }
       .letter a {
         padding-top: 0.375em;
         padding-right: 0.25em;
@@ -1436,12 +1445,6 @@ section {
   flex-shrink: 1;
   font-size: 1em;
   line-height: 1.5em; }
-  .project:before {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    content: "";
-    border-top: 1px solid rgba(0, 0, 0, 0.05); }
   .project a {
     font-weight: 500;
     display: block;
@@ -1487,9 +1490,6 @@ section {
       break-inside: avoid;
       font-size: 1em;
       line-height: 1.5em; }
-      .project:before {
-        left: 1em;
-        width: 16em; }
       .project a {
         padding-top: 0.75em;
         padding-right: 1em;
@@ -1522,13 +1522,10 @@ section {
   font-weight: 500;
   position: relative;
   width: 100%;
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 0.75em;
+  padding-bottom: 3em;
   /*flex-grow: 0;
   flex-shrink: 1;*/ }
-  .comment:last-child {
-    border-bottom: none; }
   .comment .avatar {
     font-size: 1em;
     float: left;
@@ -1536,9 +1533,9 @@ section {
     height: 2.25em;
     margin: 0.375em 0.75em 0.375em 0;
     opacity: 0.9;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px; }
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px; }
   .comment .tributary {
     font-weight: 400;
     font-style: normal;
@@ -1556,16 +1553,9 @@ section {
     .comment {
       float: left;
       width: 18em;
-      padding-top: 1.5em;
-      padding-bottom: 1.5em;
+      padding-top: 0.75em;
+      padding-bottom: 3em;
       border-bottom: 0 solid rgba(0, 0, 0, 0.05); }
-      .comment:after {
-        position: absolute;
-        bottom: 0.75em;
-        left: 1em;
-        width: 4.5em;
-        content: "";
-        border-top: 1px solid rgba(0, 0, 0, 0.05); }
       .comment .avatar {
         width: 2.25em;
         height: 2.25em;

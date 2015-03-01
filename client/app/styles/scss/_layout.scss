@@ -317,7 +317,7 @@
 
 		opacity: 0.9;
 
-		@include border-radius(4px);
+		@include border-radius(2px);
 	}
 	.tributary {
 		font-weight: $normal;
@@ -420,26 +420,39 @@ section {
 	}*/
 }
 
+.letter, .project, .comment {
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin-left: em($m-gut/2);
+		margin-right: em($m-gut/2);
+
+		content: "";
+
+		border-top: $border-width solid $border-color;
+	}
+	@include min-screen(col(8)) {
+		width: col(4);
+
+		border-bottom: none;
+
+		@include column-break-inside(avoid);
+		@include adjust-font-size-to($d-medium-size, $d-medium-line);
+		&:before {
+			margin-left: em($d-gut/2);
+			margin-right: em($d-gut/2);
+		}
+	}
+}
+
 .letter {
 	position: relative;
 	width: 50%;
 
 	@include flex-grow(0);
 	@include flex-shrink(1);
-	&:before {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		margin-left: auto;
-		margin-right: auto;
-
-		width: 50%;
-
-		content: "";
-
-		border-top: $border-width solid $border-color;
-	}
 	a {
 		font-weight: $bold;
 
@@ -500,11 +513,6 @@ section {
 	}
 	@include min-screen(col(8)) {
 		width: col(2);
-		&:before {
-			left: em($d-gut/2);
-
-			width: em($column-width*2 - $d-gut);
-		}
 		a {
 			padding-top: rhythm($d-medium-line, $d-huge-size);
 			padding-right: em($d-gut/2, $d-huge-size);
@@ -546,16 +554,6 @@ section {
 	@include flex-grow(0);
 	@include flex-shrink(1);
 	@include adjust-font-size-to($m-medium-size, $m-medium-line);
-	&:before {
-		position: absolute;
-		top: 0;
-
-		width: 100%;
-
-		content: "";
-
-		border-top: $border-width solid $border-color;
-	}
 	a {
 		font-weight: $bold;
 
@@ -593,11 +591,6 @@ section {
 
 		@include column-break-inside(avoid);
 		@include adjust-font-size-to($d-medium-size, $d-medium-line);
-		&:before {
-			left: em($d-gut/2);
-
-			width: em($column-width*4 - $d-gut);
-		}
 		a {
 			padding-top: rhythm($d-medium-line/2, $d-medium-size);
 			padding-right: em($d-gut/2, $d-medium-size);
@@ -630,17 +623,12 @@ section {
 	position: relative;
 
 	width: 100%;
-	padding-top: rhythm($m-medium-line);
-	padding-bottom: rhythm($m-medium-line);
-
-	border-bottom: $border-width solid $border-color;
+	padding-top: rhythm($m-medium-line/2);
+	padding-bottom: rhythm($m-medium-line*2);
 
 	/*flex-grow: 0;
 	flex-shrink: 1;*/
 	@extend %column-gut;
-	&:last-child {
-		border-bottom: none;
-	}
 	.avatar {
 		font-size: 1em;
 
@@ -652,7 +640,7 @@ section {
 
 		opacity: 0.9;
 
-		@include border-radius(4px);
+		@include border-radius(2px);
 	}
 	.tributary {
 		font-weight: $normal;
@@ -670,21 +658,10 @@ section {
 	@include min-screen(col(8)) {
 		float: left;
 		width: col(4);
-		padding-top: rhythm($d-medium-line);
-		padding-bottom: rhythm($d-medium-line);
+		padding-top: rhythm($d-medium-line/2);
+		padding-bottom: rhythm($d-medium-line*2);
 
 		border-bottom: 0 solid $border-color;
-		&:after {
-			position: absolute;
-			bottom: rhythm($d-medium-line/2);
-			left: em($d-gut/2);
-
-			width: col(1);
-
-			content: "";
-
-			border-top: $border-width solid $border-color;
-		}
 		.avatar {
 			width: em(36);
 			height: em(36);
