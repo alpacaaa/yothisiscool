@@ -4,11 +4,6 @@ Promise = require 'bluebird'
 marked  = require 'marked'
 
 index = require '../../server/alphabetic-index'
-alphabetic_index = index.reduce ((acc, item) ->
-  item.definition = marked item.definition if item.definition
-  acc[item.letter.toLowerCase()] = item
-  acc
-), {}
 
 
 module.exports = (GithubRepo) ->
@@ -157,7 +152,6 @@ module.exports = (GithubRepo) ->
 
 
 
-
   GithubRepo.remoteMethod 'new',
     accepts: [
       { arg: 'slug', type: 'string', required: true },
@@ -173,3 +167,21 @@ module.exports = (GithubRepo) ->
     http: { verb: 'GET' }
     accepts: { arg: 'letter', type: 'string', http: { source: 'query' }, required: true }
     returns: { arg: 'result', type: 'object', root: true }
+
+
+
+cleanup_definition = (item) ->
+  def = item.definition
+  return item unless def
+
+  def = marked item.definition
+  def = def.replace('<a href', '<a target="_blank" href')
+  item.definition = def
+  item
+
+alphabetic_index = do ->
+  index.reduce ((acc, item) ->
+    item = cleanup_definition item
+    acc[item.letter.toLowerCase()] = item
+    acc
+  ), {}
