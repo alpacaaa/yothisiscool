@@ -1,5 +1,5 @@
 [
-  { "definition" : ,
+  { "definition" : "",
     "letter" : "#",
     "source" : "",
     "slug" : "NaN"
@@ -23,7 +23,7 @@
     "letter" : "D",
     "source" : "http://en.wikipedia.org/wiki/Dilbert_principle",
     "word" : "Dilbert Principle"
-  }
+  },
   { "definition" : "“[Eureka](http://en.wikipedia.org/wiki/Eureka_%28word%29 \"Eureka on Wikipedia\")” is an interjection used to celebrate a discovery or invention.",
     "letter" : "E",
     "source" : "http://en.wikipedia.org/wiki/Eureka_%28word%29",
@@ -99,7 +99,7 @@
     "source" : "http://en.wikipedia.org/wiki/Scoville_scale",
     "word" : "Scoville Scale"
   },
-  { "definition" : "[Towelie](http://en.wikipedia.org/wiki/Towelie \"Towelie on Wikipedia\") is a talking towel who comes in and advises everyone to keep a towel handy whenever any subject involving water is mentioned, before asking if anyone want to get “high”."
+  { "definition" : "[Towelie](http://en.wikipedia.org/wiki/Towelie \"Towelie on Wikipedia\") is a talking towel who comes in and advises everyone to keep a towel handy whenever any subject involving water is mentioned, before asking if anyone want to get “high”.",
     "letter" : "T",
     "source" : "http://en.wikipedia.org/wiki/Towelie",
     "word" : "Towelie"
