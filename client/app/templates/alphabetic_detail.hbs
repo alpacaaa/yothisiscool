@@ -21,7 +21,7 @@
         {{#each result.repos as |repo|}}
           <li class="project">
             {{#link-to "project" repo.slug}}
-              {{repo.slug}} <span class="amount">{{repo.count}}</span>
+              {{repo.owner.username}} <span class="path-divider">/</span> {{repo.name}} <span class="amount">{{repo.count}}</span>
             {{/link-to}}
           </li>
         {{/each}}

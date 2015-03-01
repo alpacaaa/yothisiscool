@@ -567,6 +567,9 @@ section {
 		@include transition-property(background-color, box-shadow, color);
 		@include transition-duration(0.2s, 0.2s, 0.2s);
 		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
+		.path-divider {
+			color: $light-type-color;
+		}
 		.amount {
 			float: right;
 

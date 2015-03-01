@@ -1464,6 +1464,8 @@ section {
     -o-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
     -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
     transition-timing-function: ease-in-out, ease-in-out, ease-in-out; }
+    .project a .path-divider {
+      color: rgba(0, 0, 0, 0.4); }
     .project a .amount {
       float: right;
       color: rgba(0, 0, 0, 0.4); }
