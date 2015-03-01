@@ -49,20 +49,20 @@
     "source" : "http://scottmccloud.com/4-inventions/canvas/",
     "word" : "Infinite Canvas"
   },
-  { "definition" : "",
+  { "definition" : "A [Jesus Nut](http://it.urbandictionary.com/define.php?term=Jesus+nut \"Jesus Nut on Urban Dictionary\") is anything that holds together a critical assembly, such as a main roter on a helicopter. If the nut in question fails, then the equipment will catastrophically fail and everyone in/around it will be on their way to see Jesus.",
     "letter" : "J",
-    "source" : "",
-    "word" : ""
+    "source" : "http://en.wikipedia.org/wiki/Jesus_nut",
+    "word" : "Jesus Nut"
   },
   { "definition" : "[The Book of Kells](http://en.wikipedia.org/wiki/Book_of_Kells \"The Book of Kells on Wikipedia\") is an illuminated manuscript Gospel book in Latin, containing the four Gospels of the New Testament together with various prefatory texts and tables.",
     "letter" : "K",
     "source" : "http://en.wikipedia.org/wiki/Book_of_Kells",
     "word" : "The Book of Kells"
   },
-  { "definition" : "",
+  { "definition" : "[Lenna](http://en.wikipedia.org/wiki/Lenna \"Lenna on Wikipedia\") is the name given to a standard test image widely used in the field of image processing. It's a picture cropped from the centerfold of the November 1972 issue of Playboy magazine.",
     "letter" : "L",
-    "source" : "",
-    "word" : ""
+    "source" : "http://en.wikipedia.org/wiki/Lenna",
+    "word" : "Lenna"
   },
   { "definition" : "The [Maya numeral system](http://en.wikipedia.org/wiki/Maya_numerals \"Maya Numerals on Wikipedia\") is a vigesimal (base-twenty) positional numeral system used by the Pre-Columbian Maya civilization.",
     "letter" : "M",
@@ -74,10 +74,10 @@
     "source" : "http://en.wikipedia.org/wiki/Nadir",
     "word" : "Nadir"
   },
-  { "definition" : "",
+  { "definition" : "[Octopus wrestling](http://en.wikipedia.org/wiki/Octopus_wrestling \"Octopus wrestling on Wikipedia\") involves a diver grappling with a large octopus in shallow water and dragging it to the surface.",
     "letter" : "O",
-    "source" : "",
-    "word" : ""
+    "source" : "http://en.wikipedia.org/wiki/Octopus_wrestling",
+    "word" : "Octopus wrestlin"
   },
   { "definition" : "[Panspermia](http://en.wikipedia.org/wiki/Panspermia \"Panspermia on Wikipedia\") is the hypothesis that life is distributed throughout the Universe by meteoroids, asteroids, comets, planetoids and spacecrafts.",
     "letter" : "P",
@@ -104,10 +104,10 @@
     "source" : "http://en.wikipedia.org/wiki/Towelie",
     "word" : "Towelie"
   },
-  { "definition" : "",
+  { "definition" : "The [Utah Teapot](http://en.wikipedia.org/wiki/Utah_teapot \"Utah teapot on Wikipedia\") or Newell teapot is a 3D computer model which has become a standard reference object in the computer graphics community. A teapot primitive is considered the equivalent of a *hello world* program",
     "letter" : "U",
-    "source" : "",
-    "word" : ""
+    "source" : "http://en.wikipedia.org/wiki/Utah_teapot",
+    "word" : "Utah Teapot"
   },
   { "definition" : "",
     "letter" : "V",
@@ -124,10 +124,10 @@
     "source" : "",
     "word" : ""
   },
-  { "definition" : "",
+  { "definition" : "[Yukigassen](http://en.wikipedia.org/wiki/Yukigassen \"Yukigassen on Wikipedia\") is a snowball fighting-competition from Japan. Each game is played by two teams with rules similar to capture the flag; players are eliminated when hit with snowballs. A number of snowballs (90) are made in advance.",
     "letter" : "Y",
-    "source" : "",
-    "word" : ""
+    "source" : "http://en.wikipedia.org/wiki/Yukigassen",
+    "word" : "Yukigassen"
   },
   { "definition" : "The *[Zeitgeist](http://en.wikipedia.org/wiki/Zeitgeist \"Zeitgeist on Wikipedia\")* is the intellectual fashion or dominant school of thought that typifies and influences the culture of a particular period in time.",
     "letter" : "Z",
