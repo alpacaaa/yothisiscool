@@ -7,6 +7,8 @@
 
     {{#if hasError}}
       <i>{{{hasError}}}</i>
+    {{else}}
+      {{yield}}
     {{/if}}
   </div>
 </form>
