@@ -629,6 +629,9 @@ section {
 	/*flex-grow: 0;
 	flex-shrink: 1;*/
 	@extend %column-gut;
+	img {
+		display: inline-block;
+	}
 	.avatar {
 		font-size: 1em;
 
