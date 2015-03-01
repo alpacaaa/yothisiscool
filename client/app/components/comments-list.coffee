@@ -10,6 +10,7 @@ CommentsListComponent = Ember.Component.extend
   hasPackery: false
   destroyed:  false
 
+
   onInit: ( ->
     $(window).resize @onResize.bind(@)
     @onResize()
@@ -23,13 +24,11 @@ CommentsListComponent = Ember.Component.extend
     return if @get('destroyed')
 
     Ember.run.debounce @, (->
-      container  = @$('.comments')
       hasPackery = @get 'hasPackery'
 
       if $(window).width() < 576
         if hasPackery
           @destroyPackery()
-          @set 'hasPackery', false
       else
         unless hasPackery
           @initPackery()
@@ -37,7 +36,6 @@ CommentsListComponent = Ember.Component.extend
 
 
   updatePackery: ->
-    container = @$('.comments')
     hasPackery = @get 'hasPackery'
 
     @destroyPackery() if hasPackery
@@ -48,6 +46,7 @@ CommentsListComponent = Ember.Component.extend
   initPackery: ->
     container = @$('.comments')
     @set 'hasPackery', true
+    @set 'destroyed',  false
 
     container.imagesLoaded ->
       container.packery
@@ -59,10 +58,13 @@ CommentsListComponent = Ember.Component.extend
   destroyPackery: ->
     container = @$('.comments')
     return unless container.data 'packery'
+
     container.packery 'destroy'
+    @set 'hasPackery', false
+    @set 'destroyed',  true
 
   onDestroy: (->
-    @set 'destroyed', true
+    @destroyPackery()
   ).on 'willDestroyElement'
 
 
