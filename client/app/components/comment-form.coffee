@@ -10,8 +10,8 @@ CommentFormComponent = Ember.Component.extend InboundActions,
   chars_allowed: null
 
   errorMsg: false
-  emptyError: 'Doh. Something’s wrong here.'
-  tooManyChars: 'Dude, too many characters.'
+  emptyError: 'Doh. Something’s <strong>wrong<strong/> here.'
+  tooManyChars: 'Oops. <strong>Too many characters</strong> confuse the plot!'
   userIsTyping: false
 
   showTypingMessage: Ember.computed.or('utils.session.access_token', 'userIsTyping')

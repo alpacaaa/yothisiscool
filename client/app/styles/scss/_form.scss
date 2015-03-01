@@ -183,6 +183,9 @@ optgroup {
 			color: $type-color;
 		}
 	}
+	.counter {
+		float: right;
+	}
 	button, input[type = "submit"] {
 		font-weight: $normal;
 

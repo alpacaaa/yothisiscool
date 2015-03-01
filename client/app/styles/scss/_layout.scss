@@ -426,12 +426,9 @@ section {
 
 	@include flex-grow(0);
 	@include flex-shrink(1);
-	&:last-child {
-		border-bottom: none;
-	}
-	&:after {
+	&:before {
 		position: absolute;
-		bottom: 0;
+		top: 0;
 		left: 0;
 		right: 0;
 		margin-left: auto;
@@ -503,8 +500,10 @@ section {
 	}
 	@include min-screen(col(8)) {
 		width: col(2);
-		&:after {
-			width: col(1);
+		&:before {
+			left: em($d-gut/2);
+
+			width: em($column-width*2 - $d-gut);
 		}
 		a {
 			padding-top: rhythm($d-medium-line, $d-huge-size);
@@ -544,13 +543,18 @@ section {
 
 	position: relative;
 
-	border-bottom: $border-width solid $border-color;
-
 	@include flex-grow(0);
 	@include flex-shrink(1);
 	@include adjust-font-size-to($m-medium-size, $m-medium-line);
-	&:last-child {
-		border-bottom: none;
+	&:before {
+		position: absolute;
+		top: 0;
+
+		width: 100%;
+
+		content: "";
+
+		border-top: $border-width solid $border-color;
 	}
 	a {
 		font-weight: $bold;
@@ -589,16 +593,10 @@ section {
 
 		@include column-break-inside(avoid);
 		@include adjust-font-size-to($d-medium-size, $d-medium-line);
-		&:after {
-			position: absolute;
-			bottom: 0;
+		&:before {
 			left: em($d-gut/2);
 
-			width: col(1);
-
-			content: "";
-
-			border-top: $border-width solid $border-color;
+			width: em($column-width*4 - $d-gut);
 		}
 		a {
 			padding-top: rhythm($d-medium-line/2, $d-medium-size);
