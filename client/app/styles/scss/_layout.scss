@@ -27,23 +27,30 @@
 
 .logo {
 	position: absolute;
-	z-index: -1;
-
+	//z-index: -1;
+	top: em($m-logo-size/2 + $m-gut/2);
+	left: 50%;
 	display: block;
-	overflow: hidden;
+	//overflow: hidden;
 
-	width: 100%;
-	height: 100%;
+	width: em($m-logo-size);
+	height: em($m-logo-size);
+
+	//width: 100%;
+	//height: 100%;
 
 	opacity: 0.2;
 
 	img {
-		position: relative;
-		top: em($m-logo-size/2 + $m-gut/2);
-		left: 50%;
+		//position: relative;
+		//top: em($m-logo-size/2 + $m-gut/2);
+		//left: 50%;
 
-		width: em($m-logo-size);
-		height: em($m-logo-size);
+		//width: em($d-logo-size);
+		//height: em($d-logo-size);
+
+		width: 100%;
+		height: 100%;
 
 		margin-top: em(-$m-logo-size/2);
 		margin-left: em(-$m-logo-size/2);
@@ -52,8 +59,6 @@
 		img {
 			top: em($d-logo-size/2 + $d-gut/2);
 
-			width: em($d-logo-size);
-			height: em($d-logo-size);
 			margin-top: em(-$d-logo-size/2);
 			margin-left: em(-$d-logo-size/2);
 		}
@@ -640,9 +645,9 @@ section {
 
 		float: left;
 
-		width: em(36);
-		height: em(36);
-		margin: em(6) em(12) em(6) 0;
+		width: em(36, $m-small-size);
+		height: em(36, $m-small-size);
+		margin: em(6, $m-small-size) em(12, $m-small-size) 0 0;
 
 		opacity: 0.9;
 
@@ -655,7 +660,8 @@ section {
 		display: block;
 
 		color: $light-type-color;
-
+		margin-bottom: rhythm($m-small-line/4, $m-small-size);
+		height: rhythm($m-small-line*2, $m-small-size);
 		@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
 		a {
 			@include link-colors($light-st-type-color, $light-type-color, $light-type-color);
@@ -669,11 +675,13 @@ section {
 
 		border-bottom: 0 solid $border-color;
 		.avatar {
-			width: em(36);
-			height: em(36);
-			margin: em(6) em(12) em(6) 0;
+			width: em(36, $d-small-size);
+			height: em(36, $d-small-size);
+			margin: em(6, $d-small-size) em(12, $d-small-size) 0 0;
 		}
 		.tributary {
+			margin-bottom: rhythm($d-small-line/4, $d-small-size);
+			height: rhythm($d-small-line*2, $d-small-size);
 			@include adjust-font-size-to($d-small-size, $d-small-line, $d-medium-size);
 		}
 	}

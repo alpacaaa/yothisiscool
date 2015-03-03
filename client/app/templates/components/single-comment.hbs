@@ -1,8 +1,6 @@
 <li class="comment typo-m">
-  {{#user-avatar user=comment.author}}{{/user-avatar}}
-
-  {{{comment.body}}}
   <i class="tributary">
+    {{#user-avatar user=comment.author}}{{/user-avatar}}
     {{#user-name user=comment.author}}{{/user-name}}
     said
     <time {{bind-attr datetime="comment.date"}}>
@@ -16,4 +14,6 @@
       {{/link-to}}
     {{/if}}
   </i>
+
+  {{{comment.body}}}
 </li>

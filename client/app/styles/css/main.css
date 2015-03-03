@@ -968,25 +968,20 @@ pre, [class^="form"], .head, .body, [class^="notation"], .comment, [class^="acti
 */
 .logo {
   position: absolute;
-  z-index: -1;
+  top: 3.75em;
+  left: 50%;
   display: block;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
+  width: 6em;
+  height: 6em;
   opacity: 0.2; }
   .logo img {
-    position: relative;
-    top: 3.75em;
-    left: 50%;
-    width: 6em;
-    height: 6em;
+    width: 100%;
+    height: 100%;
     margin-top: -3em;
     margin-left: -3em; }
   @media screen and (min-width: 36em) {
     .logo img {
       top: 5em;
-      width: 8em;
-      height: 8em;
       margin-top: -4em;
       margin-left: -4em; } }
 
@@ -1533,9 +1528,9 @@ section {
   .comment .avatar {
     font-size: 1em;
     float: left;
-    width: 2.25em;
-    height: 2.25em;
-    margin: 0.375em 0.75em 0.375em 0;
+    width: 2.57143em;
+    height: 2.57143em;
+    margin: 0.42857em 0.85714em 0 0;
     opacity: 0.9;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -1545,6 +1540,8 @@ section {
     font-style: normal;
     display: block;
     color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 0.42857em;
+    height: 3.42857em;
     font-size: 0.875em;
     line-height: 1.71429em; }
     .comment .tributary a {
@@ -1561,10 +1558,12 @@ section {
       padding-bottom: 3em;
       border-bottom: 0 solid rgba(0, 0, 0, 0.05); }
       .comment .avatar {
-        width: 2.25em;
-        height: 2.25em;
-        margin: 0.375em 0.75em 0.375em 0; }
+        width: 2.57143em;
+        height: 2.57143em;
+        margin: 0.42857em 0.85714em 0 0; }
       .comment .tributary {
+        margin-bottom: 0.42857em;
+        height: 3.42857em;
         font-size: 0.875em;
         line-height: 1.71429em; } }
 
