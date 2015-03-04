@@ -2,16 +2,16 @@
   <i class="tributary">
     {{#user-avatar user=comment.author}}{{/user-avatar}}
     {{#user-name user=comment.author}}{{/user-name}}
-    said
-    <a href="#2">
-      <time {{bind-attr datetime="comment.date"}}>{{timeAgo}}</time>
-    </a>
+    <br/>
     {{#if comment.repo}}
-       about
       {{#link-to 'project' comment.repo.slug}}
         {{comment.repo.name}}
       {{/link-to}}
+      ·
     {{/if}}
+    <a href="#2">
+      <time {{bind-attr datetime="comment.date"}}>{{timeAgo}}</time>
+    </a>
   </i>
 
   {{{comment.body}}}
