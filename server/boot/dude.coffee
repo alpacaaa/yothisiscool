@@ -58,6 +58,9 @@ dudeRoutes = (app) ->
   # With FastBoot, God will forgive our sins
   # In the meantime...
 
+  restApiRoot = app.get('restApiRoot')
+  app.use(restApiRoot, app.loopback.rest())
+
   try
     file  = frontend_path + '/index.html'
     index = require('fs').readFileSync(file).toString()
@@ -91,8 +94,8 @@ module.exports = (app) ->
   promisifyAlltheThings app
   initLogs app
   enableOAuth app
-  dudeRoutes  app
   staticFiles app
+  dudeRoutes  app
 
   if 'with-fixtures' in process.argv and app.get 'isDev'
     loadFixtures app
