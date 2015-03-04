@@ -102,7 +102,7 @@
 		@include rhythm($m-large-line/2, $m-large-line/2, $m-large-line/2, $m-large-line/2, $d-large-size);
 	}
 	img {
-		margin-bottom: rhythm($m-large-line/2, $m-small-size);
+		//margin-bottom: rhythm($m-large-line/2, $m-small-size);
 
 		@include adjust-font-size-to($m-small-size, $m-small-line);
 	}
@@ -149,7 +149,7 @@
 			@include rhythm($d-large-line/2, $d-large-line/2, $d-large-line/2, $d-large-line/2, $d-large-size);
 		}
 		img {
-			margin-bottom: rhythm($d-large-line/2, $d-small-size);
+			//margin-bottom: rhythm($d-large-line/2, $d-small-size);
 
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
@@ -199,8 +199,8 @@
 		@include rhythm($m-medium-line/2, $m-medium-line/2, $m-medium-line/2, $m-medium-line/2, $d-medium-size);
 	}
 	img {
-		margin-top: rhythm($m-medium-line/2, $m-small-size);
-		margin-bottom: rhythm($m-medium-line/2, $m-small-size);
+		//margin-top: rhythm($m-medium-line/2, $m-small-size);
+		//margin-bottom: rhythm($m-medium-line/2, $m-small-size);
 
 		@include adjust-font-size-to($m-small-size, $m-small-line);
 	}
@@ -247,8 +247,8 @@
 			@include rhythm($d-medium-line/2, $d-medium-line/2, $d-medium-line/2, $d-medium-line/2, $d-medium-size);
 		}
 		img {
-			margin-top: rhythm($d-medium-line/2, $d-small-size);
-			margin-bottom: rhythm($d-medium-line/2, $d-small-size);
+			//margin-top: rhythm($d-medium-line/2, $d-small-size);
+			//margin-bottom: rhythm($d-medium-line/2, $d-small-size);
 
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
@@ -298,7 +298,7 @@
 		@include rhythm($m-small-line/2, $m-small-line/2, $m-small-line/2, $m-small-line/2, $d-small-size);
 	}
 	img {
-		margin-bottom: rhythm($m-small-line/2, $m-small-size);
+		//margin-bottom: rhythm($m-small-line/2, $m-small-size);
 
 		@include adjust-font-size-to($m-small-size, $m-small-line);
 	}
@@ -345,7 +345,7 @@
 			@include rhythm($d-small-line/2, $d-small-line/2, $d-small-line/2, $d-small-line/2, $d-small-size);
 		}
 		img {
-			margin-bottom: rhythm($d-small-line/2, $d-small-size);
+			//margin-bottom: rhythm($d-small-line/2, $d-small-size);
 
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}

@@ -632,14 +632,14 @@ section {
 
 	width: 100%;
 	padding-top: rhythm($m-medium-line/2);
-	padding-bottom: rhythm($m-medium-line*2);
+	padding-bottom: rhythm($m-medium-line/2);
 
 	/*flex-grow: 0;
 	flex-shrink: 1;*/
 	@extend %column-gut;
-	img {
+	/*img {
 		display: inline-block;
-	}
+	}*/
 	.avatar {
 		font-size: 1em;
 
@@ -663,7 +663,7 @@ section {
 		margin-bottom: rhythm($m-small-line/4, $m-small-size);
 		height: rhythm($m-small-line*2, $m-small-size);
 		@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
-		a {
+		a:not(:first-of-type) {
 			@include link-colors($light-st-type-color, $light-type-color, $light-type-color);
 		}
 	}
@@ -671,7 +671,7 @@ section {
 		float: left;
 		width: col(4);
 		padding-top: rhythm($d-medium-line/2);
-		padding-bottom: rhythm($d-medium-line*2);
+		padding-bottom: rhythm($d-medium-line/2);
 
 		border-bottom: 0 solid $border-color;
 		.avatar {

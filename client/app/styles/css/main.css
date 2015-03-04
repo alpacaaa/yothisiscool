@@ -404,7 +404,6 @@ svg:not(:root) {
   padding-bottom: 0.7em;
   margin-bottom: 0.7em; }
 .typo-l img {
-  margin-bottom: 1em;
   font-size: 0.875em;
   line-height: 1.71429em; }
 .typo-l hr {
@@ -446,7 +445,6 @@ svg:not(:root) {
     padding-bottom: 0.8em;
     margin-bottom: 0.8em; }
   .typo-l img {
-    margin-bottom: 1.14286em;
     font-size: 0.875em;
     line-height: 1.71429em; }
   .typo-l hr {
@@ -488,8 +486,6 @@ svg:not(:root) {
   padding-bottom: 0.75em;
   margin-bottom: 0.75em; }
 .typo-m img {
-  margin-top: 0.85714em;
-  margin-bottom: 0.85714em;
   font-size: 0.875em;
   line-height: 1.71429em; }
 .typo-m hr {
@@ -531,8 +527,6 @@ svg:not(:root) {
     padding-bottom: 0.75em;
     margin-bottom: 0.75em; }
   .typo-m img {
-    margin-top: 0.85714em;
-    margin-bottom: 0.85714em;
     font-size: 0.875em;
     line-height: 1.71429em; }
   .typo-m hr {
@@ -574,7 +568,6 @@ svg:not(:root) {
   padding-bottom: 0.85714em;
   margin-bottom: 0.85714em; }
 .typo-s img {
-  margin-bottom: 0.85714em;
   font-size: 0.875em;
   line-height: 1.71429em; }
 .typo-s hr {
@@ -616,7 +609,6 @@ svg:not(:root) {
     padding-bottom: 0.85714em;
     margin-bottom: 0.85714em; }
   .typo-s img {
-    margin-bottom: 0.85714em;
     font-size: 0.875em;
     line-height: 1.71429em; }
   .typo-s hr {
@@ -1520,11 +1512,12 @@ section {
   position: relative;
   width: 100%;
   padding-top: 0.75em;
-  padding-bottom: 3em;
+  padding-bottom: 0.75em;
   /*flex-grow: 0;
-  flex-shrink: 1;*/ }
-  .comment img {
-    display: inline-block; }
+  flex-shrink: 1;*/
+  /*img {
+  	display: inline-block;
+  }*/ }
   .comment .avatar {
     font-size: 1em;
     float: left;
@@ -1544,18 +1537,18 @@ section {
     height: 3.42857em;
     font-size: 0.875em;
     line-height: 1.71429em; }
-    .comment .tributary a {
+    .comment .tributary a:not(:first-of-type) {
       color: rgba(230, 25, 161, 0.4); }
-      .comment .tributary a:hover {
+      .comment .tributary a:not(:first-of-type):hover {
         color: rgba(0, 0, 0, 0.4); }
-      .comment .tributary a:active {
+      .comment .tributary a:not(:first-of-type):active {
         color: rgba(0, 0, 0, 0.4); }
   @media screen and (min-width: 36em) {
     .comment {
       float: left;
       width: 18em;
       padding-top: 0.75em;
-      padding-bottom: 3em;
+      padding-bottom: 0.75em;
       border-bottom: 0 solid rgba(0, 0, 0, 0.05); }
       .comment .avatar {
         width: 2.57143em;

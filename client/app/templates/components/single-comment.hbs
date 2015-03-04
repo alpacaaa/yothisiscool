@@ -3,10 +3,9 @@
     {{#user-avatar user=comment.author}}{{/user-avatar}}
     {{#user-name user=comment.author}}{{/user-name}}
     said
-    <time {{bind-attr datetime="comment.date"}}>
-      <a href="#2">{{timeAgo}}</a>
-    </time>
-
+    <a href="#2">
+      <time {{bind-attr datetime="comment.date"}}>{{timeAgo}}</time>
+    </a>
     {{#if comment.repo}}
        about
       {{#link-to 'project' comment.repo.slug}}
