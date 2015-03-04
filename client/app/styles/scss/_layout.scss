@@ -399,11 +399,14 @@ section {
 	overflow: auto;
 	position: relative;
 
+	background-color: $content-background-color;
+	@include border-radius($radius);
 	width: 100%;
-
+	padding-bottom: rhythm($m-medium-line*2);
 	@extend %centered;
 	@include min-screen(col(8)) {
 		width: col(8);
+		padding-bottom: rhythm($d-medium-line*2);
 	}
 	@include min-screen(col(12)) {
 		width: col(12);
