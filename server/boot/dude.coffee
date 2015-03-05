@@ -4,7 +4,8 @@ Promise = require 'bluebird'
 bbutil  = require 'bluebird/js/main/util'
 serveStatic = require 'serve-static'
 
-github  = require '../github'
+github = require '../github'
+Notifier = require '../notifier'
 
 winston = require 'winston'
 logentries = require 'le_node'
@@ -81,6 +82,15 @@ staticFiles = (app) ->
   app.use serveStatic(frontend_path, options)
 
 
+
+notifications = (app) ->
+  notifier = new Notifier(app)
+
+  app.models.Comment.observe 'after save', (ctx, next) ->
+    notifier.register_comment ctx.instance
+    next()
+
+
 loadFixtures = (app) ->
   ['GithubRepo', 'GithubUser', 'Comment'].forEach (modelName) ->
     fixture = require '../../test/fixtures/' + modelName.toLowerCase() + '-fixture'
@@ -96,6 +106,7 @@ module.exports = (app) ->
   enableOAuth app
   staticFiles app
   dudeRoutes  app
+  notifications app
 
   if 'with-fixtures' in process.argv and app.get 'isDev'
     loadFixtures app

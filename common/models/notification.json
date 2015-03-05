@@ -1,0 +1,24 @@
+{
+  "name": "Notification",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "schedule_date": {
+      "type": "date"
+    },
+    "data": {
+      "type": "object"
+    }
+  },
+  "relations": {
+    "owner": {
+      "type": "belongsTo",
+      "model": "GithubUser",
+      "foreignKey": ""
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
