@@ -666,8 +666,11 @@ section {
 		margin-bottom: rhythm($m-small-line/4, $m-small-size);
 		height: rhythm($m-small-line*2, $m-small-size);
 		@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
+		a:first-of-type {
+			font-weight: $bold;
+		}
 		a:not(:first-of-type) {
-			@include link-colors($light-st-type-color, $light-type-color, $light-type-color);
+			@include link-colors($light-type-color, $strong-type-color, $strong-type-color);
 		}
 	}
 	@include min-screen(col(8)) {

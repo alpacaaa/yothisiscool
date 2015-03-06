@@ -1543,12 +1543,14 @@ section {
     height: 3.42857em;
     font-size: 0.875em;
     line-height: 1.71429em; }
+    .comment .tributary a:first-of-type {
+      font-weight: 500; }
     .comment .tributary a:not(:first-of-type) {
-      color: rgba(230, 25, 161, 0.4); }
+      color: rgba(0, 0, 0, 0.4); }
       .comment .tributary a:not(:first-of-type):hover {
-        color: rgba(0, 0, 0, 0.4); }
+        color: rgba(0, 0, 0, 0.8); }
       .comment .tributary a:not(:first-of-type):active {
-        color: rgba(0, 0, 0, 0.4); }
+        color: rgba(0, 0, 0, 0.8); }
   @media screen and (min-width: 36em) {
     .comment {
       float: left;
