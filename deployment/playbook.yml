@@ -62,7 +62,7 @@
       mode: 0600
     sudo: yes
 
-  - name: Setup Github configuration (optional)
+  - name: Setup Dude configuration (optional)
     template:
       src: files/dude-config.json.tpl
       dest: "/home/dude/www/shared/server/dude-config.json"

@@ -6,6 +6,7 @@ serveStatic = require 'serve-static'
 
 config = require '../dude-config'
 github = require '../github'
+Mailer = require '../mailer'
 Notifier = require '../notifier'
 
 winston = require 'winston'
@@ -84,6 +85,7 @@ staticFiles = (app) ->
 
 notifications = (app) ->
   notifier = new Notifier(app)
+  notifier.mailer = new Mailer(config)
 
   app.post '/notify_users', (req, res, next) ->
     unless req.query.access_token == config.INTERNAL_URL_TOKEN
@@ -93,6 +95,8 @@ notifications = (app) ->
     res.end()
 
   app.models.Comment.observe 'after save', (ctx, next) ->
+    return next() if ctx.instance.notified
+
     notifier.register_comment ctx.instance
     next()
 

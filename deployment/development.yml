@@ -15,3 +15,6 @@ dude:
   # oauth_redirect_url: http://localhost:4200
 
   internal_token: letmein
+
+  # mailgun_api_key: apikey
+  # mailgun_domain: domain.com

@@ -116,9 +116,9 @@ class Notifier
 
       Promise.all list
 
-    .then (data) ->
+    .then (data) =>
 
-      list = data.map (item) ->
+      list = data.map (item) =>
         unless item.comments.length
           return item.notification.updateAttributeAsync 'status', 'nocomments'
 
@@ -136,7 +136,7 @@ class Notifier
           with #{item.comments.length} comments
         "
 
-        Promise.delay(1000)
+        @mailer.send item
         .then ->
           item.notification.updateAttribute 'status', 'sent'
           item.user.updateAttribute 'last_notified', Date.now()
