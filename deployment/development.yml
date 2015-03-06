@@ -13,3 +13,5 @@ dude:
   # github_client_secret: yolo
   # github_access_token: www
   # oauth_redirect_url: http://localhost:4200
+
+  internal_token: letmein
