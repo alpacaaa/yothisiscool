@@ -1,12 +1,16 @@
 
 Promise = require 'bluebird'
 moment  = require 'moment'
+findgithubemail = require 'findgithubemail'
+
+config = require './dude-config'
+
 
 Comment = null
 GithubRepo = null
 GithubUser = null
 Notification = null
-
+logger = null
 
 
 class Notifier
@@ -19,6 +23,9 @@ class Notifier
     GithubRepo = app.models.GithubRepo
     GithubUser = app.models.GithubUser
     Notification = app.models.Notification
+    logger = Notification.app.get('dude.logger')
+
+    findgithubemail.access_token = config.GITHUB_ACCESS_TOKEN
 
 
   register_comment: (comment) ->
@@ -49,7 +56,6 @@ class Notifier
         status: 'queued'
 
     .catch (e) ->
-      logger = Notification.app.get('dude.logger')
       logger.error e
 
 
@@ -68,5 +74,59 @@ class Notifier
     schedule  = now.add(1, 'hour') if schedule.isBefore(now)
 
     schedule
+
+
+  process_batch: (size) ->
+    logger.info 'Processing notifications'
+
+    query =
+      status: 'queued'
+      schedule_date: lt: Date.now()
+
+    Notification.findAsync
+      where: query
+      limit: size
+      include: 'user'
+
+    .then (notifications) =>
+
+      list = notifications.map (n) =>
+
+        comments = Comment.find
+          where: id: inq: n.data.comments
+          include: ['author', 'repo']
+
+        Promise.props
+          notification: n
+          user: n.user()
+          email: @user_email n.user()
+          comments: comments
+
+      Promise.all list
+
+    .then (data) ->
+
+      data.map (item) ->
+        unless item.email == item.user.email
+          item.user.updateAttribute 'email', item.email
+
+        console.log "
+          Sending email to #{item.user.email}
+          with #{item.comments.length} comments
+        "
+
+
+
+
+
+
+  user_email: (user) ->
+    return user.email if user.email
+
+    findgithubemail.find user.username
+    .then (data) -> data.best_guess
+    .catch ->
+      logger.error 'Email not found ' + user.username
+
 
 module.exports = Notifier

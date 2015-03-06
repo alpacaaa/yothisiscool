@@ -4,6 +4,7 @@ Promise = require 'bluebird'
 bbutil  = require 'bluebird/js/main/util'
 serveStatic = require 'serve-static'
 
+config = require '../dude-config'
 github = require '../github'
 Notifier = require '../notifier'
 
@@ -40,8 +41,6 @@ initLogs = (app) ->
 
 
 enableOAuth = (app) ->
-  config = require '../dude-config'
-
   github.setDefaultToken config.GITHUB_ACCESS_TOKEN
 
   for k, v of config
@@ -85,6 +84,13 @@ staticFiles = (app) ->
 
 notifications = (app) ->
   notifier = new Notifier(app)
+
+  app.post '/notify_users', (req, res, next) ->
+    unless req.query.access_token == config.INTERNAL_URL_TOKEN
+      return res.status(401).end()
+
+    notifier.process_batch (req.query.batch ? 10)
+    res.end()
 
   app.models.Comment.observe 'after save', (ctx, next) ->
     notifier.register_comment ctx.instance
