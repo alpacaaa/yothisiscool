@@ -65,5 +65,6 @@
       "property": "findOne"
     }
   ],
-  "methods": []
+  "methods": [],
+  "hidden": ["auth_token", "email_token"]
 }
