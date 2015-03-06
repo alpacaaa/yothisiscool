@@ -2,16 +2,17 @@
   <i class="tributary">
     {{#user-avatar user=comment.author}}{{/user-avatar}}
     {{#user-name user=comment.author}}{{/user-name}}
-    <br/>
-    {{#if comment.repo}}
-      {{#link-to 'project' comment.repo.slug}}
-        {{comment.repo.name}}
-      {{/link-to}}
-      ·
-    {{/if}}
-    <a href="#2">
-      <time {{bind-attr datetime="comment.date"}}>{{timeAgo}}</time>
-    </a>
+    <span class="meta">
+      {{#if comment.repo}}
+        {{#link-to 'project' comment.repo.slug}}
+          {{comment.repo.name}}
+        {{/link-to}}
+        ·
+      {{/if}}
+      <a href="#2">
+        <time {{bind-attr datetime="comment.date"}}>{{timeAgo}}</time>
+      </a>
+    </span>
   </i>
 
   {{{comment.body}}}

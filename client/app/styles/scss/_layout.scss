@@ -402,10 +402,12 @@ section {
 	background-color: $content-background-color;
 	@include border-radius($radius);
 	width: 100%;
+	padding-top: rhythm($m-medium-line*2);
 	padding-bottom: rhythm($m-medium-line*2);
 	@extend %centered;
 	@include min-screen(col(8)) {
 		width: col(8);
+		padding-top: rhythm($d-medium-line*2);
 		padding-bottom: rhythm($d-medium-line*2);
 	}
 	@include min-screen(col(12)) {
@@ -492,6 +494,7 @@ section {
 			display: block;
 		}
 		.word {
+			margin-top: rhythm($m-small-line/5, $m-small-size);
 			color: $strong-type-color;
 			@include adjust-font-size-to($m-small-size, $m-small-line, $m-huge-size);
 		}
@@ -532,6 +535,7 @@ section {
 				@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line, $d-huge-size);
 			}
 			.word {
+				margin-top: rhythm($d-small-line/5, $d-small-size);
 				@include adjust-font-size-to($d-small-size, $d-small-line, $d-huge-size);
 			}
 			.amount {
@@ -644,33 +648,38 @@ section {
 		display: inline-block;
 	}*/
 	.avatar {
-		font-size: 1em;
-
 		float: left;
 
 		width: em(36, $m-small-size);
 		height: em(36, $m-small-size);
-		margin: em(6, $m-small-size) em(12, $m-small-size) 0 0;
+		margin: em(4, $m-small-size) em(12, $m-small-size) 0 0;
 
 		opacity: 0.9;
 
 		@include border-radius(2px);
 	}
 	.tributary {
+		overflow: auto;
 		font-weight: $normal;
 		font-style: normal;
 
 		display: block;
 
 		color: $light-type-color;
-		margin-bottom: rhythm($m-small-line/4, $m-small-size);
-		height: rhythm($m-small-line*2, $m-small-size);
-		@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
-		a:first-of-type {
+		margin-bottom: rhythm($m-small-line/4);
+		//height: rhythm($m-small-line*2);
+		//@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
+		.username {
+			display: block;
 			font-weight: $bold;
+			@include adjust-font-size-to($m-medium-size, $m-medium-line);
 		}
-		a:not(:first-of-type) {
-			@include link-colors($light-type-color, $strong-type-color, $strong-type-color);
+		.meta {
+			display: block;
+			@include adjust-font-size-to($m-small-size, $m-small-line);
+			a {
+				@include link-colors($light-type-color, $strong-type-color, $strong-type-color);
+			}
 		}
 	}
 	@include min-screen(col(8)) {
@@ -679,16 +688,19 @@ section {
 		padding-top: rhythm($d-medium-line/2);
 		padding-bottom: rhythm($d-medium-line/2);
 
-		border-bottom: 0 solid $border-color;
 		.avatar {
 			width: em(36, $d-small-size);
 			height: em(36, $d-small-size);
-			margin: em(6, $d-small-size) em(12, $d-small-size) 0 0;
+			margin: em(4, $d-small-size) em(12, $d-small-size) 0 0;
 		}
 		.tributary {
-			margin-bottom: rhythm($d-small-line/4, $d-small-size);
-			height: rhythm($d-small-line*2, $d-small-size);
-			@include adjust-font-size-to($d-small-size, $d-small-line, $d-medium-size);
+			margin-bottom: rhythm($d-small-line/4);
+			.username {
+				@include adjust-font-size-to($d-medium-size, $d-medium-line);
+			}
+			.meta {
+				@include adjust-font-size-to($d-small-size, $d-small-line);
+			}
 		}
 	}
 }

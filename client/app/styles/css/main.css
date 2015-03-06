@@ -405,7 +405,7 @@ svg:not(:root) {
   margin-bottom: 0.7em; }
 .typo-l img {
   font-size: 0.875em;
-  line-height: 1.71429em; }
+  line-height: 1.42857em; }
 .typo-l hr {
   margin-top: 0.875em;
   margin-bottom: 0.875em;
@@ -446,7 +446,7 @@ svg:not(:root) {
     margin-bottom: 0.8em; }
   .typo-l img {
     font-size: 0.875em;
-    line-height: 1.71429em; }
+    line-height: 1.42857em; }
   .typo-l hr {
     margin-top: 1em;
     margin-bottom: 1em;
@@ -463,11 +463,11 @@ svg:not(:root) {
   font-size: 1em;
   line-height: 1.5em; }
 .typo-m h5, .typo-m h6 {
-  margin-bottom: 0.85714em;
+  margin-bottom: 0.71429em;
   font-size: 0.875em;
-  line-height: 1.71429em; }
+  line-height: 1.42857em; }
 .typo-m ul, .typo-m ol, .typo-m blockquote {
-  margin-bottom: 0.75em; }
+  margin-bottom: 0.625em; }
 .typo-m li, .typo-m dt {
   font-size: 1em;
   line-height: 1.5em; }
@@ -487,7 +487,7 @@ svg:not(:root) {
   margin-bottom: 0.75em; }
 .typo-m img {
   font-size: 0.875em;
-  line-height: 1.71429em; }
+  line-height: 1.42857em; }
 .typo-m hr {
   margin-top: 0.75em;
   margin-bottom: 0.75em;
@@ -504,11 +504,11 @@ svg:not(:root) {
     font-size: 1em;
     line-height: 1.5em; }
   .typo-m h5, .typo-m h6 {
-    margin-bottom: 0.85714em;
+    margin-bottom: 0.71429em;
     font-size: 0.875em;
-    line-height: 1.71429em; }
+    line-height: 1.42857em; }
   .typo-m ul, .typo-m ol, .typo-m blockquote {
-    margin-bottom: 0.75em; }
+    margin-bottom: 0.625em; }
   .typo-m li, .typo-m dt {
     font-size: 1em;
     line-height: 1.5em; }
@@ -528,7 +528,7 @@ svg:not(:root) {
     margin-bottom: 0.75em; }
   .typo-m img {
     font-size: 0.875em;
-    line-height: 1.71429em; }
+    line-height: 1.42857em; }
   .typo-m hr {
     margin-top: 0.75em;
     margin-bottom: 0.75em;
@@ -541,18 +541,18 @@ svg:not(:root) {
   font-size: 1em;
   line-height: 1.5em; }
 .typo-s p, .typo-s dd {
-  margin-bottom: 0.85714em;
+  margin-bottom: 0.71429em;
   font-size: 0.875em;
-  line-height: 1.71429em; }
+  line-height: 1.42857em; }
 .typo-s h5, .typo-s h6 {
-  margin-bottom: 0.85714em;
+  margin-bottom: 0.71429em;
   font-size: 0.875em;
-  line-height: 1.71429em; }
+  line-height: 1.42857em; }
 .typo-s ul, .typo-s ol, .typo-s blockquote {
-  margin-bottom: 0.75em; }
+  margin-bottom: 0.625em; }
 .typo-s li, .typo-s dt {
   font-size: 0.875em;
-  line-height: 1.71429em; }
+  line-height: 1.42857em; }
 .typo-s li:before {
   width: 1.71429em;
   margin-left: -1.71429em; }
@@ -562,38 +562,38 @@ svg:not(:root) {
   padding-right: 0.85714em;
   padding-left: 1.71429em;
   font-size: 0.875em;
-  line-height: 1.71429em;
-  margin-top: 0.85714em;
-  padding-top: 0.85714em;
-  padding-bottom: 0.85714em;
-  margin-bottom: 0.85714em; }
+  line-height: 1.42857em;
+  margin-top: 0.71429em;
+  padding-top: 0.71429em;
+  padding-bottom: 0.71429em;
+  margin-bottom: 0.71429em; }
 .typo-s img {
   font-size: 0.875em;
-  line-height: 1.71429em; }
+  line-height: 1.42857em; }
 .typo-s hr {
-  margin-top: 0.75em;
+  margin-top: 0.625em;
   margin-bottom: 0em;
   border-top-width: 0.0625em;
   border-top-style: solid;
-  padding-top: 1.4375em; }
+  padding-top: 1.1875em; }
 @media screen and (min-width: 36em) {
   .typo-s h1, .typo-s h2, .typo-s h3, .typo-s h4 {
     margin-bottom: 0.75em;
     font-size: 1em;
     line-height: 1.5em; }
   .typo-s p, .typo-s dd {
-    margin-bottom: 0.85714em;
+    margin-bottom: 0.71429em;
     font-size: 0.875em;
-    line-height: 1.71429em; }
+    line-height: 1.42857em; }
   .typo-s h5, .typo-s h6 {
-    margin-bottom: 0.85714em;
+    margin-bottom: 0.71429em;
     font-size: 0.875em;
-    line-height: 1.71429em; }
+    line-height: 1.42857em; }
   .typo-s ul, .typo-s ol {
-    margin-bottom: 0.75em; }
+    margin-bottom: 0.625em; }
   .typo-s li, .typo-s dt {
     font-size: 0.875em;
-    line-height: 1.71429em; }
+    line-height: 1.42857em; }
   .typo-s li:before {
     width: 2.28571em;
     margin-left: -2.28571em; }
@@ -603,20 +603,20 @@ svg:not(:root) {
     padding-right: 1.14286em;
     padding-left: 2.28571em;
     font-size: 0.875em;
-    line-height: 1.71429em;
-    margin-top: 0.85714em;
-    padding-top: 0.85714em;
-    padding-bottom: 0.85714em;
-    margin-bottom: 0.85714em; }
+    line-height: 1.42857em;
+    margin-top: 0.71429em;
+    padding-top: 0.71429em;
+    padding-bottom: 0.71429em;
+    margin-bottom: 0.71429em; }
   .typo-s img {
     font-size: 0.875em;
-    line-height: 1.71429em; }
+    line-height: 1.42857em; }
   .typo-s hr {
-    margin-top: 0.75em;
+    margin-top: 0.625em;
     margin-bottom: 0em;
     border-top-width: 0.0625em;
     border-top-style: solid;
-    padding-top: 1.4375em; } }
+    padding-top: 1.1875em; } }
 
 /* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
 ::-webkit-input-placeholder {
@@ -756,12 +756,12 @@ optgroup {
   [class^="form"] i {
     font-style: normal;
     display: block;
-    margin-top: 0.42857em;
+    margin-top: 0.35714em;
     padding-right: 1em;
     padding-left: 1em;
     color: rgba(0, 0, 0, 0.4);
     font-size: 0.875em;
-    line-height: 1.71429em; }
+    line-height: 1.42857em; }
     [class^="form"] i strong {
       color: rgba(0, 0, 0, 0.6); }
   [class^="form"] .counter {
@@ -816,11 +816,11 @@ optgroup {
       [class^="form"] input[type="text"], [class^="form"] input[type="search"] {
         height: 2.25em; }
       [class^="form"] i {
-        margin-top: 0.42857em;
+        margin-top: 0.35714em;
         padding-right: 0.71429em;
         padding-left: 0.71429em;
         font-size: 0.875em;
-        line-height: 1.71429em; }
+        line-height: 1.42857em; }
       [class^="form"] button, [class^="form"] input[type="submit"] {
         width: 13.5em;
         height: 2.25em;
@@ -874,7 +874,7 @@ optgroup {
   border-bottom-right-radius: 0;
   overflow: hidden;
   width: 100%;
-  max-height: 13em; }
+  max-height: 12.375em; }
 .form-comment textarea, .form-comment i {
   opacity: 1.0;
   -moz-transition-property: color, border-color, background-color, opacity;
@@ -1019,7 +1019,7 @@ pre, [class^="form"], .head, .body, [class^="notation"], .comment, [class^="acti
     height: 2.85714em;
     text-transform: uppercase;
     font-size: 0.875em;
-    line-height: 1.71429em; }
+    line-height: 1.42857em; }
     .menu li:first-child {
       float: left;
       margin-left: 0.85714em; }
@@ -1130,7 +1130,7 @@ pre, [class^="form"], .head, .body, [class^="notation"], .comment, [class^="acti
       .menu li {
         height: 2.85714em;
         font-size: 0.875em;
-        line-height: 1.71429em; }
+        line-height: 1.42857em; }
         .menu li:first-child {
           margin-left: 1.14286em; }
         .menu li:last-child {
@@ -1231,7 +1231,7 @@ section {
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
   width: 100%;
-  padding-bottom: 1.5em;
+  padding-bottom: 1.25em;
   text-align: center;
   background-image: url("../../media/icons/notation.svg");
   background-repeat: repeat-y;
@@ -1244,14 +1244,14 @@ section {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     background-color: #fafad1;
     font-size: 0.875em;
-    line-height: 1.71429em; }
+    line-height: 1.42857em; }
   @media screen and (min-width: 36em) {
     [class^="notation"] {
       width: 36em;
-      padding-bottom: 3em; }
+      padding-bottom: 2.5em; }
       [class^="notation"] h3 {
         font-size: 0.875em;
-        line-height: 1.71429em; } }
+        line-height: 1.42857em; } }
 
 .notation-closed {
   padding-bottom: 0; }
@@ -1264,10 +1264,12 @@ section {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   width: 100%;
+  padding-top: 3em;
   padding-bottom: 3em; }
   @media screen and (min-width: 36em) {
     .letters, .projects, .comments {
       width: 36em;
+      padding-top: 3em;
       padding-bottom: 3em; } }
   @media screen and (min-width: 54em) {
     .letters, .projects, .comments {
@@ -1356,9 +1358,10 @@ section {
       font-style: normal;
       display: block; }
     .letter a .word {
+      margin-top: 0.28571em;
       color: rgba(0, 0, 0, 0.8);
       font-size: 0.25em;
-      line-height: 1.71429em; }
+      line-height: 1.42857em; }
     .letter a .amount {
       position: absolute;
       font-size: 0.23214em;
@@ -1406,8 +1409,9 @@ section {
           font-size: 0.20313em;
           line-height: 1.53846em; }
         .letter a .word {
+          margin-top: 0.28571em;
           font-size: 0.21875em;
-          line-height: 1.71429em; }
+          line-height: 1.42857em; }
         .letter a .amount {
           font-size: 0.20313em;
           line-height: 1.53846em;
@@ -1525,48 +1529,54 @@ section {
   	display: inline-block;
   }*/ }
   .comment .avatar {
-    font-size: 1em;
     float: left;
     width: 2.57143em;
     height: 2.57143em;
-    margin: 0.42857em 0.85714em 0 0;
+    margin: 0.28571em 0.85714em 0 0;
     opacity: 0.9;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px; }
   .comment .tributary {
+    overflow: auto;
     font-weight: 400;
     font-style: normal;
     display: block;
     color: rgba(0, 0, 0, 0.4);
-    margin-bottom: 0.42857em;
-    height: 3.42857em;
-    font-size: 0.875em;
-    line-height: 1.71429em; }
-    .comment .tributary a:first-of-type {
-      font-weight: 500; }
-    .comment .tributary a:not(:first-of-type) {
-      color: rgba(0, 0, 0, 0.4); }
-      .comment .tributary a:not(:first-of-type):hover {
-        color: rgba(0, 0, 0, 0.8); }
-      .comment .tributary a:not(:first-of-type):active {
-        color: rgba(0, 0, 0, 0.8); }
+    margin-bottom: 0.3125em; }
+    .comment .tributary .username {
+      display: block;
+      font-weight: 500;
+      font-size: 1em;
+      line-height: 1.5em; }
+    .comment .tributary .meta {
+      display: block;
+      font-size: 0.875em;
+      line-height: 1.42857em; }
+      .comment .tributary .meta a {
+        color: rgba(0, 0, 0, 0.4); }
+        .comment .tributary .meta a:hover {
+          color: rgba(0, 0, 0, 0.8); }
+        .comment .tributary .meta a:active {
+          color: rgba(0, 0, 0, 0.8); }
   @media screen and (min-width: 36em) {
     .comment {
       float: left;
       width: 18em;
       padding-top: 0.75em;
-      padding-bottom: 0.75em;
-      border-bottom: 0 solid rgba(0, 0, 0, 0.05); }
+      padding-bottom: 0.75em; }
       .comment .avatar {
         width: 2.57143em;
         height: 2.57143em;
-        margin: 0.42857em 0.85714em 0 0; }
+        margin: 0.28571em 0.85714em 0 0; }
       .comment .tributary {
-        margin-bottom: 0.42857em;
-        height: 3.42857em;
-        font-size: 0.875em;
-        line-height: 1.71429em; } }
+        margin-bottom: 0.3125em; }
+        .comment .tributary .username {
+          font-size: 1em;
+          line-height: 1.5em; }
+        .comment .tributary .meta {
+          font-size: 0.875em;
+          line-height: 1.42857em; } }
 
 [class^="action"] {
   width: 75%;
@@ -1575,7 +1585,7 @@ section {
   text-align: center; }
   [class^="action"] .instruction {
     font-size: 0.875em;
-    line-height: 1.71429em; }
+    line-height: 1.42857em; }
     [class^="action"] .instruction span {
       color: rgba(0, 0, 0, 0.6); }
   [class^="action"] .caption {
@@ -1591,7 +1601,7 @@ section {
       margin-bottom: 6em; }
       [class^="action"] .instruction {
         font-size: 0.875em;
-        line-height: 1.71429em; }
+        line-height: 1.42857em; }
       [class^="action"] .caption {
         margin-top: 0.76923em;
         font-size: 0.8125em;
