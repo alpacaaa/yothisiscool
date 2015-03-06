@@ -30,10 +30,12 @@ class Notifier
 
   register_comment: (comment) ->
 
-    GithubRepo.findById comment.repoId
+    promise = GithubRepo.findByIdAsync comment.repoId
 
     .then (repo) ->
       user_id = repo.ownerId
+      return promise.cancel() if user_id == comment.authorId
+
       query = userId: user_id, status: 'queued'
 
       Promise.props
@@ -54,6 +56,10 @@ class Notifier
         data: comments: [comment.id]
         userId: data.user.id
         status: 'queued'
+
+
+    .cancellable()
+    .catch Promise.CancellationError, (->)
 
     .catch (e) ->
       logger.error e
@@ -77,7 +83,7 @@ class Notifier
 
 
   process_batch: (size) ->
-    logger.info 'Processing notifications'
+    logger.info "Processing #{size} notifications"
 
     query =
       status: 'queued'
@@ -90,10 +96,16 @@ class Notifier
 
     .then (notifications) =>
 
+      unless notifications.length
+        logger.info 'No new notifications'
+        return []
+
       list = notifications.map (n) =>
 
         comments = Comment.find
-          where: id: inq: n.data.comments
+          where:
+            id: inq: n.data.comments
+            notified: null # cant get proper query to work, fuck me
           include: ['author', 'repo']
 
         Promise.props
@@ -106,17 +118,38 @@ class Notifier
 
     .then (data) ->
 
-      data.map (item) ->
+      list = data.map (item) ->
+        unless item.comments.length
+          return item.notification.updateAttributeAsync 'status', 'nocomments'
+
+        unless item.email
+          return item.notification.updateAttributeAsync 'status', 'unprocessable'
+
+        item.notification.updateAttribute 'status', 'processing'
+
         unless item.email == item.user.email
           item.user.updateAttribute 'email', item.email
 
-        console.log "
-          Sending email to #{item.user.email}
+
+        logger.info "
+          Sending email to #{item.email}
           with #{item.comments.length} comments
         "
 
+        Promise.delay(1000)
+        .then ->
+          item.notification.updateAttribute 'status', 'sent'
+          item.user.updateAttribute 'last_notified', Date.now()
 
+          item.comments.map (c) ->
+            c.updateAttribute 'notified', true
 
+        return true
+
+      Promise.all list
+
+    .then (data) ->
+      logger.info "Processed #{data.length} notifications"
 
 
 
