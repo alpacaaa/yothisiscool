@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "server/server.js",
   "scripts": {
-    "dev-server": "nodemon server/server.coffee --watch common --watch server",
+    "dev-server": "nodemon server/server.coffee --watch server",
     "test": "NODE_ENV=test ./node_modules/.bin/mocha --compilers coffee:coffee-script/register"
   },
   "dependencies": {
