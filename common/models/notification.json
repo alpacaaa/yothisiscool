@@ -8,17 +8,19 @@
     },
     "data": {
       "type": "object"
+    },
+    "status": {
+      "type": "string"
     }
   },
+  "validations": [],
   "relations": {
-    "owner": {
+    "user": {
       "type": "belongsTo",
       "model": "GithubUser",
       "foreignKey": ""
     }
   },
-  "validations": [],
-  "relations": {},
   "acls": [],
   "methods": []
 }
