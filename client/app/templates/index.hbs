@@ -14,13 +14,15 @@
 			{{/starred-repos}}
 		{{/search-repo}}
 
-		<section>
+		<section class="section">
 			<header class="notation">
 				<h3>The freshest thanks.</h3>
 			</header>
 
-			{{#comments-list comments=latest_comments}}
-			{{/comments-list}}
+			<div class="section-content">
+				{{#comments-list comments=latest_comments}}
+				{{/comments-list}}
+			</div>
 		</section>
 
 		{{#github-auth}}{{/github-auth}}

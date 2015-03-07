@@ -1153,7 +1153,6 @@ pre, [class^="form"], .head, .body, [class^="notation"], .comment, [class^="acti
         padding-left: 0.57143em; } }
 
 .content {
-  max-width: 72em;
   margin-right: auto;
   margin-left: auto;
   padding-top: 6em; }
@@ -1217,6 +1216,19 @@ section {
     section {
       padding-bottom: 6em; } }
 
+.section {
+  padding-bottom: 6em; }
+  .section:last-of-type {
+    padding-bottom: 0; }
+  .section > *:last-child {
+    margin-bottom: 0; }
+  @media screen and (min-width: 36em) {
+    .section {
+      padding-bottom: 6em; } }
+
+.section-content {
+  background-color: rgba(255, 255, 255, 0.8); }
+
 [class^="notation"] {
   -moz-transition-property: padding;
   -o-transition-property: padding;
@@ -1259,17 +1271,11 @@ section {
 .letters, .projects, .comments {
   overflow: auto;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.8);
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
   width: 100%;
-  padding-top: 3em;
   padding-bottom: 3em; }
   @media screen and (min-width: 36em) {
     .letters, .projects, .comments {
       width: 36em;
-      padding-top: 3em;
       padding-bottom: 3em; } }
   @media screen and (min-width: 54em) {
     .letters, .projects, .comments {

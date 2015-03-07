@@ -10,27 +10,25 @@
       {{{result.letter.definition}}}
     </div>
 
-    <section>
+    <section class="section">
       <header class="notation">
         <h3>Up to {{result.repos.length}} projects so far</h3>
       </header>
 
-
-      <ul class="projects">
-
-        {{#each result.repos as |repo|}}
-          <li class="project">
-            {{#link-to "project" repo.slug}}
-              {{repo.owner.username}} <span class="path-divider">/</span> {{repo.name}} <span class="amount">{{repo.count}}</span>
-            {{/link-to}}
-          </li>
-        {{/each}}
-
-      </ul>
+      <div class="section-content">
+        <ul class="projects">
+          {{#each result.repos as |repo|}}
+            <li class="project">
+              {{#link-to "project" repo.slug}}
+                {{repo.owner.username}} <span class="path-divider">/</span> {{repo.name}} <span class="amount">{{repo.count}}</span>
+              {{/link-to}}
+            </li>
+          {{/each}}
+        </ul>
+      </div>
     </section>
 
   </article>
-
 
   {{#github-auth}}{{/github-auth}}
 

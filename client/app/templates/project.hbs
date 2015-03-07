@@ -1,37 +1,38 @@
 
-
 <main class="content">
-	<article>
-		<header class="head typo-l">
-			<h2>{{project.name}}</h2>
-		</header>
+  <article>
+    <header class="head typo-l">
+      <h2>{{project.name}}</h2>
+    </header>
 
-		{{#project-overview project=project}}
+    {{#project-overview project=project}}
     {{/project-overview}}
 
-		<section>
-			<header class="notation">
-				<h3>Wanna thank?</h3>
-			</header>
+    <section>
+      <header class="notation">
+        <h3>Wanna thank?</h3>
+      </header>
 
-			{{#comment-form project=project submit="newComment" actionReceiver=commentForm chars_allowed=chars_allowed}}
+      {{#comment-form project=project submit="newComment" actionReceiver=commentForm chars_allowed=chars_allowed}}
       {{/comment-form}}
-		</section>
+    </section>
 
-		<section>
-			<header class="notation">
-				{{#if project.comments.length}}
-					<h3>Up to {{project.comments.length}} thanks so far.</h3>
-				{{else}}
-					<h3>No thanks yet.</h3>
-				{{/if}}
-			</header>
+    <section class="section">
+      <header class="notation">
+        {{#if project.comments.length}}
+          <h3>Up to {{project.comments.length}} thanks so far.</h3>
+        {{else}}
+          <h3>No thanks yet.</h3>
+        {{/if}}
+      </header>
 
-      {{#comments-list comments=project.comments}}
-			{{/comments-list}}
-		</section>
+      <div class="section-content">
+        {{#comments-list comments=project.comments}}
+        {{/comments-list}}
+      </div>
+    </section>
 
-	</article>
+  </article>
 
-	{{#github-auth}}{{/github-auth}}
+  {{#github-auth}}{{/github-auth}}
 </main>
