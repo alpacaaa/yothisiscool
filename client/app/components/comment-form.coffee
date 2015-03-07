@@ -22,8 +22,12 @@ CommentFormComponent = Ember.Component.extend InboundActions,
   ).property 'comment'
 
   watchChars: (->
+    msg = false
+
     if @get('remainingChars') < 0
-      @set 'errorMsg', @get('tooManyChars')
+      msg = @get 'tooManyChars'
+
+    @set 'errorMsg', msg
   ).observes 'remainingChars'
 
   submitComment: ->
