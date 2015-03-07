@@ -51,7 +51,7 @@
   },
   { "definition" : "A [Jesus Nut](http://it.urbandictionary.com/define.php?term=Jesus+nut \"Jesus Nut on Urban Dictionary\") is anything that holds together a critical assembly, such as a main roter on a helicopter. If the nut in question fails, then the equipment will catastrophically fail and everyone in/around it will be on their way to see Jesus.",
     "letter" : "J",
-    "source" : "http://en.wikipedia.org/wiki/Jesus_nut",
+    "source" : "http://it.urbandictionary.com/define.php?term=Jesus+nut",
     "word" : "Jesus Nut"
   },
   { "definition" : "[The Book of Kells](http://en.wikipedia.org/wiki/Book_of_Kells \"The Book of Kells on Wikipedia\") is an illuminated manuscript Gospel book in Latin, containing the four Gospels of the New Testament together with various prefatory texts and tables.",
@@ -59,7 +59,7 @@
     "source" : "http://en.wikipedia.org/wiki/Book_of_Kells",
     "word" : "The Book of Kells"
   },
-  { "definition" : "[Lenna](http://en.wikipedia.org/wiki/Lenna \"Lenna on Wikipedia\") is the name given to a standard test image widely used in the field of image processing. It's a picture cropped from the centerfold of the November 1972 issue of Playboy magazine.",
+  { "definition" : "[Lenna](http://en.wikipedia.org/wiki/Lenna \"Lenna on Wikipedia\") is the name given to a standard test image widely used in the field of image processing. It’s a picture cropped from the centerfold of the November 1972 issue of Playboy magazine.",
     "letter" : "L",
     "source" : "http://en.wikipedia.org/wiki/Lenna",
     "word" : "Lenna"
@@ -77,7 +77,7 @@
   { "definition" : "[Octopus wrestling](http://en.wikipedia.org/wiki/Octopus_wrestling \"Octopus wrestling on Wikipedia\") involves a diver grappling with a large octopus in shallow water and dragging it to the surface.",
     "letter" : "O",
     "source" : "http://en.wikipedia.org/wiki/Octopus_wrestling",
-    "word" : "Octopus wrestlin"
+    "word" : "Octopus Wrestling"
   },
   { "definition" : "[Panspermia](http://en.wikipedia.org/wiki/Panspermia \"Panspermia on Wikipedia\") is the hypothesis that life is distributed throughout the Universe by meteoroids, asteroids, comets, planetoids and spacecrafts.",
     "letter" : "P",
@@ -104,7 +104,7 @@
     "source" : "http://en.wikipedia.org/wiki/Towelie",
     "word" : "Towelie"
   },
-  { "definition" : "The [Utah Teapot](http://en.wikipedia.org/wiki/Utah_teapot \"Utah teapot on Wikipedia\") or Newell teapot is a 3D computer model which has become a standard reference object in the computer graphics community. A teapot primitive is considered the equivalent of a *hello world* program",
+  { "definition" : "The [Utah teapot](http://en.wikipedia.org/wiki/Utah_teapot \"Utah Teapot on Wikipedia\") or Newell teapot is a 3D computer model which has become a standard reference object in the computer graphics community. A teapot primitive is considered the equivalent of a *hello world* program",
     "letter" : "U",
     "source" : "http://en.wikipedia.org/wiki/Utah_teapot",
     "word" : "Utah Teapot"
@@ -124,7 +124,7 @@
     "source" : "",
     "word" : ""
   },
-  { "definition" : "[Yukigassen](http://en.wikipedia.org/wiki/Yukigassen \"Yukigassen on Wikipedia\") is a snowball fighting-competition from Japan. Each game is played by two teams with rules similar to capture the flag; players are eliminated when hit with snowballs. A number of snowballs (90) are made in advance.",
+  { "definition" : "[Yukigassen](http://en.wikipedia.org/wiki/Yukigassen \"Yukigassen on Wikipedia\") is a snowball fighting-competition from Japan. Each game is played by two teams with rules similar to capture the flag: players are eliminated when hit with snowballs. A number of snowballs (90) are made in advance.",
     "letter" : "Y",
     "source" : "http://en.wikipedia.org/wiki/Yukigassen",
     "word" : "Yukigassen"
