@@ -7,18 +7,12 @@
     <p>TBD</p>
   </div>
 
-  <section>
-    <header class="notation">
-      <h3>Looking for something in particular?</h3>
-    </header>
-
-    {{#search-repo found_repo="transitionToRepo"}}
-      {{#starred-repos}}{{/starred-repos}}
-    {{/search-repo}}
-  </section>
+  {{#search-repo found_repo="transitionToRepo"}}
+    {{#starred-repos}}
+    {{/starred-repos}}
+  {{/search-repo}}
 
   <section class="section">
-    
     <div class="section-content">
       {{#letters-index index=by_letter}}
       {{/letters-index}}

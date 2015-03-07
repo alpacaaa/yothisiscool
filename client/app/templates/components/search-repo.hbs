@@ -1,14 +1,18 @@
+<section>
+  <form class="form-search" {{action "form_submit" on="submit"}}>
+    <div {{bind-attr class=":field hasError:error"}}>
+      <label for="search">Repository</label>
+      {{input value=search id="search" placeholder="https://github.com/author/project" type="search" focus-in="removeErrors"}}
+      <button type="submit">Search</button>
 
-<form class="form-search" {{action "form_submit" on="submit"}}>
-  <div {{bind-attr class=":field hasError:error"}}>
-    <label for="search">Repository</label>
-    {{input value=search id="search" placeholder="https://github.com/author/project" type="search" focus-in="removeErrors"}}
-    <button type="submit">Search</button>
-
-    {{#if hasError}}
-      <i>{{{hasError}}}</i>
-    {{else}}
-      {{yield}}
-    {{/if}}
-  </div>
-</form>
+      <i>
+        {{#if hasError}}
+          {{{hasError}}}
+        {{else}}
+          Quick reach your <a href="" {{action "show_starred_repos"}}>Github starred repositories</a>.
+          <!--{{yield}}-->
+        {{/if}}
+      </i>
+    </div>
+  </form>
+</section>
