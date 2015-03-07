@@ -1,7 +1,9 @@
 
 `import Ember from 'ember'`
+`import InboundActions from 'ember-component-inbound-actions/inbound-actions'`
 
-StarredReposComponent = Ember.Component.extend
+
+StarredReposComponent = Ember.Component.extend InboundActions,
   tagName: ''
 
   repos: []

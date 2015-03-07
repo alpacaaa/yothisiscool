@@ -8,10 +8,11 @@
 		<p>Now you can, with <em>Dude, This Is Cool</em>: pick your favorite Github project/s and thank their author/s!</p>
 	</div>
 
-	{{#search-repo found_repo="transitionToRepo"}}
-		{{#starred-repos}}
-		{{/starred-repos}}
+	{{#search-repo found_repo="transitionToRepo" show_starred_repos="showStarredRepos"}}
 	{{/search-repo}}
+
+	{{#starred-repos actionReceiver=starredRepos}}
+	{{/starred-repos}}
 
 	<section class="section">
 		<header class="notation">

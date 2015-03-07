@@ -7,10 +7,11 @@
     <p>TBD</p>
   </div>
 
-  {{#search-repo found_repo="transitionToRepo"}}
-    {{#starred-repos}}
-    {{/starred-repos}}
+  {{#search-repo found_repo="transitionToRepo" show_starred_repos="showStarredRepos"}}
   {{/search-repo}}
+
+  {{#starred-repos actionReceiver=starredRepos}}
+  {{/starred-repos}}
 
   <section class="section">
     <div class="section-content">

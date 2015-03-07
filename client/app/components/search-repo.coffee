@@ -44,4 +44,8 @@ SearchRepoComponent = Ember.Component.extend
     removeErrors: ->
       @set 'hasError', false
 
+    show_starred_repos: ->
+      @sendAction 'show_starred_repos'
+
+
 `export default SearchRepoComponent`

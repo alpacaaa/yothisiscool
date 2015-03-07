@@ -10,4 +10,9 @@ Route = Ember.Route.extend
       .limit 16
       .findMany()
 
+  actions:
+    showStarredRepos: ->
+      @get('controller.starredRepos').send 'show_starred_repos'
+
+
 `export default Route`
