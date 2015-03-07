@@ -1,31 +1,30 @@
 <main class="content">
-  <article>
-    <header class="head typo-l">
-      <h2>Index</h2>
+  <header class="head typo-l">
+    <h2>Index</h2>
+  </header>
+
+  <div class="body typo-l">
+    <p>TBD</p>
+  </div>
+
+  <section>
+    <header class="notation">
+      <h3>Looking for something in particular?</h3>
     </header>
 
-    <div class="body typo-l">
-      <p>TBD</p>
+    {{#search-repo found_repo="transitionToRepo"}}
+      {{#starred-repos}}{{/starred-repos}}
+    {{/search-repo}}
+  </section>
+
+  <section class="section">
+    
+    <div class="section-content">
+      {{#letters-index index=by_letter}}
+      {{/letters-index}}
     </div>
+  </section>
 
-    <section>
-      <header class="notation">
-        <h3>Looking for something in particular?</h3>
-      </header>
-
-      {{#search-repo found_repo="transitionToRepo"}}
-        {{#starred-repos}}{{/starred-repos}}
-      {{/search-repo}}
-    </section>
-
-    <section class="section">
-      
-      <div class="section-content">
-        {{#letters-index index=by_letter}}
-        {{/letters-index}}
-      </div>
-    </section>
-
-    {{#github-auth}}{{/github-auth}}
-  </article>
+  {{#github-auth}}
+  {{/github-auth}}
 </main>

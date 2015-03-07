@@ -1,35 +1,32 @@
 <main class="content">
-  <article>
-    <header class="head typo-l">
-      <h2>
-        {{result.letter.letter}} <span>as</span> {{result.letter.word}}
-      </h2>
+  <header class="head typo-l">
+    <h2>
+      {{result.letter.letter}} <span>as</span> {{result.letter.word}}
+    </h2>
+  </header>
+
+  <div class="body typo-l">
+    {{{result.letter.definition}}}
+  </div>
+
+  <section class="section">
+    <header class="notation">
+      <h3>Up to {{result.repos.length}} projects so far</h3>
     </header>
 
-    <div class="body typo-l">
-      {{{result.letter.definition}}}
+    <div class="section-content">
+      <ul class="projects">
+        {{#each result.repos as |repo|}}
+          <li class="project">
+            {{#link-to "project" repo.slug}}
+              {{repo.owner.username}} <span class="path-divider">/</span> {{repo.name}} <span class="amount">{{repo.count}}</span>
+            {{/link-to}}
+          </li>
+        {{/each}}
+      </ul>
     </div>
+  </section>
 
-    <section class="section">
-      <header class="notation">
-        <h3>Up to {{result.repos.length}} projects so far</h3>
-      </header>
-
-      <div class="section-content">
-        <ul class="projects">
-          {{#each result.repos as |repo|}}
-            <li class="project">
-              {{#link-to "project" repo.slug}}
-                {{repo.owner.username}} <span class="path-divider">/</span> {{repo.name}} <span class="amount">{{repo.count}}</span>
-              {{/link-to}}
-            </li>
-          {{/each}}
-        </ul>
-      </div>
-    </section>
-
-  </article>
-
-  {{#github-auth}}{{/github-auth}}
-
+  {{#github-auth}}
+  {{/github-auth}}
 </main>
