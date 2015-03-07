@@ -1586,8 +1586,8 @@ section {
 
 [class^="action"] {
   width: 75%;
-  margin-top: 6em;
-  margin-bottom: 6em;
+  padding-top: 6em;
+  padding-bottom: 6em;
   text-align: center; }
   [class^="action"] .instruction {
     font-size: 0.875em;
@@ -1603,8 +1603,8 @@ section {
   @media screen and (min-width: 36em) {
     [class^="action"] {
       width: 18em;
-      margin-top: 6em;
-      margin-bottom: 6em; }
+      padding-top: 6em;
+      padding-bottom: 6em; }
       [class^="action"] .instruction {
         font-size: 0.875em;
         line-height: 1.42857em; }

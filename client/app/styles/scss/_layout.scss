@@ -720,8 +720,8 @@ section {
 
 [class^="action"] {
 	width: 75%;
-	margin-top: rhythm($m-medium-line*4);
-	margin-bottom: rhythm($m-medium-line*4);
+	padding-top: rhythm($m-medium-line*4);
+	padding-bottom: rhythm($m-medium-line*4);
 
 	text-align: center;
 
@@ -743,8 +743,8 @@ section {
 	}
 	@include min-screen(col(8)) {
 		width: col(4);
-		margin-top: rhythm($d-medium-line*4);
-		margin-bottom: rhythm($d-medium-line*4);
+		padding-top: rhythm($d-medium-line*4);
+		padding-bottom: rhythm($d-medium-line*4);
 		.instruction {
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
