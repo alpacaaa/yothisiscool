@@ -9,8 +9,7 @@
   "scripts": {
     "start": "ember server",
     "build": "ember build",
-    "test": "ember test",
-    "push": "ember build --environment=production && scp -r dist/* marco@dudethisis.cool:/home/marco/dude/frontend/"
+    "test": "ember test"
   },
   "repository": "",
   "engines": {
