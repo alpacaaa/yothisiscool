@@ -56,6 +56,8 @@
 		margin-left: em(-$m-logo-size/2);
 	}
 	@include min-screen(col(8)) {
+		width: em($d-logo-size);
+		height: em($d-logo-size);
 		img {
 			top: em($d-logo-size/2 + $d-gut/2);
 
@@ -408,8 +410,8 @@ section {
 	@include adjust-font-size-to($m-small-size, $m-small-line);
 	padding-bottom: rhythm($m-small-line, $m-small-size);
 	@include min-screen(col(8)) {
-		@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
-		padding-bottom: rhythm($d-extra-small-line, $d-extra-small-size);
+		@include adjust-font-size-to($d-small-size, $d-small-line);
+		padding-bottom: rhythm($d-small-line, $d-small-size);
 	}
 }
 .section-content {
@@ -710,6 +712,20 @@ section {
 	/*img {
 		display: inline-block;
 	}*/
+	&:last-child {
+		.tributary {
+			&:after {
+				font-weight: $bold;
+				content: "1st!";
+				position: absolute;
+				@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
+				top: 0;
+				right: 0;
+
+				color: $light-nd-type-color;
+			}
+		}
+	}
 	.avatar {
 		float: left;
 
@@ -722,6 +738,7 @@ section {
 		@include border-radius(2px);
 	}
 	.tributary {
+		position: relative;
 		overflow: auto;
 		font-weight: $normal;
 		font-style: normal;
