@@ -8,6 +8,7 @@ config = require '../dude-config'
 github = require '../github'
 Mailer = require '../mailer'
 Notifier = require '../notifier'
+NotifierRouter = require '../notifier_router'
 
 winston = require 'winston'
 logentries = require 'le_node'
@@ -85,13 +86,15 @@ staticFiles = (app) ->
 
 notifications = (app) ->
   notifier = new Notifier(app)
-  notifier.mailer = new Mailer(config)
+  router = NotifierRouter(app)
+
+  router.mailer = new Mailer(config)
 
   app.post '/notify_users', (req, res, next) ->
     unless req.query.access_token == config.INTERNAL_URL_TOKEN
       return res.status(401).end()
 
-    notifier.process_batch (req.query.batch ? 10)
+    router.process_batch (req.query.batch ? 10)
     res.end()
 
   app.models.Comment.observe 'after save', (ctx, next) ->
