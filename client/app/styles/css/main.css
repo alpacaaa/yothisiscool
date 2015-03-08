@@ -1257,24 +1257,24 @@ pre, [class^="form"], .head, .body, [class^="notation"], .comment, [class^="acti
     margin: 0.5em 1em 0.5em 0; } }
 
 section {
-  padding-bottom: 6em; }
+  margin-bottom: 6em; }
   section:last-of-type {
-    padding-bottom: 0; }
+    margin-bottom: 0; }
   section > *:last-child {
     margin-bottom: 0; }
   @media screen and (min-width: 36em) {
     section {
-      padding-bottom: 6em; } }
+      margin-bottom: 6em; } }
 
 .section {
-  padding-bottom: 6em; }
+  margin-bottom: 6em; }
   .section:last-of-type {
-    padding-bottom: 0; }
+    margin-bottom: 0; }
   .section > *:last-child {
     margin-bottom: 0; }
   @media screen and (min-width: 36em) {
     .section {
-      padding-bottom: 6em; } }
+      margin-bottom: 6em; } }
 
 .section-content {
   background-color: rgba(255, 255, 255, 0.8); }
@@ -1584,6 +1584,8 @@ section {
   /*img {
   	display: inline-block;
   }*/ }
+  .comment:target {
+    background-color: red; }
   .comment .avatar {
     float: left;
     width: 2.57143em;
