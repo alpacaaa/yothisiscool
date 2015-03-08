@@ -391,7 +391,7 @@ section {
 	}
 }
 
-.section {
+[class^="section"] {
 	margin-bottom: rhythm($m-medium-line*4);
 	&:last-of-type {
 		margin-bottom: 0;
@@ -404,7 +404,6 @@ section {
 	}
 }
 .section-notation {
-	background-color: $content-background-color;
 	font-weight: $normal;
 	color: $light-type-color;
 	text-align: center;

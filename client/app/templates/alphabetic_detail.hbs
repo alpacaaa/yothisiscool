@@ -8,18 +8,16 @@
   {{{result.letter.definition}}}
 </div>
 
-<section class="section">
+<section class="section-content">
   <h3 class="section-notation">Up to {{result.repos.length}} Projects So Far</h3>
 
-  <div class="section-content">
-    <ul class="projects">
-      {{#each result.repos as |repo|}}
-        <li class="project">
-          {{#link-to "project" repo.slug}}
-            {{repo.owner.username}} <span class="path-divider">/</span> {{repo.name}} <span class="amount">{{repo.count}}</span>
-          {{/link-to}}
-        </li>
-      {{/each}}
-    </ul>
-  </div>
+  <ul class="projects">
+    {{#each result.repos as |repo|}}
+      <li class="project">
+        {{#link-to "project" repo.slug}}
+          {{repo.owner.username}} <span class="path-divider">/</span> {{repo.name}} <span class="amount">{{repo.count}}</span>
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
 </section>

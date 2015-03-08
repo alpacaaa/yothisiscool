@@ -12,7 +12,7 @@
   {{/comment-form}}
 </section>
 
-<section class="section">
+<section class="section-content">
   <h3 class="section-notation">
     {{#if project.comments.length}}
       Up to {{project.comments.length}} Thanks So Far
@@ -21,8 +21,6 @@
     {{/if}}
   </h3>
 
-  <div class="section-content">
-    {{#comments-list comments=project.comments showRepo=false comment_selected=comment_selected}}
-    {{/comments-list}}
-  </div>
+  {{#comments-list comments=project.comments showRepo=false comment_selected=comment_selected}}
+  {{/comments-list}}
 </section>

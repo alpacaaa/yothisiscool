@@ -13,11 +13,9 @@
 {{#starred-repos actionReceiver=starredRepos}}
 {{/starred-repos}}
 
-<section class="section">
+<section class="section-content">
 	<h3 class="section-notation">The Freshest Thanks</h3>
 
-	<div class="section-content">
-		{{#comments-list comments=latest_comments}}
-		{{/comments-list}}
-	</div>
+	{{#comments-list comments=latest_comments}}
+	{{/comments-list}}
 </section>

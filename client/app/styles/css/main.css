@@ -1264,18 +1264,17 @@ section {
     section {
       margin-bottom: 6em; } }
 
-.section {
+[class^="section"] {
   margin-bottom: 6em; }
-  .section:last-of-type {
+  [class^="section"]:last-of-type {
     margin-bottom: 0; }
-  .section > *:last-child {
+  [class^="section"] > *:last-child {
     margin-bottom: 0; }
   @media screen and (min-width: 36em) {
-    .section {
+    [class^="section"] {
       margin-bottom: 6em; } }
 
 .section-notation {
-  background-color: rgba(255, 255, 255, 0.8);
   font-weight: 400;
   color: rgba(0, 0, 0, 0.4);
   text-align: center;
