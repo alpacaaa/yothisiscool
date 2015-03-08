@@ -11,5 +11,9 @@ AlphabeticRoute = Ember.Route.extend
       by_letter: promise
 
 
+  actions:
+    showStarredRepos: ->
+      @get('controller.starredRepos').send 'show_starred_repos'
+
 
 `export default AlphabeticRoute`
