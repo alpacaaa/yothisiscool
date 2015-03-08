@@ -705,10 +705,7 @@ optgroup {
 ** Istances
 */
 [class^="form"] {
-  margin-bottom: 3em;
-  background-image: url("../../media/icons/notation.svg");
-  background-repeat: repeat-y;
-  background-position: top center; }
+  margin-bottom: 3em; }
   [class^="form"] .field:last-child, [class^="form"] .button:last-child {
     margin-bottom: 0; }
   [class^="form"] input[type="text"], [class^="form"] input[type="search"], [class^="form"] textarea, [class^="form"] button, [class^="form"] input[type="submit"] {
@@ -830,28 +827,26 @@ optgroup {
       [class^="form"] .field {
         margin-bottom: 1.5em; } }
 
-.form-search {
-  background-image: none; }
-  .form-search input[type="search"] {
-    float: left;
-    width: 75%;
-    border-right: none;
-    -moz-border-radius-topright: 0;
-    -webkit-border-top-right-radius: 0;
-    border-top-right-radius: 0;
-    -moz-border-radius-bottomright: 0;
-    -webkit-border-bottom-right-radius: 0;
-    border-bottom-right-radius: 0; }
-  .form-search button {
-    width: 25%;
-    -moz-border-radius-topleft: 0;
-    -webkit-border-top-left-radius: 0;
-    border-top-left-radius: 0;
-    -moz-border-radius-bottomleft: 0;
-    -webkit-border-bottom-left-radius: 0;
-    border-bottom-left-radius: 0; }
-  .form-search .field {
-    overflow: auto; }
+.form-search input[type="search"] {
+  float: left;
+  width: 75%;
+  border-right: none;
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0; }
+.form-search button {
+  width: 25%;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0; }
+.form-search .field {
+  overflow: auto; }
 
 .form-comment .field {
   -moz-transition-property: color, border-color, background-color, width, max-height, border-radius;
@@ -1275,6 +1270,17 @@ section {
   @media screen and (min-width: 36em) {
     .section {
       margin-bottom: 6em; } }
+
+.section-notation {
+  text-align: center;
+  font-size: 0.875em;
+  line-height: 1.42857em;
+  padding-bottom: 1.42857em; }
+  @media screen and (min-width: 36em) {
+    .section-notation {
+      font-size: 0.875em;
+      line-height: 1.42857em;
+      padding-bottom: 1.42857em; } }
 
 .section-content {
   background-color: rgba(255, 255, 255, 0.8); }

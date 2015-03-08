@@ -1,10 +1,8 @@
-
 <form {{bind-attr class=":form-comment isOpen::closed"}} {{action "form_submit" on="submit"}}>
   <div {{bind-attr class=":field errorMsg:error"}}>
     <label for="comment">Comment</label>
     {{textarea value=comment id="comment" placeholder="Dude, this is cool!" rows="6" focus-in="removeErrors" key-press="userTyping"}}
 
-    
     <i>
     {{#if errorMsg}}
       {{{errorMsg}}}
@@ -21,7 +19,6 @@
     <span class="counter">{{remainingChars}}</span>
     </i>
 
-   
   </div>
   <div class="button">
     <input class="send" type="submit" value="Thank You">

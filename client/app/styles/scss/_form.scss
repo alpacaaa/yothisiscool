@@ -114,9 +114,9 @@ optgroup {
 [class^="form"] {
 	margin-bottom: rhythm($m-medium-line*2);
 
-	background-image: url("../../media/icons/notation.svg");
-	background-repeat: repeat-y;
-	background-position: top center;
+	//background-image: url("../../media/icons/notation.svg");
+	//background-repeat: repeat-y;
+	//background-position: top center;
 
 	@extend %column-gut;
 	@extend %centered;
@@ -265,7 +265,7 @@ optgroup {
 }
 
 .form-search {
-	background-image: none;
+	//background-image: none;
 	input[type = "search"] {
 		float: left;
 
