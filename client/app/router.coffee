@@ -11,5 +11,6 @@ Router.map ->
   @route 'alphabetic_detail', { path: '/index/:letter' }
 
   @route 'colophon'
+  @route '500'
 
 `export default Router`
