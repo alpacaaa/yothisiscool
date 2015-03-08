@@ -463,10 +463,12 @@ section {
 	position: relative;
 
 	width: 100%;
+	padding-top: rhythm($m-medium-line);
 	padding-bottom: rhythm($m-medium-line*2);
 	@extend %centered;
 	@include min-screen(col(8)) {
 		width: col(8);
+		padding-top: rhythm($d-medium-line);
 		padding-bottom: rhythm($d-medium-line*2);
 	}
 	@include min-screen(col(12)) {
@@ -523,6 +525,7 @@ section {
 	@include flex-grow(0);
 	@include flex-shrink(1);
 	a {
+		@include border-radius($radius);
 		font-weight: $bold;
 
 		position: relative;
@@ -626,6 +629,7 @@ section {
 	@include flex-shrink(1);
 	@include adjust-font-size-to($m-medium-size, $m-medium-line);
 	a {
+		@include border-radius($radius);
 		font-weight: $bold;
 
 		display: block;
@@ -692,8 +696,7 @@ section {
 }
 
 .comment.selected {
-	background-color: $nd-active-background-color;
-
+	background-color: $hover-background-color;
 	@include box-shadow(0 1px 4px 0 $shadow-color inset);
 }
 
@@ -701,7 +704,7 @@ section {
 	font-weight: $bold;
 
 	position: relative;
-
+	@include border-radius($radius);
 	width: 100%;
 	padding-top: rhythm($m-medium-line/2);
 	padding-bottom: rhythm($m-medium-line/2);
@@ -722,7 +725,7 @@ section {
 				top: 0;
 				right: 0;
 
-				color: $light-nd-type-color;
+				color: $light-type-color;
 			}
 		}
 	}
