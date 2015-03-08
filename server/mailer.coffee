@@ -1,6 +1,9 @@
 
-Promise = require 'bluebird'
-mailgun = require 'mailgun-js'
+Promise  = require 'bluebird'
+mailgun  = require 'mailgun-js'
+mustache = require 'mustache'
+
+fs = require 'fs'
 
 
 class Mailer
@@ -10,13 +13,18 @@ class Mailer
       apiKey: config.MAILGUN_API_KEY
       domain: config.MAILGUN_DOMAIN
 
+    file = __dirname + '/notification.tpl'
+    @notification_tpl = fs.readFileSync(file).toString()
+
 
   send: (options) ->
+    html = mustache.render @notification_tpl, options
+
     @mailgun.messages().send
       from: 'Dude this is cool <hey@dudethisis.cool>'
       to: options.email
       subject: 'YOLO'
-      text: "Check this out: #{options.comments.length}"
+      html: html
 
 
 module.exports = Mailer
