@@ -3,12 +3,15 @@
 
 Route = Ember.Route.extend
   model: ->
-    latest_comments:
+    latest_comments =
       @get('ws').request 'comments'
-      .include 'author', 'repo'
-      .order 'date DESC'
-      .limit 16
-      .findMany()
+        .include 'author', 'repo'
+        .order 'date DESC'
+        .limit 16
+        .findMany()
+
+    Ember.RSVP.hash
+      latest_comments: latest_comments
 
   actions:
     showStarredRepos: ->
