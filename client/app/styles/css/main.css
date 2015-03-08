@@ -1275,16 +1275,20 @@ section {
       margin-bottom: 6em; } }
 
 .section-notation {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
   color: rgba(0, 0, 0, 0.4);
   text-align: center;
   font-size: 0.875em;
   line-height: 1.42857em;
-  padding-bottom: 1.42857em; }
+  padding-bottom: 1em;
+  padding-top: 1em; }
   @media screen and (min-width: 36em) {
     .section-notation {
       font-size: 0.875em;
       line-height: 1.42857em;
-      padding-bottom: 1.42857em; } }
+      padding-bottom: 1em;
+      padding-top: 1em; } }
 
 .section-content {
   background-color: rgba(255, 255, 255, 0.8); }
@@ -1332,12 +1336,10 @@ section {
   overflow: auto;
   position: relative;
   width: 100%;
-  padding-top: 1.5em;
   padding-bottom: 3em; }
   @media screen and (min-width: 36em) {
     .letters, .projects, .comments {
       width: 36em;
-      padding-top: 1.5em;
       padding-bottom: 3em; } }
   @media screen and (min-width: 54em) {
     .letters, .projects, .comments {
@@ -1637,13 +1639,13 @@ section {
     display: block;
     color: rgba(0, 0, 0, 0.4);
     margin-bottom: 0.3125em; }
+    .comment .tributary span {
+      display: block; }
     .comment .tributary .username {
-      display: block;
       font-weight: 500;
       font-size: 1em;
       line-height: 1.5em; }
     .comment .tributary .meta {
-      display: block;
       font-size: 0.875em;
       line-height: 1.42857em; }
       .comment .tributary .meta a {

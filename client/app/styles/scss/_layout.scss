@@ -404,14 +404,17 @@ section {
 	}
 }
 .section-notation {
-	//font-weight: $normal;
+	background-color: $content-background-color;
+	font-weight: $normal;
 	color: $light-type-color;
 	text-align: center;
 	@include adjust-font-size-to($m-small-size, $m-small-line);
-	padding-bottom: rhythm($m-small-line, $m-small-size);
+	padding-bottom: rhythm((($m-medium-line*2)-($m-small-line))/2, $m-small-size);
+	padding-top: rhythm((($m-medium-line*2)-($m-small-line))/2, $m-small-size);
 	@include min-screen(col(8)) {
 		@include adjust-font-size-to($d-small-size, $d-small-line);
-		padding-bottom: rhythm($d-small-line, $d-small-size);
+		padding-bottom: rhythm((($d-medium-line*2)-($d-small-line))/2, $d-small-size);
+		padding-top: rhythm((($d-medium-line*2)-($d-small-line))/2, $d-small-size);
 	}
 }
 .section-content {
@@ -463,12 +466,12 @@ section {
 	position: relative;
 
 	width: 100%;
-	padding-top: rhythm($m-medium-line);
+	//padding-top: rhythm($m-medium-line*2);
 	padding-bottom: rhythm($m-medium-line*2);
 	@extend %centered;
 	@include min-screen(col(8)) {
 		width: col(8);
-		padding-top: rhythm($d-medium-line);
+		//padding-top: rhythm($d-medium-line*2);
 		padding-bottom: rhythm($d-medium-line*2);
 	}
 	@include min-screen(col(12)) {
@@ -752,13 +755,14 @@ section {
 		margin-bottom: rhythm($m-small-line/4);
 		//height: rhythm($m-small-line*2);
 		//@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
-		.username {
+		span {
 			display: block;
+		}
+		.username {
 			font-weight: $bold;
 			@include adjust-font-size-to($m-medium-size, $m-medium-line);
 		}
 		.meta {
-			display: block;
 			@include adjust-font-size-to($m-small-size, $m-small-line);
 			a {
 				@include link-colors($light-type-color, $strong-type-color, $strong-type-color);

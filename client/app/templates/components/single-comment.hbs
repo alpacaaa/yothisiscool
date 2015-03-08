@@ -1,7 +1,9 @@
 <li {{bind-attr class=":comment :typo-m selected"}}>
   <i class="tributary">
     {{#user-avatar user=comment.author}}{{/user-avatar}}
-    {{#user-name user=comment.author}}{{/user-name}}
+    <span class="username">
+      {{#user-name user=comment.author}}{{/user-name}}
+    </span>
     <span class="meta">
       {{#if showRepo}}
         {{#link-to 'project' comment.repo.slug}}
