@@ -98,19 +98,20 @@ notifications = (app) ->
     res.end()
 
 
-  app.get '/unsuscribe', (req, res, next) ->
+  ['unsuscribe', 'subscription'].forEach (r) ->
 
-    router.unsuscribe req.query
+    app.get '/' + r, (req, res, next) ->
 
-    .then (html) ->
-      res.send html
+      router[r] req.query
+      .then (html) ->
+        res.send html
 
-    .catch (e) ->
-      logger.error e
+      .catch (e) ->
+        logger.error e
 
-      res
-      .status 500
-      .send 'Something went wrong, please get in touch with us'
+        res
+        .status 500
+        .send 'Something went wrong, please get in touch with us'
 
 
   app.models.Comment.observe 'after save', (ctx, next) ->

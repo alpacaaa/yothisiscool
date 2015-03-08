@@ -9,6 +9,17 @@
 </p>
 {{/comments}}
 
+<p>
+  Change when receiving notifications:
+  <ul>
+    <li><a href="{{daily}}">Daily</a></li>
+    <li><a href="{{weekly}}">Weekly</a></li>
+    <li><a href="{{monthly}}">Monthly</a></li>
+  </ul>
+
+  You'll get notified only if there's something new, no spam!
+</p>
+
 
 <p>
   <a href="{{unsuscribe}}">Unsuscribe</a>

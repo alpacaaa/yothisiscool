@@ -21,9 +21,7 @@ class Mailer
 
   send: (options) ->
     email_token = options.user.getEmailToken()
-
-    options.unsuscribe = @generate_link 'unsuscribe', email_token,
-      email: options.email
+    options = @add_links options, email_token
 
     html = mustache.render @notification_tpl, options
 
@@ -55,6 +53,23 @@ class Mailer
     check = @generate_access_token email_token, params
     token == check
 
+
+  add_links: (options, email_token) ->
+    options.unsuscribe = @generate_link 'unsuscribe', email_token,
+      email: options.email
+
+    values =
+      daily: 1
+      weekly: 7
+      monthly: 30
+
+    for key,value of values
+      options[key] = @generate_link 'subscription', email_token,
+        email: options.email
+        frequency: value
+
+
+    options
 
 
 

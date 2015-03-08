@@ -113,6 +113,30 @@ unsuscribe = (params) ->
 
 
 
+subscription = (params) ->
+  email = params.email
+  token = params.access_token
+  frequency = params.frequency
+
+  return Promise.reject() unless email and token and frequency
+
+  GithubUser.findOneAsync email: email
+  .then (user) =>
+    email_token = user.email_token
+    throw new Error('Email token not generated') unless email_token
+
+    verify = @mailer.verify_token token, email_token,
+      email: email
+      frequency: frequency
+
+    throw new Error("Can't verify token for #{email}") unless verify
+
+    user.updateAttributeAsync 'notification_frequency', frequency
+
+  .then ->
+    "You will be notified every #{frequency} days, only if there's new activity."
+
+
 
 user_email = (user) ->
   return user.email if user.email
@@ -136,3 +160,4 @@ module.exports = (app) ->
 
   process_batch: process_batch
   unsuscribe: unsuscribe
+  subscription: subscription

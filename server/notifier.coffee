@@ -44,7 +44,7 @@ class Notifier
         if notification
           notification.updateAttributeAsync 'status', 'unsuscribed'
 
-        return promise.cancel()
+        return false
 
       if notification
         notification.data.comments.push comment.id
