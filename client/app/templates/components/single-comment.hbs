@@ -9,9 +9,9 @@
         {{/link-to}}
         ·
       {{/if}}
-      {{#link-to 'project' comment_permalink}}
+      <a href="{{unbound comment_permalink}}">
         <time {{bind-attr datetime="comment.date"}}>{{timeAgo}}</time>
-      {{/link-to}}
+      </a>
     </span>
   </i>
 

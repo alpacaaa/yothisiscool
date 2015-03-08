@@ -16,6 +16,7 @@ CommentsListComponent = Ember.Component.extend
   onInit: ( ->
     $(window).resize @onResize.bind(@)
     @onResize()
+    @scrollToComment()
   ).on 'didInsertElement'
 
   onCommentsUpdate: (->
@@ -68,6 +69,17 @@ CommentsListComponent = Ember.Component.extend
   onDestroy: (->
     @destroyPackery()
   ).on 'willDestroyElement'
+
+
+  scrollToComment: (->
+    Ember.run.scheduleOnce 'afterRender', @, ->
+      el = @$('.comment.selected')
+      top  = el.offset().top
+      half = el.outerHeight() / 2
+      win  = Ember.$(window).height() / 2
+
+      Ember.$('html,body').animate scrollTop: top - win + half
+  ).observes 'comment_selected'
 
 
 `export default CommentsListComponent`

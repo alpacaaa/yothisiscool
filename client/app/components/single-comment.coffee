@@ -8,7 +8,7 @@ SingleCommentComponent = Ember.Component.extend
   showRepo: true
 
   comment_permalink: (->
-    @get('comment.repo.slug') + '/thank-' + @get('comment.id')
+    @get('comment.repo.slug') + '#thank-' + @get('comment.id')
   ).property()
 
   selected: (->

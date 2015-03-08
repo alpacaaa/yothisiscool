@@ -18,9 +18,16 @@ ProjectRoute = Ember.Route.extend
       repo
 
 
+  beforeModel: ->
+    Ember.$(window).on 'hashchange', =>
+      comment = @comment_selected()
+      @set 'controller.model.comment_selected', comment
+
+
   model: (params) ->
     utils = @get 'utils'
-    { slug, comment } = @clean_slug params.slug
+    slug  = @clean_slug params.slug
+    comment = @comment_selected()
     controller = @get 'controller'
 
     unless slug.indexOf('/') > -1
@@ -44,16 +51,13 @@ ProjectRoute = Ember.Route.extend
 
 
   clean_slug: (slug) ->
-    slug = slug.replace(/\/+$/, "")
-    slug = slug.split('/', 3)
-    comment = slug[2] ? ''
-    comment = comment.replace('thank-', '')
+    slug.replace(/\/+$/, "")
+
+
+  comment_selected: ->
+    comment = window.location.hash
+    comment = comment.replace('#thank-', '')
     comment = parseInt comment if comment
-
-    slug: slug.splice(0,2).join('/')
-    comment: comment
-
-
 
 
   actions:
