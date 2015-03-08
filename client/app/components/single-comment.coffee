@@ -5,5 +5,6 @@
 SingleCommentComponent = Ember.Component.extend
   tagName: ''
   timeAgo: ago 'comment.date', true
+  showRepo: true
 
 `export default SingleCommentComponent`

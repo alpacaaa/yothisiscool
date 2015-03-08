@@ -3,13 +3,13 @@
     {{#user-avatar user=comment.author}}{{/user-avatar}}
     {{#user-name user=comment.author}}{{/user-name}}
     <span class="meta">
-      {{#if comment.repo}}
+      {{#if showRepo}}
         {{#link-to 'project' comment.repo.slug}}
           {{comment.repo.name}}
         {{/link-to}}
         ·
       {{/if}}
-      <a href="#2">
+      <a href="/{{unbound comment.repo.slug}}#thank-{{unbound comment.id}}">
         <time {{bind-attr datetime="comment.date"}}>{{timeAgo}}</time>
       </a>
     </span>

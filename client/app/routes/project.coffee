@@ -10,6 +10,12 @@ ProjectRoute = Ember.Route.extend
     .where slug: slug
     .include ['owner', { comments: 'author' }]
     .findOne()
+    .then (repo) ->
+      repo.comments.forEach (item) ->
+        item.repo =
+          slug: repo.slug
+
+      repo
 
 
   model: (params) ->

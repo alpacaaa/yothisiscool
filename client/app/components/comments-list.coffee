@@ -7,6 +7,7 @@ CommentsListComponent = Ember.Component.extend
   sorting: ['date:desc']
   orderedComments: Ember.computed.sort 'comments', 'sorting'
 
+  showRepo: true
   hasPackery: false
   destroyed:  false
 
