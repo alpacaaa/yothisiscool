@@ -402,19 +402,21 @@ section {
 	}
 }
 .section-notation {
+	//font-weight: $normal;
+	color: $light-type-color;
 	text-align: center;
 	@include adjust-font-size-to($m-small-size, $m-small-line);
 	padding-bottom: rhythm($m-small-line, $m-small-size);
 	@include min-screen(col(8)) {
-		@include adjust-font-size-to($d-small-size, $d-small-line);
-		padding-bottom: rhythm($d-small-line, $d-small-size);
+		@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
+		padding-bottom: rhythm($d-extra-small-line, $d-extra-small-size);
 	}
 }
 .section-content {
 	background-color: $content-background-color;
 }
 
-[class^="notation"] {
+/*[class^="notation"] {
 	@include transition-property(padding);
 	@include transition-duration(0.2s);
 	@include transition-timing-function(ease-in-out);
@@ -452,7 +454,7 @@ section {
 }
 .notation-closed {
 	padding-bottom: 0;
-}
+}*/
 
 .letters, .projects, .comments {
 	overflow: auto;
@@ -687,6 +689,12 @@ section {
 	}
 }
 
+.comment.selected {
+	background-color: $nd-active-background-color;
+
+	@include box-shadow(0 1px 4px 0 $shadow-color inset);
+}
+
 .comment {
 	font-weight: $bold;
 
@@ -695,10 +703,6 @@ section {
 	width: 100%;
 	padding-top: rhythm($m-medium-line/2);
 	padding-bottom: rhythm($m-medium-line/2);
-
-	&:target {
-		background-color: red;
-	}
 
 	/*flex-grow: 0;
 	flex-shrink: 1;*/
