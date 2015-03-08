@@ -1,6 +1,6 @@
 <ol class="comments">
   {{#each orderedComments as |c|}}
-    {{#single-comment comment=c showRepo=showRepo}}
+    {{#single-comment comment=c showRepo=showRepo comment_selected=comment_selected}}
     {{/single-comment}}
   {{/each}}
 </ol>

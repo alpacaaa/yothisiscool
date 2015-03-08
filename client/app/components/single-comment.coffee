@@ -7,4 +7,12 @@ SingleCommentComponent = Ember.Component.extend
   timeAgo: ago 'comment.date', true
   showRepo: true
 
+  comment_permalink: (->
+    @get('comment.repo.slug') + '/thank-' + @get('comment.id')
+  ).property()
+
+  selected: (->
+    @get('comment.id') == @get('comment_selected')
+  ).property 'comment_selected'
+
 `export default SingleCommentComponent`

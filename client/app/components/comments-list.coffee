@@ -11,6 +11,7 @@ CommentsListComponent = Ember.Component.extend
   hasPackery: false
   destroyed:  false
 
+  comment_selected: null
 
   onInit: ( ->
     $(window).resize @onResize.bind(@)

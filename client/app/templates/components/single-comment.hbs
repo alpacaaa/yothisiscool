@@ -1,4 +1,4 @@
-<li class="comment typo-m" id="thank-{{unbound comment.id}}">
+<li {{bind-attr class=":comment :typo-m selected"}}>
   <i class="tributary">
     {{#user-avatar user=comment.author}}{{/user-avatar}}
     {{#user-name user=comment.author}}{{/user-name}}
@@ -9,9 +9,9 @@
         {{/link-to}}
         ·
       {{/if}}
-      <a href="/{{unbound comment.repo.slug}}#thank-{{unbound comment.id}}">
+      {{#link-to 'project' comment_permalink}}
         <time {{bind-attr datetime="comment.date"}}>{{timeAgo}}</time>
-      </a>
+      {{/link-to}}
     </span>
   </i>
 
