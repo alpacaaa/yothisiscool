@@ -1160,6 +1160,56 @@ pre, [class^="form"], .head, .body, [class^="notation"], .comment, [class^="acti
     .content {
       padding-top: 6em; } }
 
+@-moz-keyframes progress-rotation {
+  0% {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -moz-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+@-webkit-keyframes progress-rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+@keyframes progress-rotation {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -moz-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+.progress .icon {
+  -moz-animation: progress-rotation 1s infinite ease;
+  -webkit-animation: progress-rotation 1s infinite ease;
+  animation: progress-rotation 1s infinite ease;
+  width: 2.5em;
+  height: 2.5em;
+  opacity: 0.4;
+  display: block;
+  margin-right: auto;
+  margin-left: auto; }
+.progress .caption {
+  position: relative;
+  text-align: center;
+  font-weight: 500;
+  display: block;
+  color: rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+  font-size: 0.8125em;
+  line-height: 1.53846em; }
+@media screen and (min-width: 36em) {
+  .progress .caption {
+    text-transform: uppercase;
+    font-size: 0.8125em;
+    line-height: 1.53846em; } }
+
 .head {
   margin-right: auto;
   margin-bottom: 1.125em;

@@ -1,22 +1,20 @@
-<main class="content">
-  <header class="head typo-l">
-    <h2>Index</h2>
-  </header>
+<header class="head typo-l">
+  <h2>Index</h2>
+</header>
 
-  <div class="body typo-l">
-    <p>TBD</p>
+<div class="body typo-l">
+  <p>TBD</p>
+</div>
+
+{{#search-repo found_repo="transitionToRepo" show_starred_repos="showStarredRepos"}}
+{{/search-repo}}
+
+{{#starred-repos actionReceiver=starredRepos}}
+{{/starred-repos}}
+
+<section class="section">
+  <div class="section-content">
+    {{#letters-index index=by_letter}}
+    {{/letters-index}}
   </div>
-
-  {{#search-repo found_repo="transitionToRepo" show_starred_repos="showStarredRepos"}}
-  {{/search-repo}}
-
-  {{#starred-repos actionReceiver=starredRepos}}
-  {{/starred-repos}}
-
-  <section class="section">
-    <div class="section-content">
-      {{#letters-index index=by_letter}}
-      {{/letters-index}}
-    </div>
-  </section>
-</main>
+</section>

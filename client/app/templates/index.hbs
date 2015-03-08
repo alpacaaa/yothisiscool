@@ -1,27 +1,25 @@
-<main class="content">
-	<header class="head typo-l">
-		<h2>Home</h2>
+<header class="head typo-l">
+	<h2>Home</h2>
+</header>
+
+<div class="body typo-l">
+	<p>Have you always looked for the chance to thank the people behind that cool project you always rely on, but never found the opportunity?</p>
+	<p>Now you can, with <em>Dude, This Is Cool</em>: pick your favorite Github project/s and thank their author/s!</p>
+</div>
+
+{{#search-repo found_repo="transitionToRepo" show_starred_repos="showStarredRepos"}}
+{{/search-repo}}
+
+{{#starred-repos actionReceiver=starredRepos}}
+{{/starred-repos}}
+
+<section class="section">
+	<header class="notation">
+		<h3>The freshest thanks.</h3>
 	</header>
 
-	<div class="body typo-l">
-		<p>Have you always looked for the chance to thank the people behind that cool project you always rely on, but never found the opportunity?</p>
-		<p>Now you can, with <em>Dude, This Is Cool</em>: pick your favorite Github project/s and thank their author/s!</p>
+	<div class="section-content">
+		{{#comments-list comments=latest_comments}}
+		{{/comments-list}}
 	</div>
-
-	{{#search-repo found_repo="transitionToRepo" show_starred_repos="showStarredRepos"}}
-	{{/search-repo}}
-
-	{{#starred-repos actionReceiver=starredRepos}}
-	{{/starred-repos}}
-
-	<section class="section">
-		<header class="notation">
-			<h3>The freshest thanks.</h3>
-		</header>
-
-		<div class="section-content">
-			{{#comments-list comments=latest_comments}}
-			{{/comments-list}}
-		</div>
-	</section>
-</main>
+</section>
