@@ -97,6 +97,22 @@ notifications = (app) ->
     router.process_batch (req.query.batch ? 10)
     res.end()
 
+
+  app.get '/unsuscribe', (req, res, next) ->
+
+    router.unsuscribe req.query
+
+    .then (html) ->
+      res.send html
+
+    .catch (e) ->
+      logger.error e
+
+      res
+      .status 500
+      .send 'Something went wrong, please get in touch with us'
+
+
   app.models.Comment.observe 'after save', (ctx, next) ->
     return next() if ctx.instance.notified
 

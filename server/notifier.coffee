@@ -40,6 +40,12 @@ class Notifier
     .then (data) =>
       notification = data.notification
 
+      if data.user.unsuscribed
+        if notification
+          notification.updateAttributeAsync 'status', 'unsuscribed'
+
+        return promise.cancel()
+
       if notification
         notification.data.comments.push comment.id
         return notification.save()

@@ -18,10 +18,16 @@
     "notification_frequency": {
       "type": "number"
     },
+    "unsuscribed": {
+      "type": "boolean"
+    },
     "last_notified": {
       "type": "date"
     },
     "auth_token": {
+      "type": "string"
+    },
+    "email_token": {
       "type": "string"
     }
   },

@@ -56,6 +56,9 @@ process_batch = (size) ->
       unless item.email
         return item.notification.updateAttributeAsync 'status', 'unprocessable'
 
+      if item.user.unsuscribed
+        return item.notification.updateAttributeAsync 'status', 'unsuscribed'
+
       item.notification.updateAttribute 'status', 'processing'
 
       unless item.email == item.user.email
@@ -85,6 +88,32 @@ process_batch = (size) ->
 
 
 
+
+
+
+unsuscribe = (params) ->
+
+  email = params.email
+  token = params.access_token
+
+  return Promise.reject() unless email and token
+
+  GithubUser.findOneAsync email: email
+  .then (user) =>
+    email_token = user.email_token
+    throw new Error('Email token not generated') unless email_token
+
+    verify = @mailer.verify_token(token, email_token, email: email)
+    throw new Error("Can't verify token for #{email}") unless verify
+
+    user.updateAttributeAsync 'unsuscribed', true
+
+  .then ->
+    'You have unsuscribed succesfully!'
+
+
+
+
 user_email = (user) ->
   return user.email if user.email
 
@@ -106,3 +135,4 @@ module.exports = (app) ->
 
 
   process_batch: process_batch
+  unsuscribe: unsuscribe

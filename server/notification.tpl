@@ -8,3 +8,8 @@
   <strong>@{{#author}}{{username}}{{/author}}</strong> – {{body}}
 </p>
 {{/comments}}
+
+
+<p>
+  <a href="{{unsuscribe}}">Unsuscribe</a>
+</p>

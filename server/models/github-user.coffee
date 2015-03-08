@@ -91,6 +91,13 @@ module.exports = (GithubUser) ->
     shasum.digest 'hex'
 
 
+  GithubUser.prototype.getEmailToken = ->
+    return @email_token if @email_token
+
+    email_token = crypto.randomBytes(64).toString('hex')
+    @updateAttribute 'email_token', email_token
+    email_token
+
 
   GithubUser.remoteMethod 'starred',
     http: { verb: 'GET' }
