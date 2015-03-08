@@ -73,12 +73,14 @@ CommentsListComponent = Ember.Component.extend
 
   scrollToComment: (->
     Ember.run.scheduleOnce 'afterRender', @, ->
-      el = @$('.comment.selected')
-      top  = el.offset().top
-      half = el.outerHeight() / 2
-      win  = Ember.$(window).height() / 2
+      @$('.comments').imagesLoaded =>
 
-      Ember.$('html,body').animate scrollTop: top - win + half
+        el = @$('.comment.selected')
+        top  = el.offset().top
+        half = el.outerHeight() / 2
+        win  = Ember.$(window).height() / 2
+
+        Ember.$('html,body').animate scrollTop: top - win + half
   ).observes 'comment_selected'
 
 
