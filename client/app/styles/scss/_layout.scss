@@ -401,7 +401,15 @@ section {
 		margin-bottom: rhythm($d-medium-line*4);
 	}
 }
-
+.section-notation {
+	text-align: center;
+	@include adjust-font-size-to($m-small-size, $m-small-line);
+	padding-bottom: rhythm($m-small-line, $m-small-size);
+	@include min-screen(col(8)) {
+		@include adjust-font-size-to($d-small-size, $d-small-line);
+		padding-bottom: rhythm($d-small-line, $d-small-size);
+	}
+}
 .section-content {
 	background-color: $content-background-color;
 }

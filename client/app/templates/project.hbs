@@ -5,23 +5,21 @@
 {{#project-overview project=project}}
 {{/project-overview}}
 
-<section>
-  <header class="notation">
-    <h3>Wanna thank?</h3>
-  </header>
+<section class="section">
+  <h3 class="section-notation">Wanna Thank?</h3>
 
   {{#comment-form project=project submit="newComment" actionReceiver=commentForm chars_allowed=chars_allowed}}
   {{/comment-form}}
 </section>
 
 <section class="section">
-  <header class="notation">
+  <h3 class="section-notation">
     {{#if project.comments.length}}
-      <h3>Up to {{project.comments.length}} thanks so far.</h3>
+      Up to {{project.comments.length}} Thanks So Far
     {{else}}
-      <h3>No thanks yet.</h3>
+      No Thanks Yet
     {{/if}}
-  </header>
+  </h3>
 
   <div class="section-content">
     {{#comments-list comments=project.comments showRepo=false}}
