@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.1.1 (8761) - http://www.bohemiancoding.com/sketch -->
-    <title>index</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="index" sketch:type="MSArtboardGroup" fill="#333333">
-            <g id="icon" sketch:type="MSLayerGroup">
-                <rect id="rectangle_4" sketch:type="MSShapeGroup" x="10" y="26" width="20" height="2"></rect>
-                <rect id="rectangle_3" sketch:type="MSShapeGroup" x="10" y="19" width="20" height="2"></rect>
-                <rect id="rectangle_2" sketch:type="MSShapeGroup" x="10" y="12" width="20" height="2"></rect>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="#333" fill-rule="evenodd"><path d="m10 26h20v2h-20z"/><path d="m10 19h20v2h-20z"/><path d="m10 12h20v2h-20z"/></g></svg>
