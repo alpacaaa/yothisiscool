@@ -19,6 +19,9 @@ ProjectRoute = Ember.Route.extend
 
 
   beforeModel: ->
+    return if @hashchange_registered
+    @hashchange_registered = true
+
     Ember.$(window).on 'hashchange', =>
       comment = @comment_selected()
       @set 'controller.model.comment_selected', comment

@@ -76,6 +76,7 @@ CommentsListComponent = Ember.Component.extend
       @$('.comments').imagesLoaded =>
 
         el = @$('.comment.selected')
+        return unless el.length
         top  = el.offset().top
         half = el.outerHeight() / 2
         win  = Ember.$(window).height() / 2
