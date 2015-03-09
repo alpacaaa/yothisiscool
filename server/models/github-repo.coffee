@@ -118,7 +118,7 @@ module.exports = (GithubRepo) ->
 
 
   GithubRepo.by_initial = (letter, next) ->
-    letter = '#' if letter == 'nan'
+    letter = '#' if letter == 'hash'
 
     # Poor man mysql escape
     return next('what ya doin?') if letter.length > 1
