@@ -1,17 +1,15 @@
 {{#if repos}}
-  <section class="section">
+  <section class="section-content">
     <h3 class="section-notation">Your Starred Repositories</h3>
 
-    <div class="section-content">
-      <ul class="projects">
-        {{#each repos as |repo|}}
-          <li class="project">
-            {{#link-to "project" repo.slug}}
-              {{repo.slug}} <span class="amount">{{repo.count}}</span>
-            {{/link-to}}
-          </li>
-        {{/each}}
-      </ul>
-    </div>
+    <ul class="projects">
+      {{#each repos as |repo|}}
+        <li class="project">
+          {{#link-to "project" repo.slug}}
+            {{repo.slug}} <span class="amount">{{repo.count}}</span>
+          {{/link-to}}
+        </li>
+      {{/each}}
+    </ul>
   </section>
 {{/if}}
