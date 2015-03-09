@@ -315,10 +315,16 @@ optgroup {
 		background-image: url("../../media/icons/add.svg");
 		background-repeat: no-repeat;
 		background-position: center -100%;
+		background-size: em(16px, $m-medium-size) em(16px, $m-medium-size);
 
 		@include transition-property(background-color, background-position, border-color, border-radius, color, height, margin-top, opacity, width);
 		@include transition-duration(0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s);
 		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out);
+	}
+	@include min-screen(col(8)) {
+		input[type = "submit"] {
+			background-size: em(16px, $d-medium-size) em(16px, $d-medium-size);
+		}
 	}
 }
 

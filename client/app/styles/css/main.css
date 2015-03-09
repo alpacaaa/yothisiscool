@@ -895,6 +895,7 @@ optgroup {
   background-image: url("../../media/icons/add.svg");
   background-repeat: no-repeat;
   background-position: center -100%;
+  background-size: 1em 1em;
   -moz-transition-property: background-color, background-position, border-color, border-radius, color, height, margin-top, opacity, width;
   -o-transition-property: background-color, background-position, border-color, border-radius, color, height, margin-top, opacity, width;
   -webkit-transition-property: background-color, background-position, border-color, border-radius, color, height, margin-top, opacity, width;
@@ -907,6 +908,9 @@ optgroup {
   -o-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out;
   -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out;
   transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out; }
+@media screen and (min-width: 36em) {
+  .form-comment input[type="submit"] {
+    background-size: 1em 1em; } }
 
 .closed textarea, .closed i {
   opacity: 0.0; }
@@ -1345,11 +1349,11 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   -webkit-align-content: flex-start;
   align-content: flex-start; }
 
-.comments {
-  /*@include min-screen(col(8)) {
-  	@include clearfix();
-  }*/ }
-
+/*.comments {
+	@include min-screen(col(8)) {
+		@include clearfix();
+	}
+}*/
 .letter:before, .project:before, .comment:before {
   position: absolute;
   top: 0;
