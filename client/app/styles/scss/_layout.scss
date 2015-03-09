@@ -378,32 +378,19 @@
 	}
 }
 
-section {
-	margin-bottom: rhythm($m-medium-line*4);
-	&:last-of-type {
-		margin-bottom: 0;
-	}
-	> *:last-child {
-		margin-bottom: 0;
-	}
-	@include min-screen(col(8)) {
-		margin-bottom: rhythm($d-medium-line*4);
-	}
-}
-
 [class^="section"] {
-	margin-bottom: rhythm($m-medium-line*4);
+	padding-bottom: rhythm($m-medium-line*4);
 	&:last-of-type {
-		margin-bottom: 0;
+		padding-bottom: 0;
 	}
 	> *:last-child {
 		margin-bottom: 0;
 	}
 	@include min-screen(col(8)) {
-		margin-bottom: rhythm($d-medium-line*4);
+		padding-bottom: rhythm($d-medium-line*4);
 	}
 }
-.section-notation {
+.notation {
 	font-weight: $normal;
 	color: $light-type-color;
 	text-align: center;

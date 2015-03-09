@@ -1250,27 +1250,17 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
     height: 3em;
     margin: 0.5em 1em 0.5em 0; } }
 
-section {
-  margin-bottom: 6em; }
-  section:last-of-type {
-    margin-bottom: 0; }
-  section > *:last-child {
-    margin-bottom: 0; }
-  @media screen and (min-width: 36em) {
-    section {
-      margin-bottom: 6em; } }
-
 [class^="section"] {
-  margin-bottom: 6em; }
+  padding-bottom: 6em; }
   [class^="section"]:last-of-type {
-    margin-bottom: 0; }
+    padding-bottom: 0; }
   [class^="section"] > *:last-child {
     margin-bottom: 0; }
   @media screen and (min-width: 36em) {
     [class^="section"] {
-      margin-bottom: 6em; } }
+      padding-bottom: 6em; } }
 
-.section-notation {
+.notation {
   font-weight: 400;
   color: rgba(0, 0, 0, 0.4);
   text-align: center;
@@ -1279,7 +1269,7 @@ section {
   padding-bottom: 1em;
   padding-top: 1em; }
   @media screen and (min-width: 36em) {
-    .section-notation {
+    .notation {
       font-size: 0.875em;
       line-height: 1.42857em;
       padding-bottom: 1em;
