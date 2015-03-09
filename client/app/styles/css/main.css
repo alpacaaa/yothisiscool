@@ -102,12 +102,6 @@ img::selection {
   outline-color: transparent; }
 
 /*
-** Android
-*/
--webkit-tap-highlight-color {
-  color: transparent; }
-
-/*
 ** Basics
 */
 html {
@@ -128,7 +122,9 @@ html {
   	}*/ }
 
 *, *:before, *:after {
-  box-sizing: inherit; }
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; }
 
 body {
   font-weight: 400;
@@ -1401,9 +1397,9 @@ section {
     position: relative;
     display: block;
     padding-top: 0.42857em;
-    padding-right: 0.21429em;
+    padding-right: 0.10714em;
     padding-bottom: 0.42857em;
-    padding-left: 0.21429em;
+    padding-left: 0.10714em;
     text-align: center;
     font-size: 3.5em;
     line-height: 1em;
@@ -1472,9 +1468,9 @@ section {
       width: 9em; }
       .letter a {
         padding-top: 0.375em;
-        padding-right: 0.25em;
+        padding-right: 0.125em;
         padding-bottom: 0.375em;
-        padding-left: 0.25em;
+        padding-left: 0.125em;
         font-size: 4em;
         line-height: 1em; }
         .letter a span {

@@ -535,9 +535,9 @@ section {
 		display: block;
 
 		padding-top: rhythm($m-medium-line, $m-huge-size);
-		padding-right: em($m-gut/2, $m-huge-size);
+		padding-right: em($m-gut/4, $m-huge-size);
 		padding-bottom: rhythm($m-medium-line, $m-huge-size);
-		padding-left: em($m-gut/2, $m-huge-size);
+		padding-left: em($m-gut/4, $m-huge-size);
 
 		text-align: center;
 
@@ -590,9 +590,9 @@ section {
 		width: col(2);
 		a {
 			padding-top: rhythm($d-medium-line, $d-huge-size);
-			padding-right: em($d-gut/2, $d-huge-size);
+			padding-right: em($d-gut/4, $d-huge-size);
 			padding-bottom: rhythm($d-medium-line, $d-huge-size);
-			padding-left: em($d-gut/2, $d-huge-size);
+			padding-left: em($d-gut/4, $d-huge-size);
 
 			@include adjust-font-size-to($d-huge-size, $d-huge-line);
 			span {

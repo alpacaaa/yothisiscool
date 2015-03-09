@@ -32,14 +32,6 @@ img::selection {
 }
 
 /*
-** Android
-*/
-
--webkit-tap-highlight-color {
-	color: rgba(0, 0, 0, 0);
-}
-
-/*
 ** Basics
 */
 
@@ -65,6 +57,8 @@ html {
 
 *, *:before, *:after {
 	box-sizing: inherit;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
 }
 
 body {
