@@ -1,18 +1,18 @@
 <header class="head typo-l">
   <h2>
-    {{result.letter.letter}} <span>as</span> {{result.letter.word}}
+    {{model.result.letter.letter}} <span>as</span> {{model.result.letter.word}}
   </h2>
 </header>
 
 <div class="body typo-l">
-  {{{result.letter.definition}}}
+  {{{model.result.letter.definition}}}
 </div>
 
 <section class="section-content">
-  <h3 class="notation">Up to {{result.repos.length}} Projects So Far</h3>
+  <h3 class="notation">Up to {{model.result.repos.length}} Projects So Far</h3>
 
   <ul class="projects">
-    {{#each result.repos as |repo|}}
+    {{#each model.result.repos as |repo|}}
       <li class="project">
         {{#link-to "project" repo.slug}}
           {{repo.owner.username}} <span class="path-divider">/</span> {{repo.name}} <span class="amount">{{repo.count}}</span>

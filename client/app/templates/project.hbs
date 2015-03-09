@@ -1,26 +1,26 @@
 <header class="head typo-l">
-  <h2>{{project.name}}</h2>
+  <h2>{{model.project.name}}</h2>
 </header>
 
-{{#project-overview project=project}}
+{{#project-overview project=model.project}}
 {{/project-overview}}
 
 <section class="section">
   <!--<h3 class="section-notation">Wanna Thank?</h3>-->
 
-  {{#comment-form project=project submit="newComment" actionReceiver=commentForm chars_allowed=chars_allowed}}
+  {{#comment-form project=model.project submit="newComment" actionReceiver="commentForm" chars_allowed=model.chars_allowed}}
   {{/comment-form}}
 </section>
 
 <section class="section-content first">
   <h3 class="notation">
-    {{#if project.comments.length}}
-      Up to {{project.comments.length}} Thanks So Far
+    {{#if model.project.comments.length}}
+      Up to {{model.project.comments.length}} Thanks So Far
     {{else}}
       No Thanks Yet
     {{/if}}
   </h3>
 
-  {{#comments-list comments=project.comments showRepo=false comment_selected=comment_selected}}
+  {{#comments-list comments=model.project.comments showRepo=false comment_selected=model.comment_selected}}
   {{/comments-list}}
 </section>

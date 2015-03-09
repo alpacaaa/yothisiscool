@@ -4,7 +4,6 @@
 
 
 CommentFormComponent = Ember.Component.extend InboundActions,
-  tagName: ''
   isOpen: false
   comment: ''
   chars_allowed: null

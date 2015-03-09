@@ -10,12 +10,12 @@
 {{#search-repo found_repo="transitionToRepo" show_starred_repos="showStarredRepos"}}
 {{/search-repo}}
 
-{{#starred-repos actionReceiver=starredRepos}}
+{{#starred-repos actionReceiver="starredRepos"}}
 {{/starred-repos}}
 
 <section class="section-content">
 	<h3 class="notation">The Freshest Thanks</h3>
 
-	{{#comments-list comments=latest_comments}}
+	{{#comments-list comments=model.latest_comments showIndex=false}}
 	{{/comments-list}}
 </section>

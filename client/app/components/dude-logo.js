@@ -34,7 +34,8 @@ function positionLogo() {
 }
 
 var DudeLogoComponent = Ember.Component.extend({
-  tagName: '',
+  tagName: 'h1',
+  classNames: 'logo',
   didInsertElement: positionLogo
 });
 

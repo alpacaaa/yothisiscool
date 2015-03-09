@@ -88,12 +88,12 @@ ProjectRoute = Ember.Route.extend
         .findOne()
 
       .then (data) ->
-        controller.get('commentForm').send 'reset'
+        controller.get('model.commentForm').send 'reset'
         controller.get('model.project.comments').pushObject data
 
       .catch (e) ->
         msg = e?.message ? e
-        controller.get('commentForm').set 'errorMsg', msg
+        controller.get('model.commentForm').set 'errorMsg', msg
 
 
 
