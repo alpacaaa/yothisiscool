@@ -10,7 +10,7 @@ GithubRepo = null
 GithubUser = null
 Notification = null
 logger = null
-
+isDev  = null
 
 
 process_batch = (size) ->
@@ -59,16 +59,19 @@ process_batch = (size) ->
       if item.user.unsuscribed
         return item.notification.updateAttributeAsync 'status', 'unsuscribed'
 
-      item.notification.updateAttribute 'status', 'processing'
-
       unless item.email == item.user.email
         item.user.updateAttribute 'email', item.email
 
+      if isDev and !config.EMAIL_ADDRESS_OVERRIDE
+        logger.warn 'Trying to send the message to the REAL email address, u mad bro'
+        return Promise.resolve()
 
       logger.info "
         Sending email to #{item.email}
         with #{item.comments.length} comments
       "
+
+      item.notification.updateAttribute 'status', 'processing'
 
       @mailer.send item
       .then ->
@@ -156,6 +159,7 @@ module.exports = (app) ->
   GithubUser = app.models.GithubUser
   Notification = app.models.Notification
   logger = Notification.app.get('dude.logger')
+  isDev = app.get('isDev')
 
 
   process_batch: process_batch

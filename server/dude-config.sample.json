@@ -5,5 +5,6 @@
   "OAUTH_REDIRECT_URL": "http://localhost:4200",
   "INTERNAL_URL_TOKEN": "dev-token",
   "MAILGUN_API_KEY": "apikey",
-  "MAILGUN_DOMAIN": "domain.com"
+  "MAILGUN_DOMAIN": "domain.com",
+  "EMAIL_ADDRESS_OVERRIDE": null
 }

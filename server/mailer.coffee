@@ -18,18 +18,27 @@ class Mailer
     file = __dirname + '/notification.tpl'
     @notification_tpl = fs.readFileSync(file).toString()
 
+    @address_override = config.EMAIL_ADDRESS_OVERRIDE
+
 
   send: (options) ->
     email_token = options.user.getEmailToken()
     options = @add_links options, email_token
-
     html = mustache.render @notification_tpl, options
 
-    @mailgun.messages().send
+    params =
       from: 'Dude this is cool <hey@dudethisis.cool>'
       to: options.email
       subject: 'YOLO'
       html: html
+
+    if @address_override
+      params['h:Dude_address'] = params.to
+      params.html += "<p>SENT TO #{options.user.username} – #{params.to}</p>"
+      params.to = @address_override
+
+    @mailgun.messages().send params
+
 
 
   generate_link: (action, email_token, params) ->
