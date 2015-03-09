@@ -688,7 +688,31 @@
 	background-color: $hover-background-color;
 	@include box-shadow(0 1px 4px 0 $shadow-color inset);
 }
+.comment.first {
+	&:last-child {
+		.tributary {
+			&:after {
+				font-weight: $bold;
+				content: "1st!";
+				position: absolute;
+				@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
+				top: 0;
+				right: 0; 
 
+				color: $light-type-color;
+			}
+		}
+	}
+	@include min-screen(col(8)) {
+		&:last-child {
+			.tributary {
+				&:after {
+					@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
+				}
+			}
+		}
+	}
+}
 .comment {
 	font-weight: $bold;
 
@@ -704,20 +728,6 @@
 	/*img {
 		display: inline-block;
 	}*/
-	&:last-child {
-		.tributary {
-			&:after {
-				font-weight: $bold;
-				content: "1st!";
-				position: absolute;
-				@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
-				top: 0;
-				right: 0;
-
-				color: $light-type-color;
-			}
-		}
-	}
 	.avatar {
 		float: left;
 
