@@ -19,12 +19,6 @@ CommentsListComponent = Ember.Component.extend
     $(window).resize @onResize.bind(@)
     @onResize()
     @scrollToComment()
-
-    # This sucks (and is deprecated too)
-    # but until Ember 1.11
-    # I'm not gonna change it
-    if @get('showIndex')
-      @$('.comment:last').addClass 'is_first'
   ).on 'didInsertElement'
 
   onCommentsUpdate: (->

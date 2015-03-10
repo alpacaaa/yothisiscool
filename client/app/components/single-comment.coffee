@@ -6,6 +6,7 @@ SingleCommentComponent = Ember.Component.extend
   tagName: ''
   timeAgo: ago 'comment.date', true
   showRepo: true
+  comments_length: 0
 
   comment_permalink: (->
     @get('comment.repo.slug') + '#thank-' + @get('comment.id')
@@ -16,7 +17,8 @@ SingleCommentComponent = Ember.Component.extend
   ).property 'comment_selected'
 
   is_first: (->
-    @get('showIndex') and @get('index') == 0
+    last = @get('comments_length') - 1
+    @get('showIndex') and @get('index') == last
   ).property()
 
 `export default SingleCommentComponent`
