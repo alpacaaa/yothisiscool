@@ -347,6 +347,8 @@ svg:not(:root) {
   [class*="typo"] blockquote {
     border-left-width: 1px;
     border-left-style: solid; }
+  [class*="typo"] a {
+    font-weight: 500; }
   [class*="typo"] img {
     margin-left: auto;
     margin-right: auto;
@@ -1603,7 +1605,6 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
     line-height: 1.53846em; } }
 
 .comment {
-  font-weight: 500;
   position: relative;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -1628,7 +1629,6 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   .comment .tributary {
     position: relative;
     overflow: auto;
-    font-weight: 400;
     font-style: normal;
     display: block;
     color: rgba(0, 0, 0, 0.4);
@@ -1636,13 +1636,13 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
     .comment .tributary span {
       display: block; }
     .comment .tributary .username {
-      font-weight: 500;
       font-size: 1em;
       line-height: 1.5em; }
     .comment .tributary .meta {
       font-size: 0.875em;
       line-height: 1.42857em; }
       .comment .tributary .meta a {
+        font-weight: 400;
         color: rgba(0, 0, 0, 0.4); }
         .comment .tributary .meta a:hover {
           color: rgba(0, 0, 0, 0.8); }

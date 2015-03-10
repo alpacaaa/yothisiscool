@@ -714,7 +714,7 @@
 	}
 }
 .comment {
-	font-weight: $bold;
+	//font-weight: $bold;
 
 	position: relative;
 	@include border-radius($radius);
@@ -742,7 +742,6 @@
 	.tributary {
 		position: relative;
 		overflow: auto;
-		font-weight: $normal;
 		font-style: normal;
 
 		display: block;
@@ -755,12 +754,12 @@
 			display: block;
 		}
 		.username {
-			font-weight: $bold;
 			@include adjust-font-size-to($m-medium-size, $m-medium-line);
 		}
 		.meta {
 			@include adjust-font-size-to($m-small-size, $m-small-line);
 			a {
+				font-weight: $normal;
 				@include link-colors($light-type-color, $strong-type-color, $strong-type-color);
 			}
 		}
