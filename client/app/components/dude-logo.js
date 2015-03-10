@@ -22,7 +22,7 @@ function positionLogo() {
   posY = Math.floor((Math.random() * 100) + 1);
   rotation = Math.floor((Math.random() * 40) -20);
 
-  this.$('.logo img').css({
+  this.$('img').css({
   	'top' : posY + '%',
   	'left' : posX + '%',
   	'-webkit-transform' : 'rotate(' + rotation + 'deg)',

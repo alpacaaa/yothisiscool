@@ -26,6 +26,9 @@
     {{/if}}
   </h3>
 
-  {{#comments-list comments=model.project.comments showRepo=false comment_selected=model.comment_selected}}
+  {{#comments-list
+    comments=model.project.comments
+    showRepo=false
+    comment_selected=model.comment_selected}}
   {{/comments-list}}
 </section>
