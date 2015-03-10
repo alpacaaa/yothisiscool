@@ -1,4 +1,3 @@
-2
 `import Ember from 'ember'`
 
 SearchRepoComponent = Ember.Component.extend

@@ -7,11 +7,8 @@
 	<p>Now you can, with <em>Dude, This Is Cool</em>: pick your favorite Github project/s and thank their author/s!</p>
 </div>
 
-{{#search-repo found_repo="transitionToRepo" show_starred_repos="showStarredRepos"}}
-{{/search-repo}}
-
-{{#starred-repos repos=model.starred_repos}}
-{{/starred-repos}}
+{{#search-with-starred found_repo="transitionToRepo"}}
+{{/search-with-starred}}
 
 <section class="section-content">
 	<h3 class="notation">The Freshest Thanks</h3>
