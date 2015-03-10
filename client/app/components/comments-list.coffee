@@ -2,13 +2,14 @@
 `import Ember from 'ember'`
 
 CommentsListComponent = Ember.Component.extend
-  tagName: ''
+  tagName: 'ol'
+  classNames: 'comments'
   comments: []
   sorting: ['date:desc']
   orderedComments: Ember.computed.sort 'comments', 'sorting'
 
-  showIndex: true
   showRepo:  true
+  showIndex: true
   hasPackery: false
   destroyed:  false
 

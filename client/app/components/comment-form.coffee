@@ -1,14 +1,13 @@
 
 `import Ember from 'ember'`
-`import InboundActions from 'ember-component-inbound-actions/inbound-actions'`
 
 
-CommentFormComponent = Ember.Component.extend InboundActions,
-  tagName: ''
+CommentFormComponent = Ember.Component.extend
   isOpen: false
   comment: ''
   chars_allowed: null
 
+  reset: true
   errorMsg: false
   emptyError: 'Doh. Something’s <strong>wrong<strong/> here.'
   tooManyChars: 'Oops. <strong>Too many characters</strong> confuse the plot!'
@@ -17,6 +16,8 @@ CommentFormComponent = Ember.Component.extend InboundActions,
   showTypingMessage: Ember.computed.or('utils.session.access_token', 'userIsTyping')
 
   remainingChars: (->
+    @set 'reset', false
+
     chars = @get 'chars_allowed'
     chars - @get('comment.length') if chars
   ).property 'comment'
@@ -37,6 +38,16 @@ CommentFormComponent = Ember.Component.extend InboundActions,
 
     @sendAction 'submit', body
 
+
+  onReset: (->
+    return unless @get('reset') == true
+
+    @set 'isOpen', false
+    @set 'errorMsg', false
+    @set 'comment', ''
+  ).observes 'reset'
+
+
   actions:
     form_submit: ->
       opened = @get 'isOpen'
@@ -51,10 +62,6 @@ CommentFormComponent = Ember.Component.extend InboundActions,
     userTyping: ->
       @set 'userIsTyping', true
 
-    reset: ->
-      @set 'isOpen', false
-      @set 'errorMsg', false
-      @set 'comment', ''
 
 
 `export default CommentFormComponent`

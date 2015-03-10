@@ -15,4 +15,8 @@ SingleCommentComponent = Ember.Component.extend
     @get('comment.id') == @get('comment_selected')
   ).property 'comment_selected'
 
+  is_first: (->
+    @get('showIndex') and @get('index') == 0
+  ).property()
+
 `export default SingleCommentComponent`
