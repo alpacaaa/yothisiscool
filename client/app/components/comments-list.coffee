@@ -49,7 +49,7 @@ CommentsListComponent = Ember.Component.extend
 
 
   initPackery: ->
-    container = @$('.comments')
+    container = @$()
     @set 'hasPackery', true
     @set 'destroyed',  false
 
@@ -61,7 +61,7 @@ CommentsListComponent = Ember.Component.extend
 
 
   destroyPackery: ->
-    container = @$('.comments')
+    container = @$()
     return unless container.data 'packery'
 
     container.packery 'destroy'
@@ -75,7 +75,7 @@ CommentsListComponent = Ember.Component.extend
 
   scrollToComment: (->
     Ember.run.scheduleOnce 'afterRender', @, ->
-      @$('.comments').imagesLoaded =>
+      @$().imagesLoaded =>
 
         el = @$('.comment.selected')
         return unless el.length
