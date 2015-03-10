@@ -122,6 +122,7 @@ html {
   	}*/ }
 
 *, *:before, *:after {
+  word-wrap: break-word;
   box-sizing: inherit;
   -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: transparent; }
@@ -200,7 +201,7 @@ a[href^="mailto"] {
 h1, h2, h3, h4, h5, h6 {
   font-size: 1em;
   margin: 0;
-  color: rgba(20, 184, 184, 0.8); }
+  color: rgba(0, 0, 0, 0.8); }
   h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     color: rgba(0, 0, 0, 0.4); }
 
@@ -231,7 +232,7 @@ abbr[title] {
 
 strong {
   font-weight: 500;
-  color: rgba(20, 184, 184, 0.8); }
+  color: rgba(0, 0, 0, 0.8); }
 
 q {
   font-style: italic;
@@ -1068,9 +1069,9 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
       transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out; }
   .menu .active span {
     cursor: default;
-    color: rgba(20, 184, 184, 0.8); }
+    color: rgba(0, 0, 0, 0.8); }
   .menu .active:hover span, .menu .active:active span {
-    color: rgba(20, 184, 184, 0.8);
+    color: rgba(0, 0, 0, 0.8);
     background-color: transparent;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
