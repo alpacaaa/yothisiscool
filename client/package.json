@@ -35,7 +35,6 @@
   },
   "dependencies": {
     "ember-moment": "^1.0.0",
-    "ember-component-inbound-actions": "0.0.2",
     "ember-cli-htmlbars": "^0.6.0"
   }
 }

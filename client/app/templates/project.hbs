@@ -8,7 +8,12 @@
 <section class="section">
   <!--<h3 class="section-notation">Wanna Thank?</h3>-->
 
-  {{#comment-form project=model.project submit="newComment" actionReceiver="commentForm" chars_allowed=model.chars_allowed}}
+  {{#comment-form
+    project=model.project
+    submit="newComment"
+    chars_allowed=model.chars_allowed
+    errorMsg=model.form.errorMsg
+    reset=model.form.reset}}
   {{/comment-form}}
 </section>
 

@@ -36,6 +36,14 @@ Utils = Ember.Object.extend
       .data slug: slug
       .post()
 
+  getStarredRepos: ->
+    @requireAuth()
+    .then =>
+      token = @get('session.access_token')
+
+      @get('ws').request 'githubusers', 'starred'
+      .access_token token
+      .find()
 
   requireAuth: ->
     session = @get 'session'

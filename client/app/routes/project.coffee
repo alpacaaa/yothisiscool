@@ -51,6 +51,9 @@ ProjectRoute = Ember.Route.extend
       project: promise
       chars_allowed: ENV.APP.CHARS_ALLOWED
       comment_selected: comment
+      form:
+        reset: true
+        errorMsg: null
 
 
   clean_slug: (slug) ->
@@ -88,12 +91,12 @@ ProjectRoute = Ember.Route.extend
         .findOne()
 
       .then (data) ->
-        controller.get('model.commentForm').send 'reset'
+        controller.set 'model.form.reset', true
         controller.get('model.project.comments').pushObject data
 
       .catch (e) ->
-        msg = e?.message ? e
-        controller.get('model.commentForm').set 'errorMsg', msg
+        msg = e?.jqXHR?.responseJSON?.error?.message ? e
+        controller.set 'model.form.errorMsg', msg
 
 
 
