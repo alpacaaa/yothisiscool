@@ -146,7 +146,7 @@
 				background-color: $active-background-color;
 
 				@include box-shadow(0 1px 4px 0 $shadow-color inset);
-				@include transition-duration(0.0625s);
+				@include transition-duration(0.0s);
 			}
 		}
 		span {
@@ -570,7 +570,7 @@
 			background-color: $active-background-color;
 
 			@include box-shadow(0 1px 4px 0 $shadow-color inset);
-			@include transition-duration(0.0625s);
+			@include transition-duration(0.0s);
 		}
 	}
 	@include min-screen(col(8)) {
@@ -648,7 +648,7 @@
 			background-color: $active-background-color;
 
 			@include box-shadow(0 1px 4px 0 $shadow-color inset);
-			@include transition-duration(0.0625s);
+			@include transition-duration(0.0s);
 		}
 	}
 	@include min-screen(col(8)) {

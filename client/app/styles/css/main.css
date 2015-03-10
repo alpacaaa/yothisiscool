@@ -1041,10 +1041,10 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
       -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
       -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
       box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
-      -moz-transition-duration: 0.0625s;
-      -o-transition-duration: 0.0625s;
-      -webkit-transition-duration: 0.0625s;
-      transition-duration: 0.0625s; }
+      -moz-transition-duration: 0s;
+      -o-transition-duration: 0s;
+      -webkit-transition-duration: 0s;
+      transition-duration: 0s; }
     .menu a span {
       display: block;
       color: rgba(230, 25, 161, 0.8);
@@ -1456,10 +1456,10 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
       -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
       -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
       box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
-      -moz-transition-duration: 0.0625s;
-      -o-transition-duration: 0.0625s;
-      -webkit-transition-duration: 0.0625s;
-      transition-duration: 0.0625s; }
+      -moz-transition-duration: 0s;
+      -o-transition-duration: 0s;
+      -webkit-transition-duration: 0s;
+      transition-duration: 0s; }
   @media screen and (min-width: 36em) {
     .letter {
       width: 9em; }
@@ -1544,10 +1544,10 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
       -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
       -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
       box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
-      -moz-transition-duration: 0.0625s;
-      -o-transition-duration: 0.0625s;
-      -webkit-transition-duration: 0.0625s;
-      transition-duration: 0.0625s; }
+      -moz-transition-duration: 0s;
+      -o-transition-duration: 0s;
+      -webkit-transition-duration: 0s;
+      transition-duration: 0s; }
   @media screen and (min-width: 36em) {
     .project {
       width: 18em;
