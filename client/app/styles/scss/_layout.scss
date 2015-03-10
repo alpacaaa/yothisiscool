@@ -361,11 +361,11 @@
 		@include border-radius(2px);
 	}
 	.tributary {
-		font-weight: $normal;
 		font-style: normal;
 
 		color: $light-type-color;
 		a {
+			font-weight: $normal;
 			@include link-colors($light-st-type-color, $light-type-color, $light-type-color);
 		}
 	}
@@ -688,7 +688,7 @@
 	background-color: $hover-background-color;
 	@include box-shadow(0 1px 4px 0 $shadow-color inset);
 }
-.comment.first {
+.comment.is-first {
 	&:last-child {
 		.tributary {
 			&:after {

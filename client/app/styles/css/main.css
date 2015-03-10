@@ -1241,10 +1241,10 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   -webkit-border-radius: 2px;
   border-radius: 2px; }
 .author .tributary {
-  font-weight: 400;
   font-style: normal;
   color: rgba(0, 0, 0, 0.4); }
   .author .tributary a {
+    font-weight: 400;
     color: rgba(230, 25, 161, 0.4); }
     .author .tributary a:hover {
       color: rgba(0, 0, 0, 0.4); }
@@ -1590,7 +1590,7 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05) inset; }
 
-.comment.first:last-child .tributary:after {
+.comment.is-first:last-child .tributary:after {
   font-weight: 500;
   content: "1st!";
   position: absolute;
@@ -1600,7 +1600,7 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   right: 0;
   color: rgba(0, 0, 0, 0.4); }
 @media screen and (min-width: 36em) {
-  .comment.first:last-child .tributary:after {
+  .comment.is-first:last-child .tributary:after {
     font-size: 0.8125em;
     line-height: 1.53846em; } }
 
