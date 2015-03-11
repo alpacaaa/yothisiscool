@@ -2,7 +2,6 @@
 
 request = require 'supertest'
 Promise = require 'bluebird'
-crypto  = require 'crypto'
 config  = require '../server/dude-config'
 
 app = require '../server/server'
@@ -11,28 +10,7 @@ GithubRepo = app.models.GithubRepo
 GithubUser = app.models.GithubUser
 Comment = app.models.Comment
 
-connector = app.dataSources.db.connector
-isSqlConnector = !!connector.query
-
-
-
-resetAutoIncrement = ->
-  return Promise.resolve() unless isSqlConnector
-
-  queries = ['GithubUser', 'GithubRepo', 'Comment'].map (table) ->
-    "ALTER TABLE #{table} AUTO_INCREMENT = 1"
-
-  Promise.reduce queries, (acc, sql) ->
-    new Promise (resolve, reject) ->
-      connector.query sql, resolve
-
-
-
-
-generateAuthToken = (access_token) ->
-  shasum = crypto.createHash 'sha1'
-  shasum.update access_token
-  shasum.digest 'hex'
+helper = require('./helper')(app)
 
 
 
@@ -40,15 +18,10 @@ generateAuthToken = (access_token) ->
 describe "User comments", ->
 
   token = 'dummy'
-  hashed_token = generateAuthToken token
+  hashed_token = GithubUser.generateAuthToken token
 
   before (done) ->
-    Promise.all [
-      GithubUser.destroyAllAsync()
-      GithubRepo.destroyAllAsync()
-      Comment.destroyAllAsync()
-    ]
-    .then resetAutoIncrement
+    helper.destroyDb()
     .then ->
       GithubUser.createAsync
         username: 'the_dude'
