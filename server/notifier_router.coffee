@@ -134,7 +134,9 @@ subscription = (params) ->
 
     throw new Error("Can't verify token for #{email}") unless verify
 
-    user.updateAttributeAsync 'notification_frequency', frequency
+    user.updateAttributesAsync
+      unsuscribed: false
+      notification_frequency: frequency
 
   .then ->
     "You will be notified every #{frequency} days, only if there's new activity."
