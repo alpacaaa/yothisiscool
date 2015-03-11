@@ -5,9 +5,14 @@
 
 {{#comments}}
 <p>
-  <strong>@{{#author}}{{username}}{{/author}}</strong> – {{body}}
+  <strong>@{{#author}}{{username}}{{/author}}</strong> – {{body}} <br>
+  on <a href="{{permalink}}">{{#repo}}{{name}}{{/repo}}</a>
 </p>
 {{/comments}}
+
+{{#more_comments}}
+  <p>And {{more_comments}} more comments to checkout!</p>
+{{/more_comments}}
 
 <p>
   Change when receiving notifications:

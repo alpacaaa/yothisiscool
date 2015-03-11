@@ -24,6 +24,9 @@ class Mailer
   send: (options) ->
     email_token = options.user.getEmailToken()
     options = @add_links options, email_token
+    options = @cutoff_comments options, 5
+    options.comments = @permalink options.comments
+
     html = mustache.render @notification_tpl, options
 
     params =
@@ -81,5 +84,21 @@ class Mailer
     options
 
 
+  cutoff_comments: (options, cutoff) ->
+    comments = options.comments
+    diff = comments - cutoff
+    return options unless diff > 0
+
+    options.comments = comments.slice 0, cutoff
+    options.more_comments = diff
+    options
+
+
+  permalink: (comments) ->
+    comments.map (item) ->
+      link = "https://dudethisis.cool/#{item.repo().slug}#thank-#{item.id}"
+      console.log link
+      item.permalink = link
+      item
 
 module.exports = Mailer
