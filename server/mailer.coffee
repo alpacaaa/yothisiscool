@@ -97,7 +97,6 @@ class Mailer
   permalink: (comments) ->
     comments.map (item) ->
       link = "https://dudethisis.cool/#{item.repo().slug}#thank-#{item.id}"
-      console.log link
       item.permalink = link
       item
 
