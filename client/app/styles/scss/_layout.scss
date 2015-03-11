@@ -30,12 +30,12 @@
 	//z-index: -1;
 	top: em($m-logo-size/2 + $m-gut/2);
 	left: 50%;
+
 	display: block;
 	//overflow: hidden;
 
 	width: em($m-logo-size);
 	height: em($m-logo-size);
-
 	//width: 100%;
 	//height: 100%;
 
@@ -45,13 +45,10 @@
 		//position: relative;
 		//top: em($m-logo-size/2 + $m-gut/2);
 		//left: 50%;
-
 		//width: em($d-logo-size);
 		//height: em($d-logo-size);
-
 		width: 100%;
 		height: 100%;
-
 		margin-top: em(-$m-logo-size/2);
 		margin-left: em(-$m-logo-size/2);
 	}
@@ -68,8 +65,9 @@
 }
 
 .warning {
-	text-align: center;
 	padding: rhythm(2) em($m-gut/2) rhythm(2) em($m-gut/2);
+
+	text-align: center;
 
 	@include min-screen(col(8)) {
 		padding: rhythm(2) em($d-gut/2) rhythm(2) em($d-gut/2);
@@ -102,12 +100,11 @@
 }
 
 .menu {
-	margin-left: auto;
-	margin-right: auto;
-
-	max-width: $waistline;
 	overflow: hidden;
 
+	max-width: $waistline;
+	margin-right: auto;
+	margin-left: auto;
 	padding-top: em($m-gut/2);
 	padding-bottom: em($m-gut/2);
 
@@ -151,12 +148,12 @@
 		}
 		span {
 			display: block;
-			color: $strong-st-type-color;
 
 			height: 100%;
 			padding-top: em(8px, $m-small-size);
 			padding-bottom: em(8px, $m-small-size);
 
+			color: $strong-st-type-color;
 			background-repeat: no-repeat;
 
 			@include border-radius($radius);
@@ -168,12 +165,14 @@
 	.active {
 		span {
 			cursor: default;
+
 			color: $strong-nd-type-color;
 		}
 		&:hover, &:active {
 			span {
 				color: $strong-nd-type-color;
 				background-color: transparent;
+
 				@include box-shadow(none);
 			}
 		}
@@ -286,34 +285,45 @@
 }
 
 @include keyframes(progress-rotation) {
-	0% { @include rotate(0deg); }
-	100% { @include rotate(-360deg); }
+	0% {
+		@include rotate(0deg);
+	}
+	100% {
+		@include rotate(-360deg);
+	}
 }
 
 .progress {
-	//padding-bottom: rhythm($m-medium-line*4);
 	.icon {
-		@include animation(progress-rotation 1.0s infinite ease);
+		display: block;
+
 		width: em(40px);
 		height: em(40px);
-		opacity: 0.4;
-		display: block;
 		margin-right: auto;
 		margin-left: auto;
+
+		opacity: 0.4;
+
+		@include animation(progress-rotation 1.0s infinite ease);
 	}
 	.caption {
-		position: relative;
-		text-align: center;
 		font-weight: $bold;
+
+		position: relative;
+
 		display: block;
-		color: $light-type-color;
+
+		text-align: center;
 		text-transform: uppercase;
+
+		color: $light-type-color;
+
 		@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
 	}
 	@include min-screen(col(8)) {
-		//padding-bottom: rhythm($d-medium-line*4);
 		.caption {
 			text-transform: uppercase;
+
 			@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
 		}
 	}
@@ -366,6 +376,7 @@
 		color: $light-type-color;
 		a {
 			font-weight: $normal;
+
 			@include link-colors($light-st-type-color, $light-type-color, $light-type-color);
 		}
 	}
@@ -380,6 +391,7 @@
 
 [class^="section"] {
 	padding-bottom: rhythm($m-medium-line*4);
+
 	&:last-of-type {
 		padding-bottom: 0;
 	}
@@ -390,17 +402,21 @@
 		padding-bottom: rhythm($d-medium-line*4);
 	}
 }
+
 .notation {
 	font-weight: $normal;
-	color: $light-type-color;
+
 	text-align: center;
+
+	color: $light-type-color;
+
 	@include adjust-font-size-to($m-small-size, $m-small-line);
-	padding-bottom: rhythm((($m-medium-line*2)-($m-small-line))/2, $m-small-size);
 	padding-top: rhythm((($m-medium-line*2)-($m-small-line))/2, $m-small-size);
+	padding-bottom: rhythm((($m-medium-line*2)-($m-small-line))/2, $m-small-size);
 	@include min-screen(col(8)) {
 		@include adjust-font-size-to($d-small-size, $d-small-line);
-		padding-bottom: rhythm((($d-medium-line*2)-($d-small-line))/2, $d-small-size);
 		padding-top: rhythm((($d-medium-line*2)-($d-small-line))/2, $d-small-size);
+		padding-bottom: rhythm((($d-medium-line*2)-($d-small-line))/2, $d-small-size);
 	}
 }
 .section-content {
@@ -408,16 +424,16 @@
 }
 
 .letters, .projects, .comments {
-	overflow: auto;
 	position: relative;
 
+	overflow: auto;
+
 	width: 100%;
-	//padding-top: rhythm($m-medium-line*2);
 	padding-bottom: rhythm($m-medium-line*2);
+
 	@extend %centered;
 	@include min-screen(col(8)) {
 		width: col(8);
-		//padding-top: rhythm($d-medium-line*2);
 		padding-bottom: rhythm($d-medium-line*2);
 	}
 	@include min-screen(col(12)) {
@@ -444,10 +460,11 @@
 	&:before {
 		position: absolute;
 		top: 0;
-		left: 0;
 		right: 0;
-		margin-left: em($m-gut/2);
+		left: 0;
+
 		margin-right: em($m-gut/2);
+		margin-left: em($m-gut/2);
 
 		content: "";
 
@@ -461,20 +478,20 @@
 		@include column-break-inside(avoid);
 		@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		&:before {
-			margin-left: em($d-gut/2);
 			margin-right: em($d-gut/2);
+			margin-left: em($d-gut/2);
 		}
 	}
 }
 
 .letter {
 	position: relative;
+
 	width: 50%;
 
 	@include flex-grow(0);
 	@include flex-shrink(1);
 	a {
-		@include border-radius($radius);
 		font-weight: $bold;
 
 		position: relative;
@@ -488,15 +505,19 @@
 
 		text-align: center;
 
+		@include border-radius($radius);
 		@include adjust-font-size-to($m-huge-size, $m-huge-line);
 		@include transition-property(background-color, box-shadow, color);
 		@include transition-duration(0.2s, 0.2s, 0.2s);
 		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
 		span {
-			@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line, $m-huge-size);
-			display: block;
 			font-weight: $normal;
+
+			display: block;
+
 			color: $light-type-color;
+
+			@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line, $m-huge-size);
 		}
 		i {
 			font-weight: $bold;
@@ -506,17 +527,19 @@
 		}
 		.word {
 			margin-top: rhythm($m-small-line/5, $m-small-size);
+
 			color: $strong-type-color;
+
 			@include adjust-font-size-to($m-small-size, $m-small-line, $m-huge-size);
 		}
 		.amount {
 			position: absolute;
-			@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line, $m-huge-size);
 			top: rhythm($m-medium-line, $m-extra-small-size);
 			right: em($m-gut/2, $m-extra-small-size);
 
 			color: $light-type-color;
 
+			@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line, $m-huge-size);
 			@include transition-property(color);
 			@include transition-duration(0.2s);
 			@include transition-timing-function(ease-in-out);
@@ -547,15 +570,16 @@
 			}
 			.word {
 				margin-top: rhythm($d-small-line/5, $d-small-size);
+
 				@include adjust-font-size-to($d-small-size, $d-small-line, $d-huge-size);
 			}
 			.amount {
-				@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line, $d-huge-size);
 				top: rhythm($d-medium-line, $d-extra-small-size);
 				right: em($d-gut/2, $d-extra-small-size);
 
 				opacity: 0.2;
 
+				@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line, $d-huge-size);
 				@include transition-property(opacity);
 				@include transition-duration(0.2s);
 				@include transition-timing-function(ease-in-out);
@@ -570,15 +594,14 @@
 }
 
 .project {
-	width: 100%;
-
 	position: relative;
+
+	width: 100%;
 
 	@include flex-grow(0);
 	@include flex-shrink(1);
 	@include adjust-font-size-to($m-medium-size, $m-medium-line);
 	a {
-		@include border-radius($radius);
 		font-weight: $bold;
 
 		display: block;
@@ -588,6 +611,7 @@
 		padding-bottom: rhythm($m-medium-line/2, $m-medium-size);
 		padding-left: em($m-gut/2, $m-medium-size);
 
+		@include border-radius($radius);
 		@include transition-property(background-color, box-shadow, color);
 		@include transition-duration(0.2s, 0.2s, 0.2s);
 		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
@@ -624,13 +648,16 @@
 			padding-bottom: rhythm($d-medium-line/2, $d-medium-size);
 			padding-left: em($d-gut/2, $d-medium-size);
 			.amount {
-				padding-left: 0.5em;
-				float: none;
-				opacity: 0.2;
-				@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line, $d-medium-size);
-				top: rhythm(-$d-extra-small-line/2, $d-medium-size);
 				position: relative;
+				top: rhythm(-$d-extra-small-line/2, $d-medium-size);
 
+				float: none;
+
+				padding-left: 0.5em;
+
+				opacity: 0.2;
+
+				@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line, $d-medium-size);
 				@include transition-property(opacity);
 				@include transition-duration(0.2s);
 				@include transition-timing-function(ease-in-out);
@@ -646,6 +673,7 @@
 
 .comment.selected {
 	background-color: $hover-background-color;
+
 	@include box-shadow(0 1px 4px 0 $shadow-color inset);
 }
 .comment.is-first {
@@ -653,13 +681,16 @@
 		.tributary {
 			&:after {
 				font-weight: $bold;
-				content: "1st!";
+
 				position: absolute;
-				@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
 				top: 0;
-				right: 0; 
+				right: 0;
+
+				content: "1st!";
 
 				color: $light-type-color;
+
+				@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
 			}
 		}
 	}
@@ -674,20 +705,16 @@
 	}
 }
 .comment {
-	//font-weight: $bold;
-
+	/*flex-grow: 0;
+	flex-shrink: 1;*/
 	position: relative;
-	@include border-radius($radius);
+
 	width: 100%;
 	padding-top: rhythm($m-medium-line/2);
 	padding-bottom: rhythm($m-medium-line/2);
 
-	/*flex-grow: 0;
-	flex-shrink: 1;*/
+	@include border-radius($radius);
 	@extend %column-gut;
-	/*img {
-		display: inline-block;
-	}*/
 	.avatar {
 		float: left;
 
@@ -700,16 +727,16 @@
 		@include border-radius(2px);
 	}
 	.tributary {
-		position: relative;
-		overflow: auto;
 		font-style: normal;
 
+		position: relative;
+
 		display: block;
+		overflow: auto;
+
+		margin-bottom: rhythm($m-small-line/4);
 
 		color: $light-type-color;
-		margin-bottom: rhythm($m-small-line/4);
-		//height: rhythm($m-small-line*2);
-		//@include adjust-font-size-to($m-small-size, $m-small-line, $m-medium-size);
 		span {
 			display: block;
 		}
@@ -720,16 +747,17 @@
 			@include adjust-font-size-to($m-small-size, $m-small-line);
 			a {
 				font-weight: $normal;
+
 				@include link-colors($light-type-color, $strong-type-color, $strong-type-color);
 			}
 		}
 	}
 	@include min-screen(col(8)) {
 		float: left;
+
 		width: col(4);
 		padding-top: rhythm($d-medium-line/2);
 		padding-bottom: rhythm($d-medium-line/2);
-
 		.avatar {
 			width: em(36, $d-small-size);
 			height: em(36, $d-small-size);

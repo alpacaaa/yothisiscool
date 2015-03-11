@@ -122,19 +122,19 @@ html {
   	}*/ }
 
 *, *:before, *:after {
-  word-wrap: break-word;
   box-sizing: inherit;
+  word-wrap: break-word;
   -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: transparent; }
 
 body {
   font-weight: 400;
+  position: relative;
+  z-index: 0;
   display: table;
   width: 100%;
   height: 100%;
   margin: 0;
-  position: relative;
-  z-index: 0;
   background-color: #fafad1; }
 
 /*
@@ -351,18 +351,18 @@ svg:not(:root) {
   [class*="typo"] a {
     font-weight: 500; }
   [class*="typo"] img {
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
     opacity: 0.9; }
   [class*="typo"] .emoji {
-    height: 3ex;
     display: inline-block;
+    height: 3ex;
     margin: 0 0 -0.3em 0;
     opacity: 0.9; }
   [class*="typo"] hr {
-    margin-left: auto;
+    width: 25%;
     margin-right: auto;
-    width: 25%; }
+    margin-left: auto; }
   [class*="typo"] > *:first-child {
     margin-top: 0; }
   [class*="typo"] > *:last-child {
@@ -697,9 +697,6 @@ textarea {
 optgroup {
   font-weight: 500; }
 
-/*button, input, select, textarea {
-	color: $type-color;
-}*/
 /*
 ** Istances
 */
@@ -730,7 +727,7 @@ optgroup {
     line-height: 1.5em; }
   [class^="form"] input[type="text"], [class^="form"] input[type="search"], [class^="form"] textarea {
     width: 100%;
-    padding: 0.25em 0.75em 0.25em 0.75em;
+    padding: 0.25em 0.375em 0.25em 0.375em;
     color: rgba(0, 0, 0, 0.6);
     border: 2px solid transparent;
     background-color: rgba(255, 255, 255, 0.8);
@@ -753,8 +750,8 @@ optgroup {
     font-style: normal;
     display: block;
     margin-top: 0.35714em;
-    padding-right: 1em;
-    padding-left: 1em;
+    padding-right: 0.57143em;
+    padding-left: 0.57143em;
     color: rgba(0, 0, 0, 0.4);
     font-size: 0.875em;
     line-height: 1.42857em; }
@@ -979,8 +976,8 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
         margin-left: -4em; } }
 
 .warning {
-  text-align: center;
-  padding: 1.25em 0.75em 1.25em 0.75em; }
+  padding: 1.25em 0.75em 1.25em 0.75em;
+  text-align: center; }
   @media screen and (min-width: 36em) {
     .warning {
       padding: 1.25em 1em 1.25em 1em; } }
@@ -1007,10 +1004,10 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   display: none; }
 
 .menu {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 90em;
   overflow: hidden;
+  max-width: 90em;
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 0.75em;
   padding-bottom: 0.75em;
   -moz-perspective: 100em;
@@ -1047,10 +1044,10 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
       transition-duration: 0s; }
     .menu a span {
       display: block;
-      color: rgba(230, 25, 161, 0.8);
       height: 100%;
       padding-top: 0.57143em;
       padding-bottom: 0.57143em;
+      color: rgba(230, 25, 161, 0.8);
       background-repeat: no-repeat;
       -moz-border-radius: 4px;
       -webkit-border-radius: 4px;
@@ -1187,22 +1184,22 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
     -webkit-transform: rotate(-360deg);
     transform: rotate(-360deg); } }
 .progress .icon {
-  -moz-animation: progress-rotation 1s infinite ease;
-  -webkit-animation: progress-rotation 1s infinite ease;
-  animation: progress-rotation 1s infinite ease;
+  display: block;
   width: 2.5em;
   height: 2.5em;
-  opacity: 0.4;
-  display: block;
   margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto;
+  opacity: 0.4;
+  -moz-animation: progress-rotation 1s infinite ease;
+  -webkit-animation: progress-rotation 1s infinite ease;
+  animation: progress-rotation 1s infinite ease; }
 .progress .caption {
-  position: relative;
-  text-align: center;
   font-weight: 500;
+  position: relative;
   display: block;
-  color: rgba(0, 0, 0, 0.4);
+  text-align: center;
   text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.4);
   font-size: 0.8125em;
   line-height: 1.53846em; }
 @media screen and (min-width: 36em) {
@@ -1269,25 +1266,25 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
 
 .notation {
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.4);
   text-align: center;
+  color: rgba(0, 0, 0, 0.4);
   font-size: 0.875em;
   line-height: 1.42857em;
-  padding-bottom: 1em;
-  padding-top: 1em; }
+  padding-top: 1em;
+  padding-bottom: 1em; }
   @media screen and (min-width: 36em) {
     .notation {
       font-size: 0.875em;
       line-height: 1.42857em;
-      padding-bottom: 1em;
-      padding-top: 1em; } }
+      padding-top: 1em;
+      padding-bottom: 1em; } }
 
 .section-content {
   background-color: rgba(255, 255, 255, 0.8); }
 
 .letters, .projects, .comments {
-  overflow: auto;
   position: relative;
+  overflow: auto;
   width: 100%;
   padding-bottom: 3em; }
   @media screen and (min-width: 36em) {
@@ -1321,10 +1318,10 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
 .letter:before, .project:before, .comment:before {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
-  margin-left: 0.75em;
+  left: 0;
   margin-right: 0.75em;
+  margin-left: 0.75em;
   content: "";
   border-top: 1px solid rgba(0, 0, 0, 0.05); }
 @media screen and (min-width: 36em) {
@@ -1337,8 +1334,8 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
     font-size: 1em;
     line-height: 1.5em; }
     .letter:before, .project:before, .comment:before {
-      margin-left: 1em;
-      margin-right: 1em; } }
+      margin-right: 1em;
+      margin-left: 1em; } }
 
 .letter {
   position: relative;
@@ -1348,9 +1345,6 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   -webkit-flex-shrink: 1;
   flex-shrink: 1; }
   .letter a {
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
     font-weight: 500;
     position: relative;
     display: block;
@@ -1359,6 +1353,9 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
     padding-bottom: 0.42857em;
     padding-left: 0.10714em;
     text-align: center;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
     font-size: 3.5em;
     line-height: 1em;
     -moz-transition-property: background-color, box-shadow, color;
@@ -1374,11 +1371,11 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
     -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
     transition-timing-function: ease-in-out, ease-in-out, ease-in-out; }
     .letter a span {
-      font-size: 0.23214em;
-      line-height: 1.53846em;
-      display: block;
       font-weight: 400;
-      color: rgba(0, 0, 0, 0.4); }
+      display: block;
+      color: rgba(0, 0, 0, 0.4);
+      font-size: 0.23214em;
+      line-height: 1.53846em; }
     .letter a i {
       font-weight: 500;
       font-style: normal;
@@ -1390,11 +1387,11 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
       line-height: 1.42857em; }
     .letter a .amount {
       position: absolute;
-      font-size: 0.23214em;
-      line-height: 1.53846em;
       top: 1.84615em;
       right: 0.92308em;
       color: rgba(0, 0, 0, 0.4);
+      font-size: 0.23214em;
+      line-height: 1.53846em;
       -moz-transition-property: color;
       -o-transition-property: color;
       -webkit-transition-property: color;
@@ -1439,11 +1436,11 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
           font-size: 0.21875em;
           line-height: 1.42857em; }
         .letter a .amount {
-          font-size: 0.20313em;
-          line-height: 1.53846em;
           top: 1.84615em;
           right: 1.23077em;
           opacity: 0.2;
+          font-size: 0.20313em;
+          line-height: 1.53846em;
           -moz-transition-property: opacity;
           -o-transition-property: opacity;
           -webkit-transition-property: opacity;
@@ -1460,8 +1457,8 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
           opacity: 1.0; } }
 
 .project {
-  width: 100%;
   position: relative;
+  width: 100%;
   -webkit-flex-grow: 0;
   flex-grow: 0;
   -webkit-flex-shrink: 1;
@@ -1469,15 +1466,15 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   font-size: 1em;
   line-height: 1.5em; }
   .project a {
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
     font-weight: 500;
     display: block;
     padding-top: 0.75em;
     padding-right: 0.75em;
     padding-bottom: 0.75em;
     padding-left: 0.75em;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
     -moz-transition-property: background-color, box-shadow, color;
     -o-transition-property: background-color, box-shadow, color;
     -webkit-transition-property: background-color, box-shadow, color;
@@ -1524,13 +1521,13 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
         padding-bottom: 0.75em;
         padding-left: 1em; }
         .project a .amount {
-          padding-left: 0.5em;
+          position: relative;
+          top: -0.625em;
           float: none;
+          padding-left: 0.5em;
           opacity: 0.2;
           font-size: 0.8125em;
           line-height: 1.53846em;
-          top: -0.625em;
-          position: relative;
           -moz-transition-property: opacity;
           -o-transition-property: opacity;
           -webkit-transition-property: opacity;
@@ -1554,31 +1551,28 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
 
 .comment.is-first:last-child .tributary:after {
   font-weight: 500;
-  content: "1st!";
   position: absolute;
-  font-size: 0.8125em;
-  line-height: 1.53846em;
   top: 0;
   right: 0;
-  color: rgba(0, 0, 0, 0.4); }
+  content: "1st!";
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 0.8125em;
+  line-height: 1.53846em; }
 @media screen and (min-width: 36em) {
   .comment.is-first:last-child .tributary:after {
     font-size: 0.8125em;
     line-height: 1.53846em; } }
 
 .comment {
+  /*flex-grow: 0;
+  flex-shrink: 1;*/
   position: relative;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
   width: 100%;
   padding-top: 0.75em;
   padding-bottom: 0.75em;
-  /*flex-grow: 0;
-  flex-shrink: 1;*/
-  /*img {
-  	display: inline-block;
-  }*/ }
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px; }
   .comment .avatar {
     float: left;
     width: 2.57143em;
@@ -1589,12 +1583,12 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
     -webkit-border-radius: 2px;
     border-radius: 2px; }
   .comment .tributary {
-    position: relative;
-    overflow: auto;
     font-style: normal;
+    position: relative;
     display: block;
-    color: rgba(0, 0, 0, 0.4);
-    margin-bottom: 0.3125em; }
+    overflow: auto;
+    margin-bottom: 0.3125em;
+    color: rgba(0, 0, 0, 0.4); }
     .comment .tributary span {
       display: block; }
     .comment .tributary .username {

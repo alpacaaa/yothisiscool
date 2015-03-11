@@ -38,20 +38,23 @@
 		font-weight: $bold;
 	}
 	img {
-		margin-left: auto;
 		margin-right: auto;
+		margin-left: auto;
+
 		opacity: 0.9;
 	}
 	.emoji {
-		height: 3ex;
 		display: inline-block;
+
+		height: 3ex;
 		margin: 0 0 -0.3em 0;
+
 		opacity: 0.9;
 	}
 	hr {
-		margin-left: auto;
-		margin-right: auto;
 		width: 25%;
+		margin-right: auto;
+		margin-left: auto;
 	}
 	> *:first-child {
 		margin-top: 0;
@@ -106,7 +109,6 @@
 	}
 	img {
 		//margin-bottom: rhythm($m-large-line/2, $m-small-size);
-
 		@include adjust-font-size-to($m-small-size, $m-small-line);
 	}
 	hr {
@@ -153,7 +155,6 @@
 		}
 		img {
 			//margin-bottom: rhythm($d-large-line/2, $d-small-size);
-
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
 		hr {
@@ -204,7 +205,6 @@
 	img {
 		//margin-top: rhythm($m-medium-line/2, $m-small-size);
 		//margin-bottom: rhythm($m-medium-line/2, $m-small-size);
-
 		@include adjust-font-size-to($m-small-size, $m-small-line);
 	}
 	hr {
@@ -252,7 +252,6 @@
 		img {
 			//margin-top: rhythm($d-medium-line/2, $d-small-size);
 			//margin-bottom: rhythm($d-medium-line/2, $d-small-size);
-
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
 		hr {
@@ -302,7 +301,6 @@
 	}
 	img {
 		//margin-bottom: rhythm($m-small-line/2, $m-small-size);
-
 		@include adjust-font-size-to($m-small-size, $m-small-line);
 	}
 	hr {
@@ -349,7 +347,6 @@
 		}
 		img {
 			//margin-bottom: rhythm($d-small-line/2, $d-small-size);
-
 			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
 		hr {

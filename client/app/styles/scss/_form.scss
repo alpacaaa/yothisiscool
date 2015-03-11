@@ -103,10 +103,6 @@ optgroup {
 	font-weight: $bold; // normalize.css
 }
 
-/*button, input, select, textarea {
-	color: $type-color;
-}*/
-
 /*
 ** Istances
 */
@@ -142,7 +138,7 @@ optgroup {
 	}
 	input[type = "text"], input[type = "search"], textarea {
 		width: 100%;
-		padding: rhythm($m-medium-line/4 + strip(-$field-border-width/10), $m-medium-size) em($m-gut/2, $m-medium-size) rhythm($m-medium-line/4 + strip(-$field-border-width/10), $m-medium-size) em($m-gut/2, $m-medium-size);
+		padding: rhythm($m-medium-line/4 + strip(-$field-border-width/10), $m-medium-size) em($m-gut/4, $m-medium-size) rhythm($m-medium-line/4 + strip(-$field-border-width/10), $m-medium-size) em($m-gut/4, $m-medium-size);
 
 		color: $type-color;
 		border: $field-border-width solid $field-border-color;
@@ -172,11 +168,10 @@ optgroup {
 		display: block;
 
 		margin-top: rhythm($m-small-line/4, $m-small-size);
-		padding-right: em($m-gut/2 + $field-border-width, $m-small-size);
-		padding-left: em($m-gut/2 + $field-border-width, $m-small-size);
+		padding-right: em($m-gut/4 + $field-border-width, $m-small-size);
+		padding-left: em($m-gut/4 + $field-border-width, $m-small-size);
 
 		color: $light-type-color;
-		//background-color: rgba($canvas, 0.5);
 
 		@include adjust-font-size-to($m-small-size, $m-small-line);
 		strong {
