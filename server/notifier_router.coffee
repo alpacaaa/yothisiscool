@@ -33,7 +33,7 @@ process_batch = (size) ->
 
     list = notifications.map (n) =>
 
-      comments = Comment.find
+      comments = Comment.findAsync
         where:
           id: inq: n.data.comments
           notified: null # cant get proper query to work, fuck me
