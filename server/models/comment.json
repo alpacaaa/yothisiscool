@@ -8,6 +8,9 @@
     },
     "date": {
       "type": "date"
+    },
+    "notified": {
+      "type": "boolean"
     }
   },
   "validations": [],

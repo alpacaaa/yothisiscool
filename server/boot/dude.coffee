@@ -4,7 +4,11 @@ Promise = require 'bluebird'
 bbutil  = require 'bluebird/js/main/util'
 serveStatic = require 'serve-static'
 
-github  = require '../github'
+config = require '../dude-config'
+github = require '../github'
+Mailer = require '../mailer'
+Notifier = require '../notifier'
+NotifierRouter = require '../notifier_router'
 
 winston = require 'winston'
 logentries = require 'le_node'
@@ -39,8 +43,6 @@ initLogs = (app) ->
 
 
 enableOAuth = (app) ->
-  config = require '../dude-config'
-
   github.setDefaultToken config.GITHUB_ACCESS_TOKEN
 
   for k, v of config
@@ -81,6 +83,44 @@ staticFiles = (app) ->
   app.use serveStatic(frontend_path, options)
 
 
+
+notifications = (app) ->
+  notifier = new Notifier(app)
+  router = NotifierRouter(app)
+
+  router.mailer = new Mailer(config)
+
+  app.post '/notify_users', (req, res, next) ->
+    unless req.query.access_token == config.INTERNAL_URL_TOKEN
+      return res.status(401).end()
+
+    router.process_batch (req.query.batch ? 10)
+    res.end()
+
+
+  ['unsuscribe', 'subscription'].forEach (r) ->
+
+    app.get '/' + r, (req, res, next) ->
+
+      router[r] req.query
+      .then (html) ->
+        res.send html
+
+      .catch (e) ->
+        logger.error e
+
+        res
+        .status 500
+        .send 'Something went wrong, please get in touch with us'
+
+
+  app.models.Comment.observe 'after save', (ctx, next) ->
+    return next() if ctx.instance.notified
+
+    notifier.register_comment ctx.instance
+    next()
+
+
 loadFixtures = (app) ->
   ['GithubRepo', 'GithubUser', 'Comment'].forEach (modelName) ->
     fixture = require '../../test/fixtures/' + modelName.toLowerCase() + '-fixture'
@@ -96,6 +136,7 @@ module.exports = (app) ->
   enableOAuth app
   staticFiles app
   dudeRoutes  app
+  notifications app
 
   if 'with-fixtures' in process.argv and app.get 'isDev'
     loadFixtures app

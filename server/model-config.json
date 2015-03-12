@@ -36,5 +36,9 @@
   "Comment": {
     "dataSource": "db",
     "public": true
+  },
+  "Notification": {
+    "dataSource": "db",
+    "public": false
   }
 }

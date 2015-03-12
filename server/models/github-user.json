@@ -9,10 +9,25 @@
     "username": {
       "type": "string"
     },
+    "email": {
+      "type": "string"
+    },
     "avatar_url": {
       "type": "string"
     },
+    "notification_frequency": {
+      "type": "number"
+    },
+    "unsuscribed": {
+      "type": "boolean"
+    },
+    "last_notified": {
+      "type": "date"
+    },
     "auth_token": {
+      "type": "string"
+    },
+    "email_token": {
       "type": "string"
     }
   },
@@ -26,6 +41,11 @@
     "comments": {
       "type": "hasMany",
       "model": "Comment",
+      "foreignKey": ""
+    },
+    "notifications": {
+      "type": "hasMany",
+      "model": "Notification",
       "foreignKey": ""
     }
   },
