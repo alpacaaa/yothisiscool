@@ -34,7 +34,7 @@ class Notifier
       query = userId: user_id, status: 'queued'
 
       Promise.props
-        user: GithubUser.findById user_id
+        user: GithubUser.findByIdAsync user_id
         notification: Notification.findOneAsync where: query
 
     .then (data) =>

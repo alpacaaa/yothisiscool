@@ -20,6 +20,10 @@
     stat: path=/usr/local/nodejs/{{ dude.node_version }}/bin
     register: node_is_installed
 
+  - name: Dude is configured
+    stat: path=/home/dude/www/shared/server/dude-config.json
+    register: dude_is_configured
+
   roles:
   - role: roles/bennojoy.mysql
     mysql_root_db_pass: "{{ dude.mysql_root_db_pass }}"
@@ -45,6 +49,9 @@
       - pm2
     sudo: yes
 
+  - name: Install git
+    apt: pkg=git state=installed
+
   - name: Create webapp environment
     file: path=/home/dude/www state=directory
     file: path=/home/dude/www/shared state=directory
@@ -69,5 +76,5 @@
       owner: dude
       group: dude
       mode: 0600
-    when: dude.github_client_id is defined
+    when: dude.github_client_id is defined and not dude_is_configured.stat.exists
     sudo: yes
