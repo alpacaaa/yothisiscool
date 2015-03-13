@@ -49,8 +49,11 @@
       - pm2
     sudo: yes
 
-  - name: Install git
-    apt: pkg=git state=installed
+  - name: Install packages from apt
+    apt: pkg={{item}} state=installed
+    with_items:
+      - git
+      - percona-xtrabackup
 
   - name: Create webapp environment
     file: path=/home/dude/www state=directory
@@ -78,3 +81,24 @@
       mode: 0600
     when: dude.github_client_id is defined and not dude_is_configured.stat.exists
     sudo: yes
+
+  - name: Create backup folders
+    file: path=/home/dude/backup state=directory
+    file: path=/home/dude/backup/mysql state=directory
+    sudo_user: dude
+    sudo: yes
+
+  - name: Create mysql backup script
+    template:
+      src: files/mysql_backup.tpl
+      dest: "/home/dude/mysql_backup"
+      owner: root
+      group: root
+      mode: 0700
+    sudo: yes
+
+  - name: Setup mysql backup cron
+    cron:
+      name: mysql backup
+      job: /home/dude/mysql_backup
+      special_time: daily
