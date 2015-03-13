@@ -49,10 +49,16 @@ module.exports = function(environment) {
   ENV.APP.WS_ENDPOINT = WS_ENDPOINT + '/api/';
   ENV.APP.CHARS_ALLOWED = CHARS_ALLOWED;
 
+  if (process.env.ANALYTICS_TRACKING_CODE) {
+    ENV.googleAnalytics = {
+      webPropertyId: process.env.ANALYTICS_TRACKING_CODE
+    };
+  }
+
 
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
-    'script-src': "'self'",
+    'script-src': "'self' https://www.google-analytics.com/ 'unsafe-inline'",
     'font-src': "'self' https://fonts.gstatic.com",
     'connect-src': "'self' https://api.github.com/ " + WS_ENDPOINT ,
     'img-src': "*",

@@ -42,7 +42,8 @@ module.exports = function (shipit) {
     production: {
       servers: 'dude@' + config.HOST,
       dude: {
-        WS_ENDPOINT: 'https://dudethisis.cool'
+        WS_ENDPOINT: 'https://dudethisis.cool',
+        ANALYTICS_TRACKING_CODE: 'UA-45799744-2'
       }
     }
   });
@@ -98,12 +99,14 @@ module.exports = function (shipit) {
 
 
   shipit.blTask('build-frontend', function() {
-    var endpoint = 'WS_ENDPOINT=' + config.WS_ENDPOINT;
+    var endpoint  = 'WS_ENDPOINT=' + config.WS_ENDPOINT;
+    var analytics = 'ANALYTICS_TRACKING_CODE=' + config.ANALYTICS_TRACKING_CODE;
     var environment = '--environment=' + config.DUDE_ENV;
     var ember_path  = path.join(shipit.config.workspace, 'client');
 
     var command = [
       endpoint,
+      analytics,
       'ember build --output-path=../frontend',
       environment
     ].join(' ');
@@ -192,7 +195,8 @@ function getConfig(shipit) {
     DUDE_ENV: 'production',
     HOST: null,
     WS_ENDPOINT: null,
-    USE_HTTPS: true
+    USE_HTTPS: true,
+    ANALYTICS_TRACKING_CODE: ''
   };
 
   Object.keys(config).forEach(function(key) {
