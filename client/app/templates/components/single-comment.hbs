@@ -1,4 +1,4 @@
-<li {{bind-attr class=":comment :typo-m is_first selected"}}>
+<li class="comment typo-m {{if is_first "is-first"}} {{if selected "selected"}}">
   <i class="tributary">
     {{#user-avatar user=comment.author}}{{/user-avatar}}
     <span class="username">
@@ -12,7 +12,7 @@
         ·
       {{/if}}
       <a href="{{unbound comment_permalink}}">
-        <time {{bind-attr datetime="comment.date"}}>{{timeAgo}}</time>
+        <time datetime="{{comment.date}}">{{timeAgo}}</time>
       </a>
     </span>
   </i>

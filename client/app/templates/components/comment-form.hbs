@@ -1,5 +1,5 @@
-<form {{bind-attr class=":form-comment isOpen::closed"}} {{action "form_submit" on="submit"}}>
-  <div {{bind-attr class=":field errorMsg:error"}}>
+<form class="form-comment {{unless isOpen "closed"}}" {{action "form_submit" on="submit"}}>
+  <div class="field {{if errorMsg "error"}}">
     <label for="comment">Comment</label>
     {{textarea value=comment id="comment" placeholder="Dude, this is cool!" rows="6" focus-in="removeErrors" key-press="userTyping"}}
 

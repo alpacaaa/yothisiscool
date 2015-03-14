@@ -6,8 +6,8 @@
     <i class="tributary">—
       {{#user-name user=project.owner}}{{/user-name}}
       started crafting
-      <a {{bind-attr href="githubUrl"}}>this project</a>
-      <time {{bind-attr datetime="project.created_at"}}>
+      <a href="{{githubUrl}}">this project</a>
+      <time datetime="{{project.created_at}}">
         {{timeAgo}}
       </time>
     </i>
