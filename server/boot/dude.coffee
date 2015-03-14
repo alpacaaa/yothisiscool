@@ -8,6 +8,7 @@ config = require '../dude-config'
 github = require '../github'
 Mailer = require '../mailer'
 Notifier = require '../notifier'
+httpCache = require '../http_cache'
 NotifierRouter = require '../notifier_router'
 
 winston = require 'winston'
@@ -61,7 +62,7 @@ dudeRoutes = (app) ->
   # In the meantime...
 
   restApiRoot = app.get('restApiRoot')
-  app.use(restApiRoot, app.loopback.rest())
+  app.use(restApiRoot, httpCache.middleware, app.loopback.rest())
 
   try
     file  = frontend_path + '/index.html'
@@ -137,6 +138,7 @@ module.exports = (app) ->
   staticFiles app
   dudeRoutes  app
   notifications app
+  httpCache.cache app
 
   if 'with-fixtures' in process.argv and app.get 'isDev'
     loadFixtures app
