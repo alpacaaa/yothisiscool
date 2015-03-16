@@ -1,15 +1,19 @@
 <section class="section">
-  <form class="form-search" {{action "form_submit" on="submit"}}>
+  <form class="form-search {{if isLoading "loading"}}" {{action "form_submit" on="submit"}}>
     <div class="field {{if hasError "error"}}">
       <label for="search">Repository</label>
       {{input value=search id="search" placeholder="https://github.com/author/project" type="search" focus-in="removeErrors"}}
       <button type="submit">Search</button>
 
       <i>
-        {{#if hasError}}
-          {{{hasError}}}
+        {{#if isLoading}}
+          Searching…
         {{else}}
-          {{yield}}
+          {{#if hasError}}
+            {{{hasError}}}
+          {{else}}
+            {{yield}}
+          {{/if}}
         {{/if}}
       </i>
     </div>

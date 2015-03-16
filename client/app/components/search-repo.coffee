@@ -5,6 +5,7 @@ SearchRepoComponent = Ember.Component.extend
   tagName: ''
   search: ''
   hasError: false
+  isLoading: false
   errorMsg: 'Mmm. This doesn’t look like a <strong>valid Github URL</strong>.'
   repoNotExistsMsg: 'Are you sure this repository exists?'
 
@@ -33,15 +34,19 @@ SearchRepoComponent = Ember.Component.extend
       unless slug
         return @set 'hasError', @get('errorMsg')
 
+      @set 'isLoading', true
+
       @get('utils').createRepo slug
       .then (repo) =>
         @sendAction 'found_repo', slug
       .catch =>
+        @set 'isLoading', false
         @set 'hasError', @get('repoNotExistsMsg')
 
 
     removeErrors: ->
       @set 'hasError', false
+      @set 'isLoading', false
 
     show_starred_repos: ->
       @sendAction 'show_starred_repos'
