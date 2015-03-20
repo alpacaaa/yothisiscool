@@ -90,12 +90,18 @@ if [ $BACKUPSTATUS == 0 ]; then
          echo "The following backup will be deleted if any $BACKUPDIR/$PREV" >> $EMAILTMP
          echo "We estimated compression of 70% We saw an actual compression of $(echo 1-$(du -bs $BACKUPDIR/$TIMEDIR | awk '{ print $1 }')/$(du -bs $DATADIR | awk '{ print $1 }') | bc -l ) of $(du -hs $DATADIR)" >> $EMAILTMP
    mail $EMAIL -s "Mysql backup success on $(hostname -f)" < $EMAILTMP
-  mv $LOGTMP $BACKUPDIR/$TIMEDIR/backup.log
-        # remove backups you don't want to keep
-        cd $BACKUPDIR
-        rm -rf $PREV
- #   echo $PREV | xargs -Idir rm -rf $BACKUPDIR/dir
-                rm -rf $EMAILTMP
+   mv $LOGTMP $BACKUPDIR/$TIMEDIR/backup.log
+  # remove backups you don't want to keep
+  cd $BACKUPDIR
+  rm -rf $PREV
+  #   echo $PREV | xargs -Idir rm -rf $BACKUPDIR/dir
+  rm -rf $EMAILTMP
+
+  ARCHIVE="dude-backup`date '+%d-%m-%Y'`.gz"
+  tar -zcvf ${ARCHIVE} ${TIMEDIR}
+  curl -T ${ARCHIVE} -H "API_TOKEN: {{ dude.haybale_apitoken }}" https://send.haybale.io/${ARCHIVE}
+
+  rm ${ARCHIVE}
 else
 # problem with initial backup :(
     tail -n20 $LOGTMP >> $EMAILTMP

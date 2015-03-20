@@ -18,3 +18,5 @@ dude:
 
   # mailgun_api_key: apikey
   # mailgun_domain: domain.com
+
+  # haybale_apitoken: YO
