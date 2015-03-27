@@ -23,4 +23,5 @@ module.exports =
     hit = cache.get req.originalUrl
     return next() unless hit
 
+    res.setHeader 'Access-Control-Allow-Origin', '*'
     res.send hit
