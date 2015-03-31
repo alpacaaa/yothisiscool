@@ -56,10 +56,12 @@
       - percona-xtrabackup
 
   - name: Create webapp environment
-    file: path=/home/dude/www state=directory
-    file: path=/home/dude/www/shared state=directory
-    file: path=/home/dude/www/shared/logs state=directory
-    file: path=/home/dude/www/shared/server state=directory
+    file: path="/home/dude/{{ item }}" state=directory
+    with_items:
+      - "www"
+      - "www/shared"
+      - "www/shared/logs"
+      - "www/shared/server"
     sudo_user: dude
     sudo: yes
 
