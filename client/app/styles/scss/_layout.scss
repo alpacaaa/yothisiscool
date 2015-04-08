@@ -785,13 +785,25 @@
 	@extend %column-gut;
 	@extend %centered;
 	.instruction {
+		position: relative;
 		@include adjust-font-size-to($m-small-size, $m-small-line);
+		padding-bottom: rhythm($m-small-line/2, $m-small-size);
+		&:after {
+			border-bottom: $border-width solid $border-color;
+			content: "";
+			position: absolute;
+			bottom: rhythm($m-small-line/4, $m-small-size);
+			margin-left: auto;
+			margin-right: auto;
+			left: 0;
+			width: rhythm($m-small-line*4, $m-small-size);
+			right: 0;
+		}
 		span {
 			color: $type-color;
 		}
 	}
 	.caption {
-		margin-top: rhythm($m-extra-small-line/2, $m-extra-small-size);
 
 		@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
 		span {
@@ -803,10 +815,14 @@
 		padding-top: rhythm($d-medium-line*4);
 		padding-bottom: rhythm($d-medium-line*4);
 		.instruction {
+			padding-bottom: rhythm($d-small-line/2, $d-small-size);
 			@include adjust-font-size-to($d-small-size, $d-small-line);
+			&:after {
+				bottom: rhythm($d-small-line/4, $d-small-size);
+				width: rhythm($d-small-line*4, $d-small-size);
+			}
 		}
 		.caption {
-			margin-top: rhythm($d-extra-small-line/2, $d-extra-small-size);
 
 			@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
 		}

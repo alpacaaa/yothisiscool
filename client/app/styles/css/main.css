@@ -144,7 +144,7 @@ a[href^="mailto"] {
 h1, h2, h3, h4, h5, h6 {
   font-size: 1em;
   margin: 0;
-  color: rgba(25, 161, 230, 0.8);
+  color: rgba(23, 207, 191, 0.8);
 }
 h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   color: rgba(0, 0, 0, 0.4);
@@ -185,7 +185,7 @@ abbr[title] {
 
 strong {
   font-weight: 500;
-  color: rgba(25, 161, 230, 0.8);
+  color: rgba(23, 207, 191, 0.8);
 }
 
 q {
@@ -1203,10 +1203,10 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
 }
 .menu .active span {
   cursor: default;
-  color: rgba(25, 161, 230, 0.8);
+  color: rgba(23, 207, 191, 0.8);
 }
 .menu .active:hover span, .menu .active:active span {
-  color: rgba(25, 161, 230, 0.8);
+  color: rgba(23, 207, 191, 0.8);
   background-color: transparent;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
@@ -1879,14 +1879,26 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   text-align: center;
 }
 [class^="action"] .instruction {
+  position: relative;
   font-size: 0.875em;
   line-height: 1.42857em;
+  padding-bottom: 0.71429em;
+}
+[class^="action"] .instruction:after {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  content: "";
+  position: absolute;
+  bottom: 0.35714em;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  width: 5.71429em;
+  right: 0;
 }
 [class^="action"] .instruction span {
   color: rgba(0, 0, 0, 0.6);
 }
 [class^="action"] .caption {
-  margin-top: 0.76923em;
   font-size: 0.8125em;
   line-height: 1.53846em;
 }
@@ -1900,11 +1912,15 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
     padding-bottom: 6em;
   }
   [class^="action"] .instruction {
+    padding-bottom: 0.71429em;
     font-size: 0.875em;
     line-height: 1.42857em;
   }
+  [class^="action"] .instruction:after {
+    bottom: 0.35714em;
+    width: 5.71429em;
+  }
   [class^="action"] .caption {
-    margin-top: 0.76923em;
     font-size: 0.8125em;
     line-height: 1.53846em;
   }
