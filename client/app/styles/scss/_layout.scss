@@ -305,6 +305,12 @@
 		opacity: 0.4;
 
 		@include animation(progress-rotation 1.0s infinite ease);
+		path {
+			stroke: $nd-color;
+		}
+		rect {
+			fill: $nd-color;
+		}
 	}
 	.caption {
 		font-weight: $bold;
@@ -316,7 +322,7 @@
 		text-align: center;
 		text-transform: uppercase;
 
-		color: $light-type-color;
+		color: $light-nd-type-color;
 
 		@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
 	}
