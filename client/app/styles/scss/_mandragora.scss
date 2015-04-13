@@ -1,0 +1,40 @@
+// (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved
+
+/*
+** Mandragora
+*/
+
+.mandragora {
+	width: em(192/4*3);
+	height: em(172/4*3);
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	[class^="body"] {
+		fill: rgba($st-color, 0.1);
+	}
+	[class^="cheek"] {
+		fill: rgba($black, 0.1);
+	}
+	[class^="eye"] {
+		fill: rgba($black, 0.6);
+	}
+	[class^="flower"] {
+		fill: rgba($st-color, 0.8);
+	}
+	.leaf {
+		fill: rgba($nd-color, 0.6);
+	}
+	.mouth {
+		fill: rgba($black, 0.6);
+	}
+	[class^="stalk"] {
+		fill: rgba($nd-color, 0.2);
+	}
+	.twist {
+		fill: rgba($black, 0.2);
+	}
+	[class^="veining"] {
+		fill: rgba($canvas, 0.6);
+	}
+}

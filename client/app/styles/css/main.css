@@ -1932,6 +1932,44 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   }
 }
 
+/*
+** Mandragora
+*/
+.mandragora {
+  width: 9em;
+  height: 8.0625em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mandragora [class^="body"] {
+  fill: rgba(230, 25, 161, 0.1);
+}
+.mandragora [class^="cheek"] {
+  fill: rgba(0, 0, 0, 0.1);
+}
+.mandragora [class^="eye"] {
+  fill: rgba(0, 0, 0, 0.6);
+}
+.mandragora [class^="flower"] {
+  fill: rgba(230, 25, 161, 0.8);
+}
+.mandragora .leaf {
+  fill: rgba(10, 194, 179, 0.6);
+}
+.mandragora .mouth {
+  fill: rgba(0, 0, 0, 0.6);
+}
+.mandragora [class^="stalk"] {
+  fill: rgba(10, 194, 179, 0.2);
+}
+.mandragora .twist {
+  fill: rgba(0, 0, 0, 0.2);
+}
+.mandragora [class^="veining"] {
+  fill: rgba(250, 250, 209, 0.6);
+}
+
 @media print {
   * {
     color: #000 !important;
