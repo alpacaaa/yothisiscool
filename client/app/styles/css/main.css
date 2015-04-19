@@ -1069,33 +1069,6 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
 /*
 ** Istances
 */
-.logo {
-  position: absolute;
-  top: 3.75em;
-  left: 50%;
-  display: block;
-  width: 6em;
-  height: 6em;
-  opacity: 0.2;
-}
-.logo img {
-  width: 100%;
-  height: 100%;
-  margin-top: -3em;
-  margin-left: -3em;
-}
-@media screen and (min-width: 36em) {
-  .logo {
-    width: 8em;
-    height: 8em;
-  }
-  .logo img {
-    top: 5em;
-    margin-top: -4em;
-    margin-left: -4em;
-  }
-}
-
 .warning {
   padding: 1.25em 0.75em 1.25em 0.75em;
   text-align: center;
@@ -1387,8 +1360,9 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   margin-right: auto;
   margin-bottom: 1.125em;
   margin-left: auto;
+  position: relative;
 }
-.head h2 {
+.head h1 {
   text-align: center;
 }
 @media screen and (min-width: 36em) {
@@ -1396,6 +1370,79 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
     width: 36em;
     margin-bottom: 1.25em;
   }
+}
+
+.scream .bubble {
+  -moz-transform-origin: center 4.71429em;
+  -ms-transform-origin: center 4.71429em;
+  -webkit-transform-origin: center 4.71429em;
+  transform-origin: center 4.71429em;
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  opacity: 0;
+  -moz-transition-property: opacity, -moz-transform;
+  -o-transition-property: opacity, -o-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  -moz-transition-duration: 0.2s, 0.2s;
+  -o-transition-duration: 0.2s, 0.2s;
+  -webkit-transition-duration: 0.2s, 0.2s;
+  transition-duration: 0.2s, 0.2s;
+  -moz-transition-timing-function: ease-in-out, ease-in-out;
+  -o-transition-timing-function: ease-in-out, ease-in-out;
+  -webkit-transition-timing-function: ease-in-out, ease-in-out;
+  transition-timing-function: ease-in-out, ease-in-out;
+  -moz-transition-delay: 2s, 2s;
+  -o-transition-delay: 2s, 2s;
+  -webkit-transition-delay: 2s, 2s;
+  transition-delay: 2s, 2s;
+}
+.scream:hover .bubble {
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1.0;
+  -moz-transition-delay: 0s, 0s;
+  -o-transition-delay: 0s, 0s;
+  -webkit-transition-delay: 0s, 0s;
+  transition-delay: 0s, 0s;
+}
+
+.bubble {
+  font-weight: 500;
+  position: absolute;
+  top: -3.57143em;
+  right: 0;
+  left: 0;
+  width: 14.28571em;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 1.07143em;
+  padding-bottom: 1.07143em;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.8);
+  -moz-border-radius: 12px / 12px;
+  -webkit-border-radius: 12px 12px;
+  border-radius: 12px / 12px;
+  font-size: 0.875em;
+  line-height: 1.42857em;
+}
+.bubble:after {
+  position: absolute;
+  left: 6em;
+  z-index: 1;
+  bottom: -1.14286em;
+  display: block;
+  width: 0;
+  content: "";
+  border-width: 1.14286em 1.14286em 0;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.8) transparent;
 }
 
 .body {
