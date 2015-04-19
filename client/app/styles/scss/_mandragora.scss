@@ -5,12 +5,13 @@
 */
 
 .mandragora {
-	width: em(192/4*3);
-	height: em(172/4*3);
 	display: block;
-	margin-left: auto;
+
+	width: em(192/4*3);
+	height: em(204/4*3);
 	margin-right: auto;
-	[class^="body"] {
+	margin-left: auto;
+	[class^="complexion"] {
 		fill: rgba($st-color, 0.1);
 	}
 	[class^="cheek"] {

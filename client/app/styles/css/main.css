@@ -1372,6 +1372,32 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   }
 }
 
+.scream .torso {
+  -moz-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -moz-transition-delay: 1s;
+  -o-transition-delay: 1s;
+  -webkit-transition-delay: 1s;
+  transition-delay: 1s;
+}
 .scream .bubble {
   -moz-transform-origin: center 4.71429em;
   -ms-transform-origin: center 4.71429em;
@@ -1394,10 +1420,20 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   -o-transition-timing-function: ease-in-out, ease-in-out;
   -webkit-transition-timing-function: ease-in-out, ease-in-out;
   transition-timing-function: ease-in-out, ease-in-out;
-  -moz-transition-delay: 2s, 2s;
-  -o-transition-delay: 2s, 2s;
-  -webkit-transition-delay: 2s, 2s;
-  transition-delay: 2s, 2s;
+  -moz-transition-delay: 1s, 1s;
+  -o-transition-delay: 1s, 1s;
+  -webkit-transition-delay: 1s, 1s;
+  transition-delay: 1s, 1s;
+}
+.scream:hover .torso {
+  -moz-transform: translate(0, -30px);
+  -ms-transform: translate(0, -30px);
+  -webkit-transform: translate(0, -30px);
+  transform: translate(0, -30px);
+  -moz-transition-delay: 0s, 0s;
+  -o-transition-delay: 0s, 0s;
+  -webkit-transition-delay: 0s, 0s;
+  transition-delay: 0s, 0s;
 }
 .scream:hover .bubble {
   -moz-transform: scale(1);
@@ -1414,14 +1450,14 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
 .bubble {
   font-weight: 500;
   position: absolute;
-  top: -3.57143em;
+  top: -3.84615em;
   right: 0;
   left: 0;
-  width: 14.28571em;
+  width: 15.38462em;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 1.07143em;
-  padding-bottom: 1.07143em;
+  padding-top: 1.15385em;
+  padding-bottom: 1.15385em;
   text-align: center;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.4);
@@ -1429,18 +1465,18 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   -moz-border-radius: 12px / 12px;
   -webkit-border-radius: 12px 12px;
   border-radius: 12px / 12px;
-  font-size: 0.875em;
-  line-height: 1.42857em;
+  font-size: 0.8125em;
+  line-height: 1.53846em;
 }
 .bubble:after {
   position: absolute;
-  left: 6em;
+  left: 6.46154em;
   z-index: 1;
-  bottom: -1.14286em;
+  bottom: -1.23077em;
   display: block;
   width: 0;
   content: "";
-  border-width: 1.14286em 1.14286em 0;
+  border-width: 1.23077em 1.23077em 0;
   border-style: solid;
   border-color: rgba(255, 255, 255, 0.8) transparent;
 }
@@ -1983,13 +2019,13 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
 ** Mandragora
 */
 .mandragora {
-  width: 9em;
-  height: 8.0625em;
   display: block;
-  margin-left: auto;
+  width: 9em;
+  height: 9.5625em;
   margin-right: auto;
+  margin-left: auto;
 }
-.mandragora [class^="body"] {
+.mandragora [class^="complexion"] {
   fill: rgba(230, 25, 161, 0.1);
 }
 .mandragora [class^="cheek"] {

@@ -314,7 +314,14 @@
 }
 
 .scream {
-	.mandragora {}
+	.torso {
+		@include apply-origin(center bottom, false);
+		@include transform(translate(0, 0));
+		@include transition-property(transform);
+		@include transition-duration(0.2s);
+		@include transition-timing-function(ease-in-out);
+		@include transition-delay(1s);
+	}
 	.bubble {
 		@include apply-origin(center rhythm(1.6 + $m-small-line + $m-small-line/4*6, $m-small-size), false);
 		@include transform(scale(0.5));
@@ -322,11 +329,12 @@
 		@include transition-property(opacity, transform);
 		@include transition-duration(0.2s, 0.2s);
 		@include transition-timing-function(ease-in-out, ease-in-out);
-		@include transition-delay(2s, 2s);
+		@include transition-delay(1s, 1s);
 	}
 	&:hover {
-		.mandragora {
-
+		.torso {
+			@include transform(translate(0, -30px));
+			@include transition-delay(0s, 0s);
 		}
 		.bubble {
 			@include transform(scale(1.0));
@@ -340,15 +348,15 @@
 	font-weight: $bold;
 
 	position: absolute;
-	top: rhythm(-($m-small-line + $m-small-line/4*6), $m-small-size);
+	top: rhythm(-($m-extra-small-line + $m-extra-small-line/4*6), $m-extra-small-size);
 	right: 0;
 	left: 0;
 
-	width: em(200, $m-small-size);
+	width: em(200, $m-extra-small-size);
 	margin-right: auto;
 	margin-left: auto;
-	padding-top: rhythm($m-small-line/4*3, $m-small-size);
-	padding-bottom: rhythm($m-small-line/4*3, $m-small-size);
+	padding-top: rhythm($m-extra-small-line/4*3, $m-extra-small-size);
+	padding-bottom: rhythm($m-extra-small-line/4*3, $m-extra-small-size);
 
 	text-align: center;
 	text-transform: uppercase;
@@ -357,12 +365,12 @@
 	background: $field-background-color;
 
 	@include border-radius($radius*3, $radius*3);
-	@include adjust-font-size-to($m-small-size, $m-small-line);
+	@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
 	&:after {
 		position: absolute;
-		left: em((200/2)-16, $m-small-size);
+		left: em((200/2)-16, $m-extra-small-size);
 		z-index: 1;
-		bottom: em(-16, $m-small-size);
+		bottom: em(-16, $m-extra-small-size);
 
 		display: block;
 
@@ -370,12 +378,11 @@
 
 		content: "";
 
-		border-width: em(16, $m-small-size) em(16, $m-small-size) 0;
+		border-width: em(16, $m-extra-small-size) em(16, $m-extra-small-size) 0;
 		border-style: solid;
 		border-color: $field-background-color transparent;
 	}
 }
-
 
 .body {
 	margin-right: auto;
