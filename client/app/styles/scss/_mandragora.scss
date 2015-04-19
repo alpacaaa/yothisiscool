@@ -7,8 +7,6 @@
 .mandragora {
 	display: block;
 
-	width: em(192/4*3);
-	height: em(204/4*3);
 	margin-right: auto;
 	margin-left: auto;
 	[class^="complexion"] {
@@ -21,7 +19,7 @@
 		fill: rgba($black, 0.6);
 	}
 	[class^="flower"] {
-		fill: rgba($st-color, 0.8);
+		fill: rgba($st-color, 0.6);
 	}
 	.leaf {
 		fill: rgba($nd-color, 0.6);

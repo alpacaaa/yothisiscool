@@ -314,6 +314,10 @@
 }
 
 .scream {
+	.mandragora {
+		width: em(192/4*3);
+		height: em(204/4*3);
+	}
 	.torso {
 		@include apply-origin(center bottom, false);
 		@include transform(translate(0, 0));
@@ -342,6 +346,11 @@
 			@include transition-delay(0s, 0s);
 		}
 	}
+	@include min-screen(col(8)) {
+		.bubble {
+			@include apply-origin(center rhythm(1.6 + $d-small-line + $d-small-line/4*6, $d-small-size), false);
+		}
+	}
 }
 
 .bubble {
@@ -352,14 +361,14 @@
 	right: 0;
 	left: 0;
 
-	width: em(200, $m-extra-small-size);
+	width: em(180, $m-extra-small-size);
 	margin-right: auto;
 	margin-left: auto;
 	padding-top: rhythm($m-extra-small-line/4*3, $m-extra-small-size);
 	padding-bottom: rhythm($m-extra-small-line/4*3, $m-extra-small-size);
 
 	text-align: center;
-	text-transform: uppercase;
+	font-style: italic;
 
 	color: $light-type-color;
 	background: $field-background-color;
@@ -368,9 +377,9 @@
 	@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
 	&:after {
 		position: absolute;
-		left: em((200/2)-16, $m-extra-small-size);
+		left: em((180/2)-12, $m-extra-small-size);
 		z-index: 1;
-		bottom: em(-16, $m-extra-small-size);
+		bottom: em(-12, $m-extra-small-size);
 
 		display: block;
 
@@ -378,9 +387,20 @@
 
 		content: "";
 
-		border-width: em(16, $m-extra-small-size) em(16, $m-extra-small-size) 0;
+		border-width: em(12, $m-extra-small-size) em(12, $m-extra-small-size) 0;
 		border-style: solid;
 		border-color: $field-background-color transparent;
+	}
+	@include min-screen(col(8)) {
+		width: em(180, $m-extra-small-size);
+		padding-top: rhythm($d-extra-small-line/4*3, $d-extra-small-size);
+		padding-bottom: rhythm($d-extra-small-line/4*3, $d-extra-small-size);
+		@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
+		&:after {
+			left: em((180/2)-12, $d-extra-small-size);
+			bottom: em(-12, $d-extra-small-size);
+			border-width: em(12, $d-extra-small-size) em(12, $d-extra-small-size) 0;
+		}
 	}
 }
 
@@ -817,13 +837,18 @@
 
 [class^="action"] {
 	width: 75%;
-	padding-top: rhythm($m-medium-line*4);
+	padding-top: rhythm($m-medium-line*2);
 	padding-bottom: rhythm($m-medium-line*4);
 
 	text-align: center;
 
 	@extend %column-gut;
 	@extend %centered;
+	.mandragora {
+		width: em(192/4*2);
+		height: em(208/4*2);
+		margin-bottom: rhythm($m-small-line);
+	}
 	.instruction {
 		position: relative;
 		@include adjust-font-size-to($m-small-size, $m-small-line);
@@ -852,8 +877,11 @@
 	}
 	@include min-screen(col(8)) {
 		width: col(4);
-		padding-top: rhythm($d-medium-line*4);
+		padding-top: rhythm($d-medium-line*2);
 		padding-bottom: rhythm($d-medium-line*4);
+		.mandragora {
+			margin-bottom: rhythm($d-small-line);
+		}
 		.instruction {
 			padding-bottom: rhythm($d-small-line/2, $d-small-size);
 			@include adjust-font-size-to($d-small-size, $d-small-line);

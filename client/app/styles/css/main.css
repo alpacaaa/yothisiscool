@@ -1372,6 +1372,10 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   }
 }
 
+.scream .mandragora {
+  width: 9em;
+  height: 9.5625em;
+}
 .scream .torso {
   -moz-transform-origin: center bottom;
   -ms-transform-origin: center bottom;
@@ -1446,6 +1450,14 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   -webkit-transition-delay: 0s, 0s;
   transition-delay: 0s, 0s;
 }
+@media screen and (min-width: 36em) {
+  .scream .bubble {
+    -moz-transform-origin: center 4.71429em;
+    -ms-transform-origin: center 4.71429em;
+    -webkit-transform-origin: center 4.71429em;
+    transform-origin: center 4.71429em;
+  }
+}
 
 .bubble {
   font-weight: 500;
@@ -1453,13 +1465,13 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   top: -3.84615em;
   right: 0;
   left: 0;
-  width: 15.38462em;
+  width: 13.84615em;
   margin-right: auto;
   margin-left: auto;
   padding-top: 1.15385em;
   padding-bottom: 1.15385em;
   text-align: center;
-  text-transform: uppercase;
+  font-style: italic;
   color: rgba(0, 0, 0, 0.4);
   background: rgba(255, 255, 255, 0.8);
   -moz-border-radius: 12px / 12px;
@@ -1470,15 +1482,29 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
 }
 .bubble:after {
   position: absolute;
-  left: 6.46154em;
+  left: 6em;
   z-index: 1;
-  bottom: -1.23077em;
+  bottom: -0.92308em;
   display: block;
   width: 0;
   content: "";
-  border-width: 1.23077em 1.23077em 0;
+  border-width: 0.92308em 0.92308em 0;
   border-style: solid;
   border-color: rgba(255, 255, 255, 0.8) transparent;
+}
+@media screen and (min-width: 36em) {
+  .bubble {
+    width: 13.84615em;
+    padding-top: 1.15385em;
+    padding-bottom: 1.15385em;
+    font-size: 0.8125em;
+    line-height: 1.53846em;
+  }
+  .bubble:after {
+    left: 6em;
+    bottom: -0.92308em;
+    border-width: 0.92308em 0.92308em 0;
+  }
 }
 
 .body {
@@ -1963,9 +1989,14 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
 
 [class^="action"] {
   width: 75%;
-  padding-top: 6em;
+  padding-top: 3em;
   padding-bottom: 6em;
   text-align: center;
+}
+[class^="action"] .mandragora {
+  width: 6em;
+  height: 6.5em;
+  margin-bottom: 1.25em;
 }
 [class^="action"] .instruction {
   position: relative;
@@ -1997,8 +2028,11 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
 @media screen and (min-width: 36em) {
   [class^="action"] {
     width: 18em;
-    padding-top: 6em;
+    padding-top: 3em;
     padding-bottom: 6em;
+  }
+  [class^="action"] .mandragora {
+    margin-bottom: 1.25em;
   }
   [class^="action"] .instruction {
     padding-bottom: 0.71429em;
@@ -2020,8 +2054,6 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
 */
 .mandragora {
   display: block;
-  width: 9em;
-  height: 9.5625em;
   margin-right: auto;
   margin-left: auto;
 }
@@ -2035,7 +2067,7 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   fill: rgba(0, 0, 0, 0.6);
 }
 .mandragora [class^="flower"] {
-  fill: rgba(230, 25, 161, 0.8);
+  fill: rgba(230, 25, 161, 0.6);
 }
 .mandragora .leaf {
   fill: rgba(10, 194, 179, 0.6);
