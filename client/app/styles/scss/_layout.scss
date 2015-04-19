@@ -238,10 +238,10 @@
 	//max-width: col(16);
 	margin-right: auto;
 	margin-left: auto;
-	padding-top: rhythm($m-medium-line*4);
+	padding-top: rhythm($m-medium-line*3);
 
 	@include min-screen(col(8)) {
-		padding-top: rhythm($d-medium-line*4);
+		padding-top: rhythm($d-medium-line*2);
 	}
 }
 
@@ -347,6 +347,10 @@
 		}
 	}
 	@include min-screen(col(8)) {
+		.mandragora {
+			width: em(192);
+			height: em(204);
+		}
 		.bubble {
 			@include apply-origin(center rhythm(1.6 + $d-small-line + $d-small-line/4*6, $d-small-size), false);
 		}
@@ -845,8 +849,8 @@
 	@extend %column-gut;
 	@extend %centered;
 	.mandragora {
-		width: em(192/4*2);
-		height: em(208/4*2);
+		width: em(192/4*3);
+		height: em(208/4*3);
 		margin-bottom: rhythm($m-small-line);
 	}
 	.instruction {
