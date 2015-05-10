@@ -40,4 +40,8 @@
 	[class^="veining"] {
 		fill: rgba($canvas, 0.6);
 	}
+	.clip {
+		fill: $canvas;
+		stroke: none;
+	}
 }

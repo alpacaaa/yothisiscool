@@ -2092,6 +2092,10 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
 .mandragora [class^="veining"] {
   fill: rgba(250, 250, 209, 0.6);
 }
+.mandragora .clip {
+  fill: #fafad1;
+  stroke: none;
+}
 
 @media print {
   * {
