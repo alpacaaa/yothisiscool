@@ -56,8 +56,8 @@ process_batch = (size) ->
       unless item.email
         return item.notification.updateAttributeAsync 'status', 'unprocessable'
 
-      if item.user.unsuscribed
-        return item.notification.updateAttributeAsync 'status', 'unsuscribed'
+      if item.user.unsubscribed
+        return item.notification.updateAttributeAsync 'status', 'unsubscribed'
 
       unless item.email == item.user.email
         item.user.updateAttribute 'email', item.email
@@ -94,7 +94,7 @@ process_batch = (size) ->
 
 
 
-unsuscribe = (params) ->
+unsubscribe = (params) ->
 
   email = params.email
   token = params.access_token
@@ -109,10 +109,10 @@ unsuscribe = (params) ->
     verify = @mailer.verify_token(token, email_token, email: email)
     throw new Error("Can't verify token for #{email}") unless verify
 
-    user.updateAttributeAsync 'unsuscribed', true
+    user.updateAttributeAsync 'unsubscribed', true
 
   .then ->
-    'You have unsuscribed succesfully!'
+    'You have unsubscribed succesfully!'
 
 
 
@@ -135,7 +135,7 @@ subscription = (params) ->
     throw new Error("Can't verify token for #{email}") unless verify
 
     user.updateAttributesAsync
-      unsuscribed: false
+      unsubscribed: false
       notification_frequency: frequency
 
   .then ->
@@ -165,5 +165,5 @@ module.exports = (app) ->
 
 
   process_batch: process_batch
-  unsuscribe: unsuscribe
+  unsubscribe: unsubscribe
   subscription: subscription

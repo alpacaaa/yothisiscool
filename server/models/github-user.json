@@ -18,7 +18,7 @@
     "notification_frequency": {
       "type": "number"
     },
-    "unsuscribed": {
+    "unsubscribed": {
       "type": "boolean"
     },
     "last_notified": {

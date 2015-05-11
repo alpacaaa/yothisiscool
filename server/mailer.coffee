@@ -67,7 +67,7 @@ class Mailer
 
 
   add_links: (options, email_token) ->
-    options.unsuscribe = @generate_link 'unsuscribe', email_token,
+    options.unsubscribe = @generate_link 'unsubscribe', email_token,
       email: options.email
 
     values =

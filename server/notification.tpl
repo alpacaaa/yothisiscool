@@ -122,7 +122,7 @@ img {
 
 
   <p>
-    <a href="{{unsuscribe}}">Unsuscribe</a>
+    <a href="{{unsubscribe}}">Unsubscribe</a>
   </p>
 </div>
 
@@ -134,7 +134,7 @@ img {
             Sample Footer text: © 2014 Acme, Inc.
             <br><br>
 
-            You are receiving this email because your Github repositories are getting love on <a href="https://dudethisis.cool" style="color:#aaaaaa">dudethisis.cool</a>. <a href="{{unsuscribe}}" style="color:#aaaaaa">Unsuscribe</a>.
+            You are receiving this email because your Github repositories are getting love on <a href="https://dudethisis.cool" style="color:#aaaaaa">dudethisis.cool</a>. <a href="{{unsubscribe}}" style="color:#aaaaaa">unsubscribe</a>.
             <br><br>
 
             <strong>Acme, Inc.</strong><br>

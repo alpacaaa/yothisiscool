@@ -99,7 +99,7 @@ notifications = (app) ->
     res.end()
 
 
-  ['unsuscribe', 'subscription'].forEach (r) ->
+  ['unsubscribe', 'subscription'].forEach (r) ->
 
     app.get '/' + r, (req, res, next) ->
 

@@ -40,9 +40,9 @@ class Notifier
     .then (data) =>
       notification = data.notification
 
-      if data.user.unsuscribed
+      if data.user.unsubscribed
         if notification
-          notification.updateAttributeAsync 'status', 'unsuscribed'
+          notification.updateAttributeAsync 'status', 'unsubscribed'
 
         return false
 
