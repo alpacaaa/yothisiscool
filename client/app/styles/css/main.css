@@ -1430,10 +1430,10 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   transition-delay: 1s, 1s;
 }
 .scream:hover .torso {
-  -moz-transform: translate(0, -30px);
-  -ms-transform: translate(0, -30px);
-  -webkit-transform: translate(0, -30px);
-  transform: translate(0, -30px);
+  -moz-transform: translate(0, -2em);
+  -ms-transform: translate(0, -2em);
+  -webkit-transform: translate(0, -2em);
+  transform: translate(0, -2em);
   -moz-transition-delay: 0s, 0s;
   -o-transition-delay: 0s, 0s;
   -webkit-transition-delay: 0s, 0s;
@@ -1475,7 +1475,6 @@ pre, [class^="form"], .head, .body, .comment, [class^="action"] {
   padding-top: 1.15385em;
   padding-bottom: 1.15385em;
   text-align: center;
-  font-style: italic;
   color: rgba(0, 0, 0, 0.4);
   background: rgba(255, 255, 255, 0.8);
   -moz-border-radius: 12px / 12px;

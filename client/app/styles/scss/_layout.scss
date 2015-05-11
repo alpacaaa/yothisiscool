@@ -337,7 +337,7 @@
 	}
 	&:hover {
 		.torso {
-			@include transform(translate(0, -30px));
+			@include transform(translate(0, em(-32)));
 			@include transition-delay(0s, 0s);
 		}
 		.bubble {
@@ -372,8 +372,6 @@
 	padding-bottom: rhythm($m-extra-small-line/4*3, $m-extra-small-size);
 
 	text-align: center;
-	font-style: italic;
-
 	color: $light-type-color;
 	background: $field-background-color;
 
