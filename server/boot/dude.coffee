@@ -72,7 +72,8 @@ dudeRoutes = (app) ->
 
   serveIndex = (req, res, next) -> res.send index
 
-  ['/:user/:repo', '/index/:letter?', '/colophon'].forEach (route) ->
+  # /* at the end is stupid, but it will do for now
+  ['/:user/:repo', '/index/:letter?', '/colophon', '/*'].forEach (route) ->
     app.get route, serveIndex
 
 
