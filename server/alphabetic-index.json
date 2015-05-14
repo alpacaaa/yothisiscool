@@ -110,10 +110,10 @@
     "source" : "http://en.wikipedia.org/wiki/Utah_teapot",
     "word" : "Utah Teapot"
   },
-  { "definition" : "",
+  { "definition" : "The Vinland Map, dated to about AD1440 - at least 50 years before Columbus landed in the Americas - is a map of the world that shows an outline of the northeast American coast and a legend describing its discovery in about 1000 by Leif Eiriksson, the Norseman from Greenland.",
     "letter" : "V",
-    "source" : "",
-    "word" : ""
+    "source" : "http://en.wikipedia.org/wiki/Vinland_map",
+    "word" : "Vinland map"
   },
   { "definition" : "A [Watershed](http://en.wikipedia.org/wiki/Watershed_%28image_processing%29 \"Watershed on Wikipedia\") is a basin-like landform defined by highpoints and ridgelines that descend into lower elevations and stream valleys.",
     "letter" : "W",
