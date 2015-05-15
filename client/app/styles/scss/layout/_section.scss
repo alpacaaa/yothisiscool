@@ -1,0 +1,35 @@
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+
+[class^="section"] {
+	padding-bottom: rhythm($m-medium-line*4);
+
+	&:last-of-type {
+		padding-bottom: 0;
+	}
+	> *:last-child {
+		margin-bottom: 0;
+	}
+	@include min-screen(col(8)) {
+		padding-bottom: rhythm($d-medium-line*4);
+	}
+}
+.section-content {
+	background-color: $content-background-color;
+}
+
+.notation {
+	font-weight: $normal;
+
+	text-align: center;
+
+	color: $light-type-color;
+
+	@include adjust-font-size-to($m-small-size, $m-small-line);
+	padding-top: rhythm((($m-medium-line*2)-($m-small-line))/2, $m-small-size);
+	padding-bottom: rhythm((($m-medium-line*2)-($m-small-line))/2, $m-small-size);
+	@include min-screen(col(8)) {
+		@include adjust-font-size-to($d-small-size, $d-small-line);
+		padding-top: rhythm((($d-medium-line*2)-($d-small-line))/2, $d-small-size);
+		padding-bottom: rhythm((($d-medium-line*2)-($d-small-line))/2, $d-small-size);
+	}
+}

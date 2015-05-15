@@ -1,0 +1,52 @@
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+
+@include keyframes(progress-rotation) {
+	0% {
+		@include rotate(0deg);
+	}
+	100% {
+		@include rotate(-360deg);
+	}
+}
+
+.progress {
+	.icon {
+		display: block;
+
+		width: em(40px);
+		height: em(40px);
+		margin-right: auto;
+		margin-left: auto;
+
+		opacity: 0.4;
+
+		@include animation(progress-rotation 1.0s infinite ease);
+		path {
+			stroke: $nd-color;
+		}
+		rect {
+			fill: $nd-color;
+		}
+	}
+	.caption {
+		font-weight: $bold;
+
+		position: relative;
+
+		display: block;
+
+		text-align: center;
+		text-transform: uppercase;
+
+		color: $light-nd-type-color;
+
+		@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
+	}
+	@include min-screen(col(8)) {
+		.caption {
+			text-transform: uppercase;
+
+			@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
+		}
+	}
+}

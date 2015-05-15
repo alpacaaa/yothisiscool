@@ -1,0 +1,22 @@
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+
+//
+// Placeholders
+//
+
+%column-gut {
+	position: relative;
+
+	padding-right: em($m-gut/2);
+	padding-left: em($m-gut/2);
+
+	@include min-screen(col(8)) {
+		padding-right: em($d-gut/2);
+		padding-left: em($d-gut/2);
+	}
+}
+
+%centered {
+	margin-right: auto;
+	margin-left: auto;
+}

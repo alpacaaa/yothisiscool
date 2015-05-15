@@ -1,0 +1,175 @@
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+
+.menu {
+	overflow: hidden;
+
+	max-width: $waistline;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: em($m-gut/2);
+	padding-bottom: em($m-gut/2);
+
+	@include perspective(100em);
+	li {
+		height: em(40px, $m-small-size);
+
+		text-transform: uppercase;
+
+		@include adjust-font-size-to($m-small-size, $m-small-line);
+		&:first-child {
+			float: left;
+
+			margin-left: em($m-gut/2, $m-small-size);
+		}
+		&:last-child {
+			float: right;
+
+			margin-right: em($m-gut/2, $m-small-size);
+		}
+	}
+	a {
+		display: block;
+		&:hover {
+			span {
+				color: $strong-type-color;
+				background-color: $hover-background-color;
+
+				@include box-shadow(0 1px 4px 0 $shadow-color inset);
+				//@include rotate3d(0, 0, 0, 0);
+			}
+		}
+		&:active {
+			span {
+				color: $strong-type-color;
+				background-color: $active-background-color;
+
+				@include box-shadow(0 1px 4px 0 $shadow-color inset);
+				@include transition-duration(0.0s);
+			}
+		}
+		span {
+			display: block;
+
+			height: 100%;
+			padding-top: em(8px, $m-small-size);
+			padding-bottom: em(8px, $m-small-size);
+
+			color: $strong-st-type-color;
+			background-repeat: no-repeat;
+
+			@include border-radius($radius);
+			@include transition-property(background-color, box-shadow, color, transform);
+			@include transition-duration(0.2s, 0.2s, 0.2s, 0.2s);
+			@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out, ease-in-out);
+		}
+	}
+	.active {
+		span {
+			cursor: default;
+
+			color: $strong-nd-type-color;
+		}
+		&:hover, &:active {
+			span {
+				color: $strong-nd-type-color;
+				background-color: transparent;
+
+				@include box-shadow(none);
+			}
+		}
+	}
+	.home {
+		span {
+			padding-right: em(8px, $m-small-size);
+			padding-left: em(40px, $m-small-size);
+
+			background-image: url("../../media/icons/home.svg");
+			background-position: left center;
+
+			@include apply-origin(left top, false);
+			@include rotate3d(4, 4, 0, 24deg);
+		}
+	}
+	.index {
+		span {
+			padding-right: em(40px, $m-small-size);
+			padding-left: em(8px, $m-small-size);
+
+			background-image: url("../../media/icons/index.svg");
+			background-position: right center;
+
+			@include apply-origin(right top, false);
+			@include rotate3d(4, -4, 0, 24deg);
+		}
+	}
+	.colophon {
+		span {
+			padding-right: em(8px, $m-small-size);
+			padding-left: em(40px, $m-small-size);
+
+			background-image: url("../../media/icons/colophon.svg");
+			background-position: left center;
+
+			@include apply-origin(left bottom, false);
+			@include rotate3d(-4, 4, 0, 24deg);
+		}
+	}
+	.top {
+		span {
+			padding-right: em(40px, $m-small-size);
+			padding-left: em(8px, $m-small-size);
+
+			background-image: url("../../media/icons/top.svg");
+			background-position: right center;
+
+			@include apply-origin(right bottom, false);
+			@include rotate3d(-4, -4, 0, 24deg);
+		}
+	}
+	@include min-screen(col(8)) {
+		padding-top: em($d-gut/2);
+		padding-bottom: em($d-gut/2);
+		li {
+			height: em(40px, $d-small-size);
+
+			@include adjust-font-size-to($d-small-size, $d-small-line);
+			&:first-child {
+				margin-left: em($d-gut/2, $d-small-size);
+			}
+			&:last-child {
+				margin-right: em($d-gut/2, $d-small-size);
+			}
+		}
+		a {
+			span {
+				height: 100%;
+				padding-top: em(8px, $d-small-size);
+				padding-bottom: em(8px, $d-small-size);
+			}
+		}
+		.home {
+			span {
+				padding-right: em(8px, $d-small-size);
+				padding-left: em(40px, $d-small-size);
+			}
+		}
+		.index {
+			span {
+				padding-right: em(40px, $d-small-size);
+				padding-left: em(8px, $d-small-size);
+			}
+		}
+		.colophon {
+			span {
+				padding-right: em(8px, $d-small-size);
+				padding-left: em(40px, $d-small-size);
+			}
+		}
+		.top {
+			span {
+				padding-right: em(40px, $d-small-size);
+				padding-left: em(8px, $d-small-size);
+			}
+		}
+	}
+}

@@ -1,0 +1,98 @@
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+
+.scream {
+	.mandragora {
+		//width: em(192/4*3);
+		//height: em(204/4*3);
+		width: em(192);
+		height: em(204);
+	}
+	.torso {
+		@include apply-origin(center bottom, false);
+		@include transform(translate(0, 0));
+		@include transition-property(transform);
+		@include transition-duration(0.2s);
+		@include transition-timing-function(ease-in-out);
+		@include transition-delay(1s);
+	}
+	.speech-bubble {
+		@include apply-origin(center rhythm(1.6 + $m-small-line + $m-small-line/4*6, $m-small-size), false);
+		@include transform(scale(0.5));
+		opacity: 0;
+		@include transition-property(opacity, transform);
+		@include transition-duration(0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out);
+		@include transition-delay(1s, 1s);
+	}
+	&:hover {
+		.torso {
+			@include transform(translate(0, em(-32)));
+			@include transition-delay(0s, 0s);
+		}
+		.speech-bubble {
+			@include transform(scale(1.0));
+			opacity: 1.0;
+			@include transition-delay(0s, 0s);
+		}
+	}
+	@include min-screen(col(8)) {
+		.mandragora {
+			width: em(192);
+			height: em(204);
+		}
+		.speech-bubble {
+			@include apply-origin(center rhythm(1.6 + $d-small-line + $d-small-line/4*6, $d-small-size), false);
+		}
+	}
+}
+
+.speech-bubble {
+	font-weight: $bold;
+
+	position: absolute;
+	top: rhythm(-($m-small-line*3), $m-small-size);
+	right: 0;
+	left: 0;
+
+	width: em(180, $m-small-size);
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: rhythm($m-small-line/4*3, $m-small-size);
+	padding-bottom: rhythm($m-small-line/4*3, $m-small-size);
+
+	text-align: center;
+	color: $light-type-color;
+	background: $field-background-color;
+
+	@include border-radius($radius*3, $radius*3);
+	@include adjust-font-size-to($m-small-size, $m-small-line);
+	&:after {
+		position: absolute;
+		left: em((180/2)-12, $m-small-size);
+		z-index: 1;
+		bottom: em(-12, $m-small-size);
+
+		display: block;
+
+		width: 0;
+
+		content: "";
+
+		border-width: em(12, $m-small-size) em(12, $m-small-size) 0;
+		border-style: solid;
+		border-color: $field-background-color transparent;
+	}
+	@include min-screen(col(8)) {
+		top: rhythm(-($d-small-line*3), $d-small-size);
+
+		width: em(180, $d-small-size);
+		padding-top: rhythm($d-small-line/4*3, $d-small-size);
+		padding-bottom: rhythm($d-small-line/4*3, $d-small-size);
+		@include adjust-font-size-to($d-small-size, $d-small-line);
+		&:after {
+			left: em((180/2)-12, $d-small-size);
+			bottom: em(-12, $d-small-size);
+			border-width: em(12, $d-small-size) em(12, $d-small-size) 0;
+		}
+	}
+}

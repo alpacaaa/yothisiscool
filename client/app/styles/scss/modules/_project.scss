@@ -1,0 +1,79 @@
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+
+.project {
+	position: relative;
+
+	width: 100%;
+
+	@include flex-grow(0);
+	@include flex-shrink(1);
+	@include adjust-font-size-to($m-medium-size, $m-medium-line);
+	a {
+		font-weight: $bold;
+
+		display: block;
+
+		padding-top: rhythm($m-medium-line/2, $m-medium-size);
+		padding-right: em($m-gut/2, $m-medium-size);
+		padding-bottom: rhythm($m-medium-line/2, $m-medium-size);
+		padding-left: em($m-gut/2, $m-medium-size);
+
+		@include border-radius($radius);
+		@include transition-property(background-color, box-shadow, color);
+		@include transition-duration(0.2s, 0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
+		.path-divider {
+			color: $light-type-color;
+		}
+		.amount {
+			float: right;
+
+			color: $light-type-color;
+		}
+		&:hover {
+			background-color: $hover-background-color;
+
+			@include box-shadow(0 1px 4px 0 $shadow-color inset);
+		}
+		&:active {
+			background-color: $active-background-color;
+
+			@include box-shadow(0 1px 4px 0 $shadow-color inset);
+			@include transition-duration(0.0s);
+		}
+	}
+	@include min-screen(col(8)) {
+		width: col(4);
+
+		border-bottom: none;
+
+		@include column-break-inside(avoid);
+		@include adjust-font-size-to($d-medium-size, $d-medium-line);
+		a {
+			padding-top: rhythm($d-medium-line/2, $d-medium-size);
+			padding-right: em($d-gut/2, $d-medium-size);
+			padding-bottom: rhythm($d-medium-line/2, $d-medium-size);
+			padding-left: em($d-gut/2, $d-medium-size);
+			.amount {
+				position: relative;
+				top: rhythm(-$d-extra-small-line/2, $d-medium-size);
+
+				float: none;
+
+				padding-left: 0.5em;
+
+				opacity: 0.2;
+
+				@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line, $d-medium-size);
+				@include transition-property(opacity);
+				@include transition-duration(0.2s);
+				@include transition-timing-function(ease-in-out);
+			}
+			&:hover, &:active {
+				.amount {
+					opacity: 1.0;
+				}
+			}
+		}
+	}
+}

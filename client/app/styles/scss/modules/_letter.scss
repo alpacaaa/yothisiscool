@@ -1,0 +1,110 @@
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+
+.letter {
+	position: relative;
+
+	width: 50%;
+
+	@include flex-grow(0);
+	@include flex-shrink(1);
+	a {
+		font-weight: $bold;
+
+		position: relative;
+
+		display: block;
+
+		padding-top: rhythm($m-medium-line, $m-huge-size);
+		padding-right: em($m-gut/4, $m-huge-size);
+		padding-bottom: rhythm($m-medium-line, $m-huge-size);
+		padding-left: em($m-gut/4, $m-huge-size);
+
+		text-align: center;
+
+		@include border-radius($radius);
+		@include adjust-font-size-to($m-huge-size, $m-huge-line);
+		@include transition-property(background-color, box-shadow, color);
+		@include transition-duration(0.2s, 0.2s, 0.2s);
+		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
+		span {
+			font-weight: $normal;
+
+			display: block;
+
+			color: $light-type-color;
+
+			@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line, $m-huge-size);
+		}
+		i {
+			font-weight: $bold;
+			font-style: normal;
+
+			display: block;
+		}
+		.word {
+			margin-top: rhythm($m-small-line/5, $m-small-size);
+
+			color: $strong-type-color;
+
+			@include adjust-font-size-to($m-small-size, $m-small-line, $m-huge-size);
+		}
+		.amount {
+			position: absolute;
+			top: rhythm($m-medium-line, $m-extra-small-size);
+			right: em($m-gut/2, $m-extra-small-size);
+
+			color: $light-type-color;
+
+			@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line, $m-huge-size);
+			@include transition-property(color);
+			@include transition-duration(0.2s);
+			@include transition-timing-function(ease-in-out);
+		}
+		&:hover {
+			background-color: $hover-background-color;
+
+			@include box-shadow(0 1px 4px 0 $shadow-color inset);
+		}
+		&:active {
+			background-color: $active-background-color;
+
+			@include box-shadow(0 1px 4px 0 $shadow-color inset);
+			@include transition-duration(0.0s);
+		}
+	}
+	@include min-screen(col(8)) {
+		width: col(2);
+		a {
+			padding-top: rhythm($d-medium-line, $d-huge-size);
+			padding-right: em($d-gut/4, $d-huge-size);
+			padding-bottom: rhythm($d-medium-line, $d-huge-size);
+			padding-left: em($d-gut/4, $d-huge-size);
+
+			@include adjust-font-size-to($d-huge-size, $d-huge-line);
+			span {
+				@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line, $d-huge-size);
+			}
+			.word {
+				margin-top: rhythm($d-small-line/5, $d-small-size);
+
+				@include adjust-font-size-to($d-small-size, $d-small-line, $d-huge-size);
+			}
+			.amount {
+				top: rhythm($d-medium-line, $d-extra-small-size);
+				right: em($d-gut/2, $d-extra-small-size);
+
+				opacity: 0.2;
+
+				@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line, $d-huge-size);
+				@include transition-property(opacity);
+				@include transition-duration(0.2s);
+				@include transition-timing-function(ease-in-out);
+			}
+			&:hover, &:active {
+				.amount {
+					opacity: 1.0;
+				}
+			}
+		}
+	}
+}
