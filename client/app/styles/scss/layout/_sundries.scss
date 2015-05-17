@@ -1,0 +1,134 @@
+// (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved
+
+/*
+** Sundries
+*/
+
+.content {
+	//max-width: col(16);
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: rhythm($m-medium-line*3);
+
+	@include min-screen(col(8)) {
+		padding-top: rhythm($d-medium-line*2);
+	}
+}
+
+.head {
+	margin-right: auto;
+	margin-bottom: rhythm($m-extra-large-line/2);
+	margin-left: auto;
+
+	position: relative;
+
+	@extend %column-gut;
+	h1 {
+		text-align: center;
+	}
+	@include min-screen(col(8)) {
+		width: col(8);
+		margin-bottom: rhythm($d-extra-large-line/2);
+	}
+}
+
+.body {
+	margin-right: auto;
+	margin-bottom: rhythm($m-medium-line);
+	margin-left: auto;
+
+	@extend %column-gut;
+	@include min-screen(col(8)) {
+		width: col(8);
+		margin-bottom: rhythm($d-medium-line);
+	}
+}
+
+.author {
+	.avatar {
+		font-size: 1em;
+
+		float: left;
+
+		width: em(42);
+		height: em(42);
+		margin: em(7) em(12) em(7) 0;
+
+		opacity: 0.9;
+
+		@include border-radius(2px);
+	}
+	.tributary {
+		font-style: normal;
+
+		color: $light-type-color;
+		a {
+			font-weight: $normal;
+
+			@include link-colors($light-st-type-color, $light-type-color, $light-type-color);
+		}
+	}
+	@include min-screen(col(8)) {
+		.avatar {
+			width: em(48);
+			height: em(48);
+			margin: em(8) em(16) em(8) 0;
+		}
+	}
+}
+
+.letters, .projects, .comments {
+	position: relative;
+
+	overflow: auto;
+
+	width: 100%;
+	padding-bottom: rhythm($m-medium-line*2);
+
+	@extend %centered;
+	@include min-screen(col(8)) {
+		width: col(8);
+		padding-bottom: rhythm($d-medium-line*2);
+	}
+	@include min-screen(col(12)) {
+		width: col(12);
+	}
+	@include min-screen(col(16)) {
+		width: col(16);
+	}
+}
+.letters, .projects {
+	@include display-flex(flex);
+	@include flex-flow(row wrap);
+	@include justify-content(flex-start);
+	@include align-items(flex-start);
+	@include align-content(flex-start);
+}
+
+.letter, .project, .comment {
+	&:before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+
+		margin-right: em($m-gut/2);
+		margin-left: em($m-gut/2);
+
+		content: "";
+
+		border-top: $border-width solid $border-color;
+	}
+	@include min-screen(col(8)) {
+		width: col(4);
+
+		border-bottom: none;
+
+		@include column-break-inside(avoid);
+		@include adjust-font-size-to($d-medium-size, $d-medium-line);
+		&:before {
+			margin-right: em($d-gut/2);
+			margin-left: em($d-gut/2);
+		}
+	}
+}

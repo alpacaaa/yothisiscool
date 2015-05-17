@@ -1,0 +1,12 @@
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+
+.footer {
+	display: table-row;
+
+	height: 1px;
+	margin-right: auto;
+	margin-left: auto;
+	.menu {
+		@include perspective-origin(center top);
+	}
+}

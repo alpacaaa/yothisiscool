@@ -1,0 +1,105 @@
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+
+.comment.selected {
+	background-color: $hover-background-color;
+
+	@include box-shadow(0 1px 4px 0 $shadow-color inset);
+}
+.comment.is-first {
+	&:last-child {
+		.tributary {
+			&:after {
+				font-weight: $bold;
+
+				position: absolute;
+				top: 0;
+				right: 0;
+
+				content: "1st!";
+
+				color: $light-type-color;
+
+				@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
+			}
+		}
+	}
+	@include min-screen(col(8)) {
+		&:last-child {
+			.tributary {
+				&:after {
+					@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
+				}
+			}
+		}
+	}
+}
+.comment {
+	/*flex-grow: 0;
+	flex-shrink: 1;*/
+	position: relative;
+
+	width: 100%;
+	padding-top: rhythm($m-medium-line/2);
+	padding-bottom: rhythm($m-medium-line/2);
+
+	@include border-radius($radius);
+	@extend %column-gut;
+	.avatar {
+		float: left;
+
+		width: em(36, $m-small-size);
+		height: em(36, $m-small-size);
+		margin: em(4, $m-small-size) em(12, $m-small-size) 0 0;
+
+		opacity: 0.9;
+
+		@include border-radius(2px);
+	}
+	.tributary {
+		font-style: normal;
+
+		position: relative;
+
+		display: block;
+		overflow: auto;
+
+		margin-bottom: rhythm($m-small-line/4);
+
+		color: $light-type-color;
+		span {
+			display: block;
+		}
+		.username {
+			@include adjust-font-size-to($m-medium-size, $m-medium-line);
+		}
+		.meta {
+			@include adjust-font-size-to($m-small-size, $m-small-line);
+			a {
+				font-weight: $normal;
+
+				@include link-colors($light-type-color, $strong-type-color, $strong-type-color);
+			}
+		}
+	}
+	@include min-screen(col(8)) {
+		float: left;
+
+		width: col(4);
+		padding-top: rhythm($d-medium-line/2);
+		padding-bottom: rhythm($d-medium-line/2);
+		.avatar {
+			width: em(36, $d-small-size);
+			height: em(36, $d-small-size);
+			margin: em(4, $d-small-size) em(12, $d-small-size) 0 0;
+		}
+		.tributary {
+			margin-bottom: rhythm($d-small-line/4);
+			.username {
+				@include adjust-font-size-to($d-medium-size, $d-medium-line);
+			}
+			.meta {
+				@include adjust-font-size-to($d-small-size, $d-small-line);
+			}
+		}
+	}
+}

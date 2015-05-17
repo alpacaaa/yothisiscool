@@ -1,0 +1,64 @@
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+
+[class^="action"] {
+	width: 75%;
+	padding-top: rhythm($m-medium-line*2);
+	padding-bottom: rhythm($m-medium-line*4);
+
+	text-align: center;
+
+	@extend %column-gut;
+	@extend %centered;
+	.mandragora {
+		width: em(192/4*3);
+		height: em(208/4*3);
+		margin-bottom: rhythm($m-small-line);
+	}
+	.instruction {
+		position: relative;
+		@include adjust-font-size-to($m-small-size, $m-small-line);
+		padding-bottom: rhythm($m-small-line/2, $m-small-size);
+		&:after {
+			border-bottom: $border-width solid $border-color;
+			content: "";
+			position: absolute;
+			bottom: rhythm($m-small-line/4, $m-small-size);
+			margin-left: auto;
+			margin-right: auto;
+			left: 0;
+			width: rhythm($m-small-line*4, $m-small-size);
+			right: 0;
+		}
+		span {
+			color: $type-color;
+		}
+	}
+	.caption {
+
+		@include adjust-font-size-to($m-extra-small-size, $m-extra-small-line);
+		span {
+			color: $strong-st-type-color;
+		}
+	}
+	@include min-screen(col(8)) {
+		width: col(4);
+		padding-top: rhythm($d-medium-line*2);
+		padding-bottom: rhythm($d-medium-line*4);
+		.mandragora {
+			margin-bottom: rhythm($d-small-line);
+		}
+		.instruction {
+			padding-bottom: rhythm($d-small-line/2, $d-small-size);
+			@include adjust-font-size-to($d-small-size, $d-small-line);
+			&:after {
+				bottom: rhythm($d-small-line/4, $d-small-size);
+				width: rhythm($d-small-line*4, $d-small-size);
+			}
+		}
+		.caption {
+
+			@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
+		}
+	}
+}
+

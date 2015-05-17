@@ -6,15 +6,29 @@
 
 @import "compass";
 
-@import "colors.scss";
-@import "utilities.scss";
-@import "media-queries.scss";
+@import "utils/colors.scss";
+@import "utils/utilities.scss";
+@import "utils/media-queries.scss";
+@import "utils/helpers.scss";
 
-@import "basics.scss";
-@import "typography.scss";
-@import "form.scss";
-@import "layout.scss";
+@import "base/basics.scss";
+@import "base/typography.scss";
 
-@import "mandragora.scss";
+@import "layout/header.scss";
+@import "layout/footer.scss";
+@import "layout/section.scss";
+@import "layout/sundries.scss";
+@import "layout/action.scss";
+
+@import "modules/warning.scss";
+@import "modules/menu.scss";
+@import "modules/progress.scss";
+@import "modules/form.scss";
+@import "modules/letter.scss";
+@import "modules/project.scss";
+@import "modules/comment.scss";
+
+@import "mandragora/appearance.scss";
+@import "mandragora/scream.scss";
 
 @import "print.scss";

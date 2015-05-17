@@ -1,6 +1,10 @@
 // (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved
 
 //
+// Utilities
+//
+
+//
 // Logo sizes
 //
 
@@ -134,21 +138,6 @@ $radius: 4px;
 		font-family: Georgia, serif;
 	} @else if $status == "mono" {
 		font-family: "Droid Sans Mono", "Andale Mono", "Monaco", monospace;
-	}
-}
-
-//
-// Clearfix
-//
-
-@mixin clearfix {
-	&:before, &:after {
-		display: table;
-
-		content: " ";
-	}
-	&:after {
-		clear: both;
 	}
 }
 
