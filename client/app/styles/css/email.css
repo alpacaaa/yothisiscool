@@ -1,0 +1,111 @@
+/*! (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/* line 1, ../scss/email/responsive.scss */
+body { margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+
+/* line 8, ../scss/email/responsive.scss */
+table { border-spacing: 0; }
+
+/* line 12, ../scss/email/responsive.scss */
+table td { border-collapse: collapse; }
+
+/* line 16, ../scss/email/responsive.scss */
+.ExternalClass { width: 100%; }
+
+/* line 20, ../scss/email/responsive.scss */
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
+
+/* line 29, ../scss/email/responsive.scss */
+.ReadMsgBody { width: 100%; background-color: #ebebeb; }
+
+/* line 34, ../scss/email/responsive.scss */
+table { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+
+/* line 39, ../scss/email/responsive.scss */
+img { -ms-interpolation-mode: bicubic; }
+
+/* line 43, ../scss/email/responsive.scss */
+.yshortcuts a { border-bottom: none !important; }
+
+@media screen and (max-width: 599px) { /* line 48, ../scss/email/responsive.scss */
+  table[class="force-row"], table[class="container"] { width: 100% !important; max-width: 100% !important; } }
+@media screen and (max-width: 400px) { /* line 55, ../scss/email/responsive.scss */
+  td[class*="container-padding"] { padding-left: 12px !important; padding-right: 12px !important; } }
+/* line 13, ../scss/email/styles.scss */
+a { text-decoration: none; background-color: transparent; font-weight: bold; -moz-transition-property: color; -o-transition-property: color; -webkit-transition-property: color; transition-property: color; -moz-transition-duration: 0.2s; -o-transition-duration: 0.2s; -webkit-transition-duration: 0.2s; transition-duration: 0.2s; -moz-transition-timing-function: ease-in-out; -o-transition-timing-function: ease-in-out; -webkit-transition-timing-function: ease-in-out; transition-timing-function: ease-in-out; -moz-transition-delay: 0s; -o-transition-delay: 0s; -webkit-transition-delay: 0s; transition-delay: 0s; color: rgba(230, 25, 161, 0.8); }
+/* line 24, ../../../../../../../CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/typography/links/_link-colors.scss */
+a:hover { color: rgba(0, 0, 0, 0.8); }
+/* line 27, ../../../../../../../CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/typography/links/_link-colors.scss */
+a:active { color: rgba(0, 0, 0, 0.8); }
+/* line 23, ../scss/email/styles.scss */
+a:hover { outline: 0; }
+/* line 26, ../scss/email/styles.scss */
+a:active { outline: 0; -moz-transition-duration: 0s; -o-transition-duration: 0s; -webkit-transition-duration: 0s; transition-duration: 0s; }
+/* line 31, ../scss/email/styles.scss */
+a:focus { outline: 0; }
+
+/* line 35, ../scss/email/styles.scss */
+a[href^="mailto"] { word-break: break-all; }
+
+/* line 39, ../scss/email/styles.scss */
+strong { color: rgba(10, 194, 179, 0.8); font-weight: bold; }
+
+/* line 44, ../scss/email/styles.scss */
+.asterisk { color: rgba(230, 25, 161, 0.8); }
+
+/* line 52, ../scss/email/styles.scss */
+.title { font-size: 20px; line-height: 32px; color: rgba(0, 0, 0, 0.6); }
+
+/* line 59, ../scss/email/styles.scss */
+.body { font-family: Helvetica, Arial, sans-serif; font-size: 20px; line-height: 32px; text-align: left; color: rgba(0, 0, 0, 0.6); }
+
+/* line 67, ../scss/email/styles.scss */
+.username { font-size: 16px; line-height: 24px; font-weight: bold; }
+
+/* line 73, ../scss/email/styles.scss */
+.meta { color: rgba(0, 0, 0, 0.4); font-size: 14px; line-height: 20px; }
+/* line 77, ../scss/email/styles.scss */
+.meta a { font-weight: normal; color: rgba(0, 0, 0, 0.4); }
+/* line 24, ../../../../../../../CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/typography/links/_link-colors.scss */
+.meta a:hover { color: rgba(0, 0, 0, 0.8); }
+/* line 27, ../../../../../../../CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/typography/links/_link-colors.scss */
+.meta a:active { color: rgba(0, 0, 0, 0.8); }
+
+/* line 83, ../scss/email/styles.scss */
+.column { font-family: Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; text-align: left; color: rgba(0, 0, 0, 0.6); width: 100%; }
+
+/* line 92, ../scss/email/styles.scss */
+.caption { font-size: 13px; line-height: 20px; }
+
+/* line 101, ../scss/email/styles.scss */
+.header, .title, .subtitle, .footer { font-family: Helvetica, Arial, sans-serif; }
+
+/* line 108, ../scss/email/styles.scss */
+.header { font-size: 24px; font-weight: bold; padding-bottom: 12px; color: #DF4726; }
+
+/* line 115, ../scss/email/styles.scss */
+.footer { font-size: 14px; line-height: 20px; color: rgba(0, 0, 0, 0.4); }
+
+/* line 121, ../scss/email/styles.scss */
+.container { width: 600px; max-width: 600px; }
+
+/* line 126, ../scss/email/styles.scss */
+.container-padding { padding-left: 24px; padding-right: 24px; }
+
+/* line 131, ../scss/email/styles.scss */
+.content { padding-top: 12px; padding-bottom: 12px; background-color: #ffffff; }
+
+/* line 137, ../scss/email/styles.scss */
+code { background-color: #eee; padding: 0 4px; font-family: Menlo, Courier, monospace; font-size: 12px; }
+
+/* line 144, ../scss/email/styles.scss */
+hr { height: 1px; border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+
+/* line 148, ../scss/email/styles.scss */
+.hr { height: 1px; border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+
+/* line 155, ../scss/email/styles.scss */
+.subtitle { font-size: 16px; font-weight: 600; color: #2469A0; }
+
+/* line 160, ../scss/email/styles.scss */
+.subtitle span { font-weight: 400; color: #999999; }
