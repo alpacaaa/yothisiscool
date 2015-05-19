@@ -41,7 +41,7 @@
            create a wrapper div around your email and that div will inherit your embedded body styles.
            The "#body_style" is defined for AOL because it does not support your embedded body definition nor
            your body tag, we will use this class in our wrapper div. */
-        body, #body_style {width:100% !important; min-height:1000px; color:rgba(0, 0, 0, 0.6); background:#fafad1; font-family:Arial,Helvetica,sans-serif; font-size:18px; line-height:28px}
+        body, #body_style {width:100% !important; min-height:1000px; color:rgba(0, 0, 0, 0.6); background:#fafad1; font-family:Arial, Helvetica, sans-serif; font-size:18px; line-height:28px}
 
         /* This is the embedded CSS link color for Gmail. This will overwrite Hotmail and Yahoo Beta's
            embedded link colors and make it consistent with Gmail. Also use this rule on inline CSS. */
@@ -55,14 +55,6 @@
         a:hover {color:rgba(0, 0, 0, 0.8) !important; border-color:rgba(0, 0, 0, 0.8) !important;}
         a:active {color:rgba(0, 0, 0, 0.8) !important; border-color:rgba(0, 0, 0, 0.8) !important; -moz-transition-duration: 0s; -o-transition-duration: 0s; -webkit-transition-duration: 0s; transition-duration: 0s; }
 
-        /* A nice and clean way to target phone numbers you want clickable and avoid a mobile phone from
-           linking other numbers that look like, but are not phone numbers. Use these two blocks of code to
-           "unstyle" any numbers that may be linked. The second block gives you a class ".mobile_link" to apply
-           with a span tag to the numbers you would like linked and styled.
-           More info: http://www.campaignmonitor.com/blog/post/3571/using-phone-numbers-in-html-email/ */
-        a[href^="tel"], a[href^="sms"] {text-decoration:none; color:#333333; pointer-events:none; cursor:default;}
-        .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {text-decoration:default; color:#6e5c4f !important; pointer-events:auto; cursor:default;}
-
         /****** MEDIA QUERIES ********/
         /* You must use attribute selectors in your media queries to prevent Yahoo from rendering these styles.
            We added a yahoo attribute in the body tag to complete this fix.
@@ -70,24 +62,11 @@
 
         /* Target mobile devices. */
         @media only screen and (max-width: 639px) {
-            /* Hide elements at smaller screen sizes (!important needed to override inline CSS). */
-            body[yahoo] .hide {display:none !important;}
+          /* Hide elements at smaller screen sizes (!important needed to override inline CSS). */
+         body[yahoo] .hide {display:none !important;}
 
-            /* Adjust table widths at smaller screen sizes. */
-            body[yahoo] .table {width:320px !important;}
-            body[yahoo] .innertable {width:280px !important;}
-
-            /* Resize hero image at smaller screen sizes. */
-            body[yahoo] .heroimage {width:280px !important; height:100px !important;}
-
-            /* Resize page shadow at smaller screen sizes. */
-            body[yahoo] .shadow {width:280px !important; height:4px !important;}
-
-            /* Collapse cells at smaller screen sizes. */
-            body[yahoo] .collapse-cell {width:320px !important;}
-
-            /* Range social icons left at smaller screen sizes. */
-            body[yahoo] .social-media img {float:left !important; margin:0 1em 0 0 !important;}
+          /* Adjust table widths at smaller screen sizes. */
+          body[yahoo] .table {width:100% !important;}
         }
 
         /*** END EDITABLE STYLES ***/
@@ -127,145 +106,165 @@ The yahoo attribute is added if you are using media queries for mobile devices (
 
 
                   <!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
-                  <table width="600" cellpadding="16" cellspacing="0" border="0" align="center" class="table">
+                  <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="table">
 
                       <!-- HEADER -->
                       <tr>
-                          <td>
-                              <!-- set a value for bgcolor -->
-                              <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                                  <tr>
-                                      <!-- header left: logo and link to homepage -->
-                                      <td width="160">
-                                          <!-- set an image for header left - must be 320px width (height can be variable) -->
-                                          <a href="#" target="_blank"><img src="img/header-l.gif" width="160" height="120" border="0" alt="Header (left)" /></a>
-                                      </td>
-                                      <!-- /header left -->
-                                  </tr>
-                              </table>
-                          </td>
+                        <td>
+                          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                              <!-- mandragora: head -->
+                              <td width="160" height="110" align="center">
+                                <img src="mandragora_01.png" width="160" height="110" border="0" alt="Mandragora"/>
+                              </td>
+                              <!-- /mandragora: head -->
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      
+
+                      <tr style="background-color:rgba(255, 255, 255, 0.9);">
+                        <td>
+                          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                              <!-- mandragora: hands -->
+                              <td width="160" height="30" align="center">
+                                <img src="mandragora_00.png" width="160" height="30" border="0" alt="Mandragora"/>
+                              </td>
+                              <!-- /mandragora: hands -->
+                            </tr>
+                          </table>
+                        </td>
                       </tr>
                       <!-- /HEADER -->
 
-                      <!-- CONTENT -->
-                      <tr style="background-color:rgba(255, 255, 255, 0.9);">
-                        <td>
-                          <!-- introduction -->
-                          <table border="0" cellpadding="8" cellspacing="0" width="100%">
-                              <tr>
-                               <!-- greeting text -->
-                                <td style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
-                                  Hey <strong style="color:rgba(10, 194, 179, 0.8);">@username</strong>,
-                                </td>
-                                <!-- /greeting text -->
-                              </tr>
-                              <tr>
-                                <!-- body text -->
-                                <td style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
-                                  It looks like one or more of your projects on GitHub got love on <a href="https://dudethisis.cool/" style="color:rgba(230, 25, 161, 0.8); font-weight:bold; text-decoration:none; white-space:nowrap;" target="_blank">Dude, This is Cool</a>. Check it out below:
-                                </td>
-                                <!-- /body text -->
-                              </tr>
-                          </table>
-                          <!-- /introduction -->
 
-                          <!-- comments -->
-                          <table border="0" cellpadding="8" cellspacing="0" width="100%">
-                            <tr valign="top">
+                      <tr>
+                        <td>
+                          <table width="100%" cellpadding="16" cellspacing="0" border="0">
+                            <!-- CONTENT -->
+                            <tr style="background-color:rgba(255, 255, 255, 0.9);">
                               <td>
-                                <!-- comment -->
-                                <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                                  <tr>
-                                    <td height="14" colspan="2" style="border-top: 1px solid rgba(0, 0, 0, 0.05);"></td>
-                                  </tr>
-                                  <tr>
-                                    <!-- avatar -->
-                                    <td width="64" height="48" valign="middle">
-                                        <img alt="@username’s avatar." border="0" src="https://avatars.githubusercontent.com/u/1890508?v=3" style="border-radius: 2px;" width="40" height="40" />
-                                    </td>
-                                    <!-- /avatar -->
-                                    <!-- meta -->
-                                    <td valign="top">
-                                      <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                          <tr>
-                                           <!-- username -->
-                                            <td style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
-                                              <a href="https://dudethisis.cool/" style="color:rgba(230, 25, 161, 0.8); font-weight:bold; text-decoration:none; white-space:nowrap;" target="_blank">@username</a>
-                                            </td>
-                                            <!-- /username -->
-                                          </tr>
-                                          <tr>
-                                            <!-- project and time -->
-                                            <td style="color:rgba(0, 0, 0, 0.4); font-size: 14px; line-height:16px">
-                                              <a href="#" style="color:rgba(0, 0, 0, 0.4);" target="_blank">project</a> · <a href="#" style="color:rgba(0, 0, 0, 0.4);" target="_blank">time</a>
-                                            </td>
-                                            <!-- /project and time -->
-                                          </tr>
+                                <!-- introduction -->
+                                <table border="0" cellpadding="8" cellspacing="0" width="100%">
+                                    <tr>
+                                     <!-- greeting text -->
+                                      <td style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
+                                        Hey <strong style="color:rgba(10, 194, 179, 0.8);">@username</strong>,
+                                      </td>
+                                      <!-- /greeting text -->
+                                    </tr>
+                                    <tr>
+                                      <!-- body text -->
+                                      <td style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
+                                        It looks like one or more of your projects on GitHub got love on <a href="https://dudethisis.cool/" style="color:rgba(230, 25, 161, 0.8); font-weight:bold; text-decoration:none; white-space:nowrap;" target="_blank">Dude, This is Cool</a>. Check it out below:
+                                      </td>
+                                      <!-- /body text -->
+                                    </tr>
+                                </table>
+                                <!-- /introduction -->
+
+                                <!-- comments -->
+                                <table border="0" cellpadding="8" cellspacing="0" width="100%">
+                                  <tr valign="top">
+                                    <td>
+                                      <!-- comment -->
+                                      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                          <td height="14" colspan="2" style="border-top: 1px solid rgba(0, 0, 0, 0.05);"></td>
+                                        </tr>
+                                        <tr>
+                                          <!-- avatar -->
+                                          <td width="64" height="48" valign="middle">
+                                              <img alt="@username’s avatar." border="0" src="https://avatars.githubusercontent.com/u/1890508?v=3" style="border-radius: 2px;" width="40" height="40" />
+                                          </td>
+                                          <!-- /avatar -->
+                                          <!-- meta -->
+                                          <td valign="top">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                <tr>
+                                                 <!-- username -->
+                                                  <td style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
+                                                    <a href="https://dudethisis.cool/" style="color:rgba(230, 25, 161, 0.8); font-weight:bold; text-decoration:none; white-space:nowrap;" target="_blank">@username</a>
+                                                  </td>
+                                                  <!-- /username -->
+                                                </tr>
+                                                <tr>
+                                                  <!-- project and time -->
+                                                  <td style="color:rgba(0, 0, 0, 0.4); font-size: 14px; line-height:16px">
+                                                    <a href="#" style="color:rgba(0, 0, 0, 0.4);" target="_blank">project</a> · <a href="#" style="color:rgba(0, 0, 0, 0.4);" target="_blank">time</a>
+                                                  </td>
+                                                  <!-- /project and time -->
+                                                </tr>
+                                            </table>
+                                          </td>
+                                          <!-- /meta -->
+                                        </tr>
+                                        <tr>
+                                          <!-- /thank -->
+                                          <td colspan="2" style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
+                                            This is a comment
+                                          </td>
+                                          <!-- thank -->
+                                        </tr>
                                       </table>
+                                      <!-- /comment -->
                                     </td>
-                                    <!-- /meta -->
                                   </tr>
-                                  <tr>
-                                    <!-- /thank -->
-                                    <td colspan="2" style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
-                                      This is a comment
+                                  <tr valign="top">
+                                    <td>
+                                    <!-- comment -->
+                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                      <tr>
+                                        <td height="14" colspan="2" style="border-top: 1px solid rgba(0, 0, 0, 0.05);"></td>
+                                      </tr>
+                                      <tr>
+                                        <!-- avatar -->
+                                        <td width="64" height="48" valign="middle">
+                                            <img alt="@username’s avatar." border="0" src="https://avatars.githubusercontent.com/u/1890508?v=3" style="border-radius: 2px;" width="40" height="40" />
+                                        </td>
+                                        <!-- /avatar -->
+                                        <!-- meta -->
+                                        <td valign="top">
+                                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                              <tr>
+                                               <!-- username -->
+                                                <td style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
+                                                  <a href="https://dudethisis.cool/" style="color:rgba(230, 25, 161, 0.8); font-weight:bold; text-decoration:none; white-space:nowrap;" target="_blank">@username</a>
+                                                </td>
+                                                <!-- /username -->
+                                              </tr>
+                                              <tr>
+                                                <!-- project and time -->
+                                                <td style="color:rgba(0, 0, 0, 0.4); font-size: 14px; line-height:16px">
+                                                  <a href="#" style="color:rgba(0, 0, 0, 0.4);" target="_blank">project</a> · <a href="#" style="color:rgba(0, 0, 0, 0.4);" target="_blank">time</a>
+                                                </td>
+                                                <!-- /project and time -->
+                                              </tr>
+                                          </table>
+                                        </td>
+                                        <!-- /meta -->
+                                      </tr>
+                                      <tr>
+                                        <!-- /thank -->
+                                        <td colspan="2" style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
+                                          This is an incredibly long comment which has been truncated and which has a read more link at the very end <a href="#" style="color:rgba(230, 25, 161, 0.8); font-weight:bold; text-decoration:none;" target="_blank">[…]</a>
+                                        </td>
+                                        <!-- thank -->
+                                      </tr>
+                                    </table>
+                                    <!-- /comment -->
                                     </td>
-                                    <!-- thank -->
                                   </tr>
                                 </table>
-                                <!-- /comment -->
+                                <!-- /comments -->
                               </td>
                             </tr>
-                            <tr valign="top">
-                              <td>
-                              <!-- comment -->
-                              <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                                <tr>
-                                  <td height="14" colspan="2" style="border-top: 1px solid rgba(0, 0, 0, 0.05);"></td>
-                                </tr>
-                                <tr>
-                                  <!-- avatar -->
-                                  <td width="64" height="48" valign="middle">
-                                      <img alt="@username’s avatar." border="0" src="https://avatars.githubusercontent.com/u/1890508?v=3" style="border-radius: 2px;" width="40" height="40" />
-                                  </td>
-                                  <!-- /avatar -->
-                                  <!-- meta -->
-                                  <td valign="top">
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                        <tr>
-                                         <!-- username -->
-                                          <td style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
-                                            <a href="https://dudethisis.cool/" style="color:rgba(230, 25, 161, 0.8); font-weight:bold; text-decoration:none; white-space:nowrap;" target="_blank">@username</a>
-                                          </td>
-                                          <!-- /username -->
-                                        </tr>
-                                        <tr>
-                                          <!-- project and time -->
-                                          <td style="color:rgba(0, 0, 0, 0.4); font-size: 14px; line-height:16px">
-                                            <a href="#" style="color:rgba(0, 0, 0, 0.4);" target="_blank">project</a> · <a href="#" style="color:rgba(0, 0, 0, 0.4);" target="_blank">time</a>
-                                          </td>
-                                          <!-- /project and time -->
-                                        </tr>
-                                    </table>
-                                  </td>
-                                  <!-- /meta -->
-                                </tr>
-                                <tr>
-                                  <!-- /thank -->
-                                  <td colspan="2" style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
-                                    This is an incredibly long comment which has been truncated and which has a read more link at the very end <a href="#" style="color:rgba(230, 25, 161, 0.8); font-weight:bold; text-decoration:none;" target="_blank">[…]</a>
-                                  </td>
-                                  <!-- thank -->
-                                </tr>
-                              </table>
-                              <!-- /comment -->
-                              </td>
-                            </tr>
+                            <!-- /CONTENT -->
                           </table>
-                          <!-- /comments -->
                         </td>
                       </tr>
-                      <!-- /CONTENT -->
 
                       <!-- FOOTER -->
                       <tr style="background-color:rgba(255, 255, 255, 0.9);">
@@ -320,7 +319,7 @@ The yahoo attribute is added if you are using media queries for mobile devices (
                                           
                                           <table width="100%" cellpadding="10" cellspacing="0" border="0">
                                             <tr>
-                                              <td colspan="3">Given that you’ll get notified only if there’s something new, you can change the frequency of the e-mail notifications to:</td>
+                                              <td colspan="3">You can change the frequency of the e-mail notifications to:</td>
                                             </tr>
                                             <tr>
                                               <td>
@@ -344,7 +343,7 @@ The yahoo attribute is added if you are using media queries for mobile devices (
                                               <td></td>
                                             </tr>
                                             <tr>
-                                              <td colspan="3"><span style="color: rgba(230, 25, 161, 0.8);">*</span> you can still resuscribe back by clicking on </td>
+                                              <td colspan="3"><span style="color: rgba(230, 25, 161, 0.8);">*</span> you can still resuscribe back by clicking on one of the frequencies above</td>
                                             </tr>
                                           </table>
                                     
