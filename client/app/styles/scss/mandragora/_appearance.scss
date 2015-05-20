@@ -13,35 +13,31 @@
 
 	margin-right: auto;
 	margin-left: auto;
-	[class^="complexion"] {
-		fill: rgba($st-color, 0.1);
-	}
-	[class^="cheek"] {
-		fill: rgba($black, 0.1);
-	}
-	[class^="eye"] {
-		fill: rgba($black, 0.6);
-	}
 	[class^="flower"] {
 		fill: rgba($st-color, 0.6);
-	}
-	.leaf {
-		fill: rgba($nd-color, 0.6);
-	}
-	.mouth {
-		fill: rgba($black, 0.6);
 	}
 	[class^="stalk"] {
 		fill: rgba($nd-color, 0.2);
 	}
-	.twist {
-		fill: rgba($black, 0.4);
-	}
 	[class^="veining"] {
 		fill: rgba($canvas, 0.6);
 	}
-	.clip {
-		fill: $canvas;
-		stroke: none;
+	.leaf {
+		fill: rgba($nd-color, 0.6);
+	}
+	.twist {
+		fill: rgba($black, 0.4);
+	}
+	[class^="eye"] {
+		fill: rgba($black, 0.6);
+	}
+	[class^="cheek"] {
+		fill: rgba($black, 0.1);
+	}
+	.mouth {
+		fill: rgba($black, 0.6);
+	}
+	[class^="complexion"] {
+		fill: rgba($st-color, 0.1);
 	}
 }

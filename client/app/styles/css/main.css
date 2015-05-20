@@ -1928,36 +1928,32 @@ optgroup {
   stroke: rgba(0, 0, 0, 0.05);
   stroke-width: 1;
 }
-.mandragora [class^="complexion"] {
-  fill: rgba(230, 25, 161, 0.1);
-}
-.mandragora [class^="cheek"] {
-  fill: rgba(0, 0, 0, 0.1);
-}
-.mandragora [class^="eye"] {
-  fill: rgba(0, 0, 0, 0.6);
-}
 .mandragora [class^="flower"] {
   fill: rgba(230, 25, 161, 0.6);
-}
-.mandragora .leaf {
-  fill: rgba(10, 194, 179, 0.6);
-}
-.mandragora .mouth {
-  fill: rgba(0, 0, 0, 0.6);
 }
 .mandragora [class^="stalk"] {
   fill: rgba(10, 194, 179, 0.2);
 }
-.mandragora .twist {
-  fill: rgba(0, 0, 0, 0.4);
-}
 .mandragora [class^="veining"] {
   fill: rgba(250, 250, 209, 0.6);
 }
-.mandragora .clip {
-  fill: #fafad1;
-  stroke: none;
+.mandragora .leaf {
+  fill: rgba(10, 194, 179, 0.6);
+}
+.mandragora .twist {
+  fill: rgba(0, 0, 0, 0.4);
+}
+.mandragora [class^="eye"] {
+  fill: rgba(0, 0, 0, 0.6);
+}
+.mandragora [class^="cheek"] {
+  fill: rgba(0, 0, 0, 0.1);
+}
+.mandragora .mouth {
+  fill: rgba(0, 0, 0, 0.6);
+}
+.mandragora [class^="complexion"] {
+  fill: rgba(230, 25, 161, 0.1);
 }
 
 /* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
