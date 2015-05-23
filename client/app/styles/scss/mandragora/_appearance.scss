@@ -40,4 +40,12 @@
 	[class^="complexion"] {
 		fill: rgba($st-color, 0.1);
 	}
+	.shadow {
+		fill: rgba($st-color, 0.05);
+		stroke-width: 0;
+	}
+	.clip {
+		fill: $background-color;
+		stroke-width: 0;
+	}
 }
