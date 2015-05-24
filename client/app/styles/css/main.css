@@ -1956,7 +1956,7 @@ optgroup {
   fill: rgba(230, 25, 161, 0.1);
 }
 .mandragora .shadow {
-  fill: rgba(230, 25, 161, 0.05);
+  fill: rgba(230, 25, 161, 0.0375);
   stroke-width: 0;
 }
 .mandragora .clip {
