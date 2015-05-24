@@ -1933,7 +1933,7 @@ optgroup {
   margin-left: auto;
 }
 .mandragora * {
-  stroke: rgba(0, 0, 0, 0.05);
+  stroke: rgba(0, 0, 0, 0.025);
   stroke-width: 1;
 }
 .mandragora [class^="flower"] {
