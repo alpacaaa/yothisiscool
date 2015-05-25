@@ -203,14 +203,14 @@ The yahoo attribute is added if you are using media queries for mobile devices (
                                             <tr>
                                              <!-- username -->
                                               <td style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
-                                                <a href="{{project_link}}" style="color:rgba(230, 25, 161, 0.8); font-weight:bold; text-decoration:none; white-space:nowrap;" target="_blank">@{{#author}}{{username}}{{/author}}</a>
+                                                <a href="{{permalink}}" style="color:rgba(230, 25, 161, 0.8); font-weight:bold; text-decoration:none; white-space:nowrap;" target="_blank">@{{#author}}{{username}}{{/author}}</a>
                                               </td>
                                               <!-- /username -->
                                             </tr>
                                             <tr>
                                               <!-- project and time -->
                                               <td style="color:rgba(0, 0, 0, 0.4); font-size: 14px; line-height:16px">
-                                                <a href="{{permalink}}" style="color:rgba(0, 0, 0, 0.4);" target="_blank">{{#repo}}{{name}}{{/repo}}</a> · <a href="#" style="color:rgba(0, 0, 0, 0.4);" target="_blank">time</a>
+                                                <a href="{{project_link}}" style="color:rgba(0, 0, 0, 0.4);" target="_blank">{{#repo}}{{name}}{{/repo}}</a><!-- · <a href="#" style="color:rgba(0, 0, 0, 0.4);" target="_blank">time</a>-->
                                               </td>
                                               <!-- /project and time -->
                                             </tr>
