@@ -96,8 +96,9 @@ class Mailer
 
   permalink: (comments) ->
     comments.map (item) ->
-      link = "https://dudethisis.cool/#{item.repo().slug}#thank-#{item.id}"
-      item.permalink = link
+      link = "https://dudethisis.cool/#{item.repo().slug}"
+      item.project_link = link
+      item.permalink = "#{link}#thank-#{item.id}"
       item
 
 module.exports = Mailer

@@ -1,6 +1,7 @@
 
 config = require './dude-config'
 Promise = require 'bluebird'
+moment  = require 'moment'
 findgithubemail = require 'findgithubemail'
 findgithubemail.access_token = config.GITHUB_ACCESS_TOKEN
 
@@ -72,6 +73,10 @@ process_batch = (size) ->
       "
 
       item.notification.updateAttribute 'status', 'processing'
+
+      item.comments.forEach (c) ->
+        Comment.beautify c
+        c.date_posted = moment(c.date).format 'MMM DD, YYYY, HH:MM [GMT] ZZ'
 
       @mailer.send item
       .then ->

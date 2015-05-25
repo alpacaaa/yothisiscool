@@ -1,161 +1,316 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- So that mobile will display zoomed in -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- enable media queries for windows phone 8 -->
-  <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS -->
-  <title>Dude</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>Dude, This is Cool</title>
 
-  <style type="text/css">
-body {
-  margin: 0;
-  padding: 0;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
+    <!-- Facebook sharing information tags -->
+    <meta property="og:title" content="Dude, This is Cool!" />
 
-table {
-  border-spacing: 0;
-}
+    <style type="text/css">
+        /* EMBEDDED CSS
+           Android Mail doesn't support "class" declarations outside of a media query so use inline CSS as a rule.
+           More info: Http://www.emailonacid.com/blog/the_android_mail_app_and_css_class_declarations/ */
 
-table td {
-  border-collapse: collapse;
-}
+        /****** EMAIL CLIENT BUG FIXES - BEST NOT TO CHANGE THESE ********/
 
-.ExternalClass {
-  width: 100%;
-}
+        /* Forces Hotmail to display emails at full width. */
+        .ExternalClass {width:100%;}
 
-.ExternalClass,
-.ExternalClass p,
-.ExternalClass span,
-.ExternalClass font,
-.ExternalClass td,
-.ExternalClass div {
-  line-height: 100%;
-}
+        /* Forces Hotmail to display normal line spacing. */
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height:100%;}
 
-.ReadMsgBody {
-  width: 100%;
-  background-color: #ebebeb;
-}
+        /* Prevents Webkit and Windows Mobile platforms from changing default font sizes. */
+        body {-webkit-text-size-adjust:none; -ms-text-size-adjust:none;}
 
-table {
-  mso-table-lspace: 0pt;
-  mso-table-rspace: 0pt;
-}
+        /* Resets all body margins and padding to "0" for good measure. */
+        body {margin:0; padding:0;}
 
-img {
-  -ms-interpolation-mode: bicubic;
-}
+        /* Resolves webkit padding issue. */
+        table {border-spacing:0;}
 
-.yshortcuts a {
-  border-bottom: none !important;
-}
+        /* Resolves the Outlook 2007, 2010, and Gmail td padding issue. */
+        table td {border-collapse:collapse;}
 
-@media screen and (max-width: 599px) {
-  table[class="force-row"],
-  table[class="container"] {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-}
-@media screen and (max-width: 400px) {
-  td[class*="container-padding"] {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-  }
-}
-.ios-footer a {
-  color: #aaaaaa !important;
-  text-decoration: underline;
-}
-</style>
+        /****** END BUG FIXES ********/
 
+        /****** EDITABLE STYLES - FOR YOUR TEMPLATE ********/
+
+        /* The "body" is defined here for Yahoo Beta because it does not support your body tag. Instead, it will
+           create a wrapper div around your email and that div will inherit your embedded body styles.
+           The "#body_style" is defined for AOL because it does not support your embedded body definition nor
+           your body tag, we will use this class in our wrapper div. */
+        body, #body_style {width:100% !important; min-height:1000px; color:rgba(0, 0, 0, 0.6); background:#fafad1; font-family:Arial, Helvetica, sans-serif; font-size:18px; line-height:28px}
+
+        /* This is the embedded CSS link color for Gmail. This will overwrite Hotmail and Yahoo Beta's
+           embedded link colors and make it consistent with Gmail. Also use this rule on inline CSS. */
+        a {color:rgba(230, 25, 161, 0.8); border-color:rgba(230, 25, 161, 0.8); text-decoration:none; -moz-transition-property: border-color, color; -o-transition-property: border-color, color; -webkit-transition-property: border-color, color; transition-property: border-color, color; -moz-transition-duration: 0.2s; -o-transition-duration: 0.2s; -webkit-transition-duration: 0.2s; transition-duration: 0.2s; -moz-transition-timing-function: ease-in-out; -o-transition-timing-function: ease-in-out; -webkit-transition-timing-function: ease-in-out; transition-timing-function: ease-in-out; -moz-transition-delay: 0s; -o-transition-delay: 0s; -webkit-transition-delay: 0s; transition-delay: 0s;}
+        a:visited {color: rgba(230, 25, 161, 0.8); border-color: rgba(230, 25, 161, 0.8); text-decoration:none;}
+
+        /* There is no way to set these inline so you have the option of adding pseudo class definitions here.
+           They won't work for Gmail or older Lotus Notes but it's a nice addition for all other clients. */
+        a:link {color:rgba(230, 25, 161, 0.8); border-color:rgba(230, 25, 161, 0.8); text-decoration:none;}
+        a:focus {color:rgba(0, 0, 0, 0.8) !important; border-color:rgba(0, 0, 0, 0.8) !important;}
+        a:hover {color:rgba(0, 0, 0, 0.8) !important; border-color:rgba(0, 0, 0, 0.8) !important;}
+        a:active {color:rgba(0, 0, 0, 0.8) !important; border-color:rgba(0, 0, 0, 0.8) !important; -moz-transition-duration: 0s; -o-transition-duration: 0s; -webkit-transition-duration: 0s; transition-duration: 0s; }
+
+        /****** MEDIA QUERIES ********/
+        /* You must use attribute selectors in your media queries to prevent Yahoo from rendering these styles.
+           We added a yahoo attribute in the body tag to complete this fix.
+           More info: http://www.emailonacid.com/blog/details/C13/stop_yahoo_mail_from_rendering_your_media_queries */
+
+        /* Target mobile devices. */
+        @media only screen and (max-width: 639px) {
+          /* Hide elements at smaller screen sizes (!important needed to override inline CSS). */
+         body[yahoo] .hide {display:none !important;}
+
+          /* Adjust table widths at smaller screen sizes. */
+          body[yahoo] .table, body[yahoo] .subfooter {width:100% !important;}
+        }
+
+        /*** END EDITABLE STYLES ***/
+
+        /****** TEMPORARY - THESE SHOULD BE MOVED INLINE AT END OF YOUR DEVELOPMENT PROCESS ********/
+
+        img {display:block; border:none; outline:none; text-decoration:none;}
+
+        /* Remove spacing around Outlook 07, 10 tables */
+        table {border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;}
+
+        /*** END TEMPORARY ***/
+    </style>
 </head>
-<body style="margin:0; padding:0;" bgcolor="#F0F0F0" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 
-<!-- 100% background wrapper (grey background) -->
-<table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" bgcolor="#F0F0F0">
-  <tr>
-    <td align="center" valign="top" bgcolor="#F0F0F0" style="background-color: #F0F0F0;">
+<body style="width:100% !important; min-height:1000px; color:rgba(0, 0, 0, 0.6); background:#fafad1; font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:1.4;" alink="rgba(0, 0, 0, 0.8)" link="rgba(230, 25, 161, 0.8)" bgcolor="#fafad1" text="rgba(0, 0, 0, 0.6)" yahoo="fix">
+<!-- You may adjust each of the values above for your template as needed.
 
-      <br>
+We've included the style attribute for Gmail because it does not support embedded CSS and it will convert this body tag to
+a div. Since it gets converted to a div, the other body attributes like bgcolor are ignored.
 
-      <!-- 600px container (white background) -->
-      <table border="0" width="600" cellpadding="0" cellspacing="0" class="container" style="width:600px;max-width:600px">
-        <tr>
-          <td class="container-padding header" align="left" style="font-family:Helvetica, Arial, sans-serif;font-size:24px;font-weight:bold;padding-bottom:12px;color:#DF4726;padding-left:24px;padding-right:24px">
-            Dudethisis.cool
-          </td>
-        </tr>
-        <tr>
-          <td class="container-padding content" align="left" style="padding-left:24px;padding-right:24px;padding-top:12px;padding-bottom:12px;background-color:#ffffff">
-            <br>
+We included body attributes (alink, link, bgcolor and text) for Lotus Notes 6.5 and 7, as these clients do not offer much
+support for embedded nor inline CSS.
 
-<div class="title" style="font-family:Helvetica, Arial, sans-serif;font-size:18px;font-weight:600;color:#374550">Hey @{{user.username}}!</div>
-<br>
+The "min-height" attribute is set for Gmail and AOL since they will be converting this body tag to a div and we want our
+background color to reach the bottom of the page.
 
-<div class="body-text" style="font-family:Helvetica, Arial, sans-serif;font-size:14px;line-height:20px;text-align:left;color:#333333">
-  {{#comments}}
-  <p>
-    <strong>@{{#author}}{{username}}{{/author}}</strong> – {{body}} <br>
-    on <a href="{{permalink}}">{{#repo}}{{name}}{{/repo}}</a>
-  </p>
-  {{/comments}}
+The yahoo attribute is added if you are using media queries for mobile devices (see media queries above) -->
 
-  {{#more_comments}}
-    <p>And {{more_comments}} more comments to checkout!</p>
-  {{/more_comments}}
+  <!-- PAGE WRAPPER -->
+  <div id="body_style">
 
-  <p>
-    Change when receiving notifications:
-    <ul>
-      <li><a href="{{daily}}">Daily</a></li>
-      <li><a href="{{weekly}}">Weekly</a></li>
-      <li><a href="{{monthly}}">Monthly</a></li>
-    </ul>
+    <!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
+    <table cellpadding="0" cellspacing="0" border="0" align="center" style="width:100% !important; margin:0; padding:0;">
+      <tr bgcolor="#fafad1">
+        <td>
+          <!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
+          <table width="568" cellpadding="0" cellspacing="0" border="0" align="center" class="table">
 
-    You'll get notified only if there's something new, no spam!
-  </p>
+            <!-- HEADER -->
+            <tr>
+              <td>
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <!-- mandragora: padding-top -->
+                    <td height="32"></td>
+                    <!-- /mandragora: padding-top -->
+                  </tr>
+                </table>
+              </td>
+            </tr>
 
-
-  <p>
-    <a href="{{unsubscribe}}">Unsubscribe</a>
-  </p>
-</div>
-
-          </td>
-        </tr>
-        <tr>
-          <td class="container-padding footer-text" align="left" style="font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:16px;color:#aaaaaa;padding-left:24px;padding-right:24px">
-            <br><br>
-            Sample Footer text: © 2014 Acme, Inc.
-            <br><br>
-
-            You are receiving this email because your Github repositories are getting love on <a href="https://dudethisis.cool" style="color:#aaaaaa">dudethisis.cool</a>. <a href="{{unsubscribe}}" style="color:#aaaaaa">unsubscribe</a>.
-            <br><br>
-
-            <strong>Acme, Inc.</strong><br>
-            <span class="ios-footer">
-              123 Main St.<br>
-              Springfield, MA 12345<br>
-            </span>
-            <a href="http://www.acme-inc.com" style="color:#aaaaaa">www.acme-inc.com</a><br>
-
-            <br><br>
-
-          </td>
-        </tr>
-      </table>
-<!--/600px container -->
+            <tr>
+              <td>
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <!-- mandragora: head -->
+                    <td width="192" height="132" align="center">
+                      <img src="https://dudethisis.cool/mandragora_up_00.png" width="192" height="132" border="0" alt="Mandragora"/>
+                    </td>
+                    <!-- /mandragora: head -->
+                  </tr>
+                </table>
+              </td>
+            </tr>
 
 
-    </td>
-  </tr>
-</table>
-<!--/100% background wrapper-->
+            <tr style="background-color:rgba(255, 255, 255, 0.9);">
+              <td>
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <!-- mandragora: hands -->
+                    <td width="192" height="12" align="center">
+                      <img src="https://dudethisis.cool/mandragora_down_00.png" width="192" height="12" border="0" alt="Mandragora"/>
+                    </td>
+                    <!-- /mandragora: hands -->
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- /HEADER -->
+
+            <!-- CONTENT -->
+            <tr style="background-color:rgba(255, 255, 255, 0.9);">
+              <td>
+                <table width="100%" cellpadding="16" cellspacing="0" border="0">
+                  <tr>
+                    <td>
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <!-- INTRODUCTION -->
+                        <tr>
+                          <td>
+                            <table border="0" cellpadding="8" cellspacing="0" width="100%">
+                                <tr>
+                                 <!-- greeting text -->
+                                  <td style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
+                                    Hey <strong style="color:rgba(10, 194, 179, 0.8);">@{{user.username}}</strong>,
+                                  </td>
+                                  <!-- /greeting text -->
+                                </tr>
+                                <tr>
+                                  <!-- body text -->
+                                  <td style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
+                                    It looks like one or more of your projects on GitHub got love on <a href="https://dudethisis.cool/" style="color:rgba(230, 25, 161, 0.8); font-weight:bold; text-decoration:none; white-space:nowrap;" target="_blank">Dude, This is Cool</a>. Check it out below!
+                                  </td>
+                                  <!-- /body text -->
+                                </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <!-- /INTRODUCTION -->
+
+                        <!-- COMMENTS -->
+                        <tr>
+                          <td>
+                            <table border="0" cellpadding="8" cellspacing="0" width="100%">
+                              {{#comments}}
+                              <tr valign="top">
+                                <td>
+                                  <!-- comment -->
+                                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                      <td height="14" colspan="2" style="border-top: 1px solid rgba(0, 0, 0, 0.05);"></td>
+                                    </tr>
+                                    <tr>
+                                      <!-- avatar -->
+                                      <td width="64" height="48" valign="middle">
+                                          <img alt="@{{#author}}{{username}}{{/author}}’s avatar." border="0" src="{{#author}}{{avatar_url}}{{/author}}" style="border-radius: 2px;" width="40" height="40" />
+                                      </td>
+                                      <!-- /avatar -->
+                                      <!-- meta -->
+                                      <td valign="top">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                             <!-- username -->
+                                              <td style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
+                                                <a href="{{permalink}}" style="color:rgba(230, 25, 161, 0.8); font-weight:bold; text-decoration:none; white-space:nowrap;" target="_blank">@{{#author}}{{username}}{{/author}}</a>
+                                              </td>
+                                              <!-- /username -->
+                                            </tr>
+                                            <tr>
+                                              <!-- project and time -->
+                                              <td style="color:rgba(0, 0, 0, 0.4); font-size: 14px; line-height:16px">
+                                                <a href="{{project_link}}" style="color:rgba(0, 0, 0, 0.4);" target="_blank">{{#repo}}{{name}}{{/repo}}</a> · <a href="{{permalink}}" style="color:rgba(0, 0, 0, 0.4);" target="_blank">{{date_posted}}</a>
+                                              </td>
+                                              <!-- /project and time -->
+                                            </tr>
+                                        </table>
+                                      </td>
+                                      <!-- /meta -->
+                                    </tr>
+                                    <tr>
+                                      <!-- /thank -->
+                                      <td colspan="2" style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
+                                      {{{body}}}
+                                      </td>
+                                      <!-- thank -->
+                                    </tr>
+                                  </table>
+                                  <!-- /comment -->
+                                </td>
+                              </tr>
+                              {{/comments}}
+                            </table>
+                          </td>
+                        </tr>
+                        <!-- /COMMENTS -->
+
+                        <tr>
+                          <td height="32"></td>
+                        </tr>
+
+                        <!-- FOOTER -->
+                        <tr>
+                          <td>
+                            <!-- introduction -->
+                            <table border="0" cellpadding="8" cellspacing="0" width="100%">
+                                <tr>
+                                  <!-- body text -->
+                                  <td style="color:rgba(0, 0, 0, 0.6); font-size: 18px; line-height:28px">
+                                    {Here the receiver should be invited to thank more projects}
+                                    <br/>
+                                    <br/>
+                                    Sincerely Yours,
+                                    <br/>
+                                    The <strong style="color:rgba(10, 194, 179, 0.8);">Dude, This is Cool</strong> Team
+                                    <br/>
+                                    <a href="https://dudethisis.cool/" style="color:rgba(230, 25, 161, 0.8); font-weight:bold; text-decoration:none; white-space:nowrap;" target="_blank">dudethisis.cool</a>
+                                  </td>
+                                  <!-- /body text -->
+                                </tr>
+                            </table>
+                            <!-- /introduction -->
+                          </td>
+                        </tr>
+                        <!-- /FOOTER -->
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- /CONTENT-->
+
+            <!-- SUBFOOTER -->
+            <tr>
+              <td align="center">
+                <table class="subfooter" border="0" cellpadding="8" cellspacing="0" width="80%">
+                  <tr style="text-align: center;">
+                    <td valign="top" style="color:rgba(0, 0, 0, 0.4); font-size: 12px; line-height:16px">
+                      <table width="100%" cellpadding="10" cellspacing="0" border="0" style="table-layout: fixed;">
+                        <tr>
+                          <td colspan="3">You can change the frequency of the e-mail notifications to:</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="button" href="{{daily}}" style="color: rgba(230, 25, 161, 0.6); border: 2px solid rgba(230, 25, 161, 0.6); border-radius: 4px; display: block; padding: 4px; text-decoration:none; white-space:nowrap;" target="_blank">Daily</a>
+                          </td>
+                          <td >
+                            <a class="button" href="{{weekly}}" style="color: rgba(230, 25, 161, 0.6); border: 2px solid rgba(230, 25, 161, 0.6); border-radius: 4px; display: block; padding: 4px; text-decoration:none; white-space:nowrap;" target="_blank">Weekly</a>
+                          </td>
+                          <td>
+                            <a class="button" href="{{monthly}}" style="color: rgba(230, 25, 161, 0.6); border: 2px solid rgba(230, 25, 161, 0.6); border-radius: 4px; display: block; padding: 4px; text-decoration:none; white-space:nowrap;" target="_blank">Monthly</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="3">or simply <a href="{{unsubscribe}}" style="color: rgba(230, 25, 161, 0.6); text-decoration:none; white-space:nowrap;" target="_blank">unsubscribe</a>—click on a frequency to resubscribe back.</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- /SUBFOOTER -->
+
+          </table>
+        </td>
+      </tr>
+    </table>
+    <!-- End of wrapper table -->
+
+  </div>
+  <!-- /PAGE WRAPPER -->
 
 </body>
 </html>
