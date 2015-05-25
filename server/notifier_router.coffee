@@ -73,6 +73,8 @@ process_batch = (size) ->
 
       item.notification.updateAttribute 'status', 'processing'
 
+      item.comments.forEach Comment.beautify
+
       @mailer.send item
       .then ->
         item.notification.updateAttribute 'status', 'sent'
