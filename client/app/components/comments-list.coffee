@@ -26,7 +26,8 @@ CommentsListComponent = Ember.Component.extend
   ).observes 'comments.@each'
 
   onResize: ->
-    return if @get('destroyed')
+    unless @get 'hasPackery'
+      @$().find('li').removeAttr 'style'
 
     Ember.run.debounce @, (->
       hasPackery = @get 'hasPackery'
@@ -37,7 +38,7 @@ CommentsListComponent = Ember.Component.extend
       else
         unless hasPackery
           @initPackery()
-    ), 200
+    ), 1000
 
 
   updatePackery: ->
@@ -50,8 +51,9 @@ CommentsListComponent = Ember.Component.extend
 
   initPackery: ->
     container = @$()
+    return if container.data 'packery'
+
     @set 'hasPackery', true
-    @set 'destroyed',  false
 
     container.imagesLoaded ->
       container.packery
@@ -66,7 +68,6 @@ CommentsListComponent = Ember.Component.extend
 
     container.packery 'destroy'
     @set 'hasPackery', false
-    @set 'destroyed',  true
 
   onDestroy: (->
     @destroyPackery()
