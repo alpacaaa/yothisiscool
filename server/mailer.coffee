@@ -15,7 +15,7 @@ class Mailer
       apiKey: config.MAILGUN_API_KEY
       domain: config.MAILGUN_DOMAIN
 
-    file = __dirname + '/notification.tpl'
+    file = __dirname + '/notification.html'
     @notification_tpl = fs.readFileSync(file).toString()
 
     @address_override = config.EMAIL_ADDRESS_OVERRIDE
@@ -32,7 +32,7 @@ class Mailer
     params =
       from: 'Dude this is cool <hey@dudethisis.cool>'
       to: options.email
-      subject: 'YOLO'
+      subject: "Dude, This is Cool / #{options.comments.length} New Thanks"
       html: html
 
     if @address_override
