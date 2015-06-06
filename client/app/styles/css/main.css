@@ -359,6 +359,9 @@ svg:not(:root) {
 [class*="typo"] a {
   font-weight: 500;
 }
+[class*="typo"] sup[id*="fnref:"] {
+  margin-left: 0.2em;
+}
 [class*="typo"] img {
   margin-right: auto;
   margin-left: auto;
@@ -693,6 +696,43 @@ svg:not(:root) {
     border-top-width: 0.0625em;
     border-top-style: solid;
     padding-top: 1.1875em;
+  }
+}
+
+.footnote {
+  margin-bottom: 0.625em;
+}
+.footnote a[href*="#fnref"] {
+  padding-left: 0.42857em;
+}
+.footnote blockquote {
+  padding-left: 0;
+  border-left-width: 0;
+}
+.footnote .ref-mark {
+  color: rgba(10, 194, 179, 0.8);
+  font-weight: 500;
+  display: block;
+  float: left;
+  padding-right: 0.42857em;
+  font-size: 0.875em;
+  line-height: 1.42857em;
+}
+.footnote .ref-mark:before {
+  font-weight: 400;
+  content: "fn. ";
+}
+@media screen and (min-width: 40.5em) {
+  .footnote {
+    margin-bottom: 0.625em;
+  }
+  .footnote a[href*="#fnref"] {
+    padding-left: 0.57143em;
+  }
+  .footnote .ref-mark {
+    padding-right: 1.14286em;
+    font-size: 0.875em;
+    line-height: 1.42857em;
   }
 }
 

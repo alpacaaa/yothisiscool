@@ -37,6 +37,9 @@
 	a {
 		font-weight: $bold;
 	}
+	sup[id *= "fnref:"] {
+		margin-left: 0.2em; 
+	}
 	img {
 		margin-right: auto;
 		margin-left: auto;
@@ -352,6 +355,46 @@
 		hr {
 			@include rhythm-margins($d-small-line/2, 0);
 			@include leading-border($border-width, $d-small-line);
+		}
+	}
+}
+
+.footnote {
+	margin-bottom: rhythm($m-small-line/2);
+
+	a[href *= "#fnref"] {
+		padding-left: em($m-gut/4, $m-small-size);
+	}
+	blockquote {
+		padding-left: 0;
+
+		border-left-width: 0;
+	}
+	.ref-mark {
+		color: $strong-nd-type-color;
+		font-weight: $bold;
+
+		display: block;
+		float: left;
+
+		padding-right: em($m-gut/4, $m-small-size);
+
+		@include adjust-font-size-to($m-small-size, $m-small-line);
+		&:before {
+			//font-weight: $normal;
+
+			content: "fn. ";
+		}
+	}
+	@include min-screen(col(9)) {
+		margin-bottom: rhythm($d-small-line/2);
+		a[href *= "#fnref"] {
+			padding-left: em($d-gut/4, $d-small-size);
+		}
+		.ref-mark {
+			padding-right: em($d-gut/2, $d-small-size);
+
+			@include adjust-font-size-to($d-small-size, $d-small-line);
 		}
 	}
 }
