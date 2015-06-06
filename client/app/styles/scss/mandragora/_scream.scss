@@ -10,9 +10,10 @@
 	.torso {
 		@include apply-origin(center bottom, false);
 		@include transform(translate(0, 0));
+		@include transform(scale(1));
 		@include transition-property(transform);
 		@include transition-duration(0.2s);
-		@include transition-timing-function(ease-in-out);
+		@include transition-timing-function(ease-in);
 		@include transition-delay(1s);
 	}
 	.speech-bubble {
@@ -21,18 +22,23 @@
 		opacity: 0;
 		@include transition-property(opacity, transform);
 		@include transition-duration(0.2s, 0.2s);
-		@include transition-timing-function(ease-in-out, ease-in-out);
+		@include transition-timing-function(ease-in, ease-in);
 		@include transition-delay(1s, 1s);
 	}
 	&:hover {
 		.torso {
-			@include transform(translate(0, em(-32)));
+			@include transition-duration(0.3s);
+			@include transform(scale(2));
+			//@include transform(translate(0, em(-32)));
+			@include transform(translate(0, em(-30)));
+			@include transition-timing-function(cubic-bezier(0.1, 1.0, 0.2, 1.4));
 			@include transition-delay(0s, 0s);
 		}
 		.speech-bubble {
 			@include transform(scale(1.0));
 			opacity: 1.0;
 			@include transition-delay(0s, 0s);
+			@include transition-timing-function(cubic-bezier(0.1, 1.0, 0.2, 1.4), cubic-bezier(0.1, 1.0, 0.2, 1.4));
 		}
 	}
 	@include min-screen(col(8)) {
