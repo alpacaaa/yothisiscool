@@ -719,7 +719,6 @@ svg:not(:root) {
   line-height: 1.42857em;
 }
 .footnote .ref-mark:before {
-  font-weight: 400;
   content: "fn. ";
 }
 @media screen and (min-width: 40.5em) {
@@ -831,7 +830,7 @@ svg:not(:root) {
   margin-left: auto;
   position: relative;
 }
-.head h1 {
+.head h1, .head h2, .head h3, .head h4, .head h5, .head h6 {
   text-align: center;
 }
 @media screen and (min-width: 36em) {
@@ -845,6 +844,9 @@ svg:not(:root) {
   margin-right: auto;
   margin-bottom: 1.5em;
   margin-left: auto;
+}
+.body h1, .body h2, .body h3, .body h4, .body h5, .body h6 {
+  text-align: center;
 }
 @media screen and (min-width: 36em) {
   .body {
@@ -1375,6 +1377,9 @@ optgroup {
 }
 [class^="form"] input[type="text"], [class^="form"] input[type="search"], [class^="form"] textarea, [class^="form"] button, [class^="form"] input[type="submit"] {
   display: block;
+  -moz-box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
+  -webkit-box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
+  box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
   -moz-transition-property: color, border-color, background-color;
   -o-transition-property: color, border-color, background-color;
   -webkit-transition-property: color, border-color, background-color;
@@ -1581,9 +1586,6 @@ optgroup {
 }
 .form-comment textarea {
   height: 9.5em;
-  -moz-box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
-  -webkit-box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
-  box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
   -moz-transition-delay: 0.1s;
   -o-transition-delay: 0.1s;
   -webkit-transition-delay: 0.1s;
@@ -1600,9 +1602,6 @@ optgroup {
   background-repeat: no-repeat;
   background-position: center -100%;
   background-size: 1em 1em;
-  -moz-box-shadow: 0 -2px 5px -2px rgba(230, 25, 161, 0.1), 0 3px 5px -2px rgba(230, 25, 161, 0.1);
-  -webkit-box-shadow: 0 -2px 5px -2px rgba(230, 25, 161, 0.1), 0 3px 5px -2px rgba(230, 25, 161, 0.1);
-  box-shadow: 0 -2px 5px -2px rgba(230, 25, 161, 0.1), 0 3px 5px -2px rgba(230, 25, 161, 0.1);
   -moz-transition-property: background-color, background-position, border-color, border-radius, color, height, margin-top, opacity, width;
   -o-transition-property: background-color, background-position, border-color, border-radius, color, height, margin-top, opacity, width;
   -webkit-transition-property: background-color, background-position, border-color, border-radius, color, height, margin-top, opacity, width;
@@ -2047,10 +2046,6 @@ optgroup {
   -ms-transform: translate(0, 0);
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -webkit-transform: scale(1);
-  transform: scale(1);
   -moz-transition-property: -moz-transform;
   -o-transition-property: -o-transform;
   -webkit-transition-property: -webkit-transform;
@@ -2100,10 +2095,6 @@ optgroup {
   -o-transition-duration: 0.3s;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  -moz-transform: scale(2);
-  -ms-transform: scale(2);
-  -webkit-transform: scale(2);
-  transform: scale(2);
   -moz-transform: translate(0, -1.875em);
   -ms-transform: translate(0, -1.875em);
   -webkit-transform: translate(0, -1.875em);
@@ -2118,6 +2109,10 @@ optgroup {
   transition-delay: 0s, 0s;
 }
 .scream:hover .speech-bubble {
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -webkit-transform: scale(1);
@@ -2162,6 +2157,9 @@ optgroup {
   -moz-border-radius: 12px / 12px;
   -webkit-border-radius: 12px 12px;
   border-radius: 12px / 12px;
+  -moz-box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
+  -webkit-box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
+  box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
   font-size: 0.875em;
   line-height: 1.42857em;
 }

@@ -151,7 +151,7 @@ $waistline: em(1440);
 // Box-shadow
 //
 
-@mixin canvas {
+@mixin canvas-shadow {
 	//@include box-shadow(0 -2px 5px -2px $shadow-color, 0 3px 5px -2px $shadow-color);
 	@include box-shadow(0 3px 5px -2px $shadow-color);
 }

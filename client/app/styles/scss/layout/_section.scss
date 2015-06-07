@@ -15,7 +15,7 @@
 }
 .section-content {
 	background-color: $content-background-color;
-	@include canvas;
+	@include canvas-shadow;
 	/*&:first-of-type {
 		@include box-shadow(0 -2px 5px -2px $shadow-color);
 	}

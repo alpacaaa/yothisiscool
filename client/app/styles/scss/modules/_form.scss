@@ -122,6 +122,7 @@ optgroup {
 	input[type = "text"], input[type = "search"], textarea, button, input[type = "submit"] {
 		display: block;
 
+		@include canvas-shadow;
 		@include transition-property(color, border-color, background-color);
 		@include transition-duration(0.2s, 0.2s, 0.2s);
 		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out);
@@ -300,7 +301,6 @@ optgroup {
 	}
 	textarea {
 		height: rhythm($d-medium-line*6 + ($d-medium-line/4-0.2)*2);
-		@include canvas;
 		@include transition-delay(0.1s);
 	}
 	i {
@@ -312,7 +312,6 @@ optgroup {
 		background-position: center -100%;
 		background-size: em(16px, $m-medium-size) em(16px, $m-medium-size);
 
-		@include box-shadow(0 -2px 5px -2px $shadow-color, 0 3px 5px -2px $shadow-color);
 		@include transition-property(background-color, background-position, border-color, border-radius, color, height, margin-top, opacity, width);
 		@include transition-duration(0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s);
 		@include transition-timing-function(ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out);

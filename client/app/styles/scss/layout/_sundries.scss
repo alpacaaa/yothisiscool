@@ -23,7 +23,7 @@
 	position: relative;
 
 	@extend %column-gut;
-	h1 {
+	h1, h2, h3, h4, h5, h6 {
 		text-align: center;
 	}
 	@include min-screen(col(8)) {
@@ -38,6 +38,9 @@
 	margin-left: auto;
 
 	@extend %column-gut;
+	h1, h2, h3, h4, h5, h6 {
+		text-align: center;
+	}
 	@include min-screen(col(8)) {
 		width: col(8);
 		margin-bottom: rhythm($d-medium-line);
