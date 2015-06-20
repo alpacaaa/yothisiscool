@@ -76,7 +76,10 @@ process_batch = (size) ->
 
       item.comments.forEach (c) ->
         Comment.beautify c
-        c.date_posted = moment(c.date).format 'MMM DD, YYYY, HH:MM [GMT] ZZ'
+        permalink c
+        date_posted c
+        c.body = fix_comment_body c.body
+
 
       @mailer.send item
       .then ->
@@ -157,6 +160,24 @@ user_email = (user) ->
     logger.error 'Email not found ' + user.username
 
 
+
+
+
+
+permalink = (item) ->
+  link = "https://dudethisis.cool/#{item.repo().slug}"
+  item.project_link = link
+  item.permalink = "#{link}#thank-#{item.id}"
+  item
+
+
+date_posted = (comment) ->
+  comment.date_posted = moment(comment.date).format 'DD.MM.YYYY · HH:MM'
+
+
+fix_comment_body = (body) ->
+  # such inline, much wow
+  body = body.split('<p>').join('<p style="margin:0;">')
 
 
 
