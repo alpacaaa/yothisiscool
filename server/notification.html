@@ -41,7 +41,7 @@
            create a wrapper div around your email and that div will inherit your embedded body styles.
            The "#body_style" is defined for AOL because it does not support your embedded body definition nor
            your body tag, we will use this class in our wrapper div. */
-        body, #body_style {width:100% !important; min-height:1000px; color:rgba(0, 0, 0, 0.6); background:#fafad1; font-family:Arial,Helvetica,sans-serif; font-size:18px; line-height:28px}
+        body, #body_style {width:100% !important; min-height:1000px; color:#656564; background:#fafad1; font-family:Arial,Helvetica,sans-serif; font-size:18px; line-height:28px}
 
         /* This is the embedded CSS link color for Gmail. This will overwrite Hotmail and Yahoo Beta's
            embedded link colors and make it consistent with Gmail. Also use this rule on inline CSS. */
@@ -100,11 +100,11 @@ The yahoo attribute is added if you are using media queries for mobile devices (
   <div id="body_style">
 
     <!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
-    <table cellpadding="0" cellspacing="0" border="0" align="center" style="width:100% !important; margin:0; padding:0;">
+    <table cellpadding="8" cellspacing="0" border="0" align="center" style="width:100% !important; margin:0; padding:0;">
       <tr bgcolor="#fafad1">
         <td>
           <!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
-          <table width="568" cellpadding="0" cellspacing="0" border="0" align="center" class="table">
+          <table width="552" cellpadding="0" cellspacing="0" border="0" align="center" class="table">
 
             <!-- HEADER -->
             <tr>
@@ -125,7 +125,7 @@ The yahoo attribute is added if you are using media queries for mobile devices (
                   <tr>
                     <!-- mandragora: head -->
                     <td width="192" height="132" align="center">
-                      <img src="https://dudethisis.cool/mandragora_up_00.png" width="192" height="132" border="0" alt="Mandragora"/>
+                      <img border="0" src="https://dudethisis.cool/mandragora_up_00.png" style="display:block;" width="192" height="132" alt="Mandragora"/>
                     </td>
                     <!-- /mandragora: head -->
                   </tr>
@@ -133,14 +133,13 @@ The yahoo attribute is added if you are using media queries for mobile devices (
               </td>
             </tr>
 
-
             <tr style="background-color:#fefefa;">
               <td>
                 <table width="100%" cellpadding="0" cellspacing="0" border="0">
                   <tr>
                     <!-- mandragora: hands -->
                     <td width="192" height="12" align="center">
-                      <img src="https://dudethisis.cool/mandragora_down_00.png" width="192" height="12" border="0" alt="Mandragora"/>
+                      <img border="0" src="https://dudethisis.cool/mandragora_down_00.png" style="display:block;" width="192" height="12" alt="Mandragora"/>
                     </td>
                     <!-- /mandragora: hands -->
                   </tr>
@@ -169,7 +168,7 @@ The yahoo attribute is added if you are using media queries for mobile devices (
                                 </tr>
                                 <tr>
                                   <!-- body text -->
-                                  <td style="color:rgba(0, 0, 0, 0.6); font-size:18px; line-height:28px">
+                                  <td style="color:#656564; font-size:18px; line-height:28px">
                                     It looks like one or more of your projects on GitHub got love on <a href="https://dudethisis.cool/" style="color:#ea46b2; font-weight:bold; text-decoration:none; white-space:nowrap;" target="_blank">Dude, This is Cool</a>. Check it out below!
                                   </td>
                                   <!-- /body text -->
@@ -244,8 +243,8 @@ The yahoo attribute is added if you are using media queries for mobile devices (
                             <table border="0" cellpadding="8" cellspacing="0" width="100%">
                                 <tr>
                                   <!-- body text -->
-                                  <td style="color:#656564; font-size: 18px; line-height:28px">
-                                    {{#more_comments}}There are {{more_comments}} more comments to checkout.<br/>{{/more_comments}}
+                                  <td style="color:#656564; font-size:18px; line-height:28px">
+                                    {{#if more_comments}}There are {{more_comments}} more comments to checkout.<br/>{{/more_comments}}
                                     <br/>
                                     <br/>
                                     Sincerely Yours,
@@ -274,7 +273,7 @@ The yahoo attribute is added if you are using media queries for mobile devices (
               <td align="center">
                 <table class="subfooter" border="0" cellpadding="8" cellspacing="0" width="80%">
                   <tr style="text-align: center;">
-                    <td valign="top" style="color:#96967d; font-size: 12px; line-height:16px">
+                    <td valign="top" style="color:#96967d; font-size:12px; line-height:16px">
                       <table width="100%" cellpadding="10" cellspacing="0" border="0" style="table-layout: fixed;">
                         <tr>
                           <td colspan="3">You can change the frequency of the e-mail notifications to:</td>
