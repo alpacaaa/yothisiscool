@@ -793,7 +793,6 @@ svg:not(:root) {
 
 .notation {
   font-weight: 400;
-  text-transform: uppercase;
   text-align: center;
   color: rgba(0, 0, 0, 0.4);
   font-size: 0.875em;
@@ -803,10 +802,10 @@ svg:not(:root) {
 }
 @media screen and (min-width: 36em) {
   .notation {
-    font-size: 0.8125em;
-    line-height: 1.53846em;
-    padding-top: 1.07692em;
-    padding-bottom: 1.07692em;
+    font-size: 0.875em;
+    line-height: 1.42857em;
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
 }
 
@@ -2024,7 +2023,7 @@ optgroup {
   fill: rgba(230, 25, 161, 0.1);
 }
 .mandragora .shadow {
-  fill: rgba(230, 25, 161, 0.0375);
+  fill: rgba(230, 25, 161, 0.025);
   stroke-width: 0;
 }
 .mandragora .clip {

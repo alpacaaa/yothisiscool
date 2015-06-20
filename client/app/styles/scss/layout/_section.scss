@@ -29,7 +29,6 @@
 
 .notation {
 	font-weight: $normal;
-	text-transform: uppercase;
 
 	text-align: center;
 
@@ -39,8 +38,8 @@
 	padding-top: rhythm((($m-medium-line*2)-($m-small-line))/2, $m-small-size);
 	padding-bottom: rhythm((($m-medium-line*2)-($m-small-line))/2, $m-small-size);
 	@include min-screen(col(8)) {
-		@include adjust-font-size-to($d-extra-small-size, $d-extra-small-line);
-		padding-top: rhythm((($d-medium-line*2)-($d-extra-small-line))/2, $d-extra-small-size);
-		padding-bottom: rhythm((($d-medium-line*2)-($d-extra-small-line))/2, $d-extra-small-size);
+		@include adjust-font-size-to($d-small-size, $d-small-line);
+		padding-top: rhythm((($d-medium-line*2)-($d-small-line))/2, $d-small-size);
+		padding-bottom: rhythm((($d-medium-line*2)-($d-small-line))/2, $d-small-size);
 	}
 }

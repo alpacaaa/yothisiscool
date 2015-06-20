@@ -1,0 +1,88 @@
+/*! (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+
+//
+// Imports
+//
+
+@import "utilities/colors.scss";
+
+//
+// Colors
+// 0 1 | 2 3 | 4 5 | 6 7 | 8 9 | a b | c d | e f
+//
+
+$e-paper: mix($canvas, $white, 10%);
+
+$e-canvas: $canvas;
+
+// Colors on paper
+
+$e-strong-type-color-paper: mix($e-paper, $black, 20%);
+$e-type-color-paper: mix($e-paper, $black, 40%);
+$e-light-type-color-paper: mix($e-paper, $black, 60%);
+
+$e-st-strong-type-color-paper: mix($e-paper, $st-color, 20%);
+$e-st-type-color-paper: mix($e-paper, $st-color, 40%);
+$e-st-light-type-color-paper: mix($e-paper, $st-color, 60%);
+
+$e-nd-strong-type-color-paper: mix($e-paper, $nd-color, 20%);
+$e-nd-type-color-paper: mix($e-paper, $nd-color, 40%);
+$e-nd-light-type-color-paper: mix($e-paper, $nd-color, 60%);
+
+$e-border-color-paper: mix($e-paper, $black, 95%);
+
+// Colors on canvas
+
+$e-strong-type-color-canvas: mix($e-canvas, $black, 20%);
+$e-type-color-canvas: mix($e-canvas, $black, 40%);
+$e-light-type-color-canvas: mix($e-canvas, $black, 60%);
+
+$e-st-strong-type-color-canvas: mix($e-canvas, $st-color, 20%);
+$e-st-type-color-canvas: mix($e-canvas, $st-color, 40%);
+$e-st-light-type-color-canvas: mix($e-canvas, $st-color, 60%);
+
+$e-nd-strong-type-color-canvas: mix($e-canvas, $nd-color, 20%);
+$e-nd-type-color-canvas: mix($e-canvas, $nd-color, 40%);
+$e-nd-light-type-color-canvas: mix($e-canvas, $nd-color, 60%);
+
+$e-border-color-canvas: mix($e-canvas, $black, 95%);
+
+/*!
+
+ * Colors on paper
+
+ * paper: #{$e-paper}
+
+ * strong-type-color: #{$e-strong-type-color-paper}
+ * type-color: #{$e-type-color-paper}
+ * light-type-color: #{$e-light-type-color-paper}
+
+ * st-strong-type-color: #{$e-st-strong-type-color-paper}
+ * st-type-color: #{$e-st-type-color-paper}
+ * st-light-type-color: #{$e-st-light-type-color-paper}
+
+ * nd-strong-type-color: #{$e-nd-strong-type-color-paper}
+ * nd-type-color: #{$e-nd-type-color-paper}
+ * nd-light-type-color: #{$e-nd-light-type-color-paper}
+
+ * border-color: #{$e-border-color-paper}
+
+ * Colors on canvas
+
+ * canvas: #{$e-canvas}
+
+ * strong-type-color: #{$e-strong-type-color-canvas}
+ * type-color: #{$e-type-color-canvas}
+ * light-type-color: #{$e-light-type-color-canvas}
+
+ * st-strong-type-color: #{$e-st-strong-type-color-canvas}
+ * st-type-color: #{$e-st-type-color-canvas}
+ * st-light-type-color: #{$e-st-light-type-color-canvas}
+
+ * nd-strong-type-color: #{$e-nd-strong-type-color-canvas}
+ * nd-type-color: #{$e-nd-type-color-canvas}
+ * nd-light-type-color: #{$e-nd-light-type-color-canvas}
+
+ * border-color: #{$e-border-color-canvas}
+
+ */
