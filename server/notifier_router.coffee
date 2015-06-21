@@ -75,7 +75,7 @@ process_batch = (size) ->
       item.notification.updateAttribute 'status', 'processing'
 
       item.comments.forEach (c) ->
-        Comment.beautify c
+        Comment.beautify c, false
         permalink c
         date_posted c
         c.body = fix_comment_body c.body
@@ -165,7 +165,7 @@ user_email = (user) ->
 
 
 permalink = (item) ->
-  link = "https://dudethisis.cool/#{item.repo().slug}"
+  link = "https://www.dudethisis.cool/#{item.repo().slug}"
   item.project_link = link
   item.permalink = "#{link}#thank-#{item.id}"
   item
@@ -178,6 +178,8 @@ date_posted = (comment) ->
 fix_comment_body = (body) ->
   # such inline, much wow
   body = body.split('<p>').join('<p style="margin:0;">')
+  body = body.split('<strong>').join('<strong style="color:#3acec1;">')
+  body = body.split('<a').join('<a style="color:#ea46b2; font-weight:bold; text-decoration:none;"')
 
 
 

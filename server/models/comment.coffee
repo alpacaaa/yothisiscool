@@ -62,13 +62,16 @@ module.exports = (Comment) ->
 
 
   # `beautify` seriously?
-  Comment.beautify = (instance) ->
+  Comment.beautify = (instance, parse_emoticons = true) ->
     body = instance.body
     return unless body
 
     body = markdownify body
     body = emojione.shortnameToUnicode body
-    body = twemoji.parse body
+
+    if parse_emoticons
+      body = twemoji.parse body
+
     instance.body = body
 
 
