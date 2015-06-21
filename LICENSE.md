@@ -1,14 +1,14 @@
 
 
-# Dude, this is cool LICENSE
+# Dude, This Is Cool LICENSE
 
-### Logo
-[Attribution-NonCommercial-NoDerivatives 4.0 International](http://creativecommons.org/licenses/by-nc-nd/4.0/)
+## Site Design
 
+All the design in this repository is licensed under the [CC BY-NC-ND 4.0](http://creativecommons.org/licenses/by-nc-nd/4.0/) license.
 
-### Everything else
+## Site Code
 
-All the code in this repository is licensed under the MIT License.
+All the code in this repository is licensed under the MIT license.
 
     The MIT License (MIT)
 
