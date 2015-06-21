@@ -69,8 +69,15 @@ module.exports = (GithubUser) ->
         ret = repos.map (item) ->
           slug = item.full_name
           repo = found[slug]
-          return repo if repo
 
+          [owner, name] = slug.split('/')
+
+          if repo
+            repo.owner = owner
+            return repo
+
+          owner: owner
+          name: name
           slug:  slug
           count: 0
 
