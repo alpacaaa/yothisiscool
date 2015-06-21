@@ -8,11 +8,11 @@ View = Ember.View.extend
     hbody = $('html,body')
     hbody.scrollTop 0
 
-    $('sup a').click (e) ->
+    $('a[href ^= "#fn"]').click (e) ->
       e.preventDefault()
       target = $(this).attr('href').substr 1
       hbody.animate
-        scrollTop: $("div[id='#{target}']").offset().top - 20
+        scrollTop: $("*[id='#{target}']").offset().top - 20
 
 
 `export default View`
