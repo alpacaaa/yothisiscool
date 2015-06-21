@@ -41,7 +41,7 @@
            create a wrapper div around your email and that div will inherit your embedded body styles.
            The "#body_style" is defined for AOL because it does not support your embedded body definition nor
            your body tag, we will use this class in our wrapper div. */
-        body, #body_style {width:100% !important; min-height:1000px; color:#656564; background:#fafad1; font-family:Arial,Helvetica,sans-serif; font-size:18px; line-height:28px}
+        body, #body_style {width:100% !important; min-height:1000px; color:#656564; background:#fafad1; font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:24px}
 
         /* This is the embedded CSS link color for Gmail. This will overwrite Hotmail and Yahoo Beta's
            embedded link colors and make it consistent with Gmail. Also use this rule on inline CSS. */
@@ -82,7 +82,7 @@
     </style>
 </head>
 
-<body style="width:100% !important; min-height:1000px; color:#656564; background:#fafad1; font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:1.4;" alink="#323232" link="#ea46b2" bgcolor="#fafad1" text="#656564" yahoo="fix">
+<body style="width:100% !important; min-height:1000px; color:#656564; background:#fafad1; font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:20px;" alink="#323232" link="#ea46b2" bgcolor="#fafad1" text="#656564" yahoo="fix">
 <!-- You may adjust each of the values above for your template as needed.
 
 We've included the style attribute for Gmail because it does not support embedded CSS and it will convert this body tag to
@@ -161,14 +161,14 @@ The yahoo attribute is added if you are using media queries for mobile devices (
                             <table border="0" cellpadding="8" cellspacing="0" width="100%">
                                 <tr>
                                  <!-- greeting text -->
-                                  <td style="color:#656564; font-size:18px; line-height:28px">
+                                  <td style="color:#656564; font-size:16px; line-height:24px">
                                     Hey <strong style="color:#3acec1;">@{{user.username}}</strong>,
                                   </td>
                                   <!-- /greeting text -->
                                 </tr>
                                 <tr>
                                   <!-- body text -->
-                                  <td style="color:#656564; font-size:18px; line-height:28px">
+                                  <td style="color:#656564; font-size:16px; line-height:24px">
                                     It looks like one or more of your projects on GitHub got love on <a href="https://dudethisis.cool/" style="color:#ea46b2; font-weight:bold; text-decoration:none; white-space:nowrap;" target="_blank">Dude, This is Cool</a>. Check it out below!
                                   </td>
                                   <!-- /body text -->
@@ -193,7 +193,7 @@ The yahoo attribute is added if you are using media queries for mobile devices (
                                     <tr>
                                       <!-- avatar -->
                                       <td width="64" height="48" valign="middle">
-                                          <img alt="@{{#author}}{{username}}{{/author}}’s avatar." border="0" src="{{#author}}{{avatar_url}}{{/author}}" style="border-radius:2px;" width="40" height="40" />
+                                          <img alt="@{{#author}}{{username}}{{/author}}’s avatar" border="0" src="{{#author}}{{avatar_url}}{{/author}}" style="border-radius:2px; font-size:12px; line-height:16px" width="40" height="40" />
                                       </td>
                                       <!-- /avatar -->
                                       <!-- meta -->
@@ -201,14 +201,14 @@ The yahoo attribute is added if you are using media queries for mobile devices (
                                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                             <tr>
                                              <!-- username -->
-                                              <td style="color:#656564; font-size:18px; line-height:28px">
+                                              <td style="color:#656564; font-size:16px; line-height:24px">
                                                 <a href="{{permalink}}" style="color:#ea46b2; font-weight:bold; text-decoration:none; white-space:nowrap;" target="_blank">@{{#author}}{{username}}{{/author}}</a>
                                               </td>
                                               <!-- /username -->
                                             </tr>
                                             <tr>
                                               <!-- project and time -->
-                                              <td style="color:#989896; font-size: 14px; line-height:16px">
+                                              <td style="color:#989896; font-size:14px; line-height:16px">
                                                 <a href="{{project_link}}" style="color:#989896; text-decoration:none; white-space:nowrap;" target="_blank">{{#repo}}{{name}}{{/repo}}</a> · <a href="{{permalink}}" style="color:#989896; text-decoration:none; white-space:nowrap;" target="_blank">{{date_posted}}</a>
                                               </td>
                                               <!-- /project and time -->
@@ -219,7 +219,9 @@ The yahoo attribute is added if you are using media queries for mobile devices (
                                     </tr>
                                     <tr>
                                       <!-- /thank -->
-                                      <td colspan="2" style="color:#656564; font-size: 18px; line-height:28px">{{{body}}}</td>
+                                      <td colspan="2" style="color:#656564; font-size: 16px; line-height:24px">
+                                      {{{body}}}
+                                      </td>
                                       <!-- thank -->
                                     </tr>
                                   </table>
@@ -243,7 +245,7 @@ The yahoo attribute is added if you are using media queries for mobile devices (
                             <table border="0" cellpadding="8" cellspacing="0" width="100%">
                                 <tr>
                                   <!-- body text -->
-                                  <td style="color:#656564; font-size:18px; line-height:28px">
+                                  <td style="color:#656564; font-size:16px; line-height:24px">
                                     {{#if more_comments}}There are {{more_comments}} more comments to checkout.<br/>{{/more_comments}}
                                     <br/>
                                     <br/>
@@ -290,7 +292,7 @@ The yahoo attribute is added if you are using media queries for mobile devices (
                           </td>
                         </tr>
                         <tr>
-                          <td colspan="3">or simply <a href="{{unsubscribe}}" style="color:#ee73b4; text-decoration:none; white-space:nowrap;" target="_blank">unsubscribe</a>—click on a frequency to resubscribe back.</td>
+                          <td colspan="3">or simply <a href="{{unsubscribe}}" style="color:#ee73b4; text-decoration:none; white-space:nowrap;" target="_blank">unsubscribe</a> (click on a frequency to resubscribe back).</td>
                         </tr>
                       </table>
                     </td>
