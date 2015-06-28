@@ -14,6 +14,8 @@
 $e-paper: mix($canvas, $white, 10%);
 
 $e-canvas: $canvas;
+$e-strong-canvas: mix($nd-color, $canvas, 10%);
+
 
 // Colors on paper
 
@@ -48,6 +50,11 @@ $e-nd-light-type-color-canvas: mix($e-canvas, $nd-color, 60%);
 $e-border-color-canvas: mix($e-canvas, $black, 95%);
 
 /*!
+
+ * Canvas
+
+ * canvas: #{$e-canvas}
+ * strong-canvas: #{$e-strong-canvas}
 
  * Colors on paper
 
