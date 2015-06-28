@@ -17,7 +17,9 @@ module.exports = (GithubRepo) ->
     return next() unless list?.length
 
     Comment = GithubRepo.app.models.Comment
-    instance[0].comments().forEach Comment.beautify
+    instance[0].comments().forEach (item) ->
+      Comment.beautify item, true
+
     next()
 
 

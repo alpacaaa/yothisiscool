@@ -13,7 +13,9 @@ module.exports = (Comment) ->
     return next() unless instance
 
     instance = [instance] unless instance.length
-    instance.forEach Comment.beautify
+    instance.forEach (item) ->
+      Comment.beautify item, true
+
     next()
 
 
