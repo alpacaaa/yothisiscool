@@ -7,7 +7,7 @@ Route = Ember.Route.extend
       @get('ws').request 'comments'
         .include 'author', 'repo'
         .order 'date DESC'
-        .limit 16
+        .limit 32
         .findMany()
 
     Ember.RSVP.hash
