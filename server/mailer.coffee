@@ -19,6 +19,7 @@ class Mailer
     @notification_tpl = fs.readFileSync(file).toString()
 
     @address_override = config.EMAIL_ADDRESS_OVERRIDE
+    @address_bcc = config.EMAIL_ADDRESS_BCC
 
 
   send: (options) ->
@@ -38,6 +39,9 @@ class Mailer
       params['h:Dude_address'] = params.to
       params.html += "<p>SENT TO #{options.user.username} – #{params.to}</p>"
       params.to = @address_override
+
+    if @address_bcc
+      params.bcc = @address_bcc
 
     @mailgun.messages().send params
 
