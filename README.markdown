@@ -2,8 +2,9 @@
 
 # Dude, this is cool!
 
+https://dudethisis.cool
 
-Open source projects are amazing and guess what, it’s because their authors are amazing people as well: why not showing some love to these dudes?!?
+Open source projects are amazing and guess what, it’s because their authors are amazing people as well: why not show some love to these dudes?!?
 
 This is what **Dude, This Is Cool** is about: pick a project on Github and thank its author/s!
 
