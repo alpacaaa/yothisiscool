@@ -14,8 +14,6 @@
 	}
 }
 .section-content {
-	background-color: $content-background-color;
-	@include canvas-shadow;
 	/*&:first-of-type {
 		@include box-shadow(0 -2px 5px -2px $shadow-color);
 	}
@@ -25,6 +23,14 @@
 	/*&:only-of-type {
 		@include box-shadow(0 -2px 5px -2px $shadow-color, 0 3px 5px -2px $shadow-color);
 	}*/
+	min-height: rhythm($m-medium-line*10);
+
+	background-color: $content-background-color;
+
+	@include canvas-shadow;
+	@include min-screen(col(8)) {
+		min-height: rhythm($d-medium-line*10);
+	}
 }
 
 .notation {
