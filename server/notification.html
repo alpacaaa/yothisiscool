@@ -191,35 +191,22 @@ The yahoo attribute is added if you are using media queries for mobile devices (
                                       <td height="14" colspan="2" style="border-top: 1px solid #f1f1ed;"></td>
                                     </tr>
                                     <tr>
-                                      <!-- avatar -->
-                                      <td width="64" height="48" valign="middle">
-                                          <img alt="@{{#author}}{{username}}{{/author}}’s avatar" border="0" src="{{#author}}{{avatar_url}}{{/author}}" style="border-radius:2px; font-size:12px; line-height:16px" width="40" height="40" />
+                                     <!-- username -->
+                                      <td style="color:#656564; font-size:16px; line-height:24px">
+                                        <a href="{{permalink}}" style="color:#ea46b2; font-weight:bold; text-decoration:none; white-space:nowrap;" target="_blank">@{{#author}}{{username}}{{/author}}</a>
                                       </td>
-                                      <!-- /avatar -->
-                                      <!-- meta -->
-                                      <td valign="top">
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                            <tr>
-                                             <!-- username -->
-                                              <td style="color:#656564; font-size:16px; line-height:24px">
-                                                <a href="{{permalink}}" style="color:#ea46b2; font-weight:bold; text-decoration:none; white-space:nowrap;" target="_blank">@{{#author}}{{username}}{{/author}}</a>
-                                              </td>
-                                              <!-- /username -->
-                                            </tr>
-                                            <tr>
-                                              <!-- project and time -->
-                                              <td style="color:#989896; font-size:14px; line-height:16px">
-                                                <a href="{{project_link}}" style="color:#989896; text-decoration:none; white-space:nowrap;" target="_blank">{{#repo}}{{name}}{{/repo}}</a> · <a href="{{permalink}}" style="color:#989896; text-decoration:none; white-space:nowrap;" target="_blank">{{date_posted}}</a>
-                                              </td>
-                                              <!-- /project and time -->
-                                            </tr>
-                                        </table>
+                                      <!-- /username -->
+                                    </tr>
+                                    <tr>
+                                      <!-- project and time -->
+                                      <td style="color:#989896; font-size:14px; line-height:16px">
+                                        {{#repo}}{{name}}{{/repo}} · {{date_posted}}
                                       </td>
-                                      <!-- /meta -->
+                                      <!-- /project and time -->
                                     </tr>
                                     <tr>
                                       <!-- /thank -->
-                                      <td colspan="2" style="color:#656564; font-size: 16px; line-height:24px">
+                                      <td colspan="2" style="color:#656564; font-size: 16px; line-height:24px; padding-top:8px">
                                       {{{body}}}
                                       </td>
                                       <!-- thank -->
