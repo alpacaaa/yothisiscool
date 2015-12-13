@@ -1,6 +1,6 @@
 # Yo, This is Cool!
 
-https://yothisis.cool
+[yothisis.cool](https://yothisis.cool "Yo, This is Cool")
 
 **Open source** authors and contributors need much more love from the community.
 
