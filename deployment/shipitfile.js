@@ -42,7 +42,7 @@ module.exports = function (shipit) {
     production: {
       servers: 'dude@' + config.HOST,
       dude: {
-        WS_ENDPOINT: 'https://dudethisis.cool',
+        WS_ENDPOINT: 'https://yothisis.cool',
         ANALYTICS_TRACKING_CODE: 'UA-45799744-2'
       }
     }

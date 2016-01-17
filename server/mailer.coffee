@@ -30,9 +30,9 @@ class Mailer
     html = mustache.render @notification_tpl, options
 
     params =
-      from: 'Dude this is cool <hey@dudethisis.cool>'
+      from: 'Yo this is cool <hey@dudethisis.cool>'
       to: options.email
-      subject: "Dude, This is Cool / #{options.comments.length} New Thanks"
+      subject: "Yo, This is Cool / #{options.comments.length} New Thanks"
       html: html
 
     if @address_override
@@ -50,7 +50,7 @@ class Mailer
   generate_link: (action, email_token, params) ->
     params.access_token = @generate_access_token email_token, params
     qs = querystring.stringify params
-    "https://dudethisis.cool/#{action}?#{qs}"
+    "https://yothisis.cool/#{action}?#{qs}"
 
   generate_access_token: (email_token, params) ->
     str = Object.keys(params)

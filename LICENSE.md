@@ -1,6 +1,6 @@
 
 
-# Dude, This Is Cool LICENSE
+# Yo, This Is Cool LICENSE
 
 ## Site Design
 

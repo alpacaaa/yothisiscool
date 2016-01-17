@@ -165,7 +165,7 @@ user_email = (user) ->
 
 
 permalink = (item) ->
-  link = "https://dudethisis.cool/#{item.repo().slug}"
+  link = "https://yothisis.cool/#{item.repo().slug}"
   item.project_link = link
   item.permalink = "#{link}#thank-#{item.id}"
   item
