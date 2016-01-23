@@ -1,4 +1,4 @@
-// (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
 
 /*
 ** Sundries
@@ -127,7 +127,6 @@
 
 		border-bottom: none;
 
-		@include column-break-inside(avoid);
 		@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		&:before {
 			margin-right: em($d-gut/2);

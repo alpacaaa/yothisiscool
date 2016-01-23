@@ -1,9 +1,13 @@
-/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+
+/*
+** Menu
+*/
 
 .menu {
 	overflow: hidden;
 
-	max-width: $waistline;
+	max-width: em($waistline);
 	margin-right: auto;
 	margin-left: auto;
 	padding-top: em($m-gut/2);

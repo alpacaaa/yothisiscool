@@ -1,15 +1,15 @@
-/*! (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/*! (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
 
-//
-// Imports
-//
+/*
+** Imports
+*/
 
 @import "utilities/colors.scss";
 
-//
-// Colors
-// 0 1 | 2 3 | 4 5 | 6 7 | 8 9 | a b | c d | e f
-//
+/*
+** Colors
+** 0 1 | 2 3 | 4 5 | 6 7 | 8 9 | a b | c d | e f
+*/
 
 $e-paper: mix($canvas, $white, 10%);
 
@@ -17,7 +17,9 @@ $e-canvas: $canvas;
 $e-strong-canvas: mix($black, $canvas, 5%);
 
 
-// Colors on paper
+/*
+** Colors on paper
+*/
 
 $e-strong-type-color-paper: mix($e-paper, $black, 20%);
 $e-type-color-paper: mix($e-paper, $black, 40%);
@@ -33,7 +35,9 @@ $e-nd-light-type-color-paper: mix($e-paper, $nd-color, 60%);
 
 $e-border-color-paper: mix($e-paper, $black, 95%);
 
-// Colors on canvas
+/*
+** Colors on canvas
+*/
 
 $e-strong-type-color-canvas: mix($e-canvas, $black, 20%);
 $e-type-color-canvas: mix($e-canvas, $black, 40%);

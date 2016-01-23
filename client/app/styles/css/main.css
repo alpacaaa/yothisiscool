@@ -1,5 +1,86 @@
-/*! (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
-/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/*! (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+/*
+** Imports
+*/
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+/*
+** Colors
+** 0 1 | 2 3 | 4 5 | 6 7 | 8 9 | a b | c d | e f
+*/
+/*
+** Typography
+*/
+/*
+** Backgrounds
+*/
+/*
+** Borders
+*/
+/*
+** Shadows
+*/
+/*
+** Fields
+*/
+/*
+** Buttons
+*/
+/*
+** Pictures
+*/
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+/*
+** Utilities
+*/
+/*
+** Screen dimensions
+*/
+/*
+** Logo sizes
+*/
+/*
+** Font sizes and line heights
+*/
+/*
+** Base font sizes and line heights
+*/
+/*
+** Font weights
+*/
+/*
+** Grid
+*/
+/*
+** Guts and indents
+*/
+/*
+** Border widths
+*/
+/*
+** Radiuses
+*/
+/*
+** Strip units
+*/
+/*
+** Convert pxs to ems
+*/
+/*
+** Column-width function, in ems
+*/
+/*
+** Column-width function, in pxs
+*/
+/*
+** Typefaces
+*/
+/*
+** Box-shadow
+*/
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+/*
+** Placeholders
+*/
 pre, .head, .body, [class^="action"], [class^="form"], .comment {
   position: relative;
   padding-right: 0.75em;
@@ -17,6 +98,7 @@ pre, .head, .body, [class^="action"], [class^="form"], .comment {
   margin-left: auto;
 }
 
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
 /*
 ** Selection
 */
@@ -138,7 +220,7 @@ a {
   -o-transition-delay: 0s;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
-  color: rgba(230, 25, 161, 0.8);
+  color: rgba(230, 26, 162, 0.8);
 }
 a:hover {
   color: rgba(0, 0, 0, 0.8);
@@ -329,6 +411,7 @@ svg:not(:root) {
   overflow: hidden;
 }
 
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
 /*
 ** Typography
 */
@@ -735,7 +818,10 @@ svg:not(:root) {
   }
 }
 
-/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+/*
+** Header
+*/
 .header {
   margin-right: auto;
   margin-left: auto;
@@ -746,7 +832,10 @@ svg:not(:root) {
   perspective-origin: center bottom;
 }
 
-/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+/*
+** Footer
+*/
 .footer {
   display: table-row;
   height: 1px;
@@ -759,7 +848,10 @@ svg:not(:root) {
   perspective-origin: center top;
 }
 
-/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+/*
+** Section
+*/
 [class^="section"] {
   padding-bottom: 6em;
 }
@@ -787,9 +879,9 @@ svg:not(:root) {
   }*/
   min-height: 15em;
   background-color: rgba(255, 255, 255, 0.9);
-  -moz-box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
-  -webkit-box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
-  box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
+  -moz-box-shadow: 0 3px 5px -2px rgba(230, 26, 162, 0.1);
+  -webkit-box-shadow: 0 3px 5px -2px rgba(230, 26, 162, 0.1);
+  box-shadow: 0 3px 5px -2px rgba(230, 26, 162, 0.1);
 }
 @media screen and (min-width: 36em) {
   .section-content {
@@ -815,6 +907,7 @@ svg:not(:root) {
   }
 }
 
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
 /*
 ** Sundries
 */
@@ -877,7 +970,7 @@ svg:not(:root) {
 }
 .author .tributary a {
   font-weight: 400;
-  color: rgba(230, 25, 161, 0.4);
+  color: rgba(230, 26, 162, 0.4);
 }
 .author .tributary a:hover {
   color: rgba(0, 0, 0, 0.4);
@@ -943,9 +1036,6 @@ svg:not(:root) {
   .letter, .project, .comment {
     width: 18em;
     border-bottom: none;
-    -moz-page-break-inside: avoid;
-    -webkit-column-break-inside: avoid;
-    break-inside: avoid;
     font-size: 1em;
     line-height: 1.5em;
   }
@@ -955,7 +1045,10 @@ svg:not(:root) {
   }
 }
 
-/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+/*
+** Action
+*/
 [class^="action"] {
   width: 75%;
   padding-top: 3em;
@@ -992,7 +1085,7 @@ svg:not(:root) {
   line-height: 1.53846em;
 }
 [class^="action"] .caption span {
-  color: rgba(230, 25, 161, 0.8);
+  color: rgba(230, 26, 162, 0.8);
 }
 @media screen and (min-width: 36em) {
   [class^="action"] {
@@ -1018,7 +1111,10 @@ svg:not(:root) {
   }
 }
 
-/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+/*
+** Warning
+*/
 .warning {
   padding: 1.25em 0.75em 1.25em 0.75em;
   text-align: center;
@@ -1029,7 +1125,10 @@ svg:not(:root) {
   }
 }
 
-/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+/*
+** Menu
+*/
 .menu {
   overflow: hidden;
   max-width: 90em;
@@ -1061,16 +1160,16 @@ svg:not(:root) {
 .menu a:hover span {
   color: rgba(0, 0, 0, 0.8);
   background-color: rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
-  -webkit-box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
-  box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
+  -moz-box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
+  box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
 }
 .menu a:active span {
   color: rgba(0, 0, 0, 0.8);
-  background-color: rgba(230, 25, 161, 0.2);
-  -moz-box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
-  -webkit-box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
-  box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
+  background-color: rgba(230, 26, 162, 0.2);
+  -moz-box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
+  box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
   -moz-transition-duration: 0s;
   -o-transition-duration: 0s;
   -webkit-transition-duration: 0s;
@@ -1081,7 +1180,7 @@ svg:not(:root) {
   height: 100%;
   padding-top: 0.57143em;
   padding-bottom: 0.57143em;
-  color: rgba(230, 25, 161, 0.8);
+  color: rgba(230, 26, 162, 0.8);
   background-repeat: no-repeat;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -1201,7 +1300,10 @@ svg:not(:root) {
   }
 }
 
-/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+/*
+** Progress
+*/
 @-moz-keyframes progress-rotation {
   0% {
     -moz-transform: rotate(0deg);
@@ -1271,6 +1373,10 @@ svg:not(:root) {
   }
 }
 
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+/*
+** Form
+*/
 ::-webkit-input-placeholder {
   opacity: 1.0;
   color: rgba(0, 0, 0, 0.15);
@@ -1382,9 +1488,9 @@ optgroup {
 }
 [class^="form"] input[type="text"], [class^="form"] input[type="search"], [class^="form"] textarea, [class^="form"] button, [class^="form"] input[type="submit"] {
   display: block;
-  -moz-box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
-  -webkit-box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
-  box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
+  -moz-box-shadow: 0 3px 5px -2px rgba(230, 26, 162, 0.1);
+  -webkit-box-shadow: 0 3px 5px -2px rgba(230, 26, 162, 0.1);
+  box-shadow: 0 3px 5px -2px rgba(230, 26, 162, 0.1);
   -moz-transition-property: color, border-color, background-color;
   -o-transition-property: color, border-color, background-color;
   -webkit-transition-property: color, border-color, background-color;
@@ -1456,8 +1562,8 @@ optgroup {
   height: 2.25em;
   padding: 0.375em 0.75em 0.375em 0.75em;
   color: rgba(255, 255, 255, 0.95);
-  border: 0px solid rgba(230, 25, 161, 0.8);
-  background-color: rgba(230, 25, 161, 0.8);
+  border: 0px solid rgba(230, 26, 162, 0.8);
+  background-color: rgba(230, 26, 162, 0.8);
   font-size: 1em;
   line-height: 1.5em;
   -moz-border-radius: 4px / 4px;
@@ -1487,8 +1593,8 @@ optgroup {
   text-align: center;
 }
 [class^="form"] .error input[type="text"], [class^="form"] .error input[type="search"], [class^="form"] .error textarea {
-  color: rgba(230, 25, 161, 0.8);
-  border-color: rgba(230, 25, 161, 0.4);
+  color: rgba(230, 26, 162, 0.8);
+  border-color: rgba(230, 26, 162, 0.4);
 }
 @media screen and (min-width: 36em) {
   [class^="form"] {
@@ -1655,7 +1761,10 @@ optgroup {
   }
 }
 
-/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+/*
+** Letter
+*/
 .letter {
   position: relative;
   width: 50%;
@@ -1731,15 +1840,15 @@ optgroup {
 }
 .letter a:hover {
   background-color: rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
-  -webkit-box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
-  box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
+  -moz-box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
+  box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
 }
 .letter a:active {
-  background-color: rgba(230, 25, 161, 0.2);
-  -moz-box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
-  -webkit-box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
-  box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
+  background-color: rgba(230, 26, 162, 0.2);
+  -moz-box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
+  box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
   -moz-transition-duration: 0s;
   -o-transition-duration: 0s;
   -webkit-transition-duration: 0s;
@@ -1790,7 +1899,10 @@ optgroup {
   }
 }
 
-/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+/*
+** Project
+*/
 .project {
   position: relative;
   width: 100%;
@@ -1833,15 +1945,15 @@ optgroup {
 }
 .project a:hover {
   background-color: rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
-  -webkit-box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
-  box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
+  -moz-box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
+  box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
 }
 .project a:active {
-  background-color: rgba(230, 25, 161, 0.2);
-  -moz-box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
-  -webkit-box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
-  box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
+  background-color: rgba(230, 26, 162, 0.2);
+  -moz-box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
+  box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
   -moz-transition-duration: 0s;
   -o-transition-duration: 0s;
   -webkit-transition-duration: 0s;
@@ -1851,9 +1963,6 @@ optgroup {
   .project {
     width: 18em;
     border-bottom: none;
-    -moz-page-break-inside: avoid;
-    -webkit-column-break-inside: avoid;
-    break-inside: avoid;
     font-size: 1em;
     line-height: 1.5em;
   }
@@ -1889,12 +1998,15 @@ optgroup {
   }
 }
 
-/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+/*
+** Comment
+*/
 .comment.selected {
   background-color: rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
-  -webkit-box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
-  box-shadow: 0 1px 4px 0 rgba(230, 25, 161, 0.1) inset;
+  -moz-box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
+  box-shadow: 0 1px 4px 0 rgba(230, 26, 162, 0.1) inset;
 }
 
 .comment.is-first:last-child .tributary:after {
@@ -1989,6 +2101,7 @@ optgroup {
   }
 }
 
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
 /*
 ** Mandragora
 */
@@ -2002,7 +2115,7 @@ optgroup {
   stroke-width: 1;
 }
 .mandragora [class^="flower"] {
-  fill: rgba(230, 25, 161, 0.6);
+  fill: rgba(230, 26, 162, 0.6);
 }
 .mandragora [class^="stalk"] {
   fill: rgba(10, 194, 179, 0.2);
@@ -2026,10 +2139,10 @@ optgroup {
   fill: rgba(0, 0, 0, 0.6);
 }
 .mandragora [class^="complexion"] {
-  fill: rgba(230, 25, 161, 0.1);
+  fill: rgba(230, 26, 162, 0.1);
 }
 .mandragora .shadow {
-  fill: rgba(230, 25, 161, 0.025);
+  fill: rgba(230, 26, 162, 0.025);
   stroke-width: 0;
 }
 .mandragora .clip {
@@ -2037,7 +2150,10 @@ optgroup {
   stroke-width: 0;
 }
 
-/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+/*
+** Mandragora’s scream
+*/
 .scream .mandragora {
   width: 12em;
   height: 12.75em;
@@ -2162,9 +2278,9 @@ optgroup {
   -moz-border-radius: 12px / 12px;
   -webkit-border-radius: 12px 12px;
   border-radius: 12px / 12px;
-  -moz-box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
-  -webkit-box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
-  box-shadow: 0 3px 5px -2px rgba(230, 25, 161, 0.1);
+  -moz-box-shadow: 0 3px 5px -2px rgba(230, 26, 162, 0.1);
+  -webkit-box-shadow: 0 3px 5px -2px rgba(230, 26, 162, 0.1);
+  box-shadow: 0 3px 5px -2px rgba(230, 26, 162, 0.1);
   font-size: 0.875em;
   line-height: 1.42857em;
 }

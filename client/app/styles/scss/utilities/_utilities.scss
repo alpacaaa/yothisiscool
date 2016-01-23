@@ -1,19 +1,25 @@
-// (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
 
-//
-// Utilities
-//
+/*
+** Utilities
+*/
 
-//
-// Logo sizes
-//
+/*
+** Screen dimensions
+*/
+
+$waistline: 1440px;
+
+/*
+** Logo sizes
+*/
 
 $m-logo-size: 96px;
 $d-logo-size: 128px;
 
-//
-// Font sizes and line heights
-//
+/*
+** Font sizes and line heights
+*/
 
 $m-huge-size: 56px;
 $m-huge-line: 5.6;
@@ -51,29 +57,29 @@ $m-extra-small-line: 2.0;
 $d-extra-small-size: 13px;
 $d-extra-small-line: 2.0;
 
-//
-// Base font sizes and line heights
-//
+/*
+** Base font sizes and line heights
+*/
 
 $base-font-size: $m-medium-size;
 $base-line-height: 10px;
 
-//
-// Font weights
-//
+/*
+** Font weights
+*/
 
 $bold: 500;
 $normal: 400;
 
-//
-// Grid
-//
+/*
+** Grid
+*/
 
 $column-width: 72px;
 
-//
-// Guts and indents
-//
+/*
+** Guts and indents
+*/
 
 $m-gut: 24px;
 $m-indent: $m-gut;
@@ -81,55 +87,55 @@ $m-indent: $m-gut;
 $d-gut: 32px;
 $d-indent: $d-gut;
 
-//
-// Border widths
-//
+/*
+** Border widths
+*/
 
 $border-width: 1px;
 $field-border-width: 2px;
 $button-border-width: 0px;
 
-//
-// Radiuses
-//
+/*
+** Radiuses
+*/
 
 $radius: 4px;
 
-//
-// Strip units
-//
+/*
+** Strip units
+*/
 
 @function strip($number) {
 	@return $number / ($number * 0 + 1);
 }
 
-//
-// Convert pxs to ems
-//
+/*
+** Convert pxs to ems
+*/
 
 @function em($px, $base: $base-font-size) {
 	@return strip($px / $base) * 1em;
 }
 
-//
-// Column-width function, in ems
-//
+/*
+** Column-width function, in ems
+*/
 
 @function col($number-columns, $base: $base-font-size) {
 	@return em($column-width * $number-columns, $base);
 }
 
-//
-// Column-width function, in pxs
-//
+/*
+** Column-width function, in pxs
+*/
 
 @function col-px($number-columns) {
 	@return $column-width * $number-columns * 1px;
 }
 
-//
-// Typefaces
-//
+/*
+** Typefaces
+*/
 
 @mixin face($status: sans) {
 	@if $status == "sans" {
@@ -141,15 +147,9 @@ $radius: 4px;
 	}
 }
 
-//
-// Screen dimensions
-//
-
-$waistline: em(1440);
-
-//
-// Box-shadow
-//
+/*
+** Box-shadow
+*/
 
 @mixin canvas-shadow {
 	//@include box-shadow(0 -2px 5px -2px $shadow-color, 0 3px 5px -2px $shadow-color);

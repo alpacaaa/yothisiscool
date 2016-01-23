@@ -1,4 +1,8 @@
-/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [https://github.com/alpacaaa] All rights reserved */
+/* (c) 2014 Andrea Buran [www.andreaburan.com] ∪ Marco Sampellegrini [github.com/alpacaaa]. All rights reserved. */
+
+/*
+** Project
+*/
 
 .project {
 	position: relative;
@@ -47,7 +51,6 @@
 
 		border-bottom: none;
 
-		@include column-break-inside(avoid);
 		@include adjust-font-size-to($d-medium-size, $d-medium-line);
 		a {
 			padding-top: rhythm($d-medium-line/2, $d-medium-size);
